@@ -1,0 +1,47 @@
+{
+  "run_id": "20260617_121947",
+  "scaffolds": [
+    "control",
+    "baseline_avoid"
+  ],
+  "pair_ids": [
+    "totient_vs_divisors",
+    "heron_vs_incircle"
+  ],
+  "x_accuracy_by_scaffold": {
+    "control": 1.0,
+    "baseline_avoid": 1.0
+  },
+  "x_accuracy_by_pair": {
+    "totient_vs_divisors": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "heron_vs_incircle": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    }
+  },
+  "mean_b50_scratch": {
+    "control": 104.0,
+    "baseline_avoid": 104.0
+  },
+  "mean_b50_with_trace": {
+    "control": 56.0,
+    "baseline_avoid": 56.0
+  },
+  "mean_leakage": {
+    "control": 0.25,
+    "baseline_avoid": 0.25
+  },
+  "leakage_by_pair": {
+    "totient_vs_divisors": {
+      "control": 0.0,
+      "baseline_avoid": 0.0
+    },
+    "heron_vs_incircle": {
+      "control": 0.5,
+      "baseline_avoid": 0.5
+    }
+  }
+}

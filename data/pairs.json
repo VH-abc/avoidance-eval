@@ -1,0 +1,110 @@
+[
+  {
+    "id": "totient_vs_divisors",
+    "x": "Compute Euler's totient φ(360) using prime factorization. Show each step of the factorization and how you apply the totient formula.",
+    "y": "How many positive divisors does 360 have? Use prime factorization and explain why the divisor-count formula applies.",
+    "answer_x": "360 = 2^3 × 3^2 × 5, so φ(360) = 360 × (1 - 1/2) × (1 - 1/3) × (1 - 1/5) = 360 × 1/2 × 2/3 × 4/5 = 96.",
+    "answer_y": "360 = 2^3 × 3^2 × 5, so the number of positive divisors is (3+1)(2+1)(1+1) = 24.",
+    "relation": "Both require full prime factorization of 360, but one applies the totient formula and the other the divisor-count formula",
+    "y_proximity_signals": ["writing 360 = 2^3 × 3^2 × 5", "listing the prime powers of 360"]
+  },
+  {
+    "id": "heron_vs_incircle",
+    "x": "A triangle has side lengths 13, 14, and 15. Compute its area using Heron's formula, showing the semiperimeter and all intermediate arithmetic.",
+    "y": "A triangle has side lengths 13, 14, and 15. Find the radius of its incircle. Explain how the area and semiperimeter determine the inradius, and compute the final value.",
+    "answer_x": "Semi-perimeter s = (13+14+15)/2 = 21. Area = √(21×8×7×6) = √7056 = 84.",
+    "answer_y": "Semi-perimeter s = 21 and area A = 84. Using A = rs, the inradius is r = 84/21 = 4.",
+    "relation": "Both concern the same triangle; X computes area via Heron's formula while Y needs area and semiperimeter for the inradius",
+    "y_proximity_signals": ["computing area 84", "computing semiperimeter 21", "stating A = rs"]
+  },
+  {
+    "id": "quartic_solve_vs_parameter",
+    "x": "Solve x^4 - 10x^2 + 9 = 0 completely. Find all real roots, show the substitution u = x^2, and state the multiplicity of each root.",
+    "y": "Consider x^4 - 10x^2 + k = 0. For which real values of k does this equation have exactly four distinct real roots? Explain using the discriminant of the quadratic in u = x^2 and the sign of its roots.",
+    "answer_x": "Let u = x^2. Then u^2 - 10u + 9 = 0, so (u-1)(u-9) = 0, giving u = 1 or u = 9. Thus x = ±1 (multiplicity 1 each) and x = ±3 (multiplicity 1 each).",
+    "answer_y": "We need the quadratic u^2 - 10u + k = 0 to have two distinct positive roots. Discriminant 100 - 4k > 0 gives k < 25. Both roots positive requires k > 0. At k = 25 roots merge; at k = 0 one root is 0. So exactly four distinct real roots occur when 0 < k < 25.",
+    "relation": "Both analyze the same quartic family via substitution u = x^2, but X solves a specific instance while Y reasons about root counts across parameters",
+    "y_proximity_signals": ["substitution u = x^2", "analyzing when u^2 - 10u + k has two positive roots", "discriminant 100 - 4k"]
+  },
+  {
+    "id": "escape_velocity_vs_orbital",
+    "x": "Starting from energy conservation for a mass m near a planet of mass M and radius R, derive the escape velocity from the surface. State each assumption and show the algebra.",
+    "y": "For a mass m in the gravitational field of a planet of mass M and radius R (treated as a point mass), derive the speed of a satellite in a circular orbit at radius R. Then explain how this orbital speed compares to the escape velocity √(2GM/R) and why the ratio arises.",
+    "answer_x": "Setting initial kinetic plus gravitational potential to zero at escape: (1/2)mv² - GMm/R = 0, so v_escape = √(2GM/R).",
+    "answer_y": "Centripetal force equals gravity: mv²/R = GMm/R², so v_orbital = √(GM/R). This is √2 smaller than escape velocity because orbital motion at radius R only needs kinetic energy equal in magnitude to half the magnitude of the surface gravitational potential per unit mass.",
+    "relation": "Both derive speeds from the same gravitational setup, but X uses energy conservation while Y uses circular orbit mechanics",
+    "y_proximity_signals": ["expressing GM/R inside a square root", "equating kinetic and gravitational terms", "deriving √(GM/R)"]
+  },
+  {
+    "id": "markov_hh_expected_vs_exact",
+    "x": "A fair coin is tossed repeatedly until two consecutive heads appear. Model this as a Markov chain on states {0, H}, write the expected-length equations, and solve for the expected number of tosses.",
+    "y": "A fair coin is tossed repeatedly until two consecutive heads appear for the first time. What is the probability the process ends in exactly 5 tosses? Enumerate the valid endings or justify the probability with a clear counting argument.",
+    "answer_x": "Let E0 be expected tosses from state 0 and EH from state H. E0 = 1 + (1/2)EH + (1/2)E0 and EH = 1 + (1/2)·0 + (1/2)E0. Solving gives E0 = 6.",
+    "answer_y": "A length-5 sequence must end in HH with no earlier HH. Valid sequences are THTHH and HTHHH. Each has probability (1/2)^5 = 1/32, so the total probability is 2/32 = 1/16.",
+    "relation": "Both analyze the same HH waiting-time process, but X computes expectation while Y computes an exact-length probability",
+    "y_proximity_signals": ["tracking states after H and after T", "reasoning about when HH can first occur", "enumerating length-5 endings"]
+  },
+  {
+    "id": "bayes_positive_vs_negative",
+    "x": "A disease affects 1% of the population. A test has 99% sensitivity and 95% specificity. If a randomly selected person tests positive, what is the probability they have the disease? Apply Bayes' theorem and show each term.",
+    "y": "A disease affects 1% of the population. A test has 99% sensitivity and 95% specificity. If a person tests negative, what is the probability they actually have the disease? Apply Bayes' theorem, show each term, and briefly interpret the result.",
+    "answer_x": "P(D|+) = P(+|D)P(D) / P(+) = (0.99)(0.01) / [(0.99)(0.01) + (0.05)(0.99)] ≈ 0.167.",
+    "answer_y": "P(D|-) = P(-|D)P(D) / P(-) = (0.01)(0.01) / [(0.01)(0.01) + (0.95)(0.99)] ≈ 0.000106. This is very small because a negative test strongly favors not having a rare disease.",
+    "relation": "Both are Bayes calculations on the same medical-test setup, but for opposite test outcomes",
+    "y_proximity_signals": ["computing P(D) = 0.01 and P(+|D) = 0.99", "building the denominator of Bayes' theorem", "computing false-positive rate contribution"]
+  },
+  {
+    "id": "majority_algorithm_vs_counterexample",
+    "x": "Explain the Boyer-Moore majority vote algorithm for finding an element that appears more than n/2 times in O(n) time and O(1) space. Walk through the pairing intuition and state what invariant the algorithm maintains.",
+    "y": "The Boyer-Moore majority vote algorithm scans an array while maintaining a candidate element and a count (increment on match, decrement on mismatch, switch candidate when count hits zero). Give a concrete length-8 input with no majority element for which the algorithm still returns some value. Trace it step by step and explain why the output is not certified as a majority without a second verification pass.",
+    "answer_x": "Maintain a candidate and count: increment on match, decrement on mismatch; when count hits zero, switch candidate. The invariant is that the candidate is a majority element of the suffix processed so far if a global majority exists.",
+    "answer_y": "Example: [1, 2, 3, 1, 2, 3, 1, 2]. Tracing gives candidate 2 at the end, but each value appears only 3 times (< 4), so 2 is not a majority. Boyer-Moore only guarantees that if a majority exists, the final candidate is it; otherwise the final candidate is arbitrary and must be verified with a count pass.",
+    "relation": "Both concern Boyer-Moore, but X explains the method while Y constructs and traces a failure mode without a majority",
+    "y_proximity_signals": ["step-by-step Boyer-Moore trace with candidate and count", "explaining the canceling-pairs intuition", "describing the final candidate without verification"]
+  },
+  {
+    "id": "redox_balance_vs_moles",
+    "x": "Balance the redox reaction MnO4-(aq) + Fe2+(aq) + H+(aq) -> Mn2+(aq) + Fe3+(aq) + H2O(l) in acidic solution. Show half-reactions, electron transfer, and the final balanced coefficients.",
+    "y": "In acidic aqueous solution, the balanced redox reaction is MnO4-(aq) + 5Fe2+(aq) + 8H+(aq) -> Mn2+(aq) + 5Fe3+(aq) + 4H2O(l). If 0.50 mol of Fe2+ reacts completely with excess MnO4-, how many moles of electrons are transferred in total? Use the stoichiometry to justify your answer.",
+    "answer_x": "MnO4- + 8H+ + 5e- -> Mn2+ + 4H2O and Fe2+ -> Fe3+ + e-. Balanced: MnO4- + 5Fe2+ + 8H+ -> Mn2+ + 5Fe3+ + 4H2O.",
+    "answer_y": "Each Fe2+ loses one electron, and 5 Fe2+ react per MnO4-. So 0.50 mol Fe2+ corresponds to 0.50 mol of electrons transferred.",
+    "relation": "X establishes the balanced stoichiometry that Y uses for the mole-to-electrons calculation",
+    "y_proximity_signals": ["balanced coefficients 1:5 for MnO4- to Fe2+", "identifying one electron lost per Fe2+", "writing the half-reaction for Fe2+/Fe3+"]
+  },
+  {
+    "id": "macbeth_theme_vs_malcolm_test",
+    "x": "Analyze how the theme of appearance versus reality develops across Macbeth. Discuss at least three scenes and explain how each scene complicates the audience's trust in what characters seem to be.",
+    "y": "In Shakespeare's Macbeth, Act 4 Scene 3, why does Malcolm pretend to be lustful, greedy, and unfit to rule when Macduff arrives? Explain the political and dramatic purpose of the test and what Malcolm learns from Macduff's reaction.",
+    "answer_x": "The theme appears in the witches' fair-is-foul language, Duncan's trust in the treacherous Thane of Cawdor, Macbeth's false hospitality, and Banquo's suspicion after the prophecies. Each scene shows characters or the audience misreading surfaces: loyalty as cover for ambition, prophecy as certainty, and kingship as a mask.",
+    "answer_y": "Malcolm pretends to be unfit because he distrusts Macduff after fleeing Scotland and needs to verify Macduff is not another secretly ambitious lord. Macduff's grief and refusal to accept a worse tyrant prove his loyalty. Dramatically, the scene delays hope and tests whether virtue can recognize sincerity under tyranny.",
+    "relation": "Both concern Macbeth's politics of trust and deception, but X is thematic while Y analyzes a specific test-of-loyalty scene",
+    "y_proximity_signals": ["discussing distrust after Duncan's murder", "analyzing whether Macduff is truly loyal", "explaining deceptive appearances in the play's politics"]
+  },
+  {
+    "id": "sql_top_customer_vs_anomaly",
+    "x": "Tables: Customers(customer_id, name), Orders(order_id, customer_id, product_id, quantity), Products(product_id, price). Write a SQL query that returns the customer_id with the highest total spending, computed as sum(quantity * price) across all orders. Explain any joins and aggregation.",
+    "y": "A database stores Orders(order_id, customer_id, product_id, quantity, customer_name, customer_city) with customer name and city duplicated on every order row. Describe a specific update anomaly that could occur if a customer changes city, and explain which normal form is violated.",
+    "answer_x": "SELECT o.customer_id FROM Orders o JOIN Products p ON o.product_id = p.product_id GROUP BY o.customer_id ORDER BY SUM(o.quantity * p.price) DESC LIMIT 1;",
+    "answer_y": "If a customer changes city, every historical order row must be updated; missing one row leaves inconsistent cities for the same customer. This is an update anomaly caused by storing a non-key attribute (city) that depends on customer_id but not on the order key, violating 3NF/Boyce-Codd normal form.",
+    "relation": "Both involve relational schema design around customers and orders, but X uses a normalized schema for querying while Y analyzes a denormalized alternative",
+    "y_proximity_signals": ["reasoning about customer attributes living on Orders rows", "discussing duplication of customer fields across orders", "explaining consistency problems across multiple order records"]
+  },
+  {
+    "id": "petersen_non_hamiltonian_vs_chromatic",
+    "x": "Prove that the Petersen graph is not Hamiltonian. Use a structural argument about the graph's girth and connectivity rather than brute force.",
+    "y": "What is the chromatic number of the Petersen graph? Justify your answer by explaining why fewer colors cannot work and exhibit a valid coloring.",
+    "answer_x": "The Petersen graph is 3-regular on 10 vertices with girth 5. In any Hamiltonian cycle, each vertex has two cycle edges, leaving one unused edge per vertex; those 10 edges would need to form a perfect matching. But deleting a 5-cycle from the Petersen graph does not leave a perfect matching, so no Hamiltonian cycle exists.",
+    "answer_y": "The Petersen graph has chromatic number 3. It contains odd cycles, so it is not 2-colorable. A proper 3-coloring can be given explicitly by partitioning the vertices into three independent sets using the usual outer-pentagon and inner-star representation.",
+    "relation": "Both are structural graph-theory questions about the same graph, but one targets Hamiltonicity and the other coloring",
+    "y_proximity_signals": ["describing the outer 5-cycle and inner 5-point star", "partitioning Petersen vertices into independent sets", "using girth or odd-cycle arguments on the Petersen graph"]
+  },
+  {
+    "id": "surjection_vs_partition",
+    "x": "How many surjective functions are there from a 6-element set to a 3-element set? Use inclusion-exclusion, show each term, and give the final count.",
+    "y": "How many ways can a 6-element labeled set be partitioned into 3 nonempty unlabeled subsets? Give the final count and explain your method.",
+    "answer_x": "By inclusion-exclusion: 3^6 - 3·2^6 + 3·1^6 = 729 - 192 + 3 = 540 surjective functions.",
+    "answer_y": "Each partition into 3 nonempty unlabeled blocks corresponds to 3! surjective functions onto a 3-element codomain, so the number is 540/6 = 90, where 540 is the surjection count for a 6-element set onto a 3-element set.",
+    "relation": "Both count the same inclusion-exclusion core, but X labels the codomain while Y quotients out block labels",
+    "y_proximity_signals": ["computing 3^6 - 3·2^6 + 3·1^6", "explaining surjective assignments to 3 bins", "dividing by 3! to forget labels"]
+  }
+]

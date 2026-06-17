@@ -1,0 +1,492 @@
+[
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 1",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 1",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 1",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 1, 2, 3, 4]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 4, 5]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 1, 2, 3, 4]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 4, 3]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Mo",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2 = 4), so there is no majority element.\n\n###",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Mo",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Mo",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 1, 2, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2 = 4), so there is no majority element.\n\n###",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - **Element 1**: `count` is 0, set `candidate` to 1, increment `count` to 1.",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 4, 3]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - **Element 1**: `count` is 0, set `candidate` to 1, increment `count` to 1.",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2 = 4), so there is no majority element.\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - For the first element (1): `count` = 0 \u2192 `candidate` =",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to `0`.\n2. **First Pass**:\n   - For the first element `1`: \n     - `count` is `0`, so set `candidate` to `1` and `count",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-Step Trace of Boyer-Moore Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to `0`.\n2. **First Pass**:\n   - **Element 1**: `count` is 0, set `candidate` to 1, increment `count` to 1.\n   -",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - For the first element (1): `count` is 0, so set `candidate` to 1 and `count` to 1.\n   - For the second element (2): `count` is 1 (not 0), so decrement `count` to 0.\n   - For the third element (3): `count` is 0, set `candidate` to 3 and `count` to 1.\n   - For the fourth element (1): `count` is 1 (not 0), increment `count` to 2.\n   - For the fifth element (2): `count` is 2 (not 0), increment `count` to 3.\n   - For the sixth element (4): `count",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8 and no majority element, as no number appears more than 4 times (n/2).\n\n### Step-by-Step Trace of Boyer-Moore Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - **Element 1**: `count` = 0 \u2192 Set `candidate` = 1, `count` = 1\n   - **Element 2**: `count` = 1 \u2192 `count` = 0 (decrement)\n   - **Element 3**: `count` = 0 \u2192 Set `candidate` = 3, `count` = 1\n   - **Element 1**: `count` = 1 \u2192 `count` = 2 (increment)\n   - **Element 2**: `count` = 2 \u2192 `count` = 1 (decrement)\n   - **Element 4**: `count` = 1 \u2192 `count` = 0 (de",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - For the first element (1): `count` is 0, so set `candidate` to 1 and `count` to 1.\n   - For the second element (2): `count` is 1 (not 0), so decrement `count` to 0.\n   - For the third element (3): `count` is 0, set `candidate` to 3 and `count` to 1.\n   - For the fourth element (1): `count` is 1 (not 0), increment `count` to 2.\n   - For the fifth element (2): `count` is 2 (not 0), increment `count` to 3.\n   - For the sixth element (4): `count",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2 = 4), so there is no majority element.\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to 0.\n2. **First Pass**:\n   - **Element 1**: `count` = 0 \u2192 Set `candidate` = 1, `count` = 1\n   - **Element 2**: `count` = 1 \u2192 `count` = 0 (decrement)\n   - **Element 3**: `count` = 0 \u2192 Set `candidate` = 3, `count` = 1\n   - **Element 1**: `count` = 1 \u2192 `count` = 2 (increment)\n   - **Element 2**: `count` = 2 \u2192 `count` = 1 (decrement)\n   - **Element 4**: `count` = 1 \u2192",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 4, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (n/2).\n\n### Step-by-step tracing of the Boyer-Moore Voting Algorithm:\n\n1. **Initialization**: Set `candidate` to `None` and `count` to `0`.\n2. **First Pass**:\n   - For the first element `1`: \n     - `count` is `0`, so set `candidate` to `1` and increment `count` to `1`.\n   - For the second element `2`: \n     - `count` is `1`, decrement `count` to `0` (since `2` is not the candidate).\n   - For the third element `3`: \n     - `count` is `0`, set `candidate` to `3` and increment `count` to `1`.\n   - For the fourth element `1`: \n     - `count` is `1`, increment `count` to `2` (since `1` is the candidate).\n   - For the fifth element `2`: \n     - `",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "`[1, 2, 3, 4, 1, 2, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "`[1, 2, 3, 4, 1, 2, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "`[1, 2, 3, 1, 2, 4, 4, 5]`",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "`[1, 2, 3, 1, 2, 4, 3, 4]`",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "`[1, 2, 3, 4, 1, 2, 3, 4]` (Boyer-Moore returns 3, but it is not a majority).",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count =",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count =",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count =",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 1, 2, 3, 4]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count =",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count =",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1` and `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (not equal to 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3` and `count = 1`.\n   - **Element 4**: \n     - `candidate` is 3 (not equal to 4), decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5` and `count =",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Consider the input array: `[1, 2, 3, 1, 2, 3, 4, 5]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (different from 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3`, `count = 1`.\n   - **Element 1**: \n     - `candidate` is 3 (different from 1), decrement `count` to 0.\n   - **Element 2**: \n     - `count` is 0, set `candidate = 2`, `count = 1`.\n   -",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1` and `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (different from 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3` and `count = 1`.\n   - **Element 4**: \n     - `candidate` is 3 (different from 4), decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5` and `count = 1",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count = 1`.\n   - **Element 2**: \n     - `candidate` (1) is different from 2, decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3`, `count = 1`.\n   - **Element 4**: \n     - `candidate` (3) is different from 4, decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5`, `count = 1`.\n   -",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 1, 2, 3]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1` and `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (different from 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3` and `count = 1`.\n   - **Element 4**: \n     - `candidate` is 3 (different from 4), decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5` and `count = 1",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The input array",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The input array `[1, 2, 3, 4, 5,",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (different from 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3`, `count = 1`.\n   - **Element 4**: \n     - `candidate` is 3 (different from 4), decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5`, `count = 1`.\n   - **Element 6**: \n     - `candidate` is 5 (different from 6), decrement `count` to 0.\n   - **Element 7**: \n     - `count` is 0, set `candidate = 7`, `count = 1`.\n   - **Element 8**: \n     - `candidate` is 7 (different from 8), decrement `count` to 0.\n\nAt the end of the first pass, the `candidate` is 7, but `count` is 0.\n\n### Conclusion of the First Pass\nThe algorithm does not guarantee that the `candidate` is a majority element without a second pass. In this case, the final `candidate` is 7, but it does not appear more than n/2 times (4 times). \n\n### Why the Output is Not Certified as a Majority\nThe Boyer-Moore algorithm relies on the assumption that if there is a majority element, it will remain as the candidate by the end of the first pass. However, in this case, since there is no majority element, the `candidate` can be any of the elements that were set during the process, and the `count` being 0 indicates that no element",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "The input array `[1, 2, 3, 1, 2, 3, 4, 5",
+    "correct": true
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "Consider the input array: `[1, 2, 3, 4, 5, 6, 7, 8]`. This array has a length of 8, and no element appears more than 4 times (which is n/2).\n\n### Step-by-Step Trace of the Boyer-Moore Algorithm\n\n1. **Initialization**: \n   - `candidate = None`\n   - `count = 0`\n\n2. **First Pass**:\n   - **Element 1**: \n     - `count` is 0, so set `candidate = 1`, `count = 1`.\n   - **Element 2**: \n     - `candidate` is 1 (not equal to 2), decrement `count` to 0.\n   - **Element 3**: \n     - `count` is 0, set `candidate = 3`, `count = 1`.\n   - **Element 4**: \n     - `candidate` is 3 (not equal to 4), decrement `count` to 0.\n   - **Element 5**: \n     - `count` is 0, set `candidate = 5`, `count = 1`.\n   - **Element 6**: \n     - `candidate` is 5 (not equal to 6), decrement `count` to 0.\n   - **Element 7**: \n     - `count` is 0, set `candidate = 7`, `count = 1`.\n   - **Element 8**: \n     - `candidate` is 7 (not equal to 8), decrement `count` to 0.\n\nAt the end of the first pass, the `candidate` is 7, and `count` is 0.\n\n### Explanation of Output\n\nThe Boyer-Moore algorithm returns 7 as the candidate, but it is not certified as a majority element because:\n- The algorithm only guarantees that the candidate is a potential majority element. It does not confirm that it is indeed a majority element without a second pass.\n- In this case, since no element appears more than n/2 times, the candidate (7) does not meet the majority condition.\n\n### Conclusion\n\nThe output of the Boyer-Moore algorithm is not certified as a majority element without a second pass to count the occurrences of the candidate. In this example, the candidate is simply the last element that was set as the candidate",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The input array `[1, 2, 3, 4, 5, 6, 7, 8]` has no majority element, and the Boyer-Moore algorithm may return a candidate (like 7) that is not certified as a majority without a second pass to count its occurrences.",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The input array `[1, 2, 3, 4, 5, 1, 2, 3]` has no majority element, and the Boyer-Moore algorithm returns 3 as a candidate, which is not certified as a majority without a second pass.",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "The input array `[1, 2, 3, 1, 2, 3, 4, 5]` has no majority element, and the Boyer-Moore algorithm returns a candidate (5) that is not certified as a majority without a second pass to verify its count.",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "The input array `[1, 2, 3, 4, 5, 1, 2, 3]` has no majority element, and the Boyer-Moore algorithm returns 3 as a candidate, which is not certified as a majority without a second pass to count its occurrences.",
+    "correct": true
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "The input array `[1, 2, 3, 4, 5, 1, 2, 3]` has no majority element, and the Boyer-Moore algorithm returns 3 as a candidate, which is not certified as a majority without a second pass.",
+    "correct": true
+  }
+]

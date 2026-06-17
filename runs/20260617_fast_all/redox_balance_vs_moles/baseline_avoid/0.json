@@ -1,0 +1,16 @@
+{
+  "pair_id": "redox_balance_vs_moles",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "1 MnO4⁻ + 5 Fe²⁺ + 8 H⁺ → 1 Mn²⁺ + 5 Fe³⁺ + 4 H₂O",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To balance the redox reaction MnO4⁻(aq) + Fe²⁺(aq) + H⁺(aq) → Mn²⁺(aq) + Fe³⁺(aq) + H₂O(l) in acidic solution, we will separate the reaction into half-reactions for oxidation and reduction.\n\n**Oxidation half-reaction:**\nFe²⁺ → Fe³⁺ + e⁻\n\n**Reduction half-reaction:**\nMnO4⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O\n\nNext, we need to balance the number of electrons transferred in both half-reactions. The oxidation half-reaction produces 1 electron, while the reduction half-reaction consumes 5 electrons. To balance the electrons, we multiply the oxidation half-reaction by 5:\n\n5(Fe²⁺ → Fe³⁺ + e⁻) → 5Fe²⁺ → 5Fe³⁺ + 5e⁻\n\nNow we can combine the balanced half-reactions:\n\nMnO4⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 4H₂O + 5Fe³⁺\n\nFinally, we can write the balanced coefficients for the overall reaction:\n\n1 MnO4⁻ + 5 Fe²⁺ + 8 H⁺ → 1 Mn²⁺ + 5 Fe³⁺ + 4 H₂O\n\nFinal answer: 1 MnO4⁻ + 5 Fe²⁺ + 8 H⁺ → 1 Mn²⁺ + 5 Fe³⁺ + 4 H₂O",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

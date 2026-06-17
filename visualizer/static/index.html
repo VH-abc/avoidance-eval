@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thread Cutter</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Thread Cutter</h1>
+      <p>Trace &amp; leakage explorer</p>
+    </div>
+    <div class="controls">
+      <label>
+        Run
+        <select id="run-select"></select>
+      </label>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Results</h2>
+      <div id="tree" class="tree"></div>
+    </aside>
+
+    <main class="content">
+      <section id="summary-panel" class="panel"></section>
+      <section id="detail-panel" class="panel hidden">
+        <div id="pair-header" class="pair-header"></div>
+        <div class="metrics-row" id="metrics-row"></div>
+        <div class="split">
+          <section class="trace-panel">
+            <h3>Reasoning trace</h3>
+            <div id="trace-steps"></div>
+          </section>
+          <section class="y-panel">
+            <h3>Y accuracy vs token budget</h3>
+            <p class="caption">Mean accuracy across trials at each max-token budget</p>
+            <canvas id="y-chart" width="480" height="220"></canvas>
+            <h3>Y trial answers</h3>
+            <div id="y-trials-table"></div>
+          </section>
+        </div>
+      </section>
+      <section id="empty-state" class="empty">
+        <p>Select a run result from the sidebar.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

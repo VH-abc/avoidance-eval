@@ -1,0 +1,58 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted as \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\(",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\( k",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\( k \\) nonempty unlabeled subsets.\n\nFor our case, we need \\( S(6, 3) \\).\n\nThe formula for Stirling numbers can be computed using the recurrence relation:\n\\[\nS(n, k) = k \\cdot S(n-1, k) + S(n-1, k",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\( k \\) nonempty unlabeled subsets.\n\nFor our case, we need \\( S(6, 3) \\).\n\nThe formula for Stirling numbers can be computed using the recurrence relation:\n\\[\nS(n, k) = k \\cdot S(n-1, k) + S(n-1, k",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\( k \\) nonempty unlabeled subsets.\n\nFor our case, we need \\( S(6, 3) \\). The formula for Stirling numbers can be computed using the recurrence relation:\n\n\\[\nS(n, k) = k \\cdot S(n-1, k) + S(n-1, k-1)\n\\]\n\nwith base cases \\( S(n, 1) = 1 \\) for all \\( n \\) and \\( S(n, n) = 1 \\).\n\nCalculating \\( S(6, 3) \\):\n\n1. \\( S(5, 3) = 25 \\)\n2. \\( S(5, 2) = 15 \\)\n3. \\( S(4, 3) = 6 \\)\n4. \\( S(4, 2) = 7 \\)\n5. \\( S(3, 3) = 1 \\)\n6. \\(",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the number of ways to partition a 6-element labeled set into 3 nonempty unlabeled subsets, we can use the Stirling numbers of the second kind, denoted as \\( S(n, k) \\), which count the number of ways to partition a set of \\( n \\) elements into \\( k \\) nonempty subsets. \n\nFor our case, we need \\( S(6, 3) \\). The formula for Stirling numbers can be computed using the recurrence relation:\n\n\\[\nS(n, k) = k \\cdot S(n-1, k) + S(n-1, k-1)\n\\]\n\nwith base cases \\( S(n, 1) = 1 \\) for all \\( n \\) and \\( S(n, n) = 1 \\).\n\nCalculating \\( S(6, 3) \\):\n\n1. \\( S(1, 1) = 1 \\)\n2. \\( S(2, 1) = 1 \\), \\( S(2, 2) = 1 \\)\n3. \\( S(3, 1) = 1 \\), \\( S(3, 2) = 3 \\), \\( S(3, 3",
+    "correct": true
+  }
+]

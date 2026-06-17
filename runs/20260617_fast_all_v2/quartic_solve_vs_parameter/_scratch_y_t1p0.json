@@ -1,0 +1,58 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To have four distinct real roots, the equation \\( x^4 - 10x^2 + k = 0 \\) can be rewritten as \\( u",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Let \\( u = x^2 \\). The equation becomes \\( u^2 - 10u + k = 0 \\). For it to have four",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To analyze the equation \\(x^4 - 10x^2 + k = 0\\), we substitute \\(u = x^2\\), leading to the quadratic \\(u^2 - 10u + k = 0\\).\n\nFor this quadratic to have two distinct positive roots (which will yield four",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To solve \\(x^4 - 10x^2 + k = 0\\), let \\(u = x^2\\). The equation becomes \\(u^2 - 10u + k = 0\\). For \\(u\\) to have two distinct positive roots (yielding four distinct real roots",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To analyze the equation \\( x^4 - 10x^2 + k = 0 \\), we make the substitution \\( u = x^2 \\), converting it to the quadratic form \\( u^2 - 10u + k = 0 \\).\n\nFor this quadratic to have two distinct real roots, its discriminant must be positive:\n\n\\[\nD = (-10)^2 - 4 \\cdot 1 \\cdot k = 100 - 4k > 0.\n\\]\n\nSolving this inequality gives:\n\n\\[\n100 > 4k \\quad \\Rightarrow \\quad k < 25",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To analyze the equation \\( x^4 - 10x^2 + k = 0 \\), we can substitute \\( u = x^2 \\), giving us the quadratic \\( u^2 - 10u + k = 0 \\).\n\nA quadratic has two distinct real roots if its discriminant is positive:\n\n\\[\nD = (-10)^2 - 4 \\cdot 1 \\cdot k = 100 - 4k > 0\n\\]\n\nThis implies:\n\n\\[\n100 > 4k \\quad \\Rightarrow \\quad k < 25\n\\]\n\nAdditionally, for the quadratic to",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To analyze the equation \\( x^4 - 10x^2 + k = 0 \\), we can substitute \\( u = x^2 \\), transforming the quartic equation into a quadratic one:\n\n\\[\nu^2 - 10u + k = 0.\n\\]\n\nThis quadratic equation has real roots if its discriminant is non-negative:\n\n\\[\nD = b^2 - 4ac = (-10)^2 - 4 \\cdot 1 \\cdot k = 100 - 4k.\n\\]\n\nFor the quadratic to have two distinct real roots, we require:\n\n\\[\nD > 0 \\implies 100 - 4k > 0 \\implies 100 > 4k \\implies k < 25.\n\\]\n\nNext, for the roots of the quadratic \\( u^2 - 10u + k = 0 \\) to be non-negative (since \\( u = x^2 \\)), we need:\n\n1. The roots \\( u_1 \\) and \\( u_2 \\) must be positive.\n2. The vertex \\( u = \\frac{10}{2} = 5 \\) should be above the x-axis.\n\nThe value of \\( u \\) at",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "We start with the given equation:\n\n\\[\nx^4 - 10x^2 + k = 0.\n\\]\n\nBy substituting \\( u = x^2 \\), we rewrite the equation as:\n\n\\[\nu^2 - 10u + k = 0.\n\\]\n\nThis is a quadratic equation in \\( u \\). For the equation to have four distinct real roots in \\( x \\), we need \\( u \\) to have two distinct positive roots. \n\nThe discriminant \\( \\Delta \\) of the quadratic must be positive:\n\n\\[\n\\Delta = b^2 - 4ac = (-10)^2 - 4(1)(k) = 100 - 4k.\n\\]\n\nSetting the discriminant greater than zero gives:\n\n\\[\n100 - 4k > 0 \\implies k < 25.\n\\]\n\nNext, we require both roots \\( u_1 \\) and \\( u_2 \\) to be positive. The sum and product of the roots for \\( u^2 - 10u + k = 0 \\) are given by:\n\n\\[\nu_1 + u_2 = 10 \\quad \\text{(positive)}\n\\]\n\\[\nu_1 u_",
+    "correct": true
+  }
+]

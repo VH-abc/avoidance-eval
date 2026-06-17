@@ -1,0 +1,492 @@
+[
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur is that if a customer's city changes, it",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the city is duplicated across multiple Orders rows. If the update is made in one row",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the city is duplicated across multiple Orders rows. If the update is made in one row",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This leads to inconsistent",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is only made in some of the Orders rows. This would lead to inconsistent",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the city is duplicated across multiple Orders rows. If the update is made in one row",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This results in inconsistent data across the Orders table, where some rows reflect the old city while others reflect the new city. This violates the Second Normal Form (2NF) because the",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This would lead to inconsistent data, where some Orders reflect the old city and others reflect the new city. This situation violates the Second Normal Form (2NF) because the non-key",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur is when a customer's city is changed in one Orders row but not in others. This inconsistency leads to different city values for the same customer across multiple rows. The normal form violated here is the Second Normal Form (2NF), as the non-key attribute (city) is not fully",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This results in inconsistent data across the Orders table, where some rows reflect the old city while others reflect the new city. This violates the Second Normal Form (2NF) because the",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This results in inconsistent data, where the same customer has different city values across multiple Orders rows. This violates the Second Normal Form (2NF) because the non-key attribute (city",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city is changed in some Orders but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs when a customer's city is updated in some Orders rows but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "The update anomaly occurs due to inconsistent city data across Orders rows, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "Second Normal Form (2NF) is violated due to the update anomaly.",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs due to inconsistent data across Orders rows, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "The update anomaly is inconsistent city values for the same customer, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "The update anomaly occurs when a customer's city is updated in some Orders rows but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city is updated in some Orders rows but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomaly due to inconsistent city values; violates Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city is changed in some Orders but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "2NF is violated due to the update anomaly caused by duplicated customer information in Orders.",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city is changed in some Orders but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 2,
+    "answer": "The update anomaly occurs due to inconsistent city data across Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 3,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 4,
+    "answer": "The update anomaly occurs when a customer's city is updated in some Orders rows but not others, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data",
+    "correct": false
+  },
+  {
+    "budget": 16,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer appears.",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every row of the `Orders` table where that customer appears. If",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer's information is",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer appears.",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every row of the `Orders` table where that customer appears. If",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every row of the `Orders` table where that customer's information is duplicated. If the update is not applied consistently across all relevant rows, some rows may reflect the old information while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key.",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer appears. If the update is not applied uniformly across all rows, some rows may reflect the old name or city while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key.",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer appears. If the update is not applied uniformly across all rows, some rows may reflect the old name or city while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key.",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every row of the `Orders` table where that customer appears. If the update is not applied consistently across all rows, some orders may reflect the old city or name while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key. Since",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer's information is duplicated. If the update is not applied uniformly across all relevant rows, some rows may reflect the old information while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF), which requires that all non-key attributes are fully functionally dependent on the primary key. In this",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "The update anomaly is inconsistent data due to needing to update customer information in multiple rows, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 2,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 3,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 4,
+    "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  }
+]

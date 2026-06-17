@@ -1,0 +1,58 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHH\n2. H",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHH\n2. H",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHHH\n2. HTHHH\n3. HHTHH\n4. HHTTH\n5. THHTH\n\nNow, let's analyze the sequences:\n\n1. **TTHHH**: The first two tosses are T and T, followed by HH.\n2. **HTHHH**: The first toss is H,",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHHH\n2. HTHHH\n3. HHTHH\n4. HTTHH\n5. THHTH\n\nEach of these sequences must not have HH in the first four tosses. The sequences can be broken down as follows:\n\n- The first four tosses can be any combination of H and T, as long as they",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHH\n2. HTHH\n3. HHTH\n4. THHH\n\nEach sequence must have exactly 3 tosses before the last two heads (HH) on the 5th and 4th tosses. The first three tosses can be any combination of heads (H) and tails (T) that does not end in HH. \n\nThe valid combinations for the first three tosses are:\n- TTT\n- TTH\n- THT\n- THH\n- HTT\n- HTH\n- HHT\n\nHowever, we must exclude any sequences that end in HH. The valid sequences for the first three tosses are:\n1. TTT\n2. TTH\n3. THT\n4. HTT\n5. HTH\n\nNow, we can count the valid sequences:\n- TTT\n- TTH\n- THT\n- HTT\n- HTH\n\nThere are 5 valid sequences",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with the stopping rule of two consecutive heads (HH), we can enumerate the valid sequences of tosses that lead to this outcome.\n\nThe valid sequences that end in HH on the 5th toss are:\n1. TTHHH\n2. HTHHH\n3. HHTHH\n4. HHTTH\n\nNow, let's analyze each sequence:\n- TTHHH: The first two tosses must be T and T, followed by HH.\n- HTHHH: The first toss is H, the second is T, followed by HH.\n- HHTHH: The first two tosses are HH, followed by T and then H.\n- HHTTH: The first two tosses are HH, followed by T and then T.\n\nNext, we calculate the probability of each sequence:\n- Each toss of the coin is independent and has a probability of 1/2 for heads (H) and 1/2 for tails (T).\n- Each sequence consists of 5 tosses, so the probability of each specific sequence is (1/2)^5 = 1/32.\n\nSince there are 4 valid sequences, the total probability of ending in exactly 5 toss",
+    "correct": true
+  }
+]

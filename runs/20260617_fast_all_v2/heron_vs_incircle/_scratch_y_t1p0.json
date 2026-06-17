@@ -1,0 +1,58 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the inradius \\( r \\) of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere",
+    "correct": false
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The semiperimeter \\( s = \\frac{13 + 14 + 15}{2} = 21 \\).\n\nUsing Heron's formula, the area",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the inradius (\\( r \\)) of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area and \\( s \\) is the semiperimeter. \n\nFirst, calculate the semiperimeter:\n\n\\[\ns =",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle (inradius) of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\(A\\) is the area and \\(s\\) is the semiperimeter.\n\n1. **Calculate the semiperimeter \\(s\\",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius \\( r \\) of the incircle of a triangle, we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semiperimeter.\n\n1. Calculate the semiperimeter \\( s \\):\n\n\\[\ns = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\n2. Use Heron's formula to find the area \\( A \\):\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{21(21",
+    "correct": true
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle (inradius) of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semiperimeter.\n\nFirst, calculate the semiperimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we find the area \\( A \\) using Heron's formula:\n\n\\[\nA = \\sqrt{s(s - a)(",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius of the incircle of a triangle, we can use the formula for the inradius \\( r \\):\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle, and \\( s \\) is the semiperimeter.\n\nFirst, we calculate the semiperimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we find the area \\( A \\) using Heron's formula:\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nSubstituting the values:\n\n\\[\nA = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\nCalculating \\( 21 \\times 8 = 168 \\) and \\( 7 \\times 6 = 42 \\):\n\n\\[\nA = \\sqrt{168 \\times 42}\n\\]\n\nNow, we calculate \\( 168 \\times 42 \\):\n\n\\[\n168 \\times 42 = 7056\n\\",
+    "correct": true
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle (inradius) of a triangle, we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semiperimeter.\n\n1. **Calculate the semiperimeter \\( s \\)**:\n   The semiperimeter is given by:\n\n   \\[\n   s = \\frac{a + b + c}{2}\n   \\]\n\n   For our triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\):\n\n   \\[\n   s = \\frac{13 + 14 + 15}{2} = \\frac{42}{2} = 21\n   \\]\n\n2. **Calculate the area \\( A \\)**:\n   We can use Heron's formula to find the area:\n\n   \\[\n   A = \\sqrt{s(s - a)(s - b)(s - c)}\n   \\]\n\n   Substituting the values:\n\n   \\[\n   A = \\sqrt{21(21 - 13)(21 - 14)(21 - 15)} = \\sqrt{21 \\times 8 \\times 7 \\",
+    "correct": true
+  }
+]

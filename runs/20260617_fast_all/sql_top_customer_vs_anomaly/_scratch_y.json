@@ -1,0 +1,58 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur is when a customer's city is changed in one Orders row but not in others. This inconsistency leads to different city values for",
+    "correct": true
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This would lead to",
+    "correct": true
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is only made in some of the Orders rows. This would lead to inconsistent data, where some Orders reflect the old city while others show the new city. This violates the Second Normal Form (2NF) because the non-key attribute (",
+    "correct": false
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This results in inconsistent data, where the same customer has different city values across multiple rows. This violates the Second Normal Form (2NF) because the non-key attribute (city)",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs when a customer's city changes and is not updated in all Orders rows, violating Second",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The update anomaly occurs due to inconsistent city data across Orders, violating Second Normal Form (2NF).",
+    "correct": false
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs due to inconsistent city values for the same customer across multiple Orders rows, violating Second Normal Form (2NF).",
+    "correct": false
+  }
+]
