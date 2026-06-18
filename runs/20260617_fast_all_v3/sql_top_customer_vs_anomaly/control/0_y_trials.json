@@ -1,0 +1,218 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "inconsistent customer city data.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "update anomalies and inconsistencies",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomaly leads to inconsistent",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly leads to inconsistent",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomaly due to inconsistent customer city data across multiple order rows.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly leads to inconsistent city data across orders.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomalies arise when a customer's city",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly occurs due to redundancy, leading to inconsistent customer city records across orders.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "An update anomaly is inconsistent city data across order rows after a city change.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomalies arise from redundant storage, causing inconsistency in order records when customer city changes. Normalization can mitigate this issue.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Orders may show inconsistent city information due to redundancy, leading to update anomalies.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomalies arise from inconsistent customer city data across multiple order rows after a change.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Inconsistent customer city data",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistent city information across",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Inconsistent city data",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Update anomalies lead to inconsistent",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Inconsistency in customer city across orders",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistent city data across orders.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Inconsistent customer city information.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistent customer city data across orders.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Inconsistent city data across orders.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistent data due to some orders reflecting the old city value.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "Data redundancy anomaly leading to inconsistency.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistency in customer city data across orders when a customer changes city.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  }
+]

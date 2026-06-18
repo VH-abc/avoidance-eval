@@ -1,0 +1,110 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Yes, the value 1 appears more than n/2 times",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No, no value exceeds n/2.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Yes, the value 1 appears more than n/2 times",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No,",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No, no value appears more than n/2 times in the array.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  }
+]

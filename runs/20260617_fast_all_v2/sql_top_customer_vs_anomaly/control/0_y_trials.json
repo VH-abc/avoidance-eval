@@ -1,0 +1,146 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomalies",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomalies can lead to inconsistencies in customer city data across multiple order",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly due",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Data inconsistency due to partial updates across multiple rows.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Update anomaly due to inconsistent city information across multiple order rows.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Update anomaly due to redundant storage of customer city across multiple orders.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The update anomaly occurs due to redundancy, leading to potential inconsistencies in customer city information across multiple order records.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly that can occur is that if a customer changes their city, multiple rows in the Orders table must be updated to reflect the new city. If any",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "An update anomaly occurs when a customer changes their city, resulting in multiple order entries needing updates. If any orders are neglected, inconsistent data may arise, leading to",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "When a customer changes their city, if their city is stored in multiple orders, all those records must be updated to reflect the new city. Failing to update all rows can lead to inconsistency, where some records have the old city while others have the new one. This type of anomaly is known as an update anomaly",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Inconsistent city records for the same customer across orders.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly arises from inconsistent customer city data across multiple order rows.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Data inconsistency due to partial updates when a customer changes city.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "The update anomaly is inconsistent city data across different orders if a customer's city changes.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "The update anomaly leads to inconsistent customer_city values across multiple order rows for the same customer.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  }
+]

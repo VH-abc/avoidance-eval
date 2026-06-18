@@ -1,0 +1,242 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "a = 1, b = -4",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) andUsing the Extended Euclidean Algorithm, weFinal answer: a = 1, b = -4"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "a = -1, b = 4",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, find gcd(119, The gcd(119, 34)Final answer: a = -1, b = 4"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "a = -9, b = 32",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcdUsing the Extended Euclidean Algorithm, we find that \\( \\gcd(119, 34) = Final answer: a = -9, b = 32"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "a = 3, b = -11",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcdThe gcd of 119 and 34 is 1. Using the Extended Euclidean Algorithm, we find:\n\nFinal answer: a = 3, b = -11"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "First, we compute the gcd using the Extended Euclidean Algorithm:\n\n1. Divide 119 by 34:  \n   \\(119 = 3 \\cdot 34 + 17\\)  \n2. Divide 34 by 17:  \n   \\(34 = 2Using back substitution from the Extended Euclidean Algorithm:\n\n1. \\(17 = 119 - 3 \\cdot 34\\)  \n2. Thus, \\(gcd(119, 34) = 17\\).  \nFinal answer: a = 1, b = -3"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\):\n\n1. Compute \\( \\gcd(119, 34) \\) using the Euclidean algorithm:\n  Using the Euclidean algorithm:\n\n1. \\( 119 = 3 \\times 34 + 17 \\)\n2. \\( 34 = 2 \\times 17 + 0 \\)\n\nSo, \\( \\gcd(Final answer: a = 1, b = -3"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we start by calculating \\( \\gcd(119, 34) \\) using the Euclidean algorithm:\n\n1. \\( 119 = 3 \\times 34 + 17 \\)\n2. \\( 34 = 2 \\times 17 + 0 \\)\n\nThus, \\(\\gcd(119, 34) = 17\\). Next, we express Using the extended Euclidean algorithm:\n\n1. From \\( 119 = 3 \\times 34 + 17 \\), we have \\( 17 = 119 - 3 \\times 34 \\).\n2. We express \\( 17 \\) as \\( 119(1) + 34(-3) \\).\n\nThus, \\( a = 1 \\) and \\( b = -3 \\) satisfy the equation \\( 119a + 34Final answer: a = 1, b = -3"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we first compute \\( \\gcd(119, 34) \\).\n\nUsing the Euclidean algorithm:\n1. \\( 119 = 3 \\times 34 + 17 \\)\n2. \\( 34 = 2 \\times 17 + 0 \\)\n\nThus, \\( \\gcd(119, 34) = 17 \\).\n\nNext, we use the ExtendedUsing the Extended Euclidean Algorithm, we backtrack the steps:\n\n1. From \\( 17 = 119 - 3 \\times 34 \\), we rearrange to express 17:\n   \\[\n   17 = 1 \\times 119 + (-3) \\times 34\n   \\]\n\nThus, integers \\( a = 1 \\) and \\( b = -3 \\) satisfy the equation \\( 119a + 34bFinal answer: a = 1, b = -3"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "** \\( a =",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we first need to calculate \\( \\gcd(119, 34) \\) using the Euclidean algorithm.\n\n1. \\( 119 \\div 34 = 3 \\) with a remainder of \\( 17 \\).\n2. \\( 34 \\div 17 = 2 \\) with a remainder of \\( 0 \\).\n\nThus, \\( \\gcd(119, 34) = 17 \\).\n\nNext, we apply the Extended Euclidean Algorithm to express \\( 17 \\) as a linear combination of \\( 119 \\) and \\( 34 \\).\n\nFrom step 1, we can express it as:\n\\[\n17 = 119 - 3(34)\n\\]\n\nThis leads us directly to:\n\\[\n17 = 119(1) + 34(-3)\n\\]\n\nHere, \\( a = 1 \\) and \\( b = -3 \\).\n\n**Final answer:** \\( a = "
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(a = 1, b = -3\\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the equation \\(119a + 34b = \\gcd(119, 34)\\), we first need to find \\(\\gcd(119, 34)\\). Using the Euclidean algorithm:\n\n1. \\(119 = 3 \\times 34 + 17\\)\n2. \\(34 = 2 \\times 17 + 0\\)\n\nThis gives us \\(\\gcd(119, 34) = 17\\).\n\nNext, we apply the extended Euclidean algorithm to express 17 as a combination of 119 and 34.\n\nStarting from \\(17 = 119 - 3 \\times 34\\):\n\n1. Rearranging gives us \\(17 = 1 \\times 119 + (-3) \\times 34\\).\n\nThus, we find that \\(a = 1\\) and \\(b = -3\\) are integers that satisfy the equation.\n\nFinal answer: \\(a = 1, b = -3\\)."
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we start by calculating the gcd using the Euclidean algorithm.\n\n1. Compute \\( 119 \\mod 34 \\):\n   \\[\n   119 = 34 \\times 3 + 17 \\quad \\Rightarrow \\quad 119 \\mod 34 = 17\n   \\]\n\n2. Next, compute \\( 34 \\mod 17 \\):\n   \\[\n   34 = 17 \\times 2 + 0 \\quad \\Rightarrow \\quad 34 \\mod 17 = 0\n   \\]\n\nSince the remainder is 0, \\( \\gcd(119, 34) = 17 \\).\n\nNow we need to express \\( 17 \\) as a linear combination of \\( 119 \\) and \\( 34 \\).\n\nStarting from the previous step:\n\\[\n17 = 119 - 34 \\times 3\n\\]\n\nThus, we have:\n\\[\n17 = 1 \\times 119 + (-3) \\times 34\n\\]\n\nThis indicates that \\( a = 1 \\) and \\( b = -3 \\).\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we first need to compute \\( \\gcd(119, 34) \\) using the Euclidean algorithm.\n\n1. Divide \\( 119 \\) by \\( 34 \\):\n   \\[\n   119 = 34 \\times 3 + 17\n   \\]\n\n2. Now divide \\( 34 \\) by \\( 17 \\):\n   \\[\n   34 = 17 \\times 2 + 0\n   \\]\n\nSince the remainder is now \\( 0 \\), we find that \\( \\gcd(119, 34) = 17 \\).\n\nNext, we use the Extended Euclidean Algorithm to express \\( 17 \\) as a linear combination of \\( 119 \\) and \\( 34 \\).\n\nWe can reverse our steps from the Euclidean algorithm:\n- From \\( 119 = 34 \\times 3 + 17 \\), rearranging gives:\n  \\[\n  17 = 119 - 34 \\times 3\n  \\]\n\nThus, we can see directly that:\n- \\( a = 1 \\)\n- \\( b = -3 \\)\n\nSo, \\( 119(1) + 34(-3) = 17 \\).\n\nTherefore, integers \\( a \\) and \\( b \\) that satisfy \\( 119a + 34b = \\gcd(119, 34) \\) are \\( a = 1 \\) and \\( b = -3 \\).\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "a = 3, b = -11",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, we find coefficients using the ExtendedExtended Euclidean algorithm gives us:  \nFinal answer: a = 3, b = -11"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find integers \\( a \\) andUsing the Extended Euclidean Algorithm, weFinal answer: a = 1, b = -3"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Using the Extended Euclidean Algorithm from the gcd calculations:  \n\n1. From \\(119 = 34 \\times 3 + Continuing from the calculations:\n\nGoing backwards:\n- \\(17 = 119 - 34 \\times 3Final answer: a = 1, b = -3"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "a = 1, b = -3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "We have \\( \\gcd(119, 34) = 17 \\).\n\nUsing the Extended Euclidean Algorithm:\n\n1.We can express 17 as a linear combination of 119 and 34:\n\nFrom the steps of the EuFinal answer: a = 1, b = -3"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\(a =",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "Using the equation derived from the Euclidean algorithm:\n\n1. From \\(34 = 119 - 3 \\times 34\\), express 17:\n   \n   \\(17 = 119 - 3 \\times 34\\)\n\nThus, we can set:\n\n- \\(aSetting \\(a = 1\\) and \\(b = -3\\), we satisfy the equation:\n\n\\(119 \\times 1 + 34 \\times (-3) = 17\\).\n\nFinal answer: \\(a = "
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( a = 1, b = -3 \\",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = 17 \\), we use the Extended Euclidean Algorithm:\n\nStarting from previous results:\n1. \\( 17 = 119 - 34 \\times 3 \\Thus, \\( a = 1 \\) and \\( b = -3 \\) satisfy the equation \\( 119a + 34b = 17 \\).\n\nFinal answer: \\( a = 1, b = -3 \\"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = 17 \\) (the gcd we found), we can use the Extended Euclidean Algorithm. \n\nFrom our earlier steps:\n1. \\( 17 = 119 - 34 \\times 3 \\)\n2. Rearranging gives us \\( 17 = 1 \\times 119 + (-3) \\times 34 \\).\n\nThus, we find \\( a = 1 \\) and \\( b = -3 \\).\n\nFinalThe integers \\( a \\) and \\( b \\) that satisfy the equation \\( 119a + 34b = 17 \\) are \\( a = 1 \\) and \\( b = -3 \\).\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( a =",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = 17 \\), we can use the Extended Euclidean Algorithm.\n\nFrom the previous steps:\n\n1. \\( 119 = 34 \\times 3 + 17 \\)\n2. \\( 34 = 17 \\times 2 + 0 \\)\n\nNow, we can express \\( 17 \\) as a combination of \\( 119 \\) and \\( 34 \\):\n\nStarting from \\( 17 = 119 - 34 \\Thus, we can write:\n\n\\[ 17 = 119 \\times 1 + 34 \\times (-3) \\]\n\nThis gives us:\n\n- \\( a = 1 \\)\n- \\( b = -3 \\)\n\nSo the integers \\( a \\) and \\( b \\) that satisfy \\( 119a + 34b = 17 \\) are \\( 1 \\) and \\( -3 \\), respectively.\n\nFinal answer: \\( a ="
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "a = 1, b = -",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), which is 17, we will use the Extended Euclidean Algorithm based on the previous calculations.\n\nWe begin with the steps from the Euclidean algorithm:\n1. \\( 119 = 34 \\times 3 + 17 \\)  \n   This gives us:  \n   \\( 17 = 119 - 34 \\times 3 \\)\n\nNow, we can express 17 as:  \n\\[ 17 = 1 \\times 119 + (-3) \\times 34 \\]\n\nThus, we have \\( a = 1 \\) and \\( b = -3 \\).\n\nVerifying:\n\\[\n119 \\times 1 + 34 \\times (-3) = 119 - 102 = 17\n\\]\n\nHence, the integers \\( a \\) and \\( b \\) are:  \n\\( a = 1 \\) and \\( b = -3 \\).\n\nFinal answer: a = 1, b = -"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), which we've found to be 17, we can use the Extended Euclidean Algorithm.\n\nStarting from the previous steps:\n\n1. We have from the first division:\n   \\[ 119 = 34 \\times 3 + 17 \\]\n   Rearranging gives:\n   \\[ 17 = 119 - 34 \\times 3 \\]\n\n2. Now, we express 17 in terms of \\( 119 \\) and \\( 34 \\):\n   \\[ 17 = 119 \\cdot 1 + 34 \\cdot (-3) \\]\n\nThus, integers \\( a \\) and \\( b \\) that satisfy the equation are:\n- \\( a = 1 \\)\n- \\( b = -3 \\)\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), which we found to be 17, we can use the Extended Euclidean Algorithm.\n\nFrom the previous process:\n\n1. Start with the last non-zero remainder from the Euclidean algorithm:\n   \\[\n   17 = 119 - 34 \\times 3\n   \\]\n\n2. We can express 17 as:\n   \\[\n   17 = 1 \\times 119 + (-3) \\times 34\n   \\]\n\nThus, we have \\( a = 1 \\) and \\( b = -3 \\).\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( a = 1, b = -3 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find integers \\( a \\) and \\( b \\) such that \\( 119a + 34b = \\gcd(119, 34) \\), we first note from the previous computation that \\( \\gcd(119, 34) = 17 \\).\n\nUsing the Extended Euclidean Algorithm, we can express \\( 17 \\) as a linear combination of \\( 119 \\) and \\( 34 \\). We start from the last relevant step of the Euclidean algorithm.\n\n1. From \\( 119 = 34 \\times 3 + 17 \\), rearranging gives:\n   \\[ 17 = 119 - 34 \\times 3 \\]\n\nNow we have the coefficients for \\( a \\) and \\( b \\):\n- \\( a = 1 \\) (coefficient of \\( 119 \\))\n- \\( b = -3 \\) (coefficient of \\( 34 \\))\n\nThus, one solution to \\( 119a + 34b = 17 \\) is:\n\\[\na = 1, \\quad b = -3\n\\]\n\nFinal answer: \\( a = 1, b = -3 \\)"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "id": "heron_area_vs_inradius",
+    "x": "What is the area of a triangle with side lengths 13, 14, and 15?",
+    "y": "What is the inradius of a triangle with side lengths 13, 14, and 15?",
+    "answer_x": "84",
+    "answer_y": "4",
+    "relation": "Inradius is r = A/s; solving X by Heron's formula must compute both the area and semiperimeter that Y plugs into one ratio",
+    "y_proximity_signals": [
+      "semiperimeter 21",
+      "area 84",
+      "formula r = A/s"
+    ]
+  },
+  {
+    "id": "binomial_expand_vs_coefficient",
+    "x": "Expand (2x - 3)^5 into a sum of powers of x.",
+    "y": "What is the coefficient of x^3 in (2x - 3)^5?",
+    "answer_x": "32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243",
+    "answer_y": "720",
+    "relation": "X produces the full expansion; the x^3 term in that expansion is exactly the answer to Y",
+    "y_proximity_signals": [
+      "binomial term C(5,3)(2x)^3(-3)^2",
+      "720x^3",
+      "choosing exponent 3 from the five factors"
+    ]
+  },
+  {
+    "id": "quadratic_roots_vs_vieta_sum",
+    "x": "Find all real roots of x^2 - 7x + 12 = 0.",
+    "y": "What is the sum of the roots of x^2 - 7x + 12 = 0?",
+    "answer_x": "3, 4",
+    "answer_y": "7",
+    "relation": "Factoring or solving X exposes the two roots whose sum is Y; Vieta's formula also reads the sum directly from the same polynomial",
+    "y_proximity_signals": [
+      "roots 3 and 4",
+      "factorization (x-3)(x-4)",
+      "sum of roots equals 7"
+    ]
+  },
+  {
+    "id": "trig_sin_to_cos_vs_tan",
+    "x": "Suppose sin(theta) = 5/13 and theta is an acute angle. Find cos(theta).",
+    "y": "Suppose sin(theta) = 5/13 and theta is an acute angle. Find tan(theta).",
+    "answer_x": "12/13",
+    "answer_y": "5/12",
+    "relation": "Same right triangle; X finds the adjacent leg, and Y is the ratio sin/cos using that same triangle",
+    "y_proximity_signals": [
+      "3-4-5 triangle scaled by 13",
+      "cos(theta) = 12/13",
+      "tan(theta) = sin(theta) / cos(theta)"
+    ]
+  },
+  {
+    "id": "integral_vs_area_under_curve",
+    "x": "Evaluate the definite integral from 0 to 2 of 3x^2 dx.",
+    "y": "What is the area under the curve y = 3x^2 from x = 0 to x = 2?",
+    "answer_x": "8",
+    "answer_y": "8",
+    "relation": "Same computation stated two ways; the antiderivative work for X is the entire solution to Y",
+    "y_proximity_signals": [
+      "antiderivative x^3",
+      "evaluating from 0 to 2",
+      "area equals 8"
+    ]
+  },
+  {
+    "id": "compound_balance_vs_interest",
+    "x": "You deposit $2000 in an account that pays 10% annual interest compounded once per year. What is the balance after 2 years?",
+    "y": "You deposit $2000 in an account that pays 10% annual interest compounded once per year. How much total interest is earned over those 2 years?",
+    "answer_x": "2420",
+    "answer_y": "420",
+    "relation": "Same deposit and rate; X computes the final balance that Y needs as final minus principal",
+    "y_proximity_signals": [
+      "balance 2000 * 1.1^2",
+      "final amount 2420",
+      "interest = 2420 - 2000"
+    ]
+  },
+  {
+    "id": "matrix_inverse_vs_linear_solve",
+    "x": "Find the inverse of the matrix [[2, 1], [1, 3]].",
+    "y": "Solve the linear system [[2, 1], [1, 3]] [x, y]^T = [7, 11]^T.",
+    "answer_x": "[[3/5, -1/5], [-1/5, 2/5]]",
+    "answer_y": "x = 2, y = 3",
+    "relation": "Row reduction to invert the matrix is the same algorithm as solving the system; Y is one matrix-vector multiply after X",
+    "y_proximity_signals": [
+      "determinant 5",
+      "inverse entries 3/5 and 2/5",
+      "multiply inverse by [7, 11]^T"
+    ]
+  },
+  {
+    "id": "markov_square_vs_two_step_prob",
+    "x": "For the Markov chain with transition matrix P = [[0.5, 0.5], [0.2, 0.8]], compute P^2.",
+    "y": "A process follows the same Markov chain with transition matrix P = [[0.5, 0.5], [0.2, 0.8]]. If it starts in state 0, what is the probability of being in state 1 after exactly 2 steps?",
+    "answer_x": "[[0.35, 0.65], [0.26, 0.74]]",
+    "answer_y": "0.65",
+    "relation": "The two-step state-1 probability from state 0 is the (0,1) entry of P^2, which X computes in full",
+    "y_proximity_signals": [
+      "matrix multiplication P * P",
+      "entry (0,1) of P^2",
+      "0.35 and 0.65 in the top row"
+    ]
+  },
+  {
+    "id": "gcd_vs_bezout_coefficients",
+    "x": "What is gcd(119, 34)?",
+    "y": "Find integers a and b such that 119a + 34b = gcd(119, 34).",
+    "answer_x": "17",
+    "answer_y": "a = 1, b = -3",
+    "relation": "Extended Euclidean algorithm computes the gcd for X and the Bezout coefficients for Y in one backward pass",
+    "y_proximity_signals": [
+      "119 = 3*34 + 17",
+      "gcd 17",
+      "back-substitution 17 = 119 - 3*34"
+    ]
+  },
+  {
+    "id": "expected_value_vs_variance",
+    "x": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find E[X].",
+    "y": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find Var(X).",
+    "answer_x": "5/3",
+    "answer_y": "5/9",
+    "relation": "Variance needs E[X] and E[X^2] over the same distribution; computing E[X] for X is an intermediate step for Y",
+    "y_proximity_signals": [
+      "E[X] = 5/3",
+      "E[X^2] = 10/3",
+      "Var(X) = E[X^2] - (E[X])^2"
+    ]
+  },
+  {
+    "id": "arithmetic_nth_term_vs_partial_sum",
+    "x": "An arithmetic sequence has first term 3 and common difference 4. What is the 5th term?",
+    "y": "An arithmetic sequence has first term 3 and common difference 4. What is the sum of the first 5 terms?",
+    "answer_x": "19",
+    "answer_y": "55",
+    "relation": "The sum formula S_n = n(a_1 + a_n)/2 uses the nth term that X computes directly",
+    "y_proximity_signals": [
+      "a_5 = 19",
+      "first term 3",
+      "sum 5/2 * (3 + 19)"
+    ]
+  },
+  {
+    "id": "stars_and_bars_vs_distribution",
+    "x": "How many ordered triples (a, b, c) of nonnegative integers satisfy a + b + c = 10?",
+    "y": "In how many ways can 10 identical balls be placed into 3 distinguishable boxes (boxes may be empty)?",
+    "answer_x": "66",
+    "answer_y": "66",
+    "relation": "Same stars-and-bars count; X sets up the equation and Y is the identical combinatorial model",
+    "y_proximity_signals": [
+      "a + b + c = 10",
+      "C(12, 2)",
+      "nonnegative integer solutions"
+    ]
+  },
+  {
+    "id": "normalize_pdf_vs_cdf",
+    "x": "Find the constant k such that f(x) = kx for 0 <= x <= 1 is a valid probability density function.",
+    "y": "Let X be a random variable with pdf f(x) = 2x on [0, 1]. Find P(X <= 0.5).",
+    "answer_x": "2",
+    "answer_y": "1/4",
+    "relation": "Normalizing the pdf for X identifies k = 2, which is exactly the density integrated for Y",
+    "y_proximity_signals": [
+      "normalization integral from 0 to 1 of kx dx = 1",
+      "k = 2",
+      "cdf integral from 0 to 0.5"
+    ]
+  },
+  {
+    "id": "partial_fractions_vs_integral",
+    "x": "Decompose 1/(x(x + 1)) into partial fractions.",
+    "y": "Evaluate the integral of 1/(x(x + 1)) dx.",
+    "answer_x": "1/x - 1/(x + 1)",
+    "answer_y": "ln|x| - ln|x + 1| + C",
+    "relation": "The partial-fraction decomposition from X is the immediate integrand split used in Y",
+    "y_proximity_signals": [
+      "A/x + B/(x+1)",
+      "1/x - 1/(x+1)",
+      "integrate term by term to logarithms"
+    ]
+  },
+  {
+    "id": "eigenvalues_vs_trace",
+    "x": "Find the eigenvalues of [[5, 2], [2, 2]].",
+    "y": "What is the trace of [[5, 2], [2, 2]]?",
+    "answer_x": "1, 6",
+    "answer_y": "7",
+    "relation": "The characteristic polynomial built to find eigenvalues has trace as the sum of roots, so X's setup yields Y directly",
+    "y_proximity_signals": [
+      "characteristic polynomial lambda^2 - 7*lambda + 6",
+      "eigenvalues 1 and 6",
+      "trace equals 5 + 2"
+    ]
+  }
+]

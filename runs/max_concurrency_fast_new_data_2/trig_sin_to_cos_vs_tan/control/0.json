@@ -1,0 +1,16 @@
+{
+  "pair_id": "trig_sin_to_cos_vs_tan",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\(\\frac{12}{13}\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find cos(theta), we can use the Pythagorean identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\nGiven that \\(\\sin(\\theta) = \\frac{5}{13}\\), we can calculate \\(\\sin^2(\\theta)\\):\n\n\\[\n\\sin^2(\\theta) = \\left(\\frac{5}{13}\\right)^2 = \\frac{25}{169}\n\\]\n\nNow, we can substitute \\(\\sin^2(\\theta)\\) into the Pythagorean identity:\n\n\\[\n\\frac{25}{169} + \\cos^2(\\theta) = 1\n\\]\n\nTo find \\(\\cos^2(\\theta)\\), we rearrange the equation:\n\n\\[\n\\cos^2(\\theta) = 1 - \\frac{25}{169}\n\\]\n\nTo subtract, we rewrite 1 as \\(\\frac{169}{169}\\):\n\n\\[\n\\cos^2(\\theta) = \\frac{169}{169} - \\frac{25}{169} = \\frac{169 - 25}{169} = \\frac{144}{169}\n\\]\n\nTaking the square root of both sides to find \\(\\cos(\\theta)\\):\n\n\\[\n\\cos(\\theta) = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}\n\\]\n\nSince theta is an acute angle, \\(\\cos(\\theta)\\) is positive.\n\nFinal answer: \\(\\frac{12}{13}\\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

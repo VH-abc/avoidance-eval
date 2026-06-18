@@ -1,0 +1,218 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "115",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "175",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "264",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "98",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "276",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "340",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "401",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "406",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "462 - (28 + 3 * 56) = 462 - 28 - 168 = 266",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "462 - (28 + 168) = 266.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "266",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "266",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "1023",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "504",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "486",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "630",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "378",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "434",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "434",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "504",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "462 - 196 = 266",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "266",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "434",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "434",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  }
+]

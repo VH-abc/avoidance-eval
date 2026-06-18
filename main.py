@@ -4,12 +4,14 @@ import argparse
 from pathlib import Path
 
 from config import (
+    DEFAULT_JOB_WORKERS,
     DEFAULT_MODEL,
     DEFAULT_PROVIDER,
     DEFAULT_TEMPERATURE,
     DEFAULT_TRIALS,
     DEFAULT_WORKERS,
     DEFAULT_Y_TRIALS,
+    FAST_SCAFFOLDS,
     FAST_TOKEN_BUDGETS,
     GRADER_TEMPERATURE,
     RUNS_DIR,
@@ -39,6 +41,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="Comma-separated scaffold names",
     )
     run_parser.add_argument("--pairs", default="all", help="Comma-separated pair ids or 'all'")
+    run_parser.add_argument(
+        "--pairs-file",
+        default=None,
+        help="Path to question pairs JSON (default: data/pairs.json)",
+    )
     run_parser.add_argument("--trials", type=int, default=None)
     run_parser.add_argument("--y-trials", type=int, default=None)
     run_parser.add_argument("--provider", default=DEFAULT_PROVIDER)
@@ -59,13 +66,24 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument(
         "--fast",
         action="store_true",
-        help="Quick iteration: 1 trial, 2 y-trials, 4 budgets, control+baseline only, 16 workers",
+        help="Quick iteration: 1 trial, 2 y-trials, 6 budgets, control+baseline only",
     )
-    run_parser.add_argument("--workers", type=int, default=None, help="Parallel API calls for Y sweep")
+    run_parser.add_argument(
+        "--workers",
+        type=int,
+        default=None,
+        help="Parallel Y API calls per sweep (default: 0 = all budgets×trials at once)",
+    )
+    run_parser.add_argument(
+        "--job-workers",
+        type=int,
+        default=None,
+        help="Parallel top-level tasks (default: 0 = unlimited)",
+    )
     run_parser.add_argument(
         "--budgets",
         default=None,
-        help="Comma-separated token budgets for Y sweep (default: 7 full or 4 in --fast)",
+        help="Comma-separated token budgets for Y sweep (default: 9 full or 6 in --fast)",
     )
     run_parser.add_argument(
         "--skip-y",
@@ -75,6 +93,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     analyze_parser = subparsers.add_parser("analyze", help="Recompute summary for a run")
     analyze_parser.add_argument("--run-id", required=True)
+    analyze_parser.add_argument(
+        "--job-workers",
+        type=int,
+        default=None,
+        help="Parallel trace regrades (default: 0 = unlimited)",
+    )
 
     sweep_parser = subparsers.add_parser("y-sweep", help="Run Y leakage sweep for one trace")
     sweep_parser.add_argument("--trace", required=True, help="Path to scaffold result JSON")
@@ -101,12 +125,13 @@ def build_parser() -> argparse.ArgumentParser:
 def _resolve_run_options(args) -> dict:
     fast = getattr(args, "fast", False)
     scaffolds = _parse_csv(args.scaffolds)
-    if fast and args.scaffolds == "control,baseline_avoid,threaded,two_agent":
-        scaffolds = ["control", "baseline_avoid"]
+    if fast:
+        scaffolds = list(FAST_SCAFFOLDS)
 
     trials = args.trials if args.trials is not None else (1 if fast else DEFAULT_TRIALS)
     y_trials = args.y_trials if args.y_trials is not None else (2 if fast else DEFAULT_Y_TRIALS)
     workers = args.workers if args.workers is not None else DEFAULT_WORKERS
+    job_workers = args.job_workers if args.job_workers is not None else DEFAULT_JOB_WORKERS
     token_budgets = (
         _parse_int_csv(args.budgets)
         if args.budgets
@@ -118,6 +143,7 @@ def _resolve_run_options(args) -> dict:
         "trials": trials,
         "y_trials": y_trials,
         "workers": workers,
+        "job_workers": job_workers,
         "token_budgets": token_budgets,
         "skip_y": getattr(args, "skip_y", False),
     }
@@ -140,15 +166,18 @@ def main() -> None:
             run_id=args.run_id,
             token_budgets=opts["token_budgets"],
             workers=opts["workers"],
+            job_workers=opts["job_workers"],
             skip_y=opts["skip_y"],
             temperature=args.temperature,
             grader_temperature=args.grader_temperature,
+            pairs_file=args.pairs_file,
         )
         print(f"Run complete: {run_id}")
         return
 
     if args.command == "analyze":
-        analyze_run(args.run_id)
+        job_workers = args.job_workers if args.job_workers is not None else DEFAULT_JOB_WORKERS
+        analyze_run(args.run_id, job_workers=job_workers)
         return
 
     if args.command == "y-sweep":

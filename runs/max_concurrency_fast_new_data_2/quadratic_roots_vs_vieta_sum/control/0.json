@@ -1,0 +1,16 @@
+{
+  "pair_id": "quadratic_roots_vs_vieta_sum",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\( x = 3, 4 \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the real roots of the quadratic equation \\( x^2 - 7x + 12 = 0 \\), we can factor the equation. We are looking for two numbers that multiply to 12 (the constant term) and add up to -7 (the coefficient of the linear term).\n\nThe two numbers that satisfy these conditions are -3 and -4, since:\n\n- \\(-3 \\cdot -4 = 12\\)\n- \\(-3 + -4 = -7\\)\n\nThus, we can factor the quadratic as follows:\n\n\\[\n(x - 3)(x - 4) = 0\n\\]\n\nSetting each factor equal to zero gives us the potential roots:\n\n1. \\( x - 3 = 0 \\)  ⇒  \\( x = 3 \\)\n2. \\( x - 4 = 0 \\)  ⇒  \\( x = 4 \\)\n\nTherefore, the real roots of the equation \\( x^2 - 7x + 12 = 0 \\) are \\( x = 3 \\) and \\( x = 4 \\).\n\nFinal answer: \\( x = 3, 4 \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

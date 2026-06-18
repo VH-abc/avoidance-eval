@@ -42,6 +42,9 @@ class YTrialResult(BaseModel):
     trial: int
     answer: str
     correct: bool
+    grade_method: str = ""
+    grade_detail: str = ""
+    raw_response: str = ""
 
 
 class B50Result(BaseModel):
@@ -54,10 +57,9 @@ class LeakageResult(BaseModel):
     pair_id: str
     scaffold: str
     trial: int
-    b50_scratch: float | None
-    b50_with_trace: float | None
-    leakage: float | None
-    undefined_reason: str | None = None
+    y_accuracy_scratch: float
+    y_accuracy_with_trace: float
+    leakage: float
 
 
 class XAccuracyResult(BaseModel):
@@ -74,7 +76,7 @@ class RunSummary(BaseModel):
     pair_ids: list[str]
     x_accuracy_by_scaffold: dict[str, float]
     x_accuracy_by_pair: dict[str, dict[str, float]]
-    mean_b50_scratch: dict[str, float | None]
-    mean_b50_with_trace: dict[str, float | None]
+    mean_y_accuracy_scratch: dict[str, float | None]
+    mean_y_accuracy_with_trace: dict[str, float | None]
     mean_leakage: dict[str, float | None]
     leakage_by_pair: dict[str, dict[str, float | None]]

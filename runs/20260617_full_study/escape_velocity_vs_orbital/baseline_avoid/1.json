@@ -1,0 +1,16 @@
+{
+  "pair_id": "escape_velocity_vs_orbital",
+  "scaffold": "baseline_avoid",
+  "trial": 1,
+  "answer_x": "\\( v = \\sqrt{\\frac{2GM}{R}} \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To derive the escape velocity from the surface of a planet, we start with the principle of energy conservation. The escape velocity is the minimum speed needed for an object to break free from the gravitational attraction of a planet without any additional propulsion.\n\n**Assumptions:**\n1. The planet is a uniform sphere with mass \\( M \\) and radius \\( R \\).\n2. The only force acting on the mass \\( m \\) is the gravitational force from the planet.\n3. We neglect air resistance and any other forces.\n\n**Derivation:**\n\n1. The gravitational potential energy \\( U \\) at the surface of the planet is given by:\n   \\[\n   U = -\\frac{GMm}{R}\n   \\]\n   where \\( G \\) is the gravitational constant.\n\n2. The kinetic energy \\( K \\) of the mass \\( m \\) when it is at the surface with speed \\( v \\) is:\n   \\[\n   K = \\frac{1}{2} mv^2\n   \\]\n\n3. For the mass \\( m \\) to escape the gravitational field of the planet, the total mechanical energy (kinetic energy + potential energy) must be zero or greater:\n   \\[\n   K + U \\geq 0\n   \\]\n\n4. Substituting the expressions for kinetic and potential energy, we have:\n   \\[\n   \\frac{1}{2} mv^2 - \\frac{GMm}{R} \\geq 0\n   \\]\n\n5. Rearranging this inequality gives:\n   \\[\n   \\frac{1}{2} mv^2 \\geq \\frac{GMm}{R}\n   \\]\n\n6. Dividing both sides by \\( m \\) (assuming \\( m \\neq 0 \\)):\n   \\[\n   \\frac{1}{2} v^2 \\geq \\frac{GM}{R}\n   \\]\n\n7. Multiplying both sides by 2:\n   \\[\n   v^2 \\geq \\frac{2GM}{R}\n   \\]\n\n8. Taking the square root of both sides, we find the escape velocity \\( v \\):\n   \\[\n   v = \\sqrt{\\frac{2GM}{R}}\n   \\]\n\nThus, the escape velocity from the surface of a planet of mass \\( M \\) and radius \\( R \\) is given by:\n\\[\nv = \\sqrt{\\frac{2GM}{R}}\n\\]\n\nFinal answer: \\( v = \\sqrt{\\frac{2GM}{R}} \\)",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

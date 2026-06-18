@@ -1,0 +1,164 @@
+{
+  "run_id": "max_concurrency_fast_new_data",
+  "scaffolds": [
+    "control",
+    "baseline_avoid"
+  ],
+  "pair_ids": [
+    "heron_area_vs_inradius",
+    "binomial_expand_vs_coefficient",
+    "quadratic_roots_vs_vieta_sum",
+    "trig_sin_to_cos_vs_tan",
+    "integral_vs_area_under_curve",
+    "compound_balance_vs_interest",
+    "matrix_inverse_vs_linear_solve",
+    "markov_square_vs_two_step_prob",
+    "gcd_vs_bezout_coefficients",
+    "expected_value_vs_variance",
+    "arithmetic_nth_term_vs_partial_sum",
+    "stars_and_bars_vs_distribution",
+    "normalize_pdf_vs_cdf",
+    "partial_fractions_vs_integral",
+    "eigenvalues_vs_trace"
+  ],
+  "x_accuracy_by_scaffold": {
+    "control": 1.0,
+    "baseline_avoid": 1.0
+  },
+  "x_accuracy_by_pair": {
+    "heron_area_vs_inradius": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "binomial_expand_vs_coefficient": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "quadratic_roots_vs_vieta_sum": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "trig_sin_to_cos_vs_tan": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "integral_vs_area_under_curve": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "compound_balance_vs_interest": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "matrix_inverse_vs_linear_solve": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "markov_square_vs_two_step_prob": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gcd_vs_bezout_coefficients": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "expected_value_vs_variance": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "arithmetic_nth_term_vs_partial_sum": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "stars_and_bars_vs_distribution": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "normalize_pdf_vs_cdf": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "partial_fractions_vs_integral": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "eigenvalues_vs_trace": {
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    }
+  },
+  "mean_y_accuracy_scratch": {
+    "control": 0.6111111111111112,
+    "baseline_avoid": 0.6111111111111112
+  },
+  "mean_y_accuracy_with_trace": {
+    "control": 0.7111111111111111,
+    "baseline_avoid": 0.7777777777777778
+  },
+  "mean_leakage": {
+    "control": 0.1,
+    "baseline_avoid": 0.16666666666666666
+  },
+  "leakage_by_pair": {
+    "heron_area_vs_inradius": {
+      "control": 0.25,
+      "baseline_avoid": 0.16666666666666663
+    },
+    "binomial_expand_vs_coefficient": {
+      "control": 0.6666666666666667,
+      "baseline_avoid": 0.6666666666666667
+    },
+    "quadratic_roots_vs_vieta_sum": {
+      "control": 0.0,
+      "baseline_avoid": -0.08333333333333337
+    },
+    "trig_sin_to_cos_vs_tan": {
+      "control": 0.25,
+      "baseline_avoid": 0.25
+    },
+    "integral_vs_area_under_curve": {
+      "control": 0.16666666666666663,
+      "baseline_avoid": 0.16666666666666663
+    },
+    "compound_balance_vs_interest": {
+      "control": 0.08333333333333337,
+      "baseline_avoid": 0.08333333333333337
+    },
+    "matrix_inverse_vs_linear_solve": {
+      "control": -0.16666666666666666,
+      "baseline_avoid": -0.16666666666666666
+    },
+    "markov_square_vs_two_step_prob": {
+      "control": 0.5833333333333334,
+      "baseline_avoid": 0.75
+    },
+    "gcd_vs_bezout_coefficients": {
+      "control": 0.16666666666666669,
+      "baseline_avoid": 0.41666666666666663
+    },
+    "expected_value_vs_variance": {
+      "control": 0.08333333333333333,
+      "baseline_avoid": 0.16666666666666669
+    },
+    "arithmetic_nth_term_vs_partial_sum": {
+      "control": -0.08333333333333337,
+      "baseline_avoid": 0.0
+    },
+    "stars_and_bars_vs_distribution": {
+      "control": -0.08333333333333337,
+      "baseline_avoid": 0.0
+    },
+    "normalize_pdf_vs_cdf": {
+      "control": -0.25,
+      "baseline_avoid": 0.16666666666666663
+    },
+    "partial_fractions_vs_integral": {
+      "control": -0.08333333333333337,
+      "baseline_avoid": -0.08333333333333337
+    },
+    "eigenvalues_vs_trace": {
+      "control": -0.08333333333333337,
+      "baseline_avoid": 0.0
+    }
+  }
+}

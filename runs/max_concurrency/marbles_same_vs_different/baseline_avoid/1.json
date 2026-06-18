@@ -1,0 +1,16 @@
+{
+  "pair_id": "marbles_same_vs_different",
+  "scaffold": "baseline_avoid",
+  "trial": 1,
+  "answer_x": "\\( \\frac{31}{66} \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the probability that two marbles drawn are the same color, we can consider two cases: both marbles being red or both being blue.\n\n1. Probability of drawing 2 red marbles:\n   - The probability of drawing the first red marble is \\( \\frac{5}{12} \\).\n   - After removing one red marble, there are now 4 red marbles left and 11 total marbles. The probability of drawing a second red marble is \\( \\frac{4}{11} \\).\n   - Thus, the probability of drawing 2 red marbles is \\( \\frac{5}{12} \\times \\frac{4}{11} = \\frac{20}{132} \\).\n\n2. Probability of drawing 2 blue marbles:\n   - The probability of drawing the first blue marble is \\( \\frac{7}{12} \\).\n   - After removing one blue marble, there are now 6 blue marbles left and 11 total marbles. The probability of drawing a second blue marble is \\( \\frac{6}{11} \\).\n   - Thus, the probability of drawing 2 blue marbles is \\( \\frac{7}{12} \\times \\frac{6}{11} = \\frac{42}{132} \\).\n\nNow, we can add these two probabilities to get the total probability of drawing two marbles of the same color:\n\\[\n\\frac{20}{132} + \\frac{42}{132} = \\frac{62}{132} = \\frac{31}{66}.\n\\]\n\nFinal answer: \\( \\frac{31}{66} \\)",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

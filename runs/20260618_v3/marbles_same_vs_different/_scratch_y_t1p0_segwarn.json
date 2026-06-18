@@ -1,0 +1,110 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( \\frac{35",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(\\frac{35",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Final answer: 35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "35/66.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\frac{35}{66}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( \\frac{",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\frac{35}{66}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(\\frac{35}{66}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\frac{35}{66}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(\\frac{35}{66}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  }
+]

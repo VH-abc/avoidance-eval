@@ -1,0 +1,218 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "0.9651",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.956 or",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "0.9996",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.9972",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Approximately 0.97 or 97%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Approximately 0.0293 or 2.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "P(D | Negative) = 0.0009 or 0.09%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.0094 or approximately 0.94% probability.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The probability that a person has the disease given a negative test result is approximately 0.003, or 0.3%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.28%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "0.28%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.28%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.0123",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.0362",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.9118",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.03",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.9124",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.9708",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.9982",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.9701",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.0028",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.0028",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.0028",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.0028",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match"
+  }
+]

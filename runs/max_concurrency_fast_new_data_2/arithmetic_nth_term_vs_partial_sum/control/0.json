@@ -1,0 +1,16 @@
+{
+  "pair_id": "arithmetic_nth_term_vs_partial_sum",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "19",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "In an arithmetic sequence, the nth term can be calculated using the formula:\n\n\\[ a_n = a_1 + (n - 1) \\cdot d \\]\n\nwhere:\n- \\( a_n \\) is the nth term,\n- \\( a_1 \\) is the first term,\n- \\( d \\) is the common difference,\n- \\( n \\) is the term number.\n\nGiven:\n- First term \\( a_1 = 3 \\),\n- Common difference \\( d = 4 \\),\n- We want to find the 5th term (\\( n = 5 \\)).\n\nSubstituting the values into the formula:\n\n\\[ a_5 = 3 + (5 - 1) \\cdot 4 \\]\n\\[ a_5 = 3 + 4 \\cdot 4 \\]\n\\[ a_5 = 3 + 16 \\]\n\\[ a_5 = 19 \\]\n\nThus, the 5th term of the sequence is 19.\n\nFinal answer: 19",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

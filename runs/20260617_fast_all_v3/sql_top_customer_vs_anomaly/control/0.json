@@ -1,0 +1,16 @@
+{
+  "pair_id": "sql_top_customer_vs_anomaly",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "The SQL query provided.",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the `customer_id` with the highest total spending, you can use the following SQL query:\n\n```sql\nSELECT c.customer_id\nFROM Customers c\nJOIN Orders o ON c.customer_id = o.customer_id\nJOIN Products p ON o.product_id = p.product_id\nGROUP BY c.customer_id\nORDER BY SUM(o.quantity * p.price) DESC\nLIMIT 1;\n```\n\nThis query joins the `Customers`, `Orders`, and `Products` tables, calculates the total spending for each customer by summing the product of quantity and price, groups the results by `customer_id`, orders them in descending order of total spending, and limits the results to the top entry.\n\nFinal answer: The SQL query provided.",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

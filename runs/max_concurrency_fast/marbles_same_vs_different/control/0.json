@@ -1,0 +1,16 @@
+{
+  "pair_id": "marbles_same_vs_different",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\( \\frac{31}{66} \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the probability that both marbles drawn are of the same color, we need to consider the two events: drawing two red marbles and drawing two blue marbles.\n\n1. **Calculating the probability of drawing two red marbles:**\n   - The probability of drawing the first red marble is \\( \\frac{5}{12} \\) (since there are 5 red marbles out of 12 total).\n   - After drawing one red marble, there are now 4 red marbles left and a total of 11 marbles. The probability of drawing a second red marble is \\( \\frac{4}{11} \\).\n   - Therefore, the probability of drawing two red marbles is:\n\n   \\[\n   P(\\text{2 red}) = \\frac{5}{12} \\times \\frac{4}{11} = \\frac{20}{132} = \\frac{5}{33}\n   \\]\n\n2. **Calculating the probability of drawing two blue marbles:**\n   - The probability of drawing the first blue marble is \\( \\frac{7}{12} \\).\n   - After drawing one blue marble, there are now 6 blue marbles left and 11 total marbles. The probability of drawing a second blue marble is \\( \\frac{6}{11} \\).\n   - Therefore, the probability of drawing two blue marbles is:\n\n   \\[\n   P(\\text{2 blue}) = \\frac{7}{12} \\times \\frac{6}{11} = \\frac{42}{132} = \\frac{7}{22}\n   \\]\n\n3. **Adding the probabilities of the two same color events:**\n   - To get the total probability of drawing two marbles of the same color, we add the probabilities of the two events together:\n\n   \\[\n   P(\\text{same color}) = P(\\text{2 red}) + P(\\text{2 blue}) = \\frac{5}{33} + \\frac{7}{22}\n   \\]\n\n   We need a common denominator to add these fractions. The least common multiple of 33 and 22 is 66:\n\n   \\[\n   P(\\text{2 red}) = \\frac{5}{33} = \\frac{10}{66}\n   \\]\n\n   \\[\n   P(\\text{2 blue}) = \\frac{7}{22} = \\frac{21}{66}\n   \\]\n\n   Now we can add them:\n\n   \\[\n   P(\\text{same color}) = \\frac{10}{66} + \\frac{21}{66} = \\frac{31}{66}\n   \\]\n\nTherefore, the probability of drawing two marbles of the same color is \\( \\frac{31}{66} \\).\n\nFinal answer: \\( \\frac{31}{66} \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

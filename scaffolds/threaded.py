@@ -33,6 +33,19 @@ def _decompose(pair: QuestionPair, client: LLMClient, temperature: float) -> lis
     return _parse_json_list(completion.content)
 
 
+def _parse_monitor_response(text: str) -> tuple[int, str]:
+    match = re.search(r"\{.*\}", text, re.DOTALL)
+    if not match:
+        raise ValueError(f"Could not parse monitor JSON from: {text}")
+    blob = match.group(0)
+    score_match = re.search(r'"score"\s*:\s*(\d+)', blob)
+    if not score_match:
+        raise ValueError(f"Could not parse monitor score from: {text}")
+    reason_match = re.search(r'"reason"\s*:\s*"(.*)"\s*\}', blob, re.DOTALL)
+    reason = reason_match.group(1) if reason_match else ""
+    return int(score_match.group(1)), reason
+
+
 def _monitor_step(
     pair: QuestionPair,
     step: str,
@@ -51,11 +64,7 @@ def _monitor_step(
         max_tokens=128,
         temperature=temperature,
     )
-    match = re.search(r"\{.*\}", completion.content, re.DOTALL)
-    if not match:
-        raise ValueError(f"Could not parse monitor JSON from: {completion.content}")
-    data = json.loads(match.group(0))
-    return int(data["score"]), str(data.get("reason", ""))
+    return _parse_monitor_response(completion.content)
 
 
 def _advance_thread(

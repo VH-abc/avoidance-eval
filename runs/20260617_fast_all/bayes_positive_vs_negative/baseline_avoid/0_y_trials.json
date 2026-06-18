@@ -4,111 +4,143 @@
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease\n- \\( P(\\neg D) \\) = probability of not having the disease = \\( 1 - P(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease\n- \\( P(\\neg D) = 1 - P(D) \\) = probability of not having the disease",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease\n- \\( P(N | D) \\) = probability of testing negative given the disease (1 - sensitivity)\n- \\( P(N | \\neg D) \\) = probability of testing negative given no disease (specificity)\n\nUsing Bayes' theorem, the probability that a person has the disease given a negative test result is:\n\n\\[\nP(D | N) = \\frac{P(N | D) \\cdot P(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease\n- \\( P(\\neg D) \\) = probability of not having the disease = \\( 1 - P(D) \\)\n- \\( P(T^+ | D) \\) = sensitivity (true positive rate)\n- \\( P(T^- | D) \\) = 1 - sensitivity = false negative rate\n- \\( P(T^- | \\neg D) \\) = specificity (true negative rate)\n\nUsing Bayes'",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease\n- \\( P(\\neg D) \\) = probability of not having the disease = \\( 1 - P(D) \\)\n- \\( P(T^+ | D) \\) = sensitivity (true positive rate)\n- \\( P(T^- | \\neg D) \\) = specificity (true negative rate)\n- \\( P(T^-) \\) = probability of testing negative\n\nUsing Bayes' theorem, the probability of having the disease given a negative test result is:\n\n\\[\nP(D | T^-) = \\frac{P(T^- | D) \\cdot P(D)}{P(T^-)}\n\\]\n\nWhere:\n- \\( P(T^- | D) = 1 - P(T^+ | D) \\) (false negative rate)\n- \\( P(T^-) = P(T^- | D) \\cdot P(D) + P(T^- | \\neg D) \\cdot P(\\neg D) \\)\n\nThe key difference between the negative and positive cases arises from the fact that the prevalence of the disease affects the base",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we can use Bayes' theorem. \n\nLet:\n- \\( P(D) \\) = prevalence of the disease (prior probability of having the disease)\n- \\( P(\\neg D) \\) = probability of not having the disease = \\( 1 - P(D) \\)\n- \\( P(T^+ | D) \\) = sensitivity (true positive rate)\n- \\( P(T^- | D) \\) = probability of testing negative given the disease = \\( 1 - P(T^+ | D) \\)\n- \\( P(T^- | \\neg D) \\) = specificity (true negative rate)\n\nUsing Bayes' theorem, the probability of having the disease given a negative test result is:\n\n\\[\nP(D | T^-) = \\frac{P(T^- | D) \\cdot P(D)}{P(T^-)}\n\\]\n\nWhere \\( P(T^-) \\) can be calculated as:\n\n\\[\nP(T^-) = P(T^- | D) \\cdot P(D) + P(T^- | \\neg D) \\cdot P(\\neg D)\n\\]\n\nThis results in:\n\n\\[\nP(D | T^-)",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) is the event of testing negative.\n\nUsing Bayes' theorem:\n\n\\[\nP(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) is the event of testing negative.\n\nUsing Bayes' theorem:\n\n\\[\nP(D",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) represents a negative test result.\n\nUsing Bayes' theorem:\n\n\\[\nP(D|T^c) = \\frac{P(T^c|D) \\cdot P(D)}{P(T^c)}\n\\]\n\nWhere:\n- \\( P(T^c|D) \\) is the probability of testing negative given that the person has the disease (which is \\( 1 - \\text",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) is the event of testing negative.\n\nUsing Bayes' theorem:\n\n\\[\nP(D|T^c) = \\frac{P(T^c|D) \\cdot P(D)}{P(T^c)}\n\\]\n\nWhere:\n- \\( P(T^c|D) = 1 - P(T|D) = 1 - 0.99 = 0.01 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) is the event of testing negative.\n\nUsing Bayes' theorem:\n\n\\[\nP(D|T^c) = \\frac{P(T^c|D) \\cdot P(D)}{P(T^c)}\n\\]\n\nWhere:\n- \\( P(T^c|D) = 1 - P(T|D) = 1 - 0.99 = 0.01 \\) (the probability of testing negative given that the person has the disease).\n- \\( P(D) = 0.01 \\) (the prior probability of having the disease).\n- \\( P(T^c) \\) is the total probability of testing negative, which we will calculate using the law of total probability:\n\n\\[\nP(T^c) = P(T^c|D) \\cdot P(D) + P(T^c|D^c) \\cdot P(D^c)\n\\]\n\nWhere:\n- \\( P(T^c|D^c) = P(T|D^c) =",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the probability that a person actually has the disease given a negative test result, we will again use Bayes' theorem. We need to calculate \\( P(D|T^c) \\), where \\( T^c \\) is the event of testing negative.\n\nUsing Bayes' theorem:\n\n\\[\nP(D|T^c) = \\frac{P(T^c|D) \\cdot P(D)}{P(T^c)}\n\\]\n\nWhere:\n- \\( P(T^c|D) \\) is the probability of testing negative given that the person has the disease (which is \\( 1 - \\text{sensitivity} = 1 - 0.99 = 0.01 \\)).\n- \\( P(D) = 0.01 \\) (the prevalence).\n- \\( P(T^c) \\) is the total probability of testing negative.\n\nFirst, we need to calculate \\( P(T^c) \\) using the law of total probability:\n\n\\[\nP(T^c) = P(T^c|D) \\cdot P(D) + P(T^c|D^c) \\cdot P(D^c)\n\\]\n\nWhere:\n- \\( P(T^c|D^c) =",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   }
 ]

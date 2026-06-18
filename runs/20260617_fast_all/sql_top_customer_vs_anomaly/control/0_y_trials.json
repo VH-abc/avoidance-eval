@@ -4,111 +4,143 @@
     "condition": "scratch",
     "trial": 0,
     "answer": "A specific update anomaly that could occur is when a customer's city is changed in one Orders row but not in others. This inconsistency leads to different city values for",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
     "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This would lead to",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
     "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is only made in some of the Orders rows. This would lead to inconsistent data, where some Orders reflect the old city while others show the new city. This violates the Second Normal Form (2NF) because the non-key attribute (",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
     "answer": "A specific update anomaly that could occur is if a customer's city changes, and the update is made in one Orders row but not in others. This results in inconsistent data, where the same customer has different city values across multiple rows. This violates the Second Normal Form (2NF) because the non-key attribute (city)",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
     "answer": "The update anomaly occurs due to inconsistent data when a customer's city changes, violating Second Normal Form (2NF).",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
     "answer": "The update anomaly occurs when a customer's city changes and is not updated in all Orders rows, violating Second",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
     "answer": "The update anomaly occurs due to inconsistent city data across Orders, violating Second Normal Form (2NF).",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 1,
     "answer": "The update anomaly occurs due to inconsistent city values for the same customer across multiple Orders rows, violating Second Normal Form (2NF).",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 0,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 1,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 0,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city is duplicated across multiple rows in the `Orders` table and needs to be updated (e.g., the customer moves to a new city), the update must be applied to every row where that",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 1,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single order row associated with that customer. If the update is not",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 0,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city needs to be updated (e.g., the customer moves to a new city), this change would have to be made in every single row of the `Orders` table where that customer appears. If the update is not applied uniformly across all rows, some orders may reflect the old city or name while others reflect the new information, leading to data inconsistency.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key.",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 1,
     "answer": "A specific update anomaly that could occur in this scenario is the potential for inconsistent data. For example, if a customer's name or city is duplicated across multiple rows in the `Orders` table, updating the customer's name in one order row but forgetting to update it in others would lead to discrepancies. This inconsistency can result in different representations of the same customer's information across the database.\n\nThis situation violates the Second Normal Form (2NF). In 2NF, all non-key attributes must be fully functionally dependent on the primary key. Since customer name and city are dependent on the customer (not the order), they should be stored in a separate",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 0,
     "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
     "answer": "The update anomaly is inconsistent data due to duplicated customer information in Orders, violating Second Normal Form (2NF).",
-    "correct": false
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   }
 ]

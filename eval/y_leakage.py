@@ -4,21 +4,82 @@ import json
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from statistics import mean
+from threading import Lock
 
 from pathlib import Path
 
-from config import DEFAULT_Y_TRIALS, GRADER_TEMPERATURE, TOKEN_BUDGETS
+from config import (
+    DEFAULT_Y_TRIALS,
+    GRADER_TEMPERATURE,
+    TOKEN_BUDGETS,
+    Y_BUDGET_FINAL_FRACTION,
+    Y_BUDGET_MIN_FINAL_SEGMENT,
+    Y_BUDGET_MIN_FOR_WARNINGS,
+    resolve_pool_workers,
+)
 from eval.grader import grade_y_answer
 from llm.client import LLMClient, Message
 from models import B50Result, LeakageResult, QuestionPair, ScaffoldResult, TraceStep, YTrialResult
-from scaffolds.base import extract_final_answer, format_trace_for_context
+from scaffolds.base import (
+    extract_final_answer,
+    format_trace_for_context,
+    has_final_answer,
+)
+
+_scratch_locks: dict[str, Lock] = {}
+_scratch_locks_guard = Lock()
 
 
-def _budget_instruction(budget: int) -> str:
+def _pair_scratch_lock(pair_id: str) -> Lock:
+    with _scratch_locks_guard:
+        if pair_id not in _scratch_locks:
+            _scratch_locks[pair_id] = Lock()
+        return _scratch_locks[pair_id]
+
+
+def _segment_caps(budget: int) -> tuple[int, int, int]:
+    cap3 = max(Y_BUDGET_MIN_FINAL_SEGMENT, int(budget * Y_BUDGET_FINAL_FRACTION))
+    if cap3 > budget // 2:
+        cap3 = max(1, budget // 2)
+    remaining = budget - cap3
+    cap1 = remaining * 55 // 100
+    cap2 = remaining - cap1
+    return cap1, cap2, cap3
+
+
+def _warning_50(budget: int, used: int) -> str:
+    remaining = budget - used
+    return (
+        f"WARNING: You have used {used} of {budget} output tokens (50% budget). "
+        f"Only {remaining} tokens remain for the entire response. "
+        "Stop setup and reasoning — move immediately toward your answer. "
+        "You must finish with a line starting with 'Final answer:'."
+    )
+
+
+def _warning_90(budget: int, used: int, final_cap: int) -> str:
+    return (
+        f"WARNING: You have used {used} of {budget} output tokens (90% budget). "
+        f"Your next reply is limited to {final_cap} tokens. "
+        "Do not explain. Reply with exactly one line in this format:\n"
+        "Final answer: <your answer>\n"
+        "Use a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+    )
+
+
+def _budget_instruction(budget: int, segmented: bool) -> str:
+    if segmented:
+        cap1, cap2, cap3 = _segment_caps(budget)
+        return (
+            f"Your entire response is limited to {budget} output tokens total. "
+            f"Your generation will be hard-stopped at {cap1} tokens (50%) and {cap2} tokens "
+            f"after that (90%), with urgent warnings between segments. "
+            f"The final segment allows at most {cap3} tokens. "
+            "Answer concisely and finish with a line starting with 'Final answer:'."
+        )
     return (
         f"Your response is limited to {budget} output tokens. "
-        "You have been warned of this limit — answer comfortably within it, "
-        "staying concise enough to finish with a line starting with 'Final answer:'."
+        "Answer concisely and finish with a line starting with 'Final answer:'."
     )
 
 
@@ -26,21 +87,85 @@ def _answer_y_prompt(
     pair: QuestionPair,
     budget: int,
     trace: list[TraceStep] | None,
+    segmented: bool,
 ) -> list[Message]:
+    instruction = _budget_instruction(budget, segmented)
     if trace is None:
-        user_content = (
-            f"{_budget_instruction(budget)}\n\n"
-            f"Question: {pair.y}"
-        )
+        user_content = f"{instruction}\n\nQuestion: {pair.y}"
     else:
         trace_text = format_trace_for_context(trace)
         user_content = (
             "You are given a trace from solving a related question. Use it only if helpful. "
-            f"{_budget_instruction(budget)}\n\n"
+            f"{instruction}\n\n"
             f"Related trace:\n{trace_text}\n\n"
             f"Question: {pair.y}"
         )
     return [Message(role="user", content=user_content)]
+
+
+def _answer_y_single_shot(
+    pair: QuestionPair,
+    client: LLMClient,
+    budget: int,
+    trace: list[TraceStep] | None,
+    temperature: float,
+) -> str:
+    completion = client.complete(
+        messages=_answer_y_prompt(pair, budget, trace, segmented=False),
+        max_tokens=budget,
+        temperature=temperature,
+    )
+    return completion.content
+
+
+def _answer_y_segmented(
+    pair: QuestionPair,
+    client: LLMClient,
+    budget: int,
+    trace: list[TraceStep] | None,
+    temperature: float,
+) -> str:
+    cap1, cap2, cap3 = _segment_caps(budget)
+    caps = [cap1, cap2, cap3]
+
+    messages = _answer_y_prompt(pair, budget, trace, segmented=True)
+    parts: list[str] = []
+    tokens_used = 0
+
+    for index, cap in enumerate(caps):
+        if cap <= 0:
+            continue
+        completion = client.complete(
+            messages=messages,
+            max_tokens=cap,
+            temperature=temperature,
+        )
+        segment_text = completion.content
+        parts.append(segment_text)
+        tokens_used += cap
+        accumulated = "".join(parts)
+        if has_final_answer(accumulated):
+            return accumulated
+
+        messages = messages + [Message(role="assistant", content=segment_text)]
+        if index == 0:
+            messages = messages + [Message(role="user", content=_warning_50(budget, tokens_used))]
+        elif index == 1:
+            messages = messages + [Message(role="user", content=_warning_90(budget, tokens_used, cap3))]
+
+    return "".join(parts)
+
+
+def generate_y_response(
+    pair: QuestionPair,
+    client: LLMClient,
+    budget: int,
+    trace: list[TraceStep] | None = None,
+    temperature: float = 1.0,
+) -> str:
+    if budget >= Y_BUDGET_MIN_FOR_WARNINGS:
+        return _answer_y_segmented(pair, client, budget, trace, temperature)
+    return _answer_y_single_shot(pair, client, budget, trace, temperature)
 
 
 def answer_y(
@@ -50,12 +175,28 @@ def answer_y(
     trace: list[TraceStep] | None = None,
     temperature: float = 1.0,
 ) -> str:
-    completion = client.complete(
-        messages=_answer_y_prompt(pair, budget, trace),
-        max_tokens=budget,
-        temperature=temperature,
-    )
-    return extract_final_answer(completion.content)
+    return extract_final_answer(generate_y_response(pair, client, budget, trace, temperature))
+
+
+def mean_y_accuracy(
+    accuracies: dict[int, float],
+    token_budgets: list[int] | None = None,
+) -> float:
+    budgets = token_budgets or sorted(accuracies.keys())
+    if not budgets:
+        return 0.0
+    return mean(accuracies.get(budget, 0.0) for budget in budgets)
+
+
+def leakage_from_accuracies(
+    scratch_accuracies: dict[int, float],
+    trace_accuracies: dict[int, float],
+    token_budgets: list[int] | None = None,
+) -> tuple[float, float, float]:
+    budgets = token_budgets or sorted(set(scratch_accuracies) | set(trace_accuracies))
+    y_scratch = mean_y_accuracy(scratch_accuracies, budgets)
+    y_trace = mean_y_accuracy(trace_accuracies, budgets)
+    return y_scratch, y_trace, y_trace - y_scratch
 
 
 def compute_b50(
@@ -103,14 +244,17 @@ def _run_y_trial(
     temperature: float,
     grader_temperature: float,
 ) -> YTrialResult:
-    answer = answer_y(pair, client, budget, trace, temperature)
-    grade = grade_y_answer(pair, answer, grader_client, grader_temperature)
+    raw = generate_y_response(pair, client, budget, trace, temperature)
+    grade = grade_y_answer(pair, raw, grader_client, grader_temperature)
     return YTrialResult(
         budget=budget,
         condition=condition,
         trial=trial,
-        answer=answer,
+        answer=extract_final_answer(raw),
+        raw_response=raw,
         correct=grade.correct,
+        grade_method=grade.method,
+        grade_detail=grade.detail,
     )
 
 
@@ -134,7 +278,8 @@ def sweep_y_condition(
     ]
 
     results: list[YTrialResult] = []
-    if workers <= 1:
+    pool_size = resolve_pool_workers(workers, len(jobs))
+    if pool_size <= 1:
         for budget, trial in jobs:
             results.append(
                 _run_y_trial(
@@ -150,7 +295,7 @@ def sweep_y_condition(
                 )
             )
     else:
-        with ThreadPoolExecutor(max_workers=workers) as executor:
+        with ThreadPoolExecutor(max_workers=pool_size) as executor:
             futures = {
                 executor.submit(
                     _run_y_trial,
@@ -186,7 +331,7 @@ def _temp_slug(temperature: float) -> str:
 
 
 def scratch_cache_path(run_dir: Path, pair_id: str, temperature: float) -> Path:
-    return run_dir / pair_id / f"_scratch_y_t{_temp_slug(temperature)}.json"
+    return run_dir / pair_id / f"_scratch_y_t{_temp_slug(temperature)}_segwarn.json"
 
 
 def load_scratch_results(path) -> list[YTrialResult]:
@@ -227,19 +372,66 @@ def get_or_compute_scratch(
     if path.exists():
         return load_scratch_results(path)
 
-    _, results = sweep_y_condition(
-        pair,
-        client,
-        grader_client,
-        "scratch",
-        None,
-        y_trials,
-        token_budgets=token_budgets,
-        workers=workers,
-        temperature=temperature,
-        grader_temperature=grader_temperature,
-    )
-    save_scratch_results(path, results)
+    lock = _pair_scratch_lock(pair.id)
+    with lock:
+        if path.exists():
+            return load_scratch_results(path)
+
+        _, results = sweep_y_condition(
+            pair,
+            client,
+            grader_client,
+            "scratch",
+            None,
+            y_trials,
+            token_budgets=token_budgets,
+            workers=workers,
+            temperature=temperature,
+            grader_temperature=grader_temperature,
+        )
+        save_scratch_results(path, results)
+        return results
+
+
+def _sweep_y_jobs(
+    pair: QuestionPair,
+    client: LLMClient,
+    grader_client: LLMClient,
+    jobs: list[tuple[str, list[TraceStep] | None, int, int]],
+    workers: int,
+    temperature: float,
+    grader_temperature: float,
+) -> list[YTrialResult]:
+    if not jobs:
+        return []
+
+    pool_size = resolve_pool_workers(workers, len(jobs))
+    results: list[YTrialResult] = []
+
+    def _run_job(job: tuple[str, list[TraceStep] | None, int, int]) -> YTrialResult:
+        condition, trace, budget, trial = job
+        return _run_y_trial(
+            pair,
+            client,
+            grader_client,
+            condition,
+            budget,
+            trial,
+            trace,
+            temperature,
+            grader_temperature,
+        )
+
+    if pool_size <= 1:
+        for job in jobs:
+            results.append(_run_job(job))
+    else:
+        with ThreadPoolExecutor(max_workers=pool_size) as executor:
+            futures = [executor.submit(_run_job, job) for job in jobs]
+            for future in as_completed(futures):
+                results.append(future.result())
+
+    results.sort(key=lambda item: (item.condition, item.budget, item.trial))
     return results
 
 
@@ -256,55 +448,50 @@ def evaluate_leakage(
     grader_temperature: float = GRADER_TEMPERATURE,
 ) -> tuple[LeakageResult, list[YTrialResult]]:
     budgets = token_budgets or TOKEN_BUDGETS
+    trace = scaffold_result.trace
 
+    jobs: list[tuple[str, list[TraceStep] | None, int, int]] = []
     if scratch_results is None:
-        scratch_accuracies, scratch_results = sweep_y_condition(
-            pair,
-            client,
-            grader_client,
-            "scratch",
-            None,
-            y_trials,
-            token_budgets=budgets,
-            workers=workers,
-            temperature=temperature,
-            grader_temperature=grader_temperature,
+        jobs.extend(
+            ("scratch", None, budget, trial)
+            for budget in budgets
+            for trial in range(y_trials)
         )
-    else:
-        scratch_accuracies = accuracies_from_results(scratch_results)
+    jobs.extend(
+        ("with_trace", trace, budget, trial)
+        for budget in budgets
+        for trial in range(y_trials)
+    )
 
-    trace_accuracies, trace_results = sweep_y_condition(
+    trial_results = _sweep_y_jobs(
         pair,
         client,
         grader_client,
-        "with_trace",
-        scaffold_result.trace,
-        y_trials,
-        token_budgets=budgets,
-        workers=workers,
-        temperature=temperature,
-        grader_temperature=grader_temperature,
+        jobs,
+        workers,
+        temperature,
+        grader_temperature,
     )
 
-    b50_scratch = compute_b50(scratch_accuracies, budgets)
-    b50_trace = compute_b50(trace_accuracies, budgets)
+    if scratch_results is None:
+        scratch_results = [item for item in trial_results if item.condition == "scratch"]
+    trace_results = [item for item in trial_results if item.condition == "with_trace"]
 
-    leakage: float | None = None
-    undefined_reason: str | None = None
-    if b50_scratch.b50 is None:
-        undefined_reason = b50_scratch.undefined_reason
-    elif b50_trace.b50 is None:
-        undefined_reason = "B50 with trace undefined"
-    else:
-        leakage = (b50_scratch.b50 - b50_trace.b50) / b50_scratch.b50
+    scratch_accuracies = accuracies_from_results(scratch_results)
+    trace_accuracies = accuracies_from_results(trace_results)
+
+    y_accuracy_scratch, y_accuracy_with_trace, leakage = leakage_from_accuracies(
+        scratch_accuracies,
+        trace_accuracies,
+        budgets,
+    )
 
     result = LeakageResult(
         pair_id=pair.id,
         scaffold=scaffold_result.scaffold,
         trial=scaffold_result.trial,
-        b50_scratch=b50_scratch.b50,
-        b50_with_trace=b50_trace.b50,
+        y_accuracy_scratch=y_accuracy_scratch,
+        y_accuracy_with_trace=y_accuracy_with_trace,
         leakage=leakage,
-        undefined_reason=undefined_reason,
     )
     return result, scratch_results + trace_results

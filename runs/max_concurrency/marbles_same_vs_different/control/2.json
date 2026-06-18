@@ -1,0 +1,16 @@
+{
+  "pair_id": "marbles_same_vs_different",
+  "scaffold": "control",
+  "trial": 2,
+  "answer_x": "\\(\\frac{31}{66}\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the probability that the two marbles drawn are of the same color, we first need to evaluate the total number of ways to draw two marbles from the bag.\n\nThe total number of marbles in the bag is:\n\n\\[\n5 \\text{ (red)} + 7 \\text{ (blue)} = 12 \\text{ marbles}\n\\]\n\nThe total number of ways to choose 2 marbles from 12 is given by the combination formula:\n\n\\[\n\\binom{n}{r} = \\frac{n!}{r!(n-r)!}\n\\]\n\nUsing \\(n=12\\) and \\(r=2\\):\n\n\\[\n\\binom{12}{2} = \\frac{12!}{2!(12-2)!} = \\frac{12 \\times 11}{2 \\times 1} = 66\n\\]\n\nNext, we will calculate the probability of drawing two marbles of the same color. There are two scenarios for this: drawing 2 red marbles or drawing 2 blue marbles.\n\n1. **Probability of drawing 2 red marbles:**\n   The number of ways to choose 2 red marbles from the 5 red marbles is:\n\n   \\[\n   \\binom{5}{2} = \\frac{5!}{2!(5-2)!} = \\frac{5 \\times 4}{2 \\times 1} = 10\n   \\]\n\n2. **Probability of drawing 2 blue marbles:**\n   The number of ways to choose 2 blue marbles from the 7 blue marbles is:\n\n   \\[\n   \\binom{7}{2} = \\frac{7!}{2!(7-2)!} = \\frac{7 \\times 6}{2 \\times 1} = 21\n   \\]\n\nNow we can add the two outcomes together to get the total number of successful outcomes (drawing 2 marbles of the same color):\n\n\\[\n10 \\text{ (red)} + 21 \\text{ (blue)} = 31\n\\]\n\nFinally, we calculate the probability of drawing two marbles of the same color:\n\n\\[\nP(\\text{same color}) = \\frac{\\text{number of favorable outcomes}}{\\text{total outcomes}} = \\frac{31}{66}\n\\]\n\nThus, the probability that the two drawn marbles are the same color is:\n\nFinal answer: \\(\\frac{31}{66}\\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

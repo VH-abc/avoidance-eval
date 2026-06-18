@@ -1,0 +1,16 @@
+{
+  "pair_id": "marbles_same_vs_different",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "\\( \\frac{31}{66} \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the probability that two marbles drawn from the bag are the same color, we determine the total number of possible ways to draw two marbles and the ways to draw two marbles of the same color.\n\n1. **Total number of marbles**: 5 red + 7 blue = 12 marbles.\n2. **Total ways to choose 2 marbles** from 12: \n   \\[\n   \\binom{12}{2} = \\frac{12 \\times 11}{2} = 66\n   \\]\n\n3. **Ways to choose 2 red marbles**: \n   \\[\n   \\binom{5}{2} = \\frac{5 \\times 4}{2} = 10\n   \\]\n\n4. **Ways to choose 2 blue marbles**: \n   \\[\n   \\binom{7}{2} = \\frac{7 \\times 6}{2} = 21\n   \\]\n\n5. **Total ways to choose 2 marbles of the same color**: \n   \\[\n   10 \\text{ (red)} + 21 \\text{ (blue)} = 31\n   \\]\n\n6. **Probability of choosing 2 marbles of the same color**: \n   \\[\n   P(\\text{same color}) = \\frac{\\text{ways to choose same color}}{\\text{total ways to choose 2}} = \\frac{31}{66}\n   \\]\n\nFinal answer: \\( \\frac{31}{66} \\)",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

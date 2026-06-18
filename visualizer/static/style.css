@@ -220,13 +220,74 @@ table.compact th {
 
 .trace-panel h3,
 .y-panel h3 {
-  margin: 0 0 0.5rem;
+  margin: 0.75rem 0 0.5rem;
   font-size: 0.85rem;
+}
+.trace-panel h3:first-child {
+  margin-top: 0;
+}
+.budget-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.budget-picker select {
+  min-width: 0;
+  width: 120px;
+}
+.y-trace-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.y-trace-card summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  background: var(--surface-2);
+  font-size: 0.78rem;
+}
+.y-trace-card summary::-webkit-details-marker {
+  display: none;
+}
+.y-trace-card.correct summary {
+  border-left: 3px solid var(--good);
+}
+.y-trace-card.incorrect summary {
+  border-left: 3px solid var(--bad);
+}
+.y-trace-verdict {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+.y-trace-body {
+  padding: 0.65rem 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  max-height: 240px;
+  overflow-y: auto;
 }
 .caption {
   margin: 0 0 0.5rem;
   font-size: 0.75rem;
   color: var(--muted);
+}
+.caption.warn {
+  color: var(--warn);
+}
+.caption code {
+  font-family: var(--mono);
+  font-size: 0.72rem;
 }
 
 .step {
@@ -300,4 +361,86 @@ table.compact th {
   margin-top: 0.5rem;
 }
 .leakage-high { color: var(--bad); }
-.leakage-low { color: var(--good); }
+.leakage-low { color: var(--muted); }
+.leakage-negative { color: var(--warn); }
+
+.summary-table .pair-row {
+  cursor: pointer;
+}
+.summary-table .pair-row:hover td {
+  background: var(--surface-2);
+}
+.summary-table .pair-row.expanded td {
+  background: var(--surface-2);
+}
+.pair-cell {
+  white-space: nowrap;
+}
+.expand-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 0.35rem 0 0;
+  font-size: 0.7rem;
+}
+.pair-expand td {
+  background: var(--surface);
+  padding: 0.5rem 0.75rem 0.75rem;
+}
+.pair-expand-inner {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.scaffold-block + .scaffold-block {
+  margin-top: 0.75rem;
+}
+.scaffold-block h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.trial-entry {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.trial-entry-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.65rem;
+  background: var(--surface-2);
+  font-size: 0.78rem;
+}
+.trial-metrics {
+  color: var(--muted);
+  flex: 1;
+}
+.trace-toggle,
+.open-detail-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.trace-toggle:hover,
+.open-detail-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.inline-trace {
+  padding: 0.65rem;
+}
+.inline-trace-steps .step {
+  margin-bottom: 0.45rem;
+}
+.inline-trace-steps .step-body {
+  max-height: 200px;
+}

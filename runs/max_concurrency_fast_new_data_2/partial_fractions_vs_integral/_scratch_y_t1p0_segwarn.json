@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "ln|x| - ln|x+1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral \u222b 1The integral can be solved using partial fractionsFinal answer: ln|x| - ln|x+1| + C"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "ln|x| - ln|x+1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Use partial fractions:\n\n\u222b 1= \u222b (1/x - Final answer: ln|x| - ln|x+1| + C"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "ln|x| - ln|x+1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{1}{x(x+1)} \\, dx\\), we use partial fractionThe integral can be expressed as:\n\n\\[\n\\int \\left( \\frac{1}{x} -Final answer: ln|x| - ln|x+1| + C"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "ln|x| - ln|x+1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral of \\( \\frac{1}{x(x + 1)} \\, dx \\), use partial fraction decompositionwhich gives:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{Final answer: ln|x| - ln|x+1| + C"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "ln|x| - ln|x + 1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{1}{x(x + 1)} \\, dx\\), we can use partial fraction decomposition:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{BSolving for \\(A\\) and \\(B\\):\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nSetting up equations by substituting values, we find \\(A = 1\\) and \\(Final answer: ln|x| - ln|x + 1| + C"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "ln|x| - ln|x + 1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral of \\( \\frac{1}{x(x + 1)} \\, dx \\), we can use partial fraction decomposition:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{Setting up the equation:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nSolving for \\( A \\) and \\( B \\):\n\nLet \\( x = 0 \\): \\( 1 = A \\Final answer: ln|x| - ln|x + 1| + C"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "ln|x| - ln|x + 1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{1}{x(x + 1)} \\, dx\\), we can use partial fraction decomposition:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{x + 1}\n\\]\n\nMultiplying through by the denominator \\(x(x + 1)\\) gives:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nSetting up equations, we find \\(A + B = 0\\) andSetting \\(x = 0\\), we find \\(A = 1\\) and \\(B = -1\\). Thus, we have:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{1}{x} - \\frac{1}{x + 1}\n\\]\n\nNow we can integrate:\n\n\\[\n\\int \\frac{1}{x(x + 1)} \\, dx = \\int \\left(\\Final answer: ln|x| - ln|x + 1| + C"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "ln|x| - ln|x + 1| + C",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To evaluate the integral \\( \\int \\frac{1}{x(x + 1)} \\, dx \\), we can use partial fraction decomposition. We express the integrand as:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{x + 1}\n\\]\n\nMultiplying through by \\( x(x + 1) \\) gives:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nExpanding and rearranging, we get:\n\n\\Setting up the equations:\n\n\\[\n1 = Ax + A + Bx\n\\]\n\nThis simplifies to:\n\n\\[\n1 = (A + B)x + A\n\\]\n\nFrom here, we set up the system of equations:\n\n1. \\( A + B = 0 \\)\n2. \\( A = 1 \\)\n\nSolving these gives \\( A = 1 \\) and \\( B = -1 \\). Thus, we have:\n\n\\[\nFinal answer: ln|x| - ln|x + 1| + C"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( \\ln \\left| \\frac{x}{x + 1} \\right| + C \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \\( \\int \\frac{1}{x(x + 1)} \\, dx \\), we can use partial fraction decomposition. We can express the integrand as:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{x + 1}\n\\]\n\nMultiplying through by \\( x(x + 1) \\) gives:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nExpanding this leads to:\n\n\\[\n1 = Ax + A + Bx\n\\]\n\nCombining terms, we have:\n\n\\[\n1 = (A + B)x + A\n\\]\n\nSetting up a system of equations, we find:\n\n1. \\( A + B = 0 \\)\n2. \\( A = 1 \\)\n\nFrom \\( A = 1 \\), we substitute into the first equation:\n\n\\[\n1 + B = 0 \\implies B = -1\n\\]\n\nThus, the partial fraction decomposition is:\n\n\\[\n\\frac{1}{x(x + The integral can be rewritten as:\n\n\\[\n\\int \\left( \\frac{1}{x} - \\frac{1}{x + 1} \\right) \\, dx\n\\]\n\nNow, we integrate each term separately:\n\n\\[\n\\int \\frac{1}{x} \\, dx - \\int \\frac{1}{x + 1} \\, dx = \\ln |x| - \\ln |x + 1| + C\n\\]\n\nCombining the logarithmic terms:\n\n\\[\n\\ln \\left| \\frac{x}{x + 1} \\right| + C\n\\]\n\nThus, the final result of the integral is:\n\nFinal answer: \\( \\ln \\left| \\frac{x}{x + 1} \\right| + C \\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( \\ln \\left| \\frac{x}{x+1} \\right| + C \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \\( \\int \\frac{1}{x(x+1)} \\, dx \\), we can use the method of partial fractions. We start by expressing the integrand in the form:\n\n\\[\n\\frac{1}{x(x+1)} = \\frac{A}{x} + \\frac{B}{x+1}\n\\]\n\nMultiplying both sides by \\( x(x + 1) \\) gives:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nSetting \\( x = 0 \\):\n\n\\[\n1 = A(0 + 1) + B(0) \\implies A = 1\n\\]\n\nSetting \\( x = -1 \\):\n\n\\[\n1 = A(-1 + 1) + B(-1) \\implies B = -1\n\\]\n\nThus, we have:\n\n\\[\n\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{x+1}\n\\]\n\nNow, we can integrate:\n\n\\[\n\\int \\left( \\\\[\n\\int \\left( \\frac{1}{x} - \\frac{1}{x+1} \\right) \\, dx = \\int \\frac{1}{x} \\, dx - \\int \\frac{1}{x+1} \\, dx\n\\]\n\nIntegrating each term gives:\n\n\\[\n= \\ln |x| - \\ln |x+1| + C\n\\]\n\nThis can be combined using properties of logarithms:\n\n\\[\n= \\ln \\left| \\frac{x}{x+1} \\right| + C\n\\]\n\nFinal answer: \\( \\ln \\left| \\frac{x}{x+1} \\right| + C \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\ln \\left| \\frac{x}{x + 1} \\right| + C\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \\( \\int \\frac{1}{x(x + 1)} \\, dx \\), we can use partial fraction decomposition.\n\nFirst, we express \\( \\frac{1}{x(x+1)} \\) as:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{x + 1}\n\\]\n\nMultiplying through by \\( x(x + 1) \\) gives:\n\n\\[\n1 = A(x + 1) + Bx\n\\]\n\nExpanding the right side yields:\n\n\\[\n1 = Ax + A + Bx\n\\]\n\nCombining like terms results in:\n\n\\[\n1 = (A + B)x + A\n\\]\n\nSetting coefficients equal, we have the system of equations:\n\n1. \\( A + B = 0 \\)\n2. \\( A = 1 \\)\n\nFrom the second equation, \\( A = 1 \\). Substituting into the first equation:\n\n\\[\n1 + B = 0 \\implies B = -1\n\\]\n\nThus, we can rewrite the integral as:\n\n\\[\n\\int \\frac{1}{x(x + 1)} \\, dx = \\int \\left( \\frac{1}{x} - \\frac{1}{x + 1} \\right) \\, dx\n\\]\n\nNow, we can integrate term by term:\n\n\\[\n\\int \\left( \\frac{1}{x} - \\frac{1}{x + 1} \\right) \\, dx = \\int \\frac{1}{x} \\, dx - \\int \\frac{1}{x + 1} \\, dx\n\\]\n\nCalculating the two integrals gives:\n\n\\[\n\\ln |x| - \\ln |x + 1| + C\n\\]\n\nWe can further simplify this using properties of logarithms:\n\n\\[\n\\ln \\left| \\frac{x}{x + 1} \\right| + C\n\\]\n\nThus, the final result of the integral is:\n\n\\[\n\\int \\frac{1}{x(x + 1)} \\, dx = \\ln\\(\n\\int \\frac{1}{x(x + 1)} \\, dx = \\ln \\left| \\frac{x}{x + 1} \\right| + C\n\\)\n\nFinal answer: \\(\\ln \\left| \\frac{x}{x + 1} \\right| + C\\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(\\ln \\left| \\frac{x}{x + 1} \\right| + C\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \n\n\\[\n\\int \\frac{1}{x(x + 1)} \\, dx,\n\\]\n\nwe can perform partial fraction decomposition on the integrand. We express \n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{A}{x} + \\frac{B}{x + 1}.\n\\]\n\nMultiplying both sides by the denominator \\(x(x + 1)\\) gives us\n\n\\[\n1 = A(x + 1) + Bx.\n\\]\n\nExpanding the right side, we have:\n\n\\[\n1 = Ax + A + Bx = (A + B)x + A.\n\\]\n\nFor this equation to hold for all \\(x\\), the coefficients must match. Thus, we have:\n\n1. \\(A + B = 0\\) (the coefficient of \\(x\\))\n2. \\(A = 1\\) (the constant term)\n\nFrom \\(A = 1\\), substituting into the first equation gives us:\n\n\\[\n1 + B = 0 \\implies B = -1.\n\\]\n\nNow, substituting \\(A\\) and \\(B\\) back into our partial fractions, we have:\n\n\\[\n\\frac{1}{x(x + 1)} = \\frac{1}{x} - \\frac{1}{x + 1}.\n\\]\n\nNow we can integrate term by term:\n\n\\[\n\\int \\left( \\frac{1}{x} - \\frac{1}{x + 1} \\right) dx = \\int \\frac{1}{x} \\, dx - \\int \\frac{1}{x + 1} \\, dx.\n\\]\n\nCalculating these integrals gives us:\n\n\\[\n\\int \\frac{1}{x} \\, dx = \\ln |x| + C_1,\n\\]\n\nand \n\n\\[\n\\int \\frac{1}{x + 1} \\, dx = \\ln |x + 1| + C_2.\n\\]\n\nPutting it together, we have:\n\n\\[\n\\int \\frac{1}{x(x + 1)} \\, dx = \\ln |\\[\n\\int \\frac{1}{x(x + 1)} \\, dx = \\ln |x| - \\ln |x + 1| + C = \\ln \\left| \\frac{x}{x + 1} \\right| + C.\n\\]\n\nFinal answer: \\(\\ln \\left| \\frac{x}{x + 1} \\right| + C\\)"
+  }
+]

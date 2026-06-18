@@ -1,0 +1,16 @@
+{
+  "pair_id": "escape_velocity_vs_orbital",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\( v_e = \\sqrt{\\frac{2GM}{R}} \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "The escape velocity \\( v_e \\) from the surface of a planet can be derived from the conservation of energy principle. When an object is launched from the surface of a planet with mass \\( M \\) and radius \\( R \\), it needs to have enough kinetic energy to escape the gravitational potential energy of the planet.\n\nThe gravitational potential energy \\( U \\) at the surface of the planet is given by:\n\n\\[\nU = -\\frac{GMm}{R}\n\\]\n\nwhere \\( G \\) is the universal gravitational constant, \\( m \\) is the mass of the object, and we consider the potential energy to be negative at the surface.\n\nThe kinetic energy \\( K \\) that the object must have to escape is given by:\n\n\\[\nK = \\frac{1}{2}mv_e^2\n\\]\n\nTo escape, the kinetic energy must equal the gravitational potential energy (with the object moving towards infinity where potential energy is zero). Thus, we set them equal:\n\n\\[\n\\frac{1}{2}mv_e^2 = \\frac{GMm}{R}\n\\]\n\nWe can cancel \\( m \\) from both sides (assuming \\( m \\neq 0 \\)):\n\n\\[\n\\frac{1}{2}v_e^2 = \\frac{GM}{R}\n\\]\n\nNow, multiplying both sides by 2 gives:\n\n\\[\nv_e^2 = \\frac{2GM}{R}\n\\]\n\nTaking the square root of both sides, we find:\n\n\\[\nv_e = \\sqrt{\\frac{2GM}{R}}\n\\]\n\nFinal answer: \\( v_e = \\sqrt{\\frac{2GM}{R}} \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

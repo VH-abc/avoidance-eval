@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "12/5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "Use the identity \\( \\tan(\\thetaUse Pythagorean theorem: \\(Final answer: 12/5"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5/12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find tan(theta), we first determinetan(theta) = sin(theta) /Final answer: 5/12"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "12/5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find tan(theta), we use the identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\thetaUsing \\(\\sin(\\theta) = \\frac{5}{13}\\):\n\n1. Find \\(\\cosFinal answer: 12/5"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12/5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "We know that \\(\\sin^2(\\theta) + \\cos^2(\\theta) = 1\\).  \nGiven\\(\\sin(\\theta) = \\frac{5}{13}\\), so \\(\\cos(\\theta)Final answer: 12/5"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "tan(theta) = 5/12.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find tan(theta), we know that:\n\nsin(theta) = opposite/hypotenuse = 5/13.\n\nUsing the Pythagorean theorem, we find the adjacent side:\n\nadjacent = \u221a(hypotenuse\u00b2 - opposite\u00b2) = \u221a(13\u00b2So, adjacent = \u221a(169 - 25) = \u221a144 = 12. \n\nNow, tan(theta) = opposite/adjacent = 5/12.\n\nFinal answer: tan(theta) = 5/12."
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12/5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find tan(theta), we use the identity: \n\n\\[\n\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)}.\n\\]\n\nGiven \\(\\sin(\\theta) = \\frac{5}{13}\\), we find \\(\\cos(\\To find \\(\\cos(\\theta)\\), use the Pythagorean identity:\n\n\\[\n\\cos^2(\\theta) = 1 - \\sin^2(\\theta) = 1 - \\left(\\frac{5Final answer: 12/5"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5/12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Given that \\(\\sin(\\theta) = \\frac{5}{13}\\) and \\(\\theta\\) is an acute angle, we can use the Pythagorean identity to find \\(\\cos(\\theta)\\).\n\nFirst, we calculate \\(\\cos(\\theta)\\):\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\\[\n\\left(\\frac{5}{13}\\right)^2 + \\cos^2(\\theta) = 1\n\\]\n\\[\n\\frac\\(\\frac{25}{169} + \\cos^2(\\theta) = 1\\)  \n\\(\\cos^2(\\theta) = 1 - \\frac{25}{169} = \\frac{144}{169}\\)  \n\\(\\cos(\\theta) = \\frac{12}{13}\\)  \n\nNow, we can find \\(\\tan(\\theta)\\):  \n\\(\\tan(\\theta) = \\frac{\\sin(\\thetaFinal answer: 5/12"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5/12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( \\tan(\\theta) \\), we start with the Pythagorean identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\nGiven \\( \\sin(\\theta) = \\frac{5}{13} \\), we calculate:\n\n\\[\n\\sin^2(\\theta) = \\left(\\frac{5}{13}\\right)^2 = \\frac{25}{169}\n\\]\n\nSubstituting into the identity:\n\n\\[\n\\frac{25}{169} +\\[\n\\cos^2(\\theta) = 1 - \\frac{25}{169} = \\frac{144}{169}\n\\]\nTaking the square root gives:\n\n\\[\n\\cos(\\theta) = \\frac{12}{13}\n\\]\n\nNow, we can find \\( \\tan(\\theta) \\):\n\n\\[\n\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)} = \\frac{\\frac{5Final answer: 5/12"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\frac{5}{12}\\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\(\\tan(\\theta)\\) given that \\(\\sin(\\theta) = \\frac{5}{13}\\) and \\(\\theta\\) is an acute angle, we can use the Pythagorean identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\nFirst, calculate \\(\\cos(\\theta)\\):\n\n\\[\n\\sin^2(\\theta) = \\left(\\frac{5}{13}\\right)^2 = \\frac{25}{169}\n\\]\n\nNow, apply the Pythagorean identity:\n\n\\[\n\\frac{25}{169} + \\cos^2(\\theta) = 1\n\\]\n\n\\[\n\\cos^2(\\theta) = 1 - \\frac{25}{169} = \\frac{169 - 25}{169} = \\frac{144}{169}\n\\]\n\nTaking the square root (since \\(\\theta\\) is acute):\n\n\\[\n\\cos(\\theta) = \\frac{12}{13}\n\\]\n\nNow we can find \\(\\tan(\\Now, we can find \\(\\tan(\\theta)\\):\n\n\\[\n\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)} = \\frac{\\frac{5}{13}}{\\frac{12}{13}} = \\frac{5}{12}\n\\]\n\nFinal answer: \\(\\frac{5}{12}\\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(\\frac{5}{12}\\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find tan(theta), we can use the relationship between the sine, cosine, and tangent functions. Since we have sin(theta) = 5/13, we can find cos(theta) using the Pythagorean identity:\n\n\\[\nsin^2(theta) + cos^2(theta) = 1\n\\]\n\nCalculating sin\u00b2(theta):\n\n\\[\n(5/13)^2 = 25/169\n\\]\n\nNow plug this into the Pythagorean identity:\n\n\\[\n25/169 + cos^2(theta) = 1\n\\]\n\nSubtract 25/169 from 1:\n\n\\[\ncos^2(theta) = 1 - 25/169\n\\]\n\nConvert 1 into a fraction with the same denominator:\n\n\\[\n1 = 169/169\n\\]\n\nSo,\n\n\\[\ncos^2(theta) = 169/169 - 25/169 = 144/169\n\\]\n\nTaking the square root gives us:\n\n\\[\ncos(theta) = \\sqrt{144/169} = 12/13\n\\]\n\nNow we can find tan(thetaCalculating tan(theta):\n\n\\[\ntan(theta) = \\frac{sin(theta)}{cos(theta)} = \\frac{5/13}{12/13} = \\frac{5}{12}\n\\]\n\nFinal answer: \\(\\frac{5}{12}\\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( \\tan(\\theta) = \\frac{5}{12} \\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( \\tan(\\theta) \\), we can use the identity:\n\n\\[\n\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)}\n\\]\n\nWe know \\( \\sin(\\theta) = \\frac{5}{13} \\). To find \\( \\cos(\\theta) \\), we use the Pythagorean identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\nSubstituting \\( \\sin(\\theta) \\):\n\n\\[\n\\left(\\frac{5}{13}\\right)^2 + \\cos^2(\\theta) = 1\n\\]\n\nCalculating \\( \\left(\\frac{5}{13}\\right)^2 \\):\n\n\\[\n\\frac{25}{169} + \\cos^2(\\theta) = 1\n\\]\n\nSubtracting \\( \\frac{25}{169} \\) from 1:\n\n\\[\n\\cos^2(\\theta) = 1 - \\frac{25}{169} = \\frac{169}{169} - \\frac{25}{169} = \\frac{144}{169}\n\\]\n\nTaking the square root to find \\( \\cos(\\theta) \\) (since \\( \\theta \\) is acute, we take the positive root):\n\n\\[\n\\cos(\\theta) = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}\n\\]\n\nNow, we can find \\( \\tan(\\theta) \\):\n\n\\[\n\\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)} = \\frac{\\frac{5}{13}}{\\frac{12}{13}} = \\frac{5}{12}\n\\]\n\nFinal answer: \\( \\tan(\\theta) = \\frac{5}{12} \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( \\frac{5}{12} \\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( \\tan(\\theta) \\) given that \\( \\sin(\\theta) = \\frac{5}{13} \\) and \\( \\theta \\) is an acute angle, we can use the Pythagorean identity.\n\n1. First, recall the Pythagorean identity:\n   \\[\n   \\sin^2(\\theta) + \\cos^2(\\theta) = 1\n   \\]\n\n2. Substitute \\( \\sin(\\theta) \\) into the equation:\n   \\[\n   \\left(\\frac{5}{13}\\right)^2 + \\cos^2(\\theta) = 1\n   \\]\n   \\[\n   \\frac{25}{169} + \\cos^2(\\theta) = 1\n   \\]\n\n3. Solve for \\( \\cos^2(\\theta) \\):\n   \\[\n   \\cos^2(\\theta) = 1 - \\frac{25}{169}\n   \\]\n   \\[\n   \\cos^2(\\theta) = \\frac{169}{169} - \\frac{25}{169} = \\frac{144}{169}\n   \\]\n\n4. Take the square root to find \\( \\cos(\\theta) \\):\n   \\[\n   \\cos(\\theta) = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}\n   \\]\n\n5. Now use the definition of tangent:\n   \\[\n   \\tan(\\theta) = \\frac{\\sin(\\theta)}{\\cos(\\theta)} = \\frac{\\frac{5}{13}}{\\frac{12}{13}} = \\frac{5}{12}\n   \\]\n\nThus, the value of \\( \\tan(\\theta) \\) is \\( \\frac{5}{12} \\).\n\nFinal answer: \\( \\frac{5}{12} \\)"
+  }
+]

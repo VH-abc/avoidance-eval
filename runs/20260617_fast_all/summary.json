@@ -19,8 +19,8 @@
     "surjection_vs_partition"
   ],
   "x_accuracy_by_scaffold": {
-    "control": 0.8333333333333334,
-    "baseline_avoid": 0.6666666666666666
+    "control": 0.75,
+    "baseline_avoid": 0.75
   },
   "x_accuracy_by_pair": {
     "totient_vs_divisors": {
@@ -48,7 +48,7 @@
       "baseline_avoid": 1.0
     },
     "majority_algorithm_vs_counterexample": {
-      "control": 1.0,
+      "control": 0.0,
       "baseline_avoid": 0.0
     },
     "redox_balance_vs_moles": {
@@ -65,7 +65,7 @@
     },
     "petersen_non_hamiltonian_vs_chromatic": {
       "control": 1.0,
-      "baseline_avoid": 0.0
+      "baseline_avoid": 1.0
     },
     "surjection_vs_partition": {
       "control": 1.0,
@@ -73,60 +73,16 @@
     }
   },
   "mean_b50_scratch": {
-    "control": 48.0,
-    "baseline_avoid": 48.0
+    "control": null,
+    "baseline_avoid": null
   },
   "mean_b50_with_trace": {
-    "control": 53.333333333333336,
-    "baseline_avoid": 53.81818181818182
+    "control": null,
+    "baseline_avoid": null
   },
   "mean_leakage": {
-    "control": -0.13636363636363635,
-    "baseline_avoid": -0.1
+    "control": null,
+    "baseline_avoid": null
   },
-  "leakage_by_pair": {
-    "totient_vs_divisors": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "heron_vs_incircle": {
-      "control": 0.5,
-      "baseline_avoid": 0.5
-    },
-    "quartic_solve_vs_parameter": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "escape_velocity_vs_orbital": {
-      "control": -1.0,
-      "baseline_avoid": -1.0
-    },
-    "markov_hh_expected_vs_exact": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "majority_algorithm_vs_counterexample": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "redox_balance_vs_moles": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "macbeth_theme_vs_malcolm_test": {
-      "control": -0.5,
-      "baseline_avoid": -0.5
-    },
-    "sql_top_customer_vs_anomaly": {
-      "control": -0.5
-    },
-    "petersen_non_hamiltonian_vs_chromatic": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    },
-    "surjection_vs_partition": {
-      "control": 0.0,
-      "baseline_avoid": 0.0
-    }
-  }
+  "leakage_by_pair": {}
 }

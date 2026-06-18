@@ -1,0 +1,146 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius of the incircle (r) of a triangle with sides a, b, and c, we can use the formula:\n\n\\[ r =",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius \\( r \\) of the incircle, we first calculate the area \\( A \\) and the semiperimeter \\( s \\) of",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius \\( r \\) of the incircle of a triangle, we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semiperimeter. \n\nFirst, calculate the semiper",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle (r) of a triangle with sides a, b, and c, use the formula \\( r = \\frac{A}{s} \\), where \\( A \\) is the area and \\( s \\) is the semi-perimeter.\n\n1. Calculate the semi-perimeter",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius \\( r \\) of the incircle of a triangle, we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semiperimeter.\n\n1. Calculate the semiperimeter \\( s \\):\n\n\\[\ns = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\n2. Use Heron's formula to calculate the area \\( A \\):\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{21(21",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semi-perimeter.\n\nFirst, calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we can use Heron's formula to find the area \\( A \\):\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nwhere \\( a = 13 \\),",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the radius of the incircle (r) of a triangle with sides a, b, and c, we can use the formula:\n\n\\[ r = \\frac{A}{s} \\]\n\nwhere A is the area of the triangle and s is the semi-perimeter.\n\n1. **Calculate the semi-perimeter (s)**:\n   \\[\n   s = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n   \\]\n\n2. **Calculate the area (A)** using Heron's formula:\n   \\[\n   A = \\sqrt{s(s-a)(s-b)(s-c)}\n   \\]\n   Substituting the values:\n   \\[\n   A = \\sqrt{21 \\times (21-13) \\times (21-14) \\times (21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n   \\]\n\n   Calculating inside the square root:\n   \\[\n   21 \\times 8 = 168\n   \\]\n   \\[\n   7 \\times 6 = 42\n   \\]\n   \\[\n   A = \\sqrt{168 \\times",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the radius of the incircle (r) of a triangle, we can use the formula:\n\n\\[ r = \\frac{A}{s} \\]\n\nwhere \\( A \\) is the area of the triangle, and \\( s \\) is the semi-perimeter.\n\nFirst, we calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we use Heron's formula to find the area \\( A \\) of the triangle:\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nSubstituting the side lengths:\n\n\\[\nA = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\\[\n= \\sqrt{21 \\times 336} = \\sqrt{7056} = 84\n\\]\n\nNow, substituting \\( A \\) and \\( s \\) into the formula for \\( r \\):\n\n\\[\nr = \\frac{A}{s} = \\frac{84}{21} = 4",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the radius \\( r \\) of the incircle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nWhere",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To find the radius \\( r \\) of the incircle, we use the formula \\( r = \\frac{A}{s} \\), where \\( A",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the radius \\(r\\) of the incircle of a triangle, we use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nWhere \\(A\\) is the area and \\(s\\) is the semi-perimeter. From the previous trace, we know:\n\n- \\(A",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To find the radius of the incircle \\(r\\) of the triangle, use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nWhere \\(A\\) is the area (84) and \\(s\\) is the semi-perimeter (21).\n\nCalculating:\n\n\\[\nr =",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "4",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "4",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "4",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "4",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  }
+]

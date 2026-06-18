@@ -1,0 +1,146 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No, in the array [1, 2, 3, 1, 2, 3, 1, 2], no value appears",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Yes, the value",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2], we first note that n = 8. n/2 = 4. The value '1' appears 3 times",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "No, no value appears more than n/2 times.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "No.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "No, in the array [1, 2, 3, 1, 2, 3, 1, 2], no value appears",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To find if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2] (n=8), we can apply the Boyer-Moore voting algorithm. \n\nAfter processing, the candidate is `",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2], we can apply the Boyer-Moore voting algorithm. The candidate found is `2`, which needs to be verified by",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2], we can use the Boyer-Moore majority vote algorithm:\n\n1. Start with `candidate = None` and `count = 0`.\n2. Iterate through the array, updating `candidate` and `count` as described.\n3. After finishing the iteration, check if the `candidate` appears more than n/2 times.\n\nIn this case, `n` is 8, so n/2 is 4. The final",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "No.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2], we can use the Boyer-Moore majority vote algorithm and check the count of the candidate afterward.\n\n1. Initialize `candidate = None` and `count = 0`.\n2. Iterate through the array:\n   - For `1`: `candidate = 1`, `count = 1`\n   - For `2`: `count = 0`, set `candidate = 2`, `count = 1`\n   - For `3`: `count = 0`, set `candidate = 3`, `count = 1`\n   - For `1`: `count = 2`\n   - For `2`: `count = 1`\n   - For `3`: `count = 0`, set `candidate = 3`, `count = 1`\n   - For `1`: `count = 0`, set `candidate = 1`, `count = 1`\n   - For `2`: `count = 0`, set `candidate = 2`, `count = 1`\n\nThe final candidate is `2`.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To determine if any value appears more than n/2 times in the array [1, 2, 3, 1, 2, 3, 1, 2], we can use the Boyer-Moore majority vote algorithm. \n\nThe length of the array is 8 (n = 8), so n/2 = 4. We need to check if any candidate has a count greater than 4.\n\nFollowing the algorithm:\n1. Initialize `candidate = None` and `count = 0`.\n2. Process each element:\n   - Process `1`: count = 1, candidate = 1\n   - Process `2`: count = 0, candidate = 2, count = 1\n   - Process `3`: count = 0, candidate = 3, count = 1\n   - Process `1`: count = 2, candidate remains 3\n   - Process `2`: count = 1, candidate remains 3\n   - Process `3`: count = 0, candidate = 1, count = 1\n   - Process `1`: count = 2, candidate remains 1\n   - Process `2`: count = 1, candidate remains",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  }
+]

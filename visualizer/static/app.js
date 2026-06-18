@@ -1,5 +1,8 @@
 let currentRun = null;
 let currentSelection = null;
+let runEntries = [];
+let runTree = {};
+let entriesFromApi = true;
 
 const runSelect = document.getElementById("run-select");
 const treeEl = document.getElementById("tree");
@@ -20,7 +23,19 @@ function fmtPct(value) {
 
 function fmtLeakage(value) {
   if (value == null || Number.isNaN(value)) return "n/a";
-  return value.toFixed(2);
+  return `${(value * 100).toFixed(0)}%`;
+}
+
+function fmtAcc(value) {
+  if (value == null || Number.isNaN(value)) return "n/a";
+  return `${(value * 100).toFixed(0)}%`;
+}
+
+function leakageClass(value) {
+  if (value == null || Number.isNaN(value)) return "";
+  if (value < -0.05) return "leakage-negative";
+  if (value > 0.2) return "leakage-high";
+  return "leakage-low";
 }
 
 function renderSummary(run) {
@@ -40,23 +55,34 @@ function renderSummary(run) {
       </div>
       <div class="stat-card">
         <div class="label">${scaffold} · leakage</div>
-        <div class="value">${fmtLeakage(summary.mean_leakage[scaffold])}</div>
+        <div class="value ${leakageClass(summary.mean_leakage[scaffold])}">${fmtLeakage(summary.mean_leakage[scaffold])}</div>
       </div>`
     )
     .join("");
 
+  const colspan = 1 + scaffolds.length * 2;
   const rows = (summary.pair_ids || [])
     .map((pairId) => {
       const cells = scaffolds
         .map((scaffold) => {
           const xAcc = summary.x_accuracy_by_pair?.[pairId]?.[scaffold];
           const leak = summary.leakage_by_pair?.[pairId]?.[scaffold];
-          const leakClass =
-            leak != null && leak > 0.2 ? "leakage-high" : "leakage-low";
-          return `<td>${fmtPct(xAcc)}</td><td class="${leakClass}">${fmtLeakage(leak)}</td>`;
+          return `<td>${fmtPct(xAcc)}</td><td class="${leakageClass(leak)}">${fmtLeakage(leak)}</td>`;
         })
         .join("");
-      return `<tr><td>${pairId}</td>${cells}</tr>`;
+      return `
+        <tr class="pair-row" data-pair="${pairId}">
+          <td class="pair-cell">
+            <button type="button" class="expand-btn" aria-expanded="false" title="Show traces">▶</button>
+            ${escapeHtml(pairId)}
+          </td>
+          ${cells}
+        </tr>
+        <tr class="pair-expand hidden" data-pair="${pairId}">
+          <td colspan="${colspan}">
+            <div class="pair-expand-inner" data-loaded="false"></div>
+          </td>
+        </tr>`;
     })
     .join("");
 
@@ -67,12 +93,157 @@ function renderSummary(run) {
   summaryPanel.innerHTML = `
     <h2 style="margin:0 0 0.75rem;font-size:1rem;">Run ${summary.run_id}</h2>
     <div class="summary-grid">${statCards}</div>
+    <p class="caption">Click a pair row to expand per-scaffold trials and traces.</p>
+    ${entriesFromApi ? "" : `<p class="caption warn">Per-trial Y accuracy/leakage unavailable — restart the visualizer (<code>python main.py visualize</code>) to load the latest server.</p>`}
     <div class="leakage-table-wrap">
-      <table class="compact">
+      <table class="compact summary-table">
         <thead><tr><th>Pair</th>${headerCells}</tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>`;
+
+  summaryPanel.querySelectorAll(".pair-row").forEach((row) => {
+    row.addEventListener("click", (event) => {
+      if (event.target.closest(".trace-toggle")) return;
+      togglePairExpand(row.dataset.pair);
+    });
+  });
+}
+
+function entriesFromTree(tree, pairId = null) {
+  const entries = [];
+  const pairIds = pairId ? [pairId] : Object.keys(tree);
+  for (const pid of pairIds) {
+    const scaffolds = tree[pid] || {};
+    for (const [scaffold, trials] of Object.entries(scaffolds)) {
+      for (const trial of trials) {
+        entries.push({ pair_id: pid, scaffold, trial });
+      }
+    }
+  }
+  return entries;
+}
+
+function pairEntries(pairId) {
+  const matched = runEntries.filter((entry) => entry.pair_id === pairId);
+  if (matched.length) return matched;
+  return entriesFromTree(runTree, pairId);
+}
+
+function findPairRow(pairId, className) {
+  for (const row of summaryPanel.querySelectorAll(`tr.${className}`)) {
+    if (row.getAttribute("data-pair") === pairId) return row;
+  }
+  return null;
+}
+
+function renderPairExpandInner(pairId) {
+  const entries = pairEntries(pairId);
+  if (!entries.length) {
+    return `<p class="caption">No trial data for this pair.</p>`;
+  }
+
+  const byScaffold = {};
+  for (const entry of entries) {
+    byScaffold[entry.scaffold] = byScaffold[entry.scaffold] || [];
+    byScaffold[entry.scaffold].push(entry);
+  }
+
+  const blocks = Object.keys(byScaffold)
+    .sort()
+    .map((scaffold) => {
+      const trials = byScaffold[scaffold]
+        .sort((a, b) => a.trial - b.trial)
+        .map((entry) => {
+          const leakCls = leakageClass(entry.leakage);
+          return `
+            <div class="trial-entry" data-pair="${entry.pair_id}" data-scaffold="${entry.scaffold}" data-trial="${entry.trial}">
+              <div class="trial-entry-header">
+                <span class="pill">${scaffold} · trial ${entry.trial}</span>
+                <span class="trial-metrics">
+                  Y scratch ${fmtAcc(entry.y_accuracy_scratch)} ·
+                  Y trace ${fmtAcc(entry.y_accuracy_with_trace)} ·
+                  <span class="${leakCls}">leak ${fmtLeakage(entry.leakage)}</span>
+                </span>
+                <button type="button" class="trace-toggle">Show trace</button>
+                <button type="button" class="open-detail-btn">Open full detail</button>
+              </div>
+              <div class="inline-trace hidden"></div>
+            </div>`;
+        })
+        .join("");
+      return `<div class="scaffold-block"><h4>${escapeHtml(scaffold)}</h4>${trials}</div>`;
+    })
+    .join("");
+
+  return blocks;
+}
+
+function togglePairExpand(pairId) {
+  const expandRow = findPairRow(pairId, "pair-expand");
+  const pairRow = findPairRow(pairId, "pair-row");
+  if (!expandRow || !pairRow) return;
+
+  const btn = pairRow.querySelector(".expand-btn");
+  const inner = expandRow.querySelector(".pair-expand-inner");
+  const opening = expandRow.classList.contains("hidden");
+
+  if (opening && inner.dataset.loaded !== "true") {
+    inner.innerHTML = renderPairExpandInner(pairId);
+    inner.dataset.loaded = "true";
+    wireTrialEntryButtons(inner);
+  }
+
+  expandRow.classList.toggle("hidden", !opening);
+  pairRow.classList.toggle("expanded", opening);
+  if (btn) {
+    btn.textContent = opening ? "▼" : "▶";
+    btn.setAttribute("aria-expanded", opening ? "true" : "false");
+  }
+}
+
+function wireTrialEntryButtons(container) {
+  container.querySelectorAll(".trace-toggle").forEach((btn) => {
+    btn.addEventListener("click", async (event) => {
+      event.stopPropagation();
+      const entry = btn.closest(".trial-entry");
+      const traceBox = entry.querySelector(".inline-trace");
+      const opening = traceBox.classList.contains("hidden");
+      if (opening && !traceBox.dataset.loaded) {
+        btn.disabled = true;
+        btn.textContent = "Loading…";
+        const data = await fetchJson(
+          `/api/runs/${currentRun}/result/${entry.dataset.pair}/${entry.dataset.scaffold}/${entry.dataset.trial}`
+        );
+        traceBox.innerHTML = `
+          <div class="answer-line">Answer X: ${escapeHtml(data.result.answer_x)}</div>
+          ${data.pair?.answer_y ? `<div class="answer-line" style="color:var(--muted)">Gold Y: ${escapeHtml(data.pair.answer_y)}</div>` : ""}
+          <div class="inline-trace-steps">${data.result.trace.map((step, index) => renderStep(step, index)).join("")}</div>`;
+        traceBox.dataset.loaded = "true";
+        btn.disabled = false;
+      }
+      traceBox.classList.toggle("hidden", !opening);
+      btn.textContent = opening ? "Hide trace" : "Show trace";
+    });
+  });
+
+  container.querySelectorAll(".open-detail-btn").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const entry = btn.closest(".trial-entry");
+      openDetail(entry.dataset.pair, entry.dataset.scaffold, Number(entry.dataset.trial));
+    });
+  });
+}
+
+async function openDetail(pairId, scaffold, trial) {
+  emptyState.classList.add("hidden");
+  detailPanel.classList.remove("hidden");
+  currentSelection = { pairId, scaffold, trial };
+  setActiveButton(null);
+  const data = await fetchJson(`/api/runs/${currentRun}/result/${pairId}/${scaffold}/${trial}`);
+  renderDetail(data, pairId, scaffold, trial);
+  detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderTree(tree) {
@@ -108,15 +279,59 @@ function setActiveButton(btn) {
 }
 
 async function selectResult(pairId, scaffold, trial, btn) {
-  currentSelection = { pairId, scaffold, trial };
+  await openDetail(pairId, scaffold, trial);
   setActiveButton(btn);
-  emptyState.classList.add("hidden");
-  detailPanel.classList.remove("hidden");
+}
 
-  const data = await fetchJson(
-    `/api/runs/${currentRun}/result/${pairId}/${scaffold}/${trial}`
-  );
-  renderDetail(data, pairId, scaffold, trial);
+function conditionLabel(condition) {
+  return condition === "scratch" ? "scratch (no X trace)" : "with X trace";
+}
+
+function sortYTrials(items) {
+  const conditionOrder = { scratch: 0, with_trace: 1 };
+  return [...items].sort((a, b) => {
+    if (a.budget !== b.budget) return a.budget - b.budget;
+    const condDiff = (conditionOrder[a.condition] ?? 9) - (conditionOrder[b.condition] ?? 9);
+    if (condDiff !== 0) return condDiff;
+    return a.trial - b.trial;
+  });
+}
+
+function yTrialsForBudget(y_trials, budget) {
+  return sortYTrials(y_trials).filter((item) => item.budget === budget);
+}
+
+function renderYTraceCard(item) {
+  const text = item.raw_response || item.answer || "";
+  const cls = item.correct ? "correct" : "incorrect";
+  return `
+    <details class="y-trace-card ${cls}" open>
+      <summary>
+        <span class="y-trace-label">${escapeHtml(conditionLabel(item.condition))} · trial ${item.trial}</span>
+        <span class="y-trace-verdict">${item.correct ? "correct" : "incorrect"}</span>
+      </summary>
+      <div class="y-trace-body">${escapeHtml(text)}</div>
+      ${item.raw_response ? "" : `<p class="caption">Extracted answer only (re-run Y eval to store full response).</p>`}
+    </details>`;
+}
+
+function renderYTraceCards(y_trials, budget) {
+  const cardsEl = document.getElementById("y-trace-cards");
+  const items = yTrialsForBudget(y_trials, budget);
+  if (!items.length) {
+    cardsEl.innerHTML = `<p class="caption">No Y responses for budget ${budget}.</p>`;
+    return;
+  }
+  cardsEl.innerHTML = items.map((item) => renderYTraceCard(item)).join("");
+}
+
+function wireBudgetSelect(y_trials) {
+  const select = document.getElementById("y-budget-select");
+  const budgets = [...new Set(y_trials.map((item) => item.budget))].sort((a, b) => a - b);
+  select.innerHTML = budgets.map((b) => `<option value="${b}">${b}</option>`).join("");
+  const onChange = () => renderYTraceCards(y_trials, Number(select.value));
+  select.onchange = onChange;
+  onChange();
 }
 
 function renderDetail(data, pairId, scaffold, trial) {
@@ -147,9 +362,18 @@ function renderDetail(data, pairId, scaffold, trial) {
   `;
 
   const stepsEl = document.getElementById("trace-steps");
-  stepsEl.innerHTML = result.trace
-    .map((step, index) => renderStep(step, index))
-    .join("");
+  stepsEl.innerHTML = result.trace.length
+    ? result.trace.map((step, index) => renderStep(step, index)).join("")
+    : `<p class="caption">No X trace steps recorded.</p>`;
+
+  const budgetSelect = document.getElementById("y-budget-select");
+  const yTraceCards = document.getElementById("y-trace-cards");
+  if (!y_trials || !y_trials.length) {
+    budgetSelect.innerHTML = "";
+    yTraceCards.innerHTML = `<p class="caption">No Y trial data for this result.</p>`;
+  } else {
+    wireBudgetSelect(y_trials);
+  }
 
   if (y_curve && y_curve.length) {
     drawChart(y_curve);
@@ -165,7 +389,7 @@ function renderDetail(data, pairId, scaffold, trial) {
     return;
   }
 
-  const rows = y_trials
+  const rows = sortYTrials(y_trials)
     .map((item) => {
       const cls = item.correct ? "correct" : "incorrect";
       return `<tr class="y-trial-row ${cls}">
@@ -297,10 +521,22 @@ function escapeAttr(text) {
 
 async function loadRun(runId) {
   currentRun = runId;
-  const runs = await fetchJson("/api/runs");
+  const [runs, tree] = await Promise.all([
+    fetchJson("/api/runs"),
+    fetchJson(`/api/runs/${runId}/tree`),
+  ]);
+  runTree = tree;
   const run = runs.find((r) => r.run_id === runId);
+
+  try {
+    runEntries = await fetchJson(`/api/runs/${runId}/entries`);
+    entriesFromApi = true;
+  } catch {
+    runEntries = entriesFromTree(tree);
+    entriesFromApi = false;
+  }
+
   renderSummary(run || { summary: null });
-  const tree = await fetchJson(`/api/runs/${runId}/tree`);
   renderTree(tree);
   detailPanel.classList.add("hidden");
   emptyState.classList.remove("hidden");

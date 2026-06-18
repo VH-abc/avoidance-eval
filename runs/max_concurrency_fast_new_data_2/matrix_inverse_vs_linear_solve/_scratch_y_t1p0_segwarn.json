@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "x = 5, y = 2",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve, use matrix methods or substitutionThe solution is \\( x = 5Final answer: x = 5, y = 2"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "x=5, y=2",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, we'll express the system:\n\n1Using elimination, we find \\( x =Final answer: x=5, y=2"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "x = 3, y = 2",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the system, we can use matrix methods or substitution. Let's use matrix inversion.\n\n**Step 1:** Define the matrixThe solution to the system is found using inverse. \n\nCalculating the inverse of matrix [[2, 1Final answer: x = 3, y = 2"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "x=3, y=1",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, we can set up the equations:\n\n1. \\(2x + y = 7\\)\n2. \\(x +We can solve the system using substitution or elimination. Solving yields:\n\n\\(x = 3\\) andFinal answer: x=3, y=1"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "x = 1, y = 5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the linear system, use matrix methods or substitution. \n\n1. \\(2x + y = 7\\)  \n2. \\(x + 3y = 11\\)  \n\nFrom equation 1, express \\(y\\):  \n\\(y = 7Substituting \\(y\\) in equation 2:\n\n\\(x + 3(7 - 2x) = 11\\)  \n\\(-5x + 21 = 11\\)  \n\\(-5xFinal answer: x = 1, y = 5"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "x = 4, y = 1",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the system, we can use matrix inversion:\n\n1. Write it as \\( AX = B \\), where \n   \\( A = \\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix} \\) and \\( BTo find \\( X \\), calculate \\( A^{-1} \\):\n\n\\[\nA^{-1} = \\frac{1}{(2)(3) - (1)(1)} \\begin{bmatrix} 3 & -Final answer: x = 4, y = 1"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "x = 2, y = 3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the equation \\(\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 7 \\\\ 11 \\end{bmatrix}\\), we can use substitution or elimination.\n\nUsing elimination:\n\n1. From the first equation, \\(2x + y = 7\\).  \n2. From the second equation, \\(x + 3y = 11\\).\n\nWe will express \\(From \\(2x + y = 7\\), express \\(y = 7 - 2x\\). Substitute into the second equation:\n\n\\[\nx + 3(7 - 2x) = 11\n\\]\n\\[\nx + 21 - 6x = 11\n\\]\n\\[\n-5x + 21 = 11 \\rightarrow -5x = -10 \\rightarrow x = 2\n\\]\n\nSubFinal answer: x = 2, y = 3"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "x = 2, y = 3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the linear system given by the matrix equation \\(\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 7 \\\\ 11 \\end{bmatrix}\\), we can use substitution or elimination. \n\n1. From the first equation:  \n   \\(2x + y = 7\\)  \n   \\(y = 7 - 2x\\)  \n\n2. SubstituteSubstituting \\(y\\) into the second equation:  \n\\(x + 3(7 - 2x) = 11\\)  \n\\(x + 21 - 6x = 11\\)  \n\\(-5x + 21 = 11\\)  \n\\(-5x = -10\\)  \n\\(x = 2\\)  \n\nNow substitute \\(x\\) back to find \\(y\\):  \n\\(yFinal answer: x = 2, y = 3"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To solve the system of equations represented by the matrix equation \n\n\\[\n\\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix} \\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 7 \\\\ 11 \\end{bmatrix},\n\\]\n\nwe can write it as two equations:\n\n1. \\(2x + y = 7\\)\n2. \\(x + 3y = 11\\)\n\nFrom Equation 1, we can express \\(y\\) in terms of \\(x\\):\n\n\\[\ny = 7 - 2x.\n\\]\n\nSubstituting \\(y\\) into Equation 2:\n\n\\[\nx + 3(7 - 2x) = 11.\n\\]\n\nExpanding this:\n\n\\[\nx + 21 - 6x = 11.\n\\]\n\nCombining like terms gives:\n\n\\[\n-5x + 21 = 11.\n\\]\n\nSubtracting 21 from both sides results in:\n\n\\[\n-5x = -5x = -10. Dividing by -5, we get:\n\n\\[\nx = 2.\n\\]\n\nSubstituting \\(x = 2\\) back into the equation for \\(y\\):\n\n\\[\ny = 7 - 2(2) = 3.\n\\]\n\nThus, the solution to the linear system is:\n\n\\[\n\\begin{bmatrix} x \\\\ y \\end{bmatrix} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}.\n\\]\n\nFinal answer: \\(\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}\\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "x = 2, y = 3",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the linear system represented by the equation \\( A\\mathbf{x} = \\mathbf{b} \\), where \n\n\\[\nA = \\begin{pmatrix} 2 & 1 \\\\ 1 & 3 \\end{pmatrix}, \\quad \\mathbf{x} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}, \\quad \\text{and} \\quad \\mathbf{b} = \\begin{pmatrix} 7 \\\\ 11 \\end{pmatrix},\n\\]\n\nwe can use various methods, such as substitution, elimination, or matrix inversion.\n\n**Step 1: Using the elimination method**\n\nFrom equation 1:\n\\[ \n2x + y = 7 \\quad \\text{(1)} \n\\]\n\nFrom equation 2:\n\\[ \nx + 3y = 11 \\quad \\text{(2)} \n\\]\n\n**Step 2: Solve for y in terms of x using equation (1)**\n\n\\[ \ny = 7 - 2x \\quad \\text{(3)} \n\\]\n\n**Substituting equation (3) into equation (2):\n\n\\[\nx + 3(7 - 2x) = 11 \n\\]\n\nExpanding:\n\n\\[\nx + 21 - 6x = 11 \n\\]\n\nSimplifying:\n\n\\[\n-5x + 21 = 11 \n\\]\n\nSubtracting 21 from both sides:\n\n\\[\n-5x = -10 \n\\]\n\nDividing both sides by -5:\n\n\\[\nx = 2 \n\\]\n\n**Step 3: Substitute x back into equation (3) to find y:**\n\n\\[\ny = 7 - 2(2) = 7 - 4 = 3 \n\\]\n\nThus, the solution to the system is:\n\n\\[\n\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 3 \\endFinal answer: x = 2, y = 3"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To solve the linear system represented by the matrix equation \\( Ax = b \\), where:\n\n\\[\nA = \\begin{bmatrix}\n2 & 1 \\\\\n1 & 3\n\\end{bmatrix}, \\quad\nx = \\begin{bmatrix}\nx \\\\\ny\n\\end{bmatrix}, \\quad\nb = \\begin{bmatrix}\n7 \\\\\n11\n\\end{bmatrix},\n\\]\n\nwe can use the method of substitution or elimination.\n\nLet's use elimination to solve this system.\n\n1. **Write the equations**:\n   \\[\n   2x + y = 7 \\quad (1)\n   \\]\n   \\[\n   x + 3y = 11 \\quad (2)\n   \\]\n\n2. **Solve equation (1) for \\( y \\)**:\n   \\[\n   y = 7 - 2x\n   \\]\n\n3. **Substitute \\( y \\) in equation (2)**:\n   \\[\n   x + 3(7 - 2x) = 11\n   \\]\n   \\[\n   x + 21 - 6x = 11\n   \\]\n   \\[\n   -5x + 21 = 11\n   \\]\n   \\[\n   -5x = 11 - 21\n   \\]\n   \\[\n   -5x = -10\n   \\]\n   \\[\n   x = 2\n   \\]\n\n4. **Substitute \\( x \\) back into the expression for \\( y \\)**:\n   \\[\n   y = 7 - 2(2)\n   \\]\n   \\[\n   y = 7 - 4 = 3\n   \\]\n\nThus, the solution to the system is \\( x = 2 \\) and \\( y = 3 \\), or in vector form:\n\n\\[\n\\begin{bmatrix}\nx \\\\\ny\n\\end{bmatrix} = \\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}.\n\\]\n\nFinal answer: \\(\\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}\\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( x = 2, y = 3 \\).",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To solve the linear system represented by the matrix equation \\( A\\mathbf{x} = \\mathbf{b} \\), where \n\n\\[\nA = \\begin{bmatrix} 2 & 1 \\\\ 1 & 3 \\end{bmatrix}, \\quad \\mathbf{x} = \\begin{bmatrix} x \\\\ y \\end{bmatrix}, \\quad \\text{and} \\quad \\mathbf{b} = \\begin{bmatrix} 7 \\\\ 11 \\end{bmatrix},\n\\]\n\nwe can use the method of substitution or elimination, or alternatively, apply matrix inversion if \\( A \\) is invertible.\n\nFirst, we will check if \\( A \\) is invertible by calculating its determinant:\n\n\\[\n\\text{det}(A) = (2)(3) - (1)(1) = 6 - 1 = 5.\n\\]\n\nSince the determinant is non-zero, the matrix is invertible. Now we find the inverse \\( A^{-1} \\):\n\n\\[\nA^{-1} = \\frac{1}{\\text{det}(A)} \\begin{bmatrix} d & -b \\\\ -c & a \\end{bmatrix} \n= \\frac{1}{5} \\begin{bmatrix} 3 & -1 \\\\ -1 & 2 \\end{bmatrix} \n= \\begin{bmatrix} \\frac{3}{5} & -\\frac{1}{5} \\\\ -\\frac{1}{5} & \\frac{2}{5} \\end{bmatrix}.\n\\]\n\nNow, multiply \\( A^{-1} \\) by \\( \\mathbf{b} \\):\n\n\\[\n\\mathbf{x} = A^{-1}\\mathbf{b} = \\begin{bmatrix} \\frac{3}{5} & -\\frac{1}{5} \\\\ -\\frac{1}{5} & \\frac{2}{5} \\end{bmatrix} \\begin{bmatrix} 7 \\\\ 11 \\end{bmatrix}.\n\\]\n\nCalculating the components:\n\n\\[\nx = \\frac{3}{5} \\cdot 7Calculating the components:\n\n\\[\nx = \\frac{3}{5} \\cdot 7 - \\frac{1}{5} \\cdot 11 = \\frac{21}{5} - \\frac{11}{5} = \\frac{10}{5} = 2.\n\\]\n\n\\[\ny = -\\frac{1}{5} \\cdot 7 + \\frac{2}{5} \\cdot 11 = -\\frac{7}{5} + \\frac{22}{5} = \\frac{15}{5} = 3.\n\\]\n\nThus, the solution to the linear system is:\n\n\\[\n\\mathbf{x} = \\begin{bmatrix} 2 \\\\ 3 \\end{bmatrix}.\n\\]\n\nFinal answer: \\( x = 2, y = 3 \\)."
+  }
+]

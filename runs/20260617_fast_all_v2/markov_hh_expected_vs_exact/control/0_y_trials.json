@@ -1,0 +1,146 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability of ending with two consecutive heads in exactly 5 tosses, the sequence must be of the form: TTHHH. \n\nCalculating",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To end in exactly 5 tosses with two consecutive heads (HH), the sequence must be: THHTH or THTHH. Each pattern occurs with",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To end in exactly 5 tosses with two consecutive heads, the last two tosses must be HH, and the previous three tosses must not contain HH. The valid sequences are THHTH, HTHHT, and TTHHT (3 configurations).\n\nThe total outcomes of 5 tosses is \\(2",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To end in exactly 5 tosses with two consecutive heads (HH), the sequence must be: TTHHH. The probability of this specific sequence is calculated as follows:\n\nP(TTHHH) = P(T) \u00d7 P(T) \u00d7 P(H) \u00d7 P(H) \u00d7 P(H) = (1/",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with two consecutive heads appearing, we analyze the outcomes. \n\nThe valid sequence for this situation is four tosses that do not end with two heads, followed by \"HH\". The possible sequences of the first four tosses must avoid \"HH\". The sequences can consist of combinations of H (heads) and T (tails) but must not have \"HH\".\n\nPossible outcomes for the first four tosses are: T, HT, TH, THT, TTH, HTH, HHT, but H cannot be at the end. \n\nCount the valid sequences:",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses, we need to consider the sequences of tosses that end with two consecutive heads (HH) after the 5th toss.\n\nThe possible sequences for 5 tosses that end in HH are:\n1. THH\n2. HTHH\n3. HHTHH\n4. HHHTH (this doesn't satisfy two consecutive heads before the last toss)\n\nThus, the valid sequences are THH, HTHH, and HHTHH.\n\n1. THH: Tosses are T, H, H.\n2. HTHH: Tosses",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "To find the probability that the process of tossing a fair coin ends in exactly 5 tosses with two consecutive heads (HH), we need to analyze the sequences of tosses that would result in HH appearing precisely on the 5th toss.\n\n1. The outcomes of the first four tosses must not produce HH.\n2. The 5th toss must be a head (H) to complete the HH.\n\nLet's denote the outcomes as follows:\n- The possible sequences for the first four tosses can end in either \"T\" (tails) or \"H\" (heads), but the last two tosses must not yield HH until the 5th toss.\n\nThe valid sequences are:\n1. TTTT\n2. HHTT\n3. HTHT (but H on 5th toss will lead to HH)\n4. HTTH (but H on 5th toss will lead to HH)\n5. THTT\n6. THHT (but H on 5th toss will lead to HH)\n7. THTH (but H on 5th toss will lead to HH)\n8. HTTT (but H on 5th toss will lead to HH)\n9. THHT (but H on 5th toss will",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses with two consecutive heads, we need to look at the sequence of tosses that would lead to this condition. The possible valid sequences before obtaining \"HH\" on the 5th toss can be represented as follows:\n\n1. The last two tosses must be HH (i.e., tosses 4 and 5).\n2. The 3rd toss can be either H or T, but if it is H, the 2nd toss must be T (to avoid getting HH before the 4th toss).\n3. The 1st toss must also adhere to the rules outlined.\n\nValid sequences that meet these conditions:\n\n1. THHH\n2. TTHH\n3. HTTH\n4. HHTH\n\nThe key is that no sequence prior to the last two tosses can yield two consecutive heads. We calculate the probabilities for the last two tosses and the arrangements leading to them:\n\n- The last two tosses must always be HH: Probability = \\( \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4} \\).\n  \nFor the arrangements of the first three tosses:\n\n- The valid configurations are TH",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses, we need to ensure:\n\n1. The first four tosses do not result in two",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To find the probability that the process ends in exactly 5 tosses, we consider the sequence of coin tosses.\n\nFor the sequence to end with two consecutive",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the probability of ending the process in exactly 5 tosses, we need to analyze the sequences of tosses that result in two consecutive heads (HH) on the 5th toss.\n\nThe valid sequences leading to HH as the last outcomes include:\n1. TTHHH\n2. HHTHH",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To end in exactly 5 tosses, we need the first four tosses to not finish the game but the fifth toss to be heads following heads. The sequences possible for the first four tosses can contain up to one head only before the two consecutive heads on the 5th toss. \n\nValid 4-t",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the probability that exactly 5 tosses are needed to get two consecutive heads, we can analyze the sequence of tosses required.\n\nFor the sequence to end in exactly 5 tosses with two consecutive heads, the last two tosses must be heads (HH), and the first three tosses must not end with HH. Valid sequences for the first three tosses are: TTH, HTH, or HHT. The possible combinations are:\n\n1. TTHHH\n2. HTHHH\n3. HHTHH\n\nEach coin toss is independent, and the probability of heads (H) or tails (T",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To calculate the probability that the process ends in exactly 5 tosses, we first need to consider the sequences that yield two consecutive heads (HH) on the 5th toss.\n\nThe valid sequences for tosses 1 to 4 must not contain \"HH.\" The only combinations that fulfill this are:\n- TTHH\n- HTHH\n- THHH\n\nEach of these sequences ends in HH. For the first four tosses, the total possible outcomes are \\(2^4 = 16\\).\n\nFor each of the valid sequences:\n1. TTHH: Tosses 1, 2 = TT;",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "To find the probability that the process ends in exactly 5 tosses when tossing a fair coin until two consecutive heads (HH) appear, we need to analyze the possible outcomes of the first 5 tosses.\n\nFor the process to end in exactly 5 tosses, the outcomes on the first 4 tosses must be such that they do not produce two heads in a row (i.e., they cannot result in HH), and the 5th toss must be a head. The valid sequences of the first 4 tosses, denoted as X, can include any combination of heads (H) and tails (T) that avoids HH, as long as the last toss before the 5th is T (to ensure no HH up to that point).\n\nWe can characterize the sequences as follows:\n1. The 5th toss must be H.\n2. The first 4 tosses must end in T (to avoid HH).\n\nValid sequences of the first 4 tosses could be:\n- HTHT (ends in T)\n- HTTT\n- THTH\n- THTT\n- TTTT\n\nWe can determine them or use a systematic approach to ensure we meet the non-consecutive HW criterion.\n\nThe sequences turn out to permit",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "To find the probability that two consecutive heads (HH) appear for the first time in exactly 5 tosses, we can analyze the outcome patterns over the 5 tosses.\n\n1. The last toss must be heads (H) to end the sequence with HH.\n2. The toss before that must also be a heads (H) to form HH.\n3. The first three tosses must not end in HH and be one of the following:\n   - THH\n   - TTHH\n   - HTTH\n   - HTHTH\n   - HHTHT\n   \nWe focus on combinations where the only way to avoid both H's in the first four tosses is:\n- The first toss must be T (to avoid an initial H), and the next three should have no two consecutive H's.\n\nSo, the sequences could be \"TXXXHH,\" where X could be H or T fulfilling the non-consecutive rule.\n\nThe possible valid configurations for the first three tosses can be determined as follows:\n- TTH, THT, HTT (three arrangements).\n\nCalculating the probabilities:\n- Each specific sequence of tosses has a probability of \\( \\left(\\frac{1}{2}\\right)^5 = \\frac{1}{32",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
+  }
+]

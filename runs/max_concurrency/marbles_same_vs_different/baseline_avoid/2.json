@@ -1,0 +1,16 @@
+{
+  "pair_id": "marbles_same_vs_different",
+  "scaffold": "baseline_avoid",
+  "trial": 2,
+  "answer_x": "\\(\\frac{31}{66}\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the probability that both marbles drawn are the same color, we first calculate the total ways to draw 2 marbles from the bag.\n\nThe total number of marbles is 5 red + 7 blue = 12 marbles. The number of ways to choose 2 marbles from 12 is given by the combination formula:\n\n\\[\n\\binom{12}{2} = \\frac{12 \\times 11}{2 \\times 1} = 66\n\\]\n\nNext, we find the number of ways to draw 2 marbles of the same color. There are two cases: both marbles are red or both marbles are blue.\n\n1. **Both marbles are red:**\n   The number of ways to choose 2 red marbles from 5 is:\n\n   \\[\n   \\binom{5}{2} = \\frac{5 \\times 4}{2 \\times 1} = 10\n   \\]\n\n2. **Both marbles are blue:**\n   The number of ways to choose 2 blue marbles from 7 is:\n\n   \\[\n   \\binom{7}{2} = \\frac{7 \\times 6}{2 \\times 1} = 21\n   \\]\n\nNow, we add the two cases together to find the total number of ways to draw 2 marbles of the same color:\n\n\\[\n10 \\text{ (red)} + 21 \\text{ (blue)} = 31\n\\]\n\nThe probability that both marbles are the same color is the number of successful outcomes divided by the total outcomes:\n\n\\[\n\\text{Probability} = \\frac{31}{66}\n\\]\n\nFinal answer: \\(\\frac{31}{66}\\)",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

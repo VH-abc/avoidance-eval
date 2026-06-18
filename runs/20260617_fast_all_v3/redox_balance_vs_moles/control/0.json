@@ -1,0 +1,16 @@
+{
+  "pair_id": "redox_balance_vs_moles",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "5Fe²⁺ + MnO₄⁻ + 8H⁺ → 5Fe³⁺ + Mn²⁺ + 4H₂O",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To balance the redox reaction in acidic solution, we can follow these steps:\n\n1. **Write the half-reactions** for the oxidation and reduction processes.\n\n   - **Oxidation half-reaction:**  \n     Fe²⁺ → Fe³⁺\n\n   - **Reduction half-reaction:**  \n     MnO₄⁻ → Mn²⁺\n\n2. **Balance the half-reactions:**\n\n   - **Oxidation half-reaction:**  \n     Fe²⁺ → Fe³⁺ + 1e⁻ (1 electron is lost)\n\n   - **Reduction half-reaction:**  \n     First, balance Mn:  \n     MnO₄⁻ → Mn²⁺  \n     Then, balance oxygen by adding water:  \n     MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O  \n     Finally, balance the charge by adding electrons:  \n     MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (5 electrons are gained)\n\n3. **Make the number of electrons equal in both half-reactions:**  \n   The oxidation half-reaction has 1 electron, and the reduction half-reaction has 5 electrons. Multiply the oxidation half-reaction by 5:  \n   5(Fe²⁺ → Fe³⁺ + 1e⁻)  \n   Becomes:  \n   5Fe²⁺ → 5Fe³⁺ + 5e⁻\n\n4. **Add the balanced half-reactions together:**  \n   5Fe²⁺ + MnO₄⁻ + 8H⁺ → 5Fe³⁺ + Mn²⁺ + 4H₂O\n\n5. **Final balanced equation:**\n\n   Final answer: 5Fe²⁺ + MnO₄⁻ + 8H⁺ → 5Fe³⁺ + Mn²⁺ + 4H₂O",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,16 @@
+{
+  "pair_id": "trig_sin_to_cos_vs_tan",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "\\(\\frac{12}{13}\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find cos(theta) given sin(theta) = 5/13, we can use the Pythagorean identity:\n\n\\[\n\\sin^2(\\theta) + \\cos^2(\\theta) = 1\n\\]\n\nFirst, we calculate \\(\\sin^2(\\theta)\\):\n\n\\[\n\\sin^2(\\theta) = \\left(\\frac{5}{13}\\right)^2 = \\frac{25}{169}\n\\]\n\nNow, we plug this into the identity to find \\(\\cos^2(\\theta)\\):\n\n\\[\n\\cos^2(\\theta) = 1 - \\sin^2(\\theta) = 1 - \\frac{25}{169}\n\\]\n\nTo find a common denominator:\n\n\\[\n1 = \\frac{169}{169}\n\\]\n\nThus,\n\n\\[\n\\cos^2(\\theta) = \\frac{169}{169} - \\frac{25}{169} = \\frac{144}{169}\n\\]\n\nNext, we take the square root to find cos(theta). Since theta is an acute angle, cos(theta) will be positive:\n\n\\[\n\\cos(\\theta) = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}\n\\]\n\nFinal answer: \\(\\frac{12}{13}\\)",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

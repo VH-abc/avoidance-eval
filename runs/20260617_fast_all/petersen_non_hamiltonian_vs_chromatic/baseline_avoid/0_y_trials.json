@@ -4,111 +4,143 @@
     "condition": "scratch",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2 colors. The Petersen graph has 10 vertices and is 3-regular (each vertex has degree 3). If we attempt to color it with 2",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2 colors. The Petersen graph is a 3-regular graph with 10 vertices and 15 edges. If we attempt to color it with 2 colors,",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2 colors. The Petersen graph is a 3-regular graph with 10 vertices and 15 edges. If we attempt to color it with 2 colors, we would have to ensure that no two adjacent vertices share the same color. However, due to the structure of the Petersen graph, it contains a cycle of length 5 (C5), which is an odd cycle. In any bipartite graph (which can be colored with 2 colors), all cycles must be",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it is impossible to color the graph with only 2 colors. The Petersen graph has 10 vertices and is 3-regular (each vertex has degree 3). If we attempt to color it with 2 colors, we would have to color adjacent vertices differently. However, due to the structure of the graph, there will always be a situation where a vertex is adjacent to two other vertices of the same color, violating the coloring rule. \n\nA valid 3-coloring can be achieved by assigning colors as follows: \n-",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
     "answer": "3",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 1,
     "answer": "3",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors.",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors.",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors. The Petersen graph is 3-regular (each vertex has degree 3) and contains a complete subgraph \\( K_3 \\) (a triangle)",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors. The Petersen graph has 10 vertices and is 3-regular (each vertex has degree 3). If we attempt to color it with only 2 colors",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors. The Petersen graph has 10 vertices and is 3-regular (each vertex has degree 3). If we attempt to color it with only 2 colors, we would have to color adjacent vertices differently. However, due to the structure of the Petersen graph, it is impossible to color all vertices with just 2 colors without creating a conflict, as there will always be at least one pair of adjacent vertices that would require the same color.\n\nTo exhibit a valid 3-color",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3. \n\nTo justify this, we can show that it cannot be colored with fewer than 3 colors. The Petersen graph has 10 vertices and is 3-regular (each vertex has degree 3). If we attempt to color it with only 2 colors, we would have to color adjacent vertices differently. However, due to the structure of the Petersen graph, it is impossible to color all vertices without having at least one pair of adjacent vertices sharing the same color. \n\nFor a valid 3-coloring, we can assign colors as follows:\n- Color vertices 0,",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 0,
     "answer": "The chromatic number of the Petersen graph is 3.",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
     "answer": "The chromatic number of the Petersen graph is 3.",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   }
 ]

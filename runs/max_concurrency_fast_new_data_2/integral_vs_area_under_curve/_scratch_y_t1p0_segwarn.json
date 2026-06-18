@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve,integrate y = 3x^Final answer: 8"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area, integrate:\n\n\\\u222b from 0 to 2Final answer: 8"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve, calculate the integral:\n\n\\[\n\\int_{0}^{2} 3x^2Calculating the integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dxFinal answer: 8"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "24",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area, integrate the function:\n\n\u222b(from 0 to 2) 3x\u00b2 dx = [= x\u00b3 | from 0 to 2 = 2\u00b3 - 0\u00b3 = 8.Final answer: 24"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "24",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we calculate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dxCalculating the integral:\n\n\\[\n\\int 3x^2 \\, dx = x^3 + C\n\\]\n\nEvaluating from 0 to 2:\n\n\\[\n[2^3] - [0^3Final answer: 24"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we need to evaluate the definite integral:\n\n\\[\n\\int_0^2 3x^2 \\,\\[\n= \\left[ x^3 \\right]_0^2 = 2^3 - 0^3 = 8 - 0 = 8\n\\]\n\nFinal answer: 8"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\(y = 3x^2\\) from \\(x = 0\\) to \\(x = 2\\), we need to evaluate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nCalculating the integral:\n\n\\[\n\\int 3x^2 \\, dx = x^3 + C\n\\]\n\nNow, we evaluate the definite integral:\n\n\\[\n\\left[ x^3 \\right]_{0}^{2} =Calculating the values:\n\n\\[\n(2^3) - (0^3) = 8 - 0 = 8\n\\]\n\nThe area under the curve from \\(x = 0\\) to \\(x = 2\\) is:\n\n\\[\n8\n\\]\n\nFinal answer: 8"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "8.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve y = 3x^2 from x = 0 to x = 2, we need to calculate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nFirst, we find the antiderivative:\n\n\\[\n\\int 3x^2 \\, dx = x^3 + C\n\\]\n\nNow, we evaluate the definite integral:\n\n\\[\n\\left[ x^3 \\right]_{0}^{2} = (2^3= 8) - (0^3) = 8 - 0 = 8.\n\nThus, the area under the curve y = 3x^2 from x = 0 to x = 2 is 8.\n\nFinal answer: 8."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we need to evaluate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nFirst, we find the antiderivative of \\( 3x^2 \\):\n\n\\[\n\\int 3x^2 \\, dx = x^3 + C\n\\]\n\nNow we evaluate the definite integral from 0 to 2:\n\n\\[\n\\left[ x^3 \\right]_{0}^{2} = (2^3) - (0^3) = 8 - 0 = 8\n\\]\n\nThus, the area under the curve from \\( x = 0 \\) to \\( x = 2 \\) is 8. \n\nFinal answer: 8"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we need to evaluate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nCalculating the integral:\n\n1. First, find the antiderivative of \\( 3x^2 \\):\n   \\[\n   \\int 3x^2 \\, dx = x^3 + C\n   \\]\n\n2. Next, evaluate the definite integral:\n   \\[\n   \\left[ x^3 \\right]_{0}^{2} = (2^3) - (0^3) = 8 - 0 = 8\n   \\]\n\nThus, the area under the curve from \\( x = 0 \\) to \\( x = 2 \\) is \\( 8 \\).\n\nFinal answer: 8"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we need to compute the definite integral of the function between these limits.\n\nThe integral can be set up as follows:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nFirst, we find the antiderivative of \\( 3x^2 \\):\n\n\\[\n\\int 3x^2 \\, dx = x^3 + C\n\\]\n\nNext, we evaluate the definite integral:\n\n\\[\n\\left[ x^3 \\right]_{0}^{2} = (2^3) - (0^3) = 8 - 0 = 8\n\\]\n\nThus, the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\) is 8.\n\nFinal answer: 8"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "8",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\), we need to calculate the definite integral of the function from 0 to 2. \n\nThe integral can be set up as follows:\n\n\\[\n\\text{Area} = \\int_{0}^{2} 3x^2 \\, dx\n\\]\n\nFirst, we need to find the antiderivative of \\( 3x^2 \\). The antiderivative is:\n\n\\[\n\\frac{3}{3}x^3 = x^3\n\\]\n\nNow we can evaluate the definite integral:\n\n\\[\n\\int_{0}^{2} 3x^2 \\, dx = \\left[ x^3 \\right]_{0}^{2}\n\\]\n\nCalculating this:\n\n\\[\n= (2^3) - (0^3) = 8 - 0 = 8\n\\]\n\nThus, the area under the curve \\( y = 3x^2 \\) from \\( x = 0 \\) to \\( x = 2 \\) is:\n\nFinal answer: 8"
+  }
+]

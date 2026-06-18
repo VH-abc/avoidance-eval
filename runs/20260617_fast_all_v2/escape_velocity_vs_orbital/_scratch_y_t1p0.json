@@ -3,56 +3,72 @@
     "budget": 32,
     "condition": "scratch",
     "trial": 0,
-    "answer": "The gravitational force provides the centripetal force for circular motion: \n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit is given by:\n\n\\[\nv = \\sqrt{\\frac{GM}{R}}\n\\]",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
-    "answer": "To derive the orbital speed \\( v \\) of a satellite at radius \\( R \\), use the gravitational force and centripetal force balance:\n\n\\[\n\\",
-    "correct": false
+    "answer": "The speed of a satellite in a circular orbit can be derived from the balance of gravitational and centripetal forces. The formula is:\n\n\\( v = \\sqrt",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
-    "answer": "To derive the orbital speed \\( v \\) of a satellite at radius \\( R \\):\n\n1. Set gravitational force equal to the centripetal force:\n   \\[\n   \\frac{GMm}{R^2} = \\frac{mv^2}{R}\n   \\]\n   \n2. Cancel \\( m",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit is given by the formula:\n\n\\[\nv = \\sqrt{\\frac{GM}{R}}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( M \\) is the mass of the planet, and \\( R \\) is the radius of",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
-    "answer": "The gravitational force provides the centripetal force for a satellite in orbit:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nCancelling \\(m\\) and rearranging gives:\n\n\\[\nv^2 = \\frac{GM}{R} \\",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit can be derived from the balance of gravitational and centripetal forces. The formula is:\n\n\\[\nv = \\sqrt{\\frac{GM}{R}}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( M \\) is the mass of",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
-    "answer": "To derive the speed \\( v \\) of a satellite in a circular orbit at radius \\( R \\), we start with the gravitational force providing the necessary centripetal force:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nCancelling \\( m \\) and rearranging gives:\n\n\\[\nv^2 = \\frac{GM}{R} \\implies v = \\sqrt{\\frac{GM}{R}}\n\\]\n\nThe escape velocity \\( v_e \\) is given by:\n\n\\[\nv_e = \\sqrt{\\frac{2GM}{R}}\n\\]",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit can be derived from the balance of gravitational force and the required centripetal force. The gravitational force acting on the satellite is given by \n\n\\[\nF = \\frac{GMm}{R^2}\n\\]\n\nwhere \\( m \\) is the mass of the satellite. The centripetal force required for circular motion is \n\n\\[\nF = \\frac{mv^2}{R}.\n\\]\n\nSetting these two forces equal gives:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}.\n\\]\n\nCanceling",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
-    "answer": "To derive the orbital speed \\( v \\) of a satellite in a circular orbit at radius \\( R \\), we use the gravitational force providing the necessary centripetal force:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nHere, \\( G \\) is the gravitational constant, \\( m \\) is the satellite's mass, \\( M \\) is the planet's mass, and \\( R \\) is the orbital radius. Simplifying gives:\n\n\\[\nv^2 = \\frac{GM}{R}\n\\]\n\nThus, the orbital speed \\( v \\)",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit can be derived from the balance between gravitational force and centripetal force. The gravitational force acting on the satellite is given by \n\n\\[\nF_g = \\frac{G M m}{R^2}\n\\]\n\nwhere \\( m \\) is the mass of the satellite. The centripetal force needed to keep the satellite in orbit is \n\n\\[\nF_c = \\frac{m v^2}{R}.\n\\]\n\nSetting these forces equal gives:\n\n\\[\n\\frac{G M m}{R^2} = \\frac{m v^2}{",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
-    "answer": "To derive the speed \\( v \\) of a satellite in a circular orbit at radius \\( R \\), we start with the gravitational force acting as the centripetal force required for circular motion.\n\nThe gravitational force \\( F_g \\) is given by:\n\n\\[\nF_g = \\frac{GMm}{R^2}\n\\]\n\nThe centripetal force \\( F_c \\) required for an object of mass \\( m \\) moving in a circle of radius \\( R \\) at speed \\( v \\) is:\n\n\\[\nF_c = \\frac{mv^2}{R}\n\\]\n\nSetting these forces equal for circular motion:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nCancelling mass \\( m \\) (assuming \\( m \\neq 0 \\)) and multiplying both sides by \\( R \\) gives:\n\n\\[\n\\frac{GM}{R} = v^2\n\\]\n\nThus, the speed \\( v \\) of the satellite is:\n\n\\[\nv = \\sqrt{\\frac{GM}{R}}\n\\]\n\nNow, comparing this to the escape velocity \\( v_{esc} \\), which is given by:\n\n\\[\nv_{esc} = \\sqrt{\\",
-    "correct": true
+    "answer": "To find the speed of a satellite in a circular orbit, we can use the principles of gravitational force and centripetal force. The gravitational force acting on the satellite provides the necessary centripetal force for it to maintain its circular orbit.\n\n1. The gravitational force \\( F_g \\) is given by:\n   \\[\n   F_g = \\frac{GMm}{R^2}\n   \\]\n   where \\( m \\) is the mass of the satellite, \\( G \\) is the gravitational constant, and \\( M \\) is the mass of the planet.\n\n2. The centripetal force \\( F_c \\) required to keep the satellite in orbit is given by:\n   \\[\n   F_c = \\frac{mv^2}{R}\n   \\]\n   where \\( v \\) is the orbital speed.\n\nFor a stable orbit, these forces must be equal:\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\n3. We can cancel \\( m \\) from both sides (assuming \\( m \\neq 0 \\)):\n   \\[\n   \\frac{GM}{R^2} = \\frac{v^2}{R}\n   \\]\n\n4. Rearr",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 1,
-    "answer": "To derive the orbital speed \\( v \\) of a satellite in a circular orbit at radius \\( R \\), we use the gravitational force and centripetal force balance.\n\nThe gravitational force acting on the satellite is given by:\n\n\\[\nF_g = \\frac{GMm}{R^2}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( M \\) is the mass of the planet, and \\( m \\) is the mass of the satellite.\n\nFor circular motion, the centripetal force needed to keep the satellite in orbit is:\n\n\\[\nF_c = \\frac{mv^2}{R}\n\\]\n\nSetting the gravitational force equal to the centripetal force:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nWe can cancel \\( m \\) from both sides and solve for \\( v^2 \\):\n\n\\[\n\\frac{GM}{R^2} = \\frac{v^2}{R}\n\\]\n\nMultiplying both sides by \\( R \\) gives:\n\n\\[\n\\frac{GM}{R} = v^2\n\\]\n\nThus, the orbital speed \\( v \\) is:\n\n\\[\nv = \\sqrt{\\frac{GM}{",
-    "correct": true
+    "answer": "The speed \\( v \\) of a satellite in a circular orbit can be derived using Newton's law of gravitation and centripetal force. The gravitational force provides the necessary centripetal force for the satellite to maintain its circular orbit.\n\nThe gravitational force acting on the satellite is given by:\n\n\\[\nF_g = \\frac{GMm}{R^2}\n\\]\n\nwhere \\( m \\) is the mass of the satellite, \\( G \\) is the gravitational constant, \\( M \\) is the mass of the planet, and \\( R \\) is the radius of the orbit.\n\nThe centripetal force required to keep the satellite in circular motion is:\n\n\\[\nF_c = \\frac{mv^2}{R}\n\\]\n\nSetting the gravitational force equal to the centripetal force gives:\n\n\\[\n\\frac{GMm}{R^2} = \\frac{mv^2}{R}\n\\]\n\nDividing through by \\( m \\) (which cancels out) and multiplying both sides by \\( R \\) results in:\n\n\\[\n\\frac{GM}{R} = v^2\n\\]\n\nTaking the square root of both sides:\n\n\\[\nv = \\sqrt{\\frac{GM}{R}}\n\\]\n\nTherefore, the",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   }
 ]

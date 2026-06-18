@@ -4,111 +4,143 @@
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)\n   - \\( 90 \\div 2 = 45 \\) (no longer divisible by 2)\n   \n2. Next, divide by the next smallest prime, 3:\n   - \\( 45 \\div 3 = 15 \\)\n   - \\( 15 \\div 3 = 5 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)\n   - \\( 90 \\div 2 = 45 \\) (no longer divisible by 2)\n   \n2. Next, divide by the next smallest prime, 3:\n   - \\( 45 \\div 3 = 15 \\)\n   - \\( 15 \\div 3 = 5 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)\n   - \\( 90 \\div 2 = 45 \\) (no longer divisible by 2)\n   \n2. Next, divide by the next smallest prime, 3:\n   - \\( 45 \\div 3 = 15 \\)\n   - \\( 15 \\div 3 = 5 \\) (no longer divisible by 3)\n\n3. Finally, we are left with 5, which is a prime number.\n\nThus, the prime factorization of 360 is:\n\\[ 360 = 2^3 \\times 3^2 \\times 5^1 \\]\n\nTo find the number of positive divisors, we use the divisor-count formula, which states that if a number \\( n \\) has the prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\), then the number of",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we first perform its prime factorization.\n\n1. Start by dividing 360 by the smallest prime number, 2:\n   - \\( 360 \\div 2 = 180 \\)\n   - \\( 180 \\div 2 = 90 \\)\n   - \\( 90 \\div 2 = 45 \\) (no longer divisible by 2)\n   \n2. Next, divide by the next smallest prime, 3:\n   - \\( 45 \\div 3 = 15 \\)\n   - \\( 15 \\div 3 = 5 \\) (no longer divisible by 3)\n\n3. Finally, we are left with 5, which is a prime number.\n\nThus, the prime factorization of 360 is:\n\\[ 360 = 2^3 \\times 3^2 \\times 5^1 \\]\n\nTo find the number of positive divisors, we use the divisor-count formula, which states that if a number \\( n \\) has the prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\), then the number of",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for calculating the number of positive divisors \\( d(n) \\) of a",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for finding the number of positive divisors \\( d(n) \\) of a",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for calculating the number of positive divisors \\( d(n) \\) of a number \\( n \\) based on its prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\) is:\n\n\\[\nd(n) = (e_1 + 1)(e_2",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for calculating the number of positive divisors \\( d(n) \\) of a number \\( n \\) based on its prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\) is:\n\n\\[\nd(n) = (e_1 + 1)(e_2",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 0,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for finding the number of positive divisors \\( d(n) \\) of a number \\( n \\) based on its prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\) is:\n\n\\[\nd(n) = (e_1 + 1)(e_2 + 1) \\ldots (e_k + 1)\n\\]\n\nwhere \\( e_i \\) are the exponents in the prime factorization.\n\nFor 360, the exponents are:\n- For \\( 2^3 \\), \\( e_1 = 3 \\)\n- For \\( 3^2 \\), \\( e_2 = 2 \\)\n- For \\( 5^1 \\), \\( e_3 = 1 \\)\n\nNow, applying the formula:\n\n\\[\nd(360) = (3 + 1)(2 + 1)(1 + 1) = 4 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
     "answer": "To find the number of positive divisors of 360, we can use its prime factorization, which is:\n\n\\[\n360 = 2^3 \\times 3^2 \\times 5^1\n\\]\n\nThe formula for finding the number of positive divisors \\( d(n) \\) of a number \\( n \\) based on its prime factorization \\( p_1^{e_1} \\times p_2^{e_2} \\times \\ldots \\times p_k^{e_k} \\) is:\n\n\\[\nd(n) = (e_1 + 1)(e_2 + 1) \\ldots (e_k + 1)\n\\]\n\nwhere \\( e_i \\) are the exponents in the prime factorization.\n\nFor 360, the exponents are:\n- For \\( 2^3 \\), \\( e_1 = 3 \\)\n- For \\( 3^2 \\), \\( e_2 = 2 \\)\n- For \\( 5^1 \\), \\( e_3 = 1 \\)\n\nNow we apply the formula:\n\n\\[\nd(360) = (3 + 1)(2 + 1)(1 + 1) = 4 \\",
-    "correct": true
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer"
   }
 ]
