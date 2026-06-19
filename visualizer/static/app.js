@@ -49,14 +49,19 @@ function renderSummary(run) {
   const statCards = scaffolds
     .map(
       (scaffold) => `
-      <div class="stat-card">
-        <div class="label">${scaffold} · X acc</div>
-        <div class="value">${fmtPct(summary.x_accuracy_by_scaffold[scaffold])}</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">${scaffold} · leakage</div>
-        <div class="value ${leakageClass(summary.mean_leakage[scaffold])}">${fmtLeakage(summary.mean_leakage[scaffold])}</div>
-      </div>`
+      <section class="scaffold-stats">
+        <div class="scaffold-stats-header">${escapeHtml(scaffold)}</div>
+        <div class="scaffold-stats-metrics">
+          <div class="stat-card">
+            <div class="label">X acc</div>
+            <div class="value">${fmtPct(summary.x_accuracy_by_scaffold[scaffold])}</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Leakage</div>
+            <div class="value ${leakageClass(summary.mean_leakage[scaffold])}">${fmtLeakage(summary.mean_leakage[scaffold])}</div>
+          </div>
+        </div>
+      </section>`
     )
     .join("");
 
@@ -284,11 +289,13 @@ async function selectResult(pairId, scaffold, trial, btn) {
 }
 
 function conditionLabel(condition) {
-  return condition === "scratch" ? "scratch (no X trace)" : "with X trace";
+  if (condition === "scratch") return "scratch (no X)";
+  if (condition === "answer_only") return "answer-only (X question + X answer)";
+  return "with X trace";
 }
 
 function sortYTrials(items) {
-  const conditionOrder = { scratch: 0, with_trace: 1 };
+  const conditionOrder = { scratch: 0, answer_only: 1, with_trace: 2 };
   return [...items].sort((a, b) => {
     if (a.budget !== b.budget) return a.budget - b.budget;
     const condDiff = (conditionOrder[a.condition] ?? 9) - (conditionOrder[b.condition] ?? 9);
@@ -301,17 +308,46 @@ function yTrialsForBudget(y_trials, budget) {
   return sortYTrials(y_trials).filter((item) => item.budget === budget);
 }
 
+function renderSolverContext(messages) {
+  if (!Array.isArray(messages) || !messages.length) return "";
+  const turns = messages
+    .map((m, i) => {
+      const role = m.role || "?";
+      return `
+        <div class="turn turn-${escapeHtml(role)}">
+          <div class="turn-role">turn ${i + 1} · ${escapeHtml(role)}</div>
+          <pre class="turn-content">${escapeHtml(m.content || "")}</pre>
+        </div>`;
+    })
+    .join("");
+  return `
+    <details class="solver-context">
+      <summary>What the solver saw (${messages.length} turn${messages.length === 1 ? "" : "s"})</summary>
+      <div class="turns">${turns}</div>
+    </details>`;
+}
+
 function renderYTraceCard(item) {
   const text = item.raw_response || item.answer || "";
   const cls = item.correct ? "correct" : "incorrect";
+  const noResponseNote = item.raw_response
+    ? ""
+    : `<p class="caption">Extracted answer only (re-run Y eval to store full response).</p>`;
+  const noContextNote =
+    Array.isArray(item.prompt_messages) && item.prompt_messages.length
+      ? ""
+      : `<p class="caption">Full solver context not stored for this trial (re-run Y eval to capture it).</p>`;
   return `
     <details class="y-trace-card ${cls}" open>
       <summary>
         <span class="y-trace-label">${escapeHtml(conditionLabel(item.condition))} · trial ${item.trial}</span>
         <span class="y-trace-verdict">${item.correct ? "correct" : "incorrect"}</span>
       </summary>
+      <div class="y-trace-subhead">Final response</div>
       <div class="y-trace-body">${escapeHtml(text)}</div>
-      ${item.raw_response ? "" : `<p class="caption">Extracted answer only (re-run Y eval to store full response).</p>`}
+      ${noResponseNote}
+      ${renderSolverContext(item.prompt_messages)}
+      ${noContextNote}
     </details>`;
 }
 

@@ -1,0 +1,242 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "86",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "Calculating \\( a(2), a\\( a(2) = 4Final answer: 86"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "182",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find a(5):\n\n1.a(2) = 4*aFinal answer: 182"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "74",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To compute a(5), we first find the previous terms using the recurrence relation. \n\na(2) = 4*aa(2) = 4*5 - 3*2 = 20 - 6 = Final answer: 74"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "74",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find \\( a(5) \\), we compute:\n\n1. \\( a(2) = 4*a(1)Continuing from the previous calculations:\n\n2. \\( a(2) = 4*5 - 3Final answer: 74"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "116",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find a(5), we can use the recurrence relation: \n\n1. a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = 20 - 6 = 14\n2.3. a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 56 - 15 = 41  \n4. a(4) =Final answer: 116"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "74",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find \\( a(5) \\), we first compute the values of \\( a(n) \\) for \\( n = 2, 3, 4, \\) and finally \\( 5 \\):\n\n1. \\( a(2) = 4*a(1Continuing from previous calculations:\n\n1. \\( a(2) = 4*5 - 3*2 = 20 - 6 = 14 \\)  \n2. \\( a(3) = 4*14Final answer: 74"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "122",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\), we can calculate the values step-by-step.\n\n1. **Given**: \n   - \\( a(0) = 2 \\)\n   - \\( a(1) = 5 \\)\n\n2. **Calculate** \\( a(2) \\):\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4*5 - 3*2 =Continuing with the calculations:\n\n2. **Calculate** \\( a(2) \\):\n   \\[\n   a(2) = 4*5 - 3*2 = 20 - 6 = 14\n   \\]\n\n3. **Calculate** \\( a(3) \\):\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4*14 - 3*5Final answer: 122"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "116",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\):\n\n1. Calculate \\( a(2) \\):\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4(5) - 3(2) = 20 - 6 = 14\n   \\]\n\n2. Calculate \\(3. Calculate \\( a(3) \\):\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4(14) - 3(5) = 56 - 15 = 41\n   \\]\n\n4. Calculate \\( a(4) \\):\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4(Final answer: 116"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( a(5) = 365 \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\) with the initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we will calculate the values step-by-step up to \\( a(5) \\).\n\n1. **Calculate \\( a(2) \\):**\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4 \\times 5 - 3 \\times 2 = 20 - 6 = 14\n   \\]\n\n2. **Calculate \\( a(3) \\):**\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4 \\times 14 - 3 \\times 5 = 56 - 15 = 41\n   \\]\n\n3. **Calculate \\( a(4) \\):**\n   \\[\n   a(4) = 4a(3) - 3a(2)Continuing from the previous calculations:\n\n4. **Calculate \\( a(4) \\):**\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4 \\times 41 - 3 \\times 14 = 164 - 42 = 122\n   \\]\n\n5. **Calculate \\( a(5) \\):**\n   \\[\n   a(5) = 4a(4) - 3a(3) = 4 \\times 122 - 3 \\times 41 = 488 - 123 = 365\n   \\]\n\nFinal answer: \\( a(5) = 365 \\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we can calculate the subsequent terms step by step.\n\n1. **Calculate \\( a(2) \\)**:\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4 \\cdot 5 - 3 \\cdot 2 = 20 - 6 = 14\n   \\]\n\n2. **Calculate \\( a(3) \\)**:\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4 \\cdot 14 - 3 \\cdot 5 = 56 - 15 = 41\n   \\]\n\n3. **Calculate \\( a(4) \\)**:\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4 \\Continuing with the calculations:\n\n3. **Calculate \\( a(4) \\)**:\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4 \\cdot 41 - 3 \\cdot 14 = 164 - 42 = 122\n   \\]\n\n4. **Calculate \\( a(5) \\)**:\n   \\[\n   a(5) = 4a(4) - 3a(3) = 4 \\cdot 122 - 3 \\cdot 41 = 488 - 123 = 365\n   \\]\n\nThus, the value of \\( a(5) \\) is:\n\nFinal answer: 365"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\) with \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we can compute the values step by step.\n\n1. **Calculate \\( a(2) \\)**:\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4 \\cdot 5 - 3 \\cdot 2 = 20 - 6 = 14\n   \\]\n\n2. **Calculate \\( a(3) \\)**:\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4 \\cdot 14 - 3 \\cdot 5 = 56 - 15 = 41\n   \\]\n\n3. **Calculate \\( a(4) \\)**:\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4 \\cdot 41 - 3 \\cdot 14 = 164 - 42 = 122\n   \\]\n\n4. **Calculate \\( a(5) \\)**:\n   \\[\n   a(5) = 4a(4) - 3a(3) = 4 \\cdot 122 - 3 \\cdot 41 = 488 - 123 = 365\n   \\]\n\nThus, the value of \\( a(5) \\) is \\( 365 \\).\n\nFinal answer: 365"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the recurrence relation \\( a(n) = 4a(n-1) - 3a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we need to compute the values step by step.\n\n1. **Calculate \\( a(2) \\)**:\n   \\[\n   a(2) = 4a(1) - 3a(0) = 4 \\cdot 5 - 3 \\cdot 2 = 20 - 6 = 14\n   \\]\n\n2. **Calculate \\( a(3) \\)**:\n   \\[\n   a(3) = 4a(2) - 3a(1) = 4 \\cdot 14 - 3 \\cdot 5 = 56 - 15 = 41\n   \\]\n\n3. **Calculate \\( a(4) \\)**:\n   \\[\n   a(4) = 4a(3) - 3a(2) = 4 \\cdot 41 - 3 \\cdot 14 = 164 - 42 = 122\n   \\]\n\n4. **Calculate \\( a(5) \\)**:\n   \\[\n   a(5) = 4a(4) - 3a(3) = 4 \\cdot 122 - 3 \\cdot 41 = 488 - 123 = 365\n   \\]\n\nThus, the value of \\( a(5) \\) is \\( 365 \\).\n\nFinal answer: 365"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\Using the recurrence relation:\n\n1. \\(Final answer: 365"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\Using the recurrence:  \n1. \\(Final answer: 365"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\):\n\n1. \\( a(0) = 2 \\)\n2. \\( a(3. \\( a(1) = 5 \\)  \n4. \\( a(2) = Final answer: 365"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the recurrence relation:\n\n1. \\( a(0) = 2 \\)\n2. \\( a(1) = 5 \\)  \n3. \\( a(2) = Final answer: 365"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\), we use the given recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1)Continuing from before:\n\n3. \\( a(2) = 4*5 - 3*2 = 14 \\)  \n4. \\( a(3) = 4*14 - 3*5 = Final answer: 365"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\):\n\n1. \\( a(0) = 2 \\)\n2. \\( a(1) = 3. \\( a(2) = 4*5 - 3*2 = 14 \\)\n4. \\( a(3) = 4*14 - 3*5 = 41 \\)\n5. \\(Final answer: 365"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with the initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\):\n\n1. \\( a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = 20 - 6 = 14 \\)\n2. \\( a(3) = 42. \\( a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 56 - 15 = 41 \\)  \n3. \\( a(4) = 4*a(3) - 3*a(2) = 4*41 - 3*14 = 164 - 42 = 122 \\)  \n4. \\( a(5)Final answer: 365"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\), we will use the recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with the initial conditions:\n\n1. \\( a(0) = 2 \\)\n2. \\( a(1) = 5 \\)\n\nNow, we calculate up to \\( a(5) \\):\n\n3. \\( a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = \\( a(2) = 4*5 - 3*2 = 14 \\)\n\n4. \\( a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 41 \\)\n\n5. \\( a(4) = 4*a(3) - 3*a(2) = 4*41 - 3*14 = 122 \\)\n\n6Final answer: 365"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with the initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we can calculate the values from \\( a(0) \\) to \\( a(5) \\):\n\n1. \\( a(0) = 2 \\)\n2. \\( a(1) = 5 \\)\n3. \\( a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = 20 - 6 = 14 \\)\n4. \\( a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 56 - 15 = 41 \\)\n5. \\( a(4) = 4*a(3) - 3*a(2) = 4*41 - 3*14 = 164 - 122 = 122 \\)\n\n6. \\( a(5) = 4*a(4) - 3*a(3) = 4*122 - 3*41 = 488 - 123 = 365 \\)\n\nThus, \\( a(5) \\) is calculated to be \\( 365 \\).\n\nFinal answer: 365"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\), we will calculate the values of \\( a(n) \\) sequentially up to \\( a(5) \\) using the given recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with the initial conditions provided: \n\n1. \\( a(0) = 2 \\)  \n2. \\( a(1) = 5 \\)  \n3. \\( a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = 20 - 6 = 14 \\)  \n4. \\( a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 56 - 15 = 41 \\)  \n5. \\( a(4) = 4*a(3) - 3*a(2) = 4*41 - 3*14 = 164 - 42 = 122 \\)  \n6. \\( aContinuing from where we left off:\n\n7. \\( a(5) = 4*a(4) - 3*a(3) = 4*122 - 3*41 = 488 - 123 = 365 \\)  \n\nThus, \\( a(5) \\) is calculated to be \\( 365 \\).\n\nFinal answer: 365"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the given recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we can calculate the values step by step:\n\n1. \\( a(0) = 2 \\)\n2. \\( a(1) = 5 \\)\n3. Calculate \\( a(2) \\):\n   \\[\n   a(2) = 4 * a(1) - 3 * a(0) = 4 * 5 - 3 * 2 = 20 - 6 = 14\n   \\]\n4. Calculate \\( a(3) \\):\n   \\[\n   a(3) = 4 * a(2) - 3 * a(1) = 4 * 14 - 3 * 5 = 56 - 15 = 41\n   \\]\n5. Calculate \\( a(4) \\):\n   \\[\n   a(4) = 4 * a(3) - 3 * a(2) = 4 * 41 - 3 * 14 = 164 - 42 = 122\n   \\]\n6. Finally, calculate \\( a(5) \\):\n   \\[\n   a(5) = 4 * a(4) - 3 * a(3) = 4 * 122 - 3 * 41 = 488 - 123 = 365\n   \\]\n\nThus, \\( a(5) \\) is calculated to be \\( 365 \\).\n\nFinal answer: 365"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "365",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find \\( a(5) \\) using the recurrence relation \\( a(n) = 4*a(n-1) - 3*a(n-2) \\) with initial conditions \\( a(0) = 2 \\) and \\( a(1) = 5 \\), we will compute the necessary terms step by step.\n\n1. **Initial conditions:**\n   - \\( a(0) = 2 \\)\n   - \\( a(1) = 5 \\)\n\n2. **Calculate subsequent values:**\n   - \\( a(2) = 4*a(1) - 3*a(0) = 4*5 - 3*2 = 20 - 6 = 14 \\)\n   - \\( a(3) = 4*a(2) - 3*a(1) = 4*14 - 3*5 = 56 - 15 = 41 \\)\n   - \\( a(4) = 4*a(3) - 3*a(2) = 4*41 - 3*14 = 164 - 42 = 122 \\)\n   - \\( a(5) = 4*a(4) - 3*a(3) = 4*122 - 3*41 = 488 - 123 = 365 \\)\n\nThus, we find \\( a(5) = 365 \\).\n\nFinal answer: 365"
+  }
+]

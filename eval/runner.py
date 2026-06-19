@@ -38,14 +38,18 @@ from llm.rate_limits import monitor as rate_limit_monitor
 from models import LeakageResult, QuestionPair, RunSummary, ScaffoldResult, XAccuracyResult
 from scaffolds.base import load_pairs, load_scaffold_result, save_pairs_for_run, save_scaffold_result
 from scaffolds.baseline_avoid import run_baseline_avoid
+from scaffolds.cheating_avoid import run_cheating_avoid
 from scaffolds.control import run_control
+from scaffolds.control_answer_only import run_control_answer_only
 from scaffolds.threaded import run_threaded
 from scaffolds.two_agent import run_two_agent
 
 
 SCAFFOLD_RUNNERS = {
     "control": run_control,
+    "control_answer_only": run_control_answer_only,
     "baseline_avoid": run_baseline_avoid,
+    "cheating_avoid": run_cheating_avoid,
     "threaded": run_threaded,
     "two_agent": run_two_agent,
 }
@@ -142,6 +146,7 @@ def _run_y_job(
     scratch_results,
     temperature: float,
     grader_temperature: float,
+    x_correct: bool = True,
 ) -> LeakageResult:
     result_path = run_dir / pair.id / scaffold_name / f"{trial}.json"
     result = load_scaffold_result(result_path)
@@ -157,6 +162,7 @@ def _run_y_job(
         temperature=temperature,
         grader_temperature=grader_temperature,
     )
+    leakage_result.x_correct = x_correct
     y_path = run_dir / pair.id / scaffold_name / f"{trial}_y_trials.json"
     y_path.write_text(
         json.dumps([item.model_dump() for item in y_trials_data], indent=2),
@@ -307,6 +313,10 @@ def run_full_eval(
         else:
             x_results.append(value)
 
+    x_correct_lookup = {
+        (r.scaffold, r.pair_id, r.trial): r.correct for r in x_results
+    }
+
     if skip_y:
         print("Skipped Y leakage eval (--skip-y). Run y-sweep on traces when ready.", flush=True)
         _write_rate_limit_report(run_dir, manifest)
@@ -332,6 +342,7 @@ def run_full_eval(
             scratch_by_pair[job[1].id],
             temperature,
             grader_temperature,
+            x_correct_lookup.get((job[0], job[1].id, job[2]), True),
         ),
         job_workers,
         "y-eval",
@@ -367,18 +378,26 @@ def build_summary(
     mean_y_accuracy_with_trace: dict[str, float | None] = {}
     mean_leakage: dict[str, float | None] = {}
     leakage_by_pair: dict[str, dict[str, float | None]] = defaultdict(dict)
+    leakage_trials_used: dict[str, int] = {}
+    leakage_trials_total: dict[str, int] = {}
 
+    # Leakage is only meaningful when the scaffold actually solved X; otherwise a
+    # scaffold can suppress leakage by refusing to compute. Condition all Y/leakage
+    # aggregates on X being graded correct for that exact trace.
     for scaffold in scaffolds:
         scaffold_leakage = [r for r in leakage_results if r.scaffold == scaffold]
+        qualifying = [r for r in scaffold_leakage if r.x_correct]
+        leakage_trials_total[scaffold] = len(scaffold_leakage)
+        leakage_trials_used[scaffold] = len(qualifying)
         mean_y_accuracy_scratch[scaffold] = _mean_or_none(
-            [r.y_accuracy_scratch for r in scaffold_leakage]
+            [r.y_accuracy_scratch for r in qualifying]
         )
         mean_y_accuracy_with_trace[scaffold] = _mean_or_none(
-            [r.y_accuracy_with_trace for r in scaffold_leakage]
+            [r.y_accuracy_with_trace for r in qualifying]
         )
-        mean_leakage[scaffold] = _mean_or_none([r.leakage for r in scaffold_leakage])
+        mean_leakage[scaffold] = _mean_or_none([r.leakage for r in qualifying])
         for pair_id in pair_ids:
-            pair_leakage = [r for r in scaffold_leakage if r.pair_id == pair_id]
+            pair_leakage = [r for r in qualifying if r.pair_id == pair_id]
             if pair_leakage:
                 leakage_by_pair[pair_id][scaffold] = mean(r.leakage for r in pair_leakage)
 
@@ -392,6 +411,8 @@ def build_summary(
         mean_y_accuracy_with_trace=mean_y_accuracy_with_trace,
         mean_leakage=mean_leakage,
         leakage_by_pair=dict(leakage_by_pair),
+        leakage_trials_used=leakage_trials_used,
+        leakage_trials_total=leakage_trials_total,
     )
 
 
@@ -485,6 +506,7 @@ def analyze_run(
             y_accuracy_scratch=y_accuracy_scratch,
             y_accuracy_with_trace=y_accuracy_with_trace,
             leakage=leakage,
+            x_correct=x_result.correct,
         )
 
     print(f"Regrading {len(tasks)} traces...", flush=True)
@@ -570,9 +592,18 @@ def y_sweep_trace(
 
 
 def print_summary(summary: RunSummary) -> None:
-    headers = ["Scaffold", "X accuracy", "Y acc scratch", "Y acc w/ trace", "Leakage"]
+    headers = [
+        "Scaffold",
+        "X accuracy",
+        "Y acc scratch",
+        "Y acc w/ trace",
+        "Leakage",
+        "Trials (X-ok)",
+    ]
     rows: list[list[str]] = []
     for scaffold in summary.scaffolds:
+        used = summary.leakage_trials_used.get(scaffold, 0)
+        total = summary.leakage_trials_total.get(scaffold, 0)
         rows.append(
             [
                 scaffold,
@@ -580,6 +611,7 @@ def print_summary(summary: RunSummary) -> None:
                 _fmt(summary.mean_y_accuracy_scratch.get(scaffold)),
                 _fmt(summary.mean_y_accuracy_with_trace.get(scaffold)),
                 _fmt(summary.mean_leakage.get(scaffold)),
+                f"{used}/{total}",
             ]
         )
 
@@ -589,6 +621,11 @@ def print_summary(summary: RunSummary) -> None:
     print("-+-".join("-" * width for width in widths))
     for row in rows:
         print(" | ".join(cell.ljust(widths[i]) for i, cell in enumerate(row)))
+    print(
+        "Note: Y accuracy and leakage are averaged only over trials where X was "
+        "graded correct (see Trials X-ok).",
+        flush=True,
+    )
 
 
 def _fmt(value: float | None) -> str:

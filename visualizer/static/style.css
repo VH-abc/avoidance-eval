@@ -113,9 +113,34 @@ select {
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.75rem;
   margin-bottom: 1rem;
+}
+.scaffold-stats {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+.scaffold-stats-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.scaffold-stats-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.scaffold-stats .stat-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
 }
 .stat-card {
   background: var(--surface);
@@ -268,13 +293,71 @@ table.compact th {
   color: var(--muted);
   font-size: 0.72rem;
 }
+.y-trace-subhead {
+  padding: 0.4rem 0.75rem 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
 .y-trace-body {
-  padding: 0.65rem 0.75rem;
+  padding: 0.4rem 0.75rem 0.65rem;
   font-family: var(--mono);
   font-size: 0.78rem;
   line-height: 1.45;
   white-space: pre-wrap;
   max-height: 240px;
+  overflow-y: auto;
+}
+.solver-context {
+  margin: 0 0.5rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+}
+.solver-context > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.74rem;
+  color: var(--accent, #6ea8fe);
+}
+.solver-context > summary::-webkit-details-marker {
+  display: none;
+}
+.solver-context .turns {
+  padding: 0.25rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.turn {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.turn-role {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--surface-2);
+}
+.turn-user .turn-role {
+  border-left: 3px solid var(--warn, #d8a657);
+}
+.turn-assistant .turn-role {
+  border-left: 3px solid var(--good);
+}
+.turn-content {
+  margin: 0;
+  padding: 0.5rem 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  max-height: 320px;
   overflow-y: auto;
 }
 .caption {

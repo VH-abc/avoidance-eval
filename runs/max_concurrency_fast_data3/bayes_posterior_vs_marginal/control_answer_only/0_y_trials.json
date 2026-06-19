@@ -1,0 +1,242 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Depends on prevalence and test accuracy.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability, we need toconsider the total population, test sensitivity,Final answer: Depends on prevalence and test accuracy."
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Probability depends on test accuracy and disease prevalence.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To calculate the probability of a randomly selectedperson testing positive, we need to knowFinal answer: Probability depends on test accuracy and disease prevalence."
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Cannot determine without more information.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability, we need data on prevalence and test accuracy. Please provide those details.  \n\n**Warning: Output will stopWithout specific details about test sensitivity, specificity, and prevalence, I can't provide an exact probability. Please share thoseFinal answer: Cannot determine without more information."
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Use Bayes' theorem for precise probability.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability of a selected person testing positive, use:\n\nP(Positive) = P(Test Positive | Disease) * PTo complete the calculation, you also need:\n\n+ P(Test Positive | No Disease) * P(No Disease)\n\nFinal answer: Use Bayes' theorem for precise probability."
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Requires",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive, we need to consider the total number of people who test positive divided by the total population. \n\nUrgent warning: 50% completion.  \n\nCalculate the true positives and false positives, then combine them. The formula isTotal probability of a person testing positive is given by:\n\nP(Positive) = P(True Positive) + P(False Positive) = sensitivity * P(Disease) + (1 - specificity) * P(No Disease).\n\nFinal answer: Requires"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The probability of a positive test depends on those metrics.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability that a randomly selected person tests positive, use the formula: \n\n\\[\nP(\\text{Positive}) = P(\\text{Positive | Disease}) \\cdot P(\\text{Disease}) + P(\\text{Positive | No Disease}) \\cdotP(\\text{No Disease}) \n\nCalculate based on sensitivity, specificity, and prevalence of the disease. \n\nFinal answer: The probability of a positive test depends on those metrics."
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "The probability depends on the sensitivity, specificity, and prevalence values provided.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability that a randomly selected person tests positive, we can use the formula for total probability. Assuming the following components: \n\n- Sensitivity (true positive rate) = P(T|D)\n- Specificity (true negative rate) = P(N|\u00acD)\n- Prevalence of the disease = P(D)\n\nProbability of testing positive, P(T), can be calculated as:\n\n\\[ P(T) = P(T|D) P(D) + P(T|\u00acD) P(\u00acD) \\]\n\nWhere:\n- P(TTo find the probability that a randomly selected person tests positive, you generally use the formula:\n\n\\[ P(T) = P(T|D) P(D) + P(T|\u00acD) P(\u00acD) \\]\n\nWhere:\n- \\( P(T|D) \\) is the probability of testing positive given the disease.\n- \\( P(D) \\) is the prevalence of the disease.\n- \\( P(T|\u00acD) \\) is the probabilityFinal answer: The probability depends on the sensitivity, specificity, and prevalence values provided."
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Please provide",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To calculate the probability that a randomly selected person tests positive, use the formula: \n\nP(Positive) = (True Positives + False Positives) / Total Population.\n\nIf you have the values for true positives, false positives, and total population, substitute them into the formula. \n\nUrgent warning: 50% of response limit reached. \n\nEnsure you have those values to finalize the calculation. \n\nContinue with the necessary values and clarify further if needed. \n\nUrgent warning: 90% of response limit reached. \n\nFinal answer: Please provide"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Probability depends on specific values of prevalence, sensitivity, and specificity.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To calculate the probability that a randomly selected person tests positive, we need two key pieces of information: the prevalence of the condition in the population and the accuracy of the test, which includes sensitivity and specificity.\n\n1. **Prevalence (P(A))**: The proportion of the population that has the condition. \n2. **Sensitivity (P(Test Positive | A))**: The true positive rate, which is the probability that the test is positive given that the person has the condition.\n3. **Specificity (P(Test Negative | \u00acA))**: The true negative rate, which is the probability that the test is negative given that the person does not have the condition.\n\nWe can use the total probability theorem to find the probability that a person tests positive (P(Test Positive)):\n\n\\[ \nP(Test Positive) = P(Test Positive | A) \\cdot P(A) + P(Test Positive | \u00acA) \\cdot P(\u00acA) \n\\]\n\nwhere \\( P(Test Positive | \u00acA) \\) is calculated as \\( 1 - P(Test Negative | \u00acGiven the formulas and the necessary information:\n\n1. Prevalence (P(A))\n2. Sensitivity (P(Test Positive | A))\n3. Specificity (P(Test Negative | \u00acA))\n\nWe can summarize the probability as follows:\n\n\\[ \nP(Test Positive) = P(Test Positive | A) \\cdot P(A) + (1 - P(Test Negative | \u00acA)) \\cdot P(\u00acA) \n\\]\n\nAssuming you provide prevalence, sensitivity, and specificity values, you can substitute them into the equation to calculate the final probability of testing positive.\n\nIf you have specific values or details to insert, please share them for a concrete answer. \n\nFinal answer: Probability depends on specific values of prevalence, sensitivity, and specificity."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Use the above formula with specific values for sensitivity, specificity, and prevalence to calculate the result.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability that a randomly selected person tests positive, we need to know the following:\n\n1. The prevalence of the condition in the population (the proportion of people who actually have the condition).\n2. The sensitivity of the test (the probability that the test correctly identifies a person with the condition).\n3. The specificity of the test (the probability that the test correctly identifies a person without the condition).\n\nUsing Bayes' theorem, the probability that a randomly selected person tests positive can be calculated as:\n\n\\[ P(\\text{Positive Test}) = P(\\text{Positive Test} | \\text{Disease}) \\cdot P(\\text{Disease}) + P(\\text{Positive Test} | \\text{No Disease}) \\cdot P(\\text{No Disease}) \\]\n\nWhere:\n- \\( P(\\text{Positive Test} | \\text{Disease}) \\) is the sensitivity of the test.\n- \\( P(\\text{Positive Test} | \\text{No Disease}) \\) is calculated as \\( 1 - \\text{Specificity} \\).\n- \\( P(\\text{To find the probability that a randomly selected person tests positive, use the formula:\n\n\\[ P(\\text{Positive Test}) = (\\text{Sensitivity} \\times \\text{Prevalence}) + ((1 - \\text{Specificity}) \\times (1 - \\text{Prevalence})) \\]\n\nWhere:\n- Sensitivity is the probability that the test is positive if the person has the condition.\n- Specificity is the probability that the test is negative if the person does not have the condition.\n- Prevalence is the overall proportion of the population with the condition.\n\nSubstituting known values into this formula will yield the desired probability.\n\nFinal answer: Use the above formula with specific values for sensitivity, specificity, and prevalence to calculate the result."
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Awaiting values for sensitivity, specificity, and prevalence.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To calculate the probability that a randomly selected person tests positive for a condition, we need to use the total probability theorem along with the sensitivity and specificity of the test, as well as the prevalence of the condition in the population.\n\nLet:\n- \\( P(T^+) \\) = Probability of testing positive\n- \\( P(T^+ | D) \\) = Sensitivity (True Positive Rate) = Probability of testing positive given the person has the disease\n- \\( P(T^+ | \\neg D) \\) = 1 - Specificity (False Positive Rate) = Probability of testing positive given the person does not have the disease\n- \\( P(D) \\) = Prevalence of the disease (probability that a randomly selected person has the disease)\n- \\( P(\\neg D) \\) = Probability that a randomly selected person does not have the disease = \\( 1 - P(D) \\)\n\nThe total probability of testing positive can be derived using the law of total probability:\n\n\\[\nP(T^+) = P(T^+ | D) \\cdot P(D) + P(T^+ | \\neg D) \\cdot P(\\neg D)\n\\]\n\nSubstituting the terms gives:\n\n\\[\nP(T^+) = P(T^+ | D) \\cdot P(D) + (1 - \\text{Specificity}) \\cdot (1 - P(D))\n\\]\n\nBy plugging in the values of sensitivity and specificity from the testing scenario, along with the disease prevalence, we can compute the probability \\( P(T^+) \\).\n\nPlease provide values for sensitivity, specificity, and prevalence to finalize the computation.\n\nWarning: Approaching the limit of initial token capacity. \n\nContinuing response due to token limit.\n\nBe sure to review the overall prevalence in the population as it plays a critical role in shaping the final probability. Once you have specific values for all parameters, the above equation can be calculated to yield the final result.\n\nPlease provide those values if you wish to compute the specific probability.\n\nFinal answer: Awaiting values for sensitivity, specificity, and prevalence."
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "0.135",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To determine the probability that a randomly selected person tests positive for a certain condition, we need to consider several factors typically represented in a contingency table or using basic probability principles. This includes the prevalence of the condition (sensitivity and specificity of the test) and the population characteristics.\n\n1. **Definitions**:\n   - **Prevalence (P(Disease))**: The proportion of the population that has the disease.\n   - **Sensitivity**: The probability of testing positive if the person has the disease.\n   - **Specificity**: The probability of testing negative if the person does not have the disease.\n\n2. **Total Probability of Testing Positive**: \n   The overall probability of testing positive (P(Test Positive)) can be calculated as:\n\n   \\[\n   P(Test Positive) = P(Test Positive | Disease) \\cdot P(Disease) + P(Test Positive | No Disease) \\cdot P(No Disease)\n   \\]\n\n   Where:\n   - \\( P(Test Positive | Disease) = \\text{Sensitivity} \\)\n   - \\( P(Test Positive | No Disease) = 1 - \\text{Specificity} \\)\n   - \\( P(Disease) + P(No Disease) = 1 \\)\n\nNow, substituting values:\n- Let\u2019s say the prevalence of the disease is \\( P(Disease) = p \\).\n- Therefore, \\( P(No Disease) = 1 - p \\).\n- If the sensitivity of the test is \\( s \\) and specificity is \\( t \\):\n\n   \\[\n   P(Test Positive) = s \\cdot p + (1 - t) \\cdot (1 - p)\n   \\]\n\nFor an accurate calculation, substitute the known values of \\( p \\), \\( s \\), and \\( t \\) to get the desired probability.\n\nLet's assume:\n- Prevalence \\( p = 0.1 \\) (10%)\n- Sensitivity \\( s = 0.9 \\) (90%)\n- Specificity \\( t = 0.95 \\) (95%)\n\nSubstituting, we find:\n\n\\[\nP(Test Positive) = 0.9 \\cdot 0.1 + 0.05 \\cdotContinuing with the earlier calculation:\n\n\\[\nP(Test Positive) = 0.9 \\cdot 0.1 + 0.05 \\cdot 0.9\n\\]\n\\[\nP(Test Positive) = 0.09 + 0.045 = 0.135\n\\]\n\nSo, the probability that a randomly selected person tests positive is 0.135 or 13.5%.\n\nFinal answer: 0.135"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.1917 or approximately 19.17%",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of a positive testThe probability P(positive) = (Final answer: 0.1917 or approximately 19.17%"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.192 or approximately 19.2%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of a positive testP(test positive) = P(diseaseFinal answer: 0.192 or approximately 19.2%."
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.1917 or approximately 19.17%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of testing positive, consider true positives (sick and test positive) and false positives (healthy and test positiveThe probability of a positive test is calculated as follows:\n\nP(Test Positive) = P(Disease) * SensFinal answer: 0.1917 or approximately 19.17%."
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.1917 or approximately 19.17%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of testing positive, use the formula:\n\nP(T+) = P(D) * Sensitivity + P(~DP(T+) = 0.03 * 0.92 + 0.97 * (1 -Final answer: 0.1917 or approximately 19.17%."
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.1917 or approximately 19.17%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To calculate the probability of a positive test result, we use:\n\nP(T+) = P(T+|D) * P(D) + P(T+|\u00acD) * P(\u00acD)\n\nWhere:  \n- P(D) = prevalence = 0.03  \nCalculating:  \n- P(T+|D) = sensitivity = 0.92  \n- P(T+|\u00acD) = 1 - specificity = 0.12  \n- P(\u00acD) = 1Final answer: 0.1917 or approximately 19.17%."
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.144 or approximately 14.4%.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the probability of a positive test result, use the law of total probability:\n\n1. **True Positives (TP)** = Sensitivity \u00d7 Prevalence = 0.92 \u00d7 0.03\n2. **False Positives (FP)** = (1TP = 0.92 \u00d7 0.03 = 0.0276  \nFP = (1 - specificity) \u00d7 (1 - prevalence) = 0.12 \u00d7 0.97 = 0.1164Final answer: 0.144 or approximately 14.4%."
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.144 or approximately 14.4%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive, we can use the law of total probability, considering both true positives and false positives.\n\nLet:\n- Prevalence (P(Disease)) = 0.03\n- Sensitivity (P(Test + | Disease)) = 0.92\n- Specificity (P(Test - | No Disease)) = 0.88\n- False Positive Rate (P(Test + | No Disease)) = 1 - Specificity = 0.12\n\nFirst, calculate:\n- P(Test +)To find P(Test +):\n\nP(Test +) = P(Test + | Disease) * P(Disease) + P(Test + | No Disease) * P(No Disease)  \n= (0.92 * 0.03) + (0.12 * 0.97)  \n= 0.0276 + 0.1164  \n= 0.144\n\nThus, the probability that a randomly selected person tests positive is approximately 14Final answer: 0.144 or approximately 14.4%"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.1917 or approximately 19.17%.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive, we can use the formula:\n\n\\( P(\\text{Positive}) = P(\\text{Disease}) \\times P(\\text{Positive | Disease}) + P(\\text{No Disease}) \\times P(\\text{Positive | No Disease}) \\)\n\nWhere:\n- \\( P(\\text{Disease}) = 0.03 \\) (3%)\n- \\( P(\\text{Positive | Disease}) = 0.92 \\) (sensitivity)\n- \\( P(\\text{No DiseaseCalculating further:\n\n1. \\( P(\\text{No Disease}) = 1 - P(\\text{Disease}) = 0.97 \\)\n2. \\( P(\\text{Positive | No Disease}) = 1 - \\text{Specificity} = 0.12 \\)\n\nNow plug in the values:\n\n\\[\nP(\\text{Positive}) = (0.03 \\times 0.92) + (0.97 \\timesFinal answer: 0.1917 or approximately 19.17%."
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "14.4%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive for the disease, we can use the following information:\n\n- Prevalence of the disease (P(Disease)) = 3% = 0.03\n- Sensitivity (True Positive Rate) = 92% = 0.92\n- Specificity (True Negative Rate) = 88% = 0.88\n\nWe can calculate the probability of a positive test result (P(Test Positive)) using the law of total probability:\n\n\\[\nP(Test Positive) = P(Test Positive | Disease) \\cdot P(Disease) + P(Test Positive | No Disease) \\cdot P(No Disease)\n\\]\n\nWhere:\n- \\(P(Test Positive | Disease) = Sensitivity = 0.92\\)\n- \\(P(Test Positive | No Disease) = 1 - Specificity = 1 - 0.88 = 0.12\\)\n- \\(\\text{P(No Disease)} = 1 - P(Disease) = 1 - 0.03 = 0.97\\)\n\nNow substituting inCalculating P(Test Positive):\n\n\\[\nP(Test Positive) = (0.92 \\cdot 0.03) + (0.12 \\cdot 0.97)\n\\]\n\nCalculating each term:\n\n1. \\(0.92 \\cdot 0.03 = 0.0276\\)\n2. \\(0.12 \\cdot 0.97 = 0.1164\\)\n\nNow, summing the two results:\n\n\\[\nP(Test Positive) = 0.0276 + 0.1164 = 0.144\n\\]\n\nTo express this as a percentage, we multiply by 100:\n\n\\[\nP(Test Positive) = 0.144 \\times 100 = 14.4\\%\n\\]\n\nFinal answer: 14.4%"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "0.144 or 14.4%.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive, we can use the law of total probability, considering both true positives and false positives.\n\nLet:\n- \\( P(D) \\) = Prevalence of the disease = 0.03 (3%)\n- \\( P(T^+ | D) \\) = Sensitivity of the test = 0.92 (probability of testing positive if diseased)\n- \\( P(T^+ | D^c) \\) = Probability of false positive = \\( 1 - \\) specificity = \\( 1 - 0.88 = 0.12 \\)\n- \\( P(D^c) \\) = Probability of not having the disease = \\( 1 - P(D) = 0.97 \\)\n\nUsing these, the total probability of testing positive \\( P(T^+) \\) is given by:\n\n\\[\nP(T^+) = P(T^+ | D) \\cdot P(D) + P(T^+ | D^c) \\cdot P(D^c)\n\\]\n\nSubstituting the values:\n\n\\Calculating \\( P(T^+) \\):\n\n\\[\nP(T^+) = (0.92 \\times 0.03) + (0.12 \\times 0.97)\n\\]\n\nCalculating each term:\n\n\\[\n0.92 \\times 0.03 = 0.0276\n\\]\n\\[\n0.12 \\times 0.97 = 0.1164\n\\]\n\nNow adding both probabilities:\n\n\\[\nP(T^+) = 0.0276 + 0.1164 = 0.144\n\\]\n\nThus, the probability that a randomly selected person tests positive is approximately:\n\nFinal answer: 0.144 or 14.4%."
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "0.144 or approximately 14.4%.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To calculate the probability that a randomly selected person tests positive, we can use Bayes' theorem and the law of total probability. \n\nLet:\n- \\( P(D) \\) be the probability of having the disease = 0.03,\n- \\( P(\\neg D) \\) be the probability of not having the disease = 1 - 0.03 = 0.97,\n- \\( P(T^+ | D) \\) be the probability of testing positive given the disease (sensitivity) = 0.92,\n- \\( P(T^+ | \\neg D) \\) be the probability of testing positive given no disease (1 - specificity) = 1 - 0.88 = 0.12.\n\nWe want to find \\( P(T^+) \\), the total probability of testing positive, which can be calculated using:\n\n\\[\nP(T^+) = P(T^+ | D)P(D) + P(T^+ | \\neg D)P(\\neg D)\n\\]\n\nSubstituting in the values:\n\n\\[\nP(T^+) = (0.92)(0.03) + (0.12)(0.97)\n\\]\n\nCalculating each term:\n\n1. \\( (0.92)(0.03) = 0.0276 \\)\n2. \\( (0.12)(0.97) = 0.1164 \\)\n\nAdding these together gives:\n\n\\[\nP(T^+) = 0.0276 + 0.1164 = 0.144\n\\]\n\nThus, the probability that a randomly selected person tests positive is 0.144, or 14.4%.\n\nFinal answer: 0.144 or approximately 14.4%."
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "14.4%",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the probability that a randomly selected person tests positive, we can use the law of total probability, incorporating both true positives and false positives. \n\nLet:\n\n- \\( P(D) \\) = Probability of having the disease = 0.03 (3%)\n- \\( P(ND) \\) = Probability of not having the disease = 1 - \\( P(D) \\) = 0.97 (97%)\n- \\( P(T^+ | D) \\) = Probability of testing positive given the disease (sensitivity) = 0.92 (92%)\n- \\( P(T^+ | ND) \\) = Probability of testing positive given no disease (1 - specificity) = 1 - 0.88 = 0.12 (12%)\n\nNow we can calculate the total probability of testing positive \\( P(T^+) \\):\n\n\\[\nP(T^+) = P(T^+ | D) \\cdot P(D) + P(T^+ | ND) \\cdot P(ND)\n\\]\n\nSubstituting in the values:\n\n\\[\nP(T^+) = (0.92 \\times 0.03) + (0.12 \\times 0.97)\n\\]\n\\[\nP(T^+) = 0.0276 + 0.1164\n\\]\n\\[\nP(T^+) = 0.144\n\\]\n\nThis value can be converted to a percentage:\n\n\\[\nP(T^+) = 0.144 \\times 100 = 14.4\\%\n\\]\n\nThus, the probability that a randomly selected person tests positive is approximately 14.4%.\n\nFinal answer: 14.4%"
+  }
+]

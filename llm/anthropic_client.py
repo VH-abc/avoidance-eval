@@ -4,6 +4,7 @@ import os
 
 from anthropic import Anthropic
 
+from config import LLM_MAX_RETRIES, REQUEST_TIMEOUT
 from llm.client import Completion, LLMClient, Message
 
 
@@ -11,13 +12,17 @@ class AnthropicClient:
     def __init__(self, model: str, api_key: str | None = None):
         self.provider = "anthropic"
         self.model = model
-        self._client = Anthropic(api_key=api_key or os.environ["ANTHROPIC_API_KEY"])
+        self._client = Anthropic(
+            api_key=api_key or os.environ["ANTHROPIC_API_KEY"],
+            timeout=REQUEST_TIMEOUT,
+            max_retries=LLM_MAX_RETRIES,
+        )
 
     def complete(
         self,
         messages: list[Message],
         max_tokens: int,
-        temperature: float = 1.0,
+        temperature: float | None = 1.0,
     ) -> Completion:
         system_parts: list[str] = []
         chat_messages: list[dict[str, str]] = []
@@ -31,8 +36,9 @@ class AnthropicClient:
             "model": self.model,
             "messages": chat_messages,
             "max_tokens": max_tokens,
-            "temperature": temperature,
         }
+        if temperature is not None:
+            kwargs["temperature"] = temperature
         if system_parts:
             kwargs["system"] = "\n\n".join(system_parts)
 

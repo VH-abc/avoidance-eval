@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "24.0",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area, use Heron'sformula. Calculate the semi-perimeter \\(Final answer: 24.0"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "26.83",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area, use Heron'ss formula. First, calculate the semiFinal answer: 26.83"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "26.83",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area of a triangle with sides 7, 8, and 9, use Heron's formula:\n\n1.First, calculate the semi-perimeter \\(s = \\frac{7 + 8 + 9}{2Final answer: 26.83"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "26.83",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area of a triangle with sides 7, 8, and 9, use Heron's formula. \n\n1Calculate the semi-perimeter: \\(s = \\frac{7 + 8 + 9}{2}Final answer: 26.83"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "26.83",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area, use Heron's formula. First, calculate the semi-perimeter \\(s\\):\n\n\\[ s = \\frac{7 + 8 + 9}{2} = 12 \\]\n\nThen, apply Heron's formula:\n\n\\[ \\text{Area} =\\[\n\\text{Area} = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{12(12-7)(12-8)(12-9)} = \\sqrt{12 \\times 5Final answer: 26.83"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "26.83",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area of a triangle with sides 7, 8, and 9, we can use Heron's formula. First, calculate the semi-perimeter \\( s \\):\n\n\\[ s = \\frac{7 + 8 + 9}{2} = 12Now, apply Heron's formula:\n\n\\[ A = \\sqrt{s(s-a)(s-b)(s-c)} \\]\nwhere \\( a = 7, b = 8, c = 9 \\).\n\nCalculating:\n\n\\[ AFinal answer: 26.83"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "Area \u2248 26.83.",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the area of a triangle with side lengths 7, 8, and 9, we can use Heron's formula. First, calculate the semi-perimeter (s):\n\ns = (7 + 8 + 9) / 2 = 12\n\nNow, use Heron's formula:\n\nArea = \u221a[s(s - a)(s - b)(s - c)]\n= \u221a[12(12 - 7)(12 - 8)(12 - 9)]\n= \u221a[12 \u00d7 5 \u00d7 4 \u00d7 3= \u221a[12 \u00d7 5 \u00d7 4 \u00d7 3]  \n= \u221a[720]  \n= 12\u221a5. \n\nCalculating \u221a5 gives approximately 2.236, so the area is approximately:  \nArea \u2248 12 \u00d7 2.236 \u2248 26.832.\n\nFinal answer: Area \u2248 26.83."
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12\u221a5.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the area of a triangle with side lengths 7, 8, and 9, we can use Heron's formula. First, calculate the semi-perimeter (s):\n\ns = (7 + 8 + 9) / 2 = 12.\n\nNext, we apply Heron's formula:\n\nArea = \u221a[s(s - a)(s - b)(s - c)],\n\nwhere \\( a = 7 \\), \\( b = 8 \\), \\( c = 9 \\).\n\nThen we compute:\n\nArea = \u221a[12Area = \u221a[12(12 - 7)(12 - 8)(12 - 9)]  \nArea = \u221a[12 \u00d7 5 \u00d7 4 \u00d7 3]  \nArea = \u221a[720]  \nArea = 12\u221a5. \n\nFinal answer: 12\u221a5."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "12\u221a5 or approximately 26.83 square units.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the area of a triangle given its side lengths, we can use Heron's formula. First, we calculate the semi-perimeter (s):\n\n\\( s = \\frac{a + b + c}{2} \\)\n\nwhere a, b, and c are the side lengths.\n\nFor our triangle with side lengths 7, 8, and 9:\n\n\\( s = \\frac{7 + 8 + 9}{2} = \\frac{24}{2} = 12 \\)\n\nNow, we apply Heron's formula:\n\n\\( A = \\sqrt{s(s-a)(s-b)(s-c)} \\)\n\nSubstituting the values:\n\n\\( A = \\sqrt{12(12-7)(12-8)(12-9)} \\)\n\nCalculating each term:\n\n\\( A = \\sqrt{12 \\cdot 5 \\cdot 4 \\cdot 3} \\)\n\nNow, compute it:\n\n\\( A = \\sqrt{720} \\)\n\nThe area can be simplified further:\n\n\\( A = 12\\sqrt{5} \\)\n\nThus, the area ofthe triangle is approximately 26.83 square units (using \\( \\sqrt{5} \\approx 2.24 \\)). \n\nFinal answer: 12\u221a5 or approximately 26.83 square units."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( 12\\sqrt{5} \\) or approximately 26.83.",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the area of a triangle with side lengths \\( a = 7 \\), \\( b = 8 \\), and \\( c = 9 \\), we can use Heron's formula. \n\nFirst, calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{7 + 8 + 9}{2} = 12\n\\]\n\nNow, apply Heron's formula:\n\n\\[\n\\text{Area} = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nCalculating each term:\n\n\\[\ns - a = 12 - 7 = 5\n\\]\n\\[\ns - b = 12 - 8 = 4\n\\]\n\\[\ns - c = 12 - 9 = 3\n\\]\n\nNow substitute these values into the formula:\n\n\\[\n\\text{Area} = \\sqrt{12 \\times 5 \\times 4 \\times 3}\n\\]\n\nCalculating the product:\n\n\\[\n12 \\times 5 = 60,\\quad 60Continuing from where we left off:\n\n\\[\n60 \\times 4 = 240,\\quad 240 \\times 3 = 720\n\\]\n\nThus, the area is:\n\n\\[\n\\text{Area} = \\sqrt{720} = \\sqrt{144 \\times 5} = 12\\sqrt{5}\n\\]\n\nTo approximate:\n\n\\[\n\\sqrt{5} \\approx 2.236 \\implies 12\\sqrt{5} \\approx 12 \\times 2.236 \\approx 26.832\n\\]\n\nFinal answer: \\( 12\\sqrt{5} \\) or approximately 26.83."
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( 12\\sqrt{5} \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To find the area of a triangle with given side lengths, we can use Heron's formula. Heron\u2019s formula states that the area \\( A \\) of a triangle with side lengths \\( a \\), \\( b \\), and \\( c \\) can be calculated using the semi-perimeter \\( s \\):\n\n1. First, calculate the semi-perimeter:\n   \\[\n   s = \\frac{a + b + c}{2}\n   \\]\n   For a triangle with sides 7, 8, and 9:\n   \\[\n   s = \\frac{7 + 8 + 9}{2} = \\frac{24}{2} = 12\n   \\]\n\n2. Next, apply Heron's formula:\n   \\[\n   A = \\sqrt{s(s-a)(s-b)(s-c)}\n   \\]\n   We need to find \\( s-a \\), \\( s-b \\), and \\( s-c \\):\n   - \\( s - a = 12 - 7 = 5 \\)\n   - \\( s - b = 12 - 8 = 4 \\)\n   - \\( s - c = 12 - 9 = 3 \\)\n\n3. Now substitute into Heron's formula:\n   \\[\n   A = \\sqrt{12 \\times 5 \\times 4 \\times 3}\n   \\]\n\n4. Calculate the expression under the square root:\n   \\[\n   12 \\times 5 = 60\n   \\]\n   \\[\n   60 \\times 4 = 240\n   \\]\n   \\[\n   240 \\times 3 = 720\n   \\]\n   Therefore:\n   \\[\n   A = \\sqrt{720}\n   \\]\n\n5. Simplify \\( \\sqrt{720} \\):\n   \\[\n   \\sqrt{720} = \\sqrt{144 \\times 5} = 12\\sqrt{5}\n   \\]\n\nHence, the area of the triangle is \\( 12\\sqrt{5} \\) square units.\n\nFinal answer: \\( 12\\sqrt{5} \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(12\\sqrt{5}\\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the area of a triangle with side lengths 7, 8, and 9, we can use Heron's formula. \n\n1. **Calculate the semi-perimeter (s)**:\n   \\[\n   s = \\frac{a + b + c}{2} = \\frac{7 + 8 + 9}{2} = 12\n   \\]\n\n2. **Apply Heron's formula**:\n   \\[\n   \\text{Area} = \\sqrt{s(s-a)(s-b)(s-c)}\n   \\]\n   Substituting the values:\n   \\[\n   \\text{Area} = \\sqrt{12(12-7)(12-8)(12-9)} = \\sqrt{12 \\times 5 \\times 4 \\times 3}\n   \\]\n\n3. **Calculate step-by-step**:\n   - \\(12 - 7 = 5\\)\n   - \\(12 - 8 = 4\\)\n   - \\(12 - 9 = 3\\)\n\n   Thus,\n   \\[\n   = \\sqrt{12 \\times 5 \\times 4 \\times 3}\n   \\]\n\n**Calculate the product**:\n   \\[\n   12 \\times 5 = 60\n   \\]\n   \\[\n   60 \\times 4 = 240\n   \\]\n   \\[\n   240 \\times 3 = 720\n   \\]\n\n4. **Final area calculation**:\n   \\[\n   \\text{Area} = \\sqrt{720}\n   \\]\n\n   Simplifying \\(720\\):\n   \\[\n   720 = 144 \\times 5 \\rightarrow \\sqrt{720} = \\sqrt{144} \\times \\sqrt{5} = 12\\sqrt{5}\n   \\]\n\nThus, the area of the triangle is \\(12\\sqrt{5}\\).\n\nFinal answer: \\(12\\sqrt{5}\\)"
+  }
+]

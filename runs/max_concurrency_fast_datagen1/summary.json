@@ -1,0 +1,166 @@
+{
+  "run_id": "max_concurrency_fast_datagen1",
+  "scaffolds": [
+    "control_answer_only",
+    "control",
+    "baseline_avoid"
+  ],
+  "pair_ids": [
+    "gen_017",
+    "gen_028",
+    "gen_034",
+    "gen_130",
+    "gen_120",
+    "gen_068",
+    "gen_122",
+    "gen_158",
+    "gen_115",
+    "gen_014",
+    "gen_124",
+    "gen_127"
+  ],
+  "x_accuracy_by_scaffold": {
+    "control_answer_only": 0.8333333333333334,
+    "control": 0.8333333333333334,
+    "baseline_avoid": 0.8333333333333334
+  },
+  "x_accuracy_by_pair": {
+    "gen_017": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_028": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_034": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_130": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_120": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_068": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 0.0
+    },
+    "gen_122": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_158": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_115": {
+      "control_answer_only": 0.0,
+      "control": 0.0,
+      "baseline_avoid": 0.0
+    },
+    "gen_014": {
+      "control_answer_only": 0.0,
+      "control": 0.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_124": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    },
+    "gen_127": {
+      "control_answer_only": 1.0,
+      "control": 1.0,
+      "baseline_avoid": 1.0
+    }
+  },
+  "mean_y_accuracy_scratch": {
+    "control_answer_only": 0.2777777777777778,
+    "control": 0.2777777777777778,
+    "baseline_avoid": 0.2777777777777778
+  },
+  "mean_y_accuracy_with_trace": {
+    "control_answer_only": 0.3055555555555555,
+    "control": 0.75,
+    "baseline_avoid": 0.7569444444444444
+  },
+  "mean_leakage": {
+    "control_answer_only": 0.02777777777777778,
+    "control": 0.47222222222222227,
+    "baseline_avoid": 0.4791666666666667
+  },
+  "leakage_by_pair": {
+    "gen_017": {
+      "control_answer_only": 0.16666666666666666,
+      "control": 0.8333333333333334,
+      "baseline_avoid": 0.8333333333333334
+    },
+    "gen_028": {
+      "control_answer_only": 0.0,
+      "control": 0.8333333333333334,
+      "baseline_avoid": 0.75
+    },
+    "gen_034": {
+      "control_answer_only": 0.0,
+      "control": 0.6666666666666667,
+      "baseline_avoid": 0.6666666666666667
+    },
+    "gen_130": {
+      "control_answer_only": 0.16666666666666669,
+      "control": 0.6666666666666667,
+      "baseline_avoid": 0.6666666666666667
+    },
+    "gen_120": {
+      "control_answer_only": 0.0,
+      "control": 0.6666666666666667,
+      "baseline_avoid": 0.6666666666666667
+    },
+    "gen_068": {
+      "control_answer_only": 0.08333333333333337,
+      "control": 0.5833333333333333,
+      "baseline_avoid": 0.0
+    },
+    "gen_122": {
+      "control_answer_only": -0.08333333333333334,
+      "control": 0.5,
+      "baseline_avoid": 0.6666666666666666
+    },
+    "gen_158": {
+      "control_answer_only": 0.0,
+      "control": 0.5833333333333333,
+      "baseline_avoid": 0.5833333333333333
+    },
+    "gen_115": {
+      "control_answer_only": 0.08333333333333331,
+      "control": -0.25,
+      "baseline_avoid": -0.25
+    },
+    "gen_014": {
+      "control_answer_only": -0.08333333333333333,
+      "control": -0.16666666666666666,
+      "baseline_avoid": 0.41666666666666674
+    },
+    "gen_124": {
+      "control_answer_only": 0.0,
+      "control": 0.25000000000000006,
+      "baseline_avoid": 0.3333333333333333
+    },
+    "gen_127": {
+      "control_answer_only": 0.0,
+      "control": 0.5,
+      "baseline_avoid": 0.4166666666666667
+    }
+  }
+}

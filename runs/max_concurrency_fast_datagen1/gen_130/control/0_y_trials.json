@@ -1,0 +1,242 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "10",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the coefficient \\( c \\)The extended Euclidean algorithm gives \\( cFinal answer: 10"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "19",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find coefficients \\(c\\) andBy applying the extended Euclidean algorithm,Final answer: 19"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "-13",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find \\( c \\) using the extended Euclidean algorithm, we start with:\n\n1. \\( 73 = 2 \\Continuing with the extended Euclidean algorithm, we find that \\( c = -13 \\) and \\( dFinal answer: -13"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "17",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, apply the extended Euclidean algorithm:\n\n1. \\(73 = 2 \\times 31 + 11\\)\n2Continuing the algorithm:\n\n3. \\(31 = 2 \\times 11 + 9\\)  \nFinal answer: 17"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "10",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\(c\\) and \\(d\\) such that \\(73c + 31d = 1\\), we apply the extended Euclidean algorithm:\n\n1. \\(73 = 2 \\times 31 + 11\\)\n2. \\(31 = Continuing from the steps:\n\n3. \\(31 = 2 \\times 11 + 9\\)\n4. \\(11 = 1 \\times 9 + 2\\)\n5. \\(9 = 4 \\timesFinal answer: 10"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "17",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To apply the extended Euclidean algorithm on 73 and 31:\n\n1. Compute the GCD using the Euclidean algorithm:\n   - 73 = 31 * 2 + 11\n   - 31 = 11 * 2 + 9\n   -Continuing from the previous steps:  \n- 11 = 9 * 1 + 2  \n- 9 = 2 * 4 + 1  \n- 2 = 1 * 2 + 0  \n\nFinal answer: 17"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "29",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find integers \\( c \\) and \\( d \\) such that \\( 73c + 31d = 1 \\) using the extended Euclidean algorithm, we proceed as follows:\n\n1. Apply the Euclidean algorithm:\n\n\\[\n73 = 2 \\times 31 + 11\n\\]\n\\[\n31 = 2 \\times 11 + 9\n\\]\n\\[\n11 = 1 \\times 9 + 2\n\\]\n\\[\n9 = 4 \\times 2 + 1\n\\]\n\\Using the equations from the Euclidean algorithm, we backtrack to find \\( c \\) and \\( d \\):\n\n1. From \\( 1 = 9 - 4 \\times 2 \\)\n   2. Substitute \\( 2 = 11 - 1 \\times 9 \\):\n   \\[\n   1 = 9 - 4(11 - 1 \\times 9) = 5 \\times 9 - 4Final answer: 29"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "23",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To use the extended Euclidean algorithm:\n\n1. Apply the algorithm:\n   - \\(73 = 2 \\times 31 + 11\\)\n   - \\(31 = 2 \\times 11 + 9\\)\n   - \\(11 = 1 \\times 9 + 2\\)\n   - \\(9 = 4 \\times 2 + 1\\)\n   - \\(2 = 2 \\times 1 + 0\\)\n\n2. Now backtrack to express 1 as a combination of 73 and 31Backtracking the steps:\n\n1. \\(1 = 9 - 4 \\times 2\\)\n2. Substitute \\(2 = 11 - 1 \\times 9\\):\n   \\(1 = 9 - 4 \\times (11 - 1 \\times 9) = 5 \\times 9 - 4 \\times 11\\)\n3. Substitute \\(9 = 31 - 2 \\times 11\\):\n  Final answer: 23"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "c = -14, d = 33 (in the range -36 <= d <= 36).",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To use the extended Euclidean algorithm, we start by applying the standard Euclidean algorithm to find the gcd of 73 and 31.\n\n1. \\( 73 = 2 \\times 31 + 11 \\)\n2. \\( 31 = 2 \\times 11 + 9 \\)\n3. \\( 11 = 1 \\times 9 + 2 \\)\n4. \\( 9 = 4 \\times 2 + 1 \\)\n5. \\( 2 = 2 \\times 1 + 0 \\)\n\nFrom the above, we see that the gcd is 1. Now we can express 1 as a combination of 73 and 31 using back substitution:\n\n1. Starting from \\( 1 = 9 - 4 \\times 2 \\)\n2. Substitute \\( 2 = 11 - 1 \\times 9 \\):\n   \\[\n   1 = 9 - 4 \\times (11 - 1 \\times 9) = 5 \\times 9 - 4 \\times 11\n   \\]\n3Continuing from the previous equations:\n\n4. Substitute \\( 9 = 31 - 2 \\times 11 \\):\n   \\[\n   1 = 5 \\times (31 - 2 \\times 11) - 4 \\times 11 = 5 \\times 31 - 10 \\times 11 - 4 \\times 11\n   \\]\n   \\[\n   = 5 \\times 31 - 14 \\times 11\n   \\]\n5. Substitute \\( 11 = 73 - 2 \\times 31 \\):\n   \\[\n   1 = 5 \\times 31 - 14 \\times (73 - 2 \\times 31) = 5 \\times 31 - 14 \\times 73 + 28 \\times 31\n   \\]\n   \\[\n   = 33 \\times 31 - 14Final answer: c = -14, d = 33 (in the range -36 <= d <= 36)."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the integer coefficient \\( c \\) such that \\( 73c + 31d = 1 \\), we use the extended Euclidean algorithm.\n\nFirst, we perform the division to express the GCD:\n\n1. \\( 73 = 2 \\cdot 31 + 11 \\)\n2. \\( 31 = 2 \\cdot 11 + 9 \\)\n3. \\( 11 = 1 \\cdot 9 + 2 \\)\n4. \\( 9 = 4 \\cdot 2 + 1 \\)\n5. \\( 2 = 2 \\cdot 1 + 0 \\)\n\nNow we backtrack to express 1 as a combination of 73 and 31:\n\n1. \\( 1 = 9 - 4 \\cdot 2 \\)\n2. Substitute \\( 2 = 11 - 1 \\cdot 9 \\):\n   \\[\n   1 = 9 - 4(11 - 1 \\cdot 9) = 5 \\cdot 9 - 4 \\cdContinuing from the last calculation:\n\n3. Substitute \\( 9 = 31 - 2 \\cdot 11 \\):\n   \\[\n   1 = 5(31 - 2 \\cdot 11) - 4 \\cdot 11 = 5 \\cdot 31 - 10 \\cdot 11 - 4 \\cdot 11 = 5 \\cdot 31 - 14 \\cdot 11\n   \\]\n\n4. Substitute \\( 11 = 73 - 2 \\cdot 31 \\):\n   \\[\n   1 = 5 \\cdot 31 - 14(73 - 2 \\cdot 31) = 5 \\cdot 31 - 14 \\cdot 73 + 28 \\cdot 31\n   \\]\n   \\[\n   1 = (5 + 28Final answer: -14"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find integers \\( c \\) and \\( d \\) such that \\( 73c + 31d = 1 \\), we will use the extended Euclidean algorithm.\n\n1. **Apply the Euclidean algorithm** to find \\( \\gcd(73, 31) \\):\n\n   \\[\n   73 = 2 \\cdot 31 + 11\n   \\]\n   \\[\n   31 = 2 \\cdot 11 + 9\n   \\]\n   \\[\n   11 = 1 \\cdot 9 + 2\n   \\]\n   \\[\n   9 = 4 \\cdot 2 + 1\n   \\]\n   \\[\n   2 = 2 \\cdot 1 + 0\n   \\]\n\n   The last non-zero remainder is 1, confirming that \\( \\gcd(73, 31) = 1 \\).\n\n2. **Backtrack to express 1 as a linear combination of 73 and 31**:\n\n   From \\( 9 = 4 \\cdot 2 + 1 \\):\n   \\[\n   1 = 9 - 4 \\cdot 2\n   \\]\n\n   Substitute \\( 2 \\) from the previous equation:\n   \\[\n   2 = 11 - 1 \\cdot 9 \\Rightarrow 1 = 9 - 4(11 - 9) = 5 \\cdot 9 - 4 \\cdot 11\n   \\]\n\n   Substitute \\( 9 \\):\n   \\[\n   9 = 31 - 2 \\cdot 11 \\Rightarrow 1 = 5(31 - 2 \\cdot 11) - 4 \\cdot 11\n   \\]\n   \\[\n   1 = 5 \\cdot 31 - 10 \\cdot 11 - 4 \\cdot 11 = 5 \\cdot 31 - 14 \\cdot 11\n   \\]\n\n   Substitute \\( 11 \\):\n   \\[\n   11 = 73 - 2 \\cdot 31 \\Rightarrow 1Continuing from the last step:\n\n\\[\n1 = 5 \\cdot 31 - 14(73 - 2 \\cdot 31)\n\\]\n\\[\n= 5 \\cdot 31 - 14 \\cdot 73 + 28 \\cdot 31\n\\]\n\\[\n= (5 + 28) \\cdot 31 - 14 \\cdot 73\n\\]\n\\[\n= 33 \\cdot 31 - 14 \\cdot 73\n\\]\n\nThus, the coefficients \\( c \\) and \\( d \\) are:\n\n\\[\n73 \\cdot (-14) + 31 \\cdot 33 = 1\n\\]\n\nTo determine \\( d \\), we have \\( d = 33 \\). Now, we need \\( d \\) to fall within \\(-36 \\leq d \\leq 36\\), which it does.\n\nTherefore, the coefficient \\( c \\) is \\(-14\\).\n\nFinal answer: -14"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(-14\\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the integer coefficient \\( c \\) such that \\( 73c + 31d = 1 \\) using the extended Euclidean algorithm, we first apply the algorithm to determine \\( d \\) and then find \\( c \\).\n\n1. **Apply the Euclidean Algorithm:**\n\n   \\[\n   73 = 2 \\cdot 31 + 11\n   \\]\n   \\[\n   31 = 2 \\cdot 11 + 9\n   \\]\n   \\[\n   11 = 1 \\cdot 9 + 2\n   \\]\n   \\[\n   9 = 4 \\cdot 2 + 1\n   \\]\n   \\[\n   2 = 2 \\cdot 1 + 0\n   \\]\n\n   The last non-zero remainder is 1, which means \\( \\gcd(73, 31) = 1 \\).\n\n2. **Backtrack to find \\( c \\) and \\( d \\):**\n\n   Starting from \\( 1 = 9 - 4 \\cdot 2 \\) and substituting recursively:\n\n   From \\( 2 = 11 - 1 \\cdot 9 \\) into \\( 1 \\):\n   \\[\n   1 = 9 - 4(11 - 1 \\cdot 9) = 5 \\cdot 9 - 4 \\cdot 11\n   \\]\n\n   Next, substitute \\( 9 \\) using \\( 31 = 2 \\cdot 11 + 9 \\):\n   \\[\n   9 = 31 - 2 \\cdot 11 \\implies 1 = 5(31 - 2 \\cdot 11) - 4 \\cdot 11 = 5 \\cdot 31 - 10 \\cdot 11 - 4 \\cdot 11 = 5 \\cdot 31 - 14 \\cdot 11\n   \\]\n\n   Now substitute \\( 11 \\) using \\( 73 = 2 \\cdot 31 + 11 \\):\n   \\[\n   11 = 73 - 2 \\Continuing from where we left off:\n\nSubstituting \\( 11 \\):\n\\[\n1 = 5 \\cdot 31 - 14 (73 - 2 \\cdot 31) = 5 \\cdot 31 - 14 \\cdot 73 + 28 \\cdot 31\n\\]\n\\[\n= (5 + 28) \\cdot 31 - 14 \\cdot 73 = 33 \\cdot 31 - 14 \\cdot 73\n\\]\n\nThus, we have:\n\\[\n73(-14) + 31(33) = 1\n\\]\nThis gives \\( c = -14 \\) and \\( d = 33 \\).\n\nSince \\( d \\) must be within the range of \\(-36\\) to \\(36\\), and \\( 33 \\) is within that range, we don't need to adjust it. \n\nTherefore, the coefficient \\( c \\) is:\n\\[\n\\boxed{-14}\n\\]\n\nFinal answer: \\(-14\\)"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Using the extended Euclidean algorithm, weCalculating gives \\( c = -14Final answer: -14"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Using the previous steps from the trace,the coefficient \\( c \\) corresponding toFinal answer: -14"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the coefficient \\( c \\) in the equation \\( 73c + 31d = 1 \\) where \\(we have already derived \\( 1 = 33 \\cdot 31 - 14 \\cdot Final answer: -14"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the coefficient \\( c \\) in \\( 73c + 31d = 1 \\):\n\n1. From previousFrom the Extended Euclidean Algorithm, we have:\n\n\\[\n1 = 33 \\cdot 31 -Final answer: -14"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To rewrite the identity \\( 73c + 31d = 1 \\) with \\( d \\) in the specified range, we start with:\n\n\\[\n73(-14) + 31(33) = 1\n\\]\n\nAdjust \\( d = 33 \\Thus, we need to adjust \\( d \\). Set \\( d = 33 - 73 = -40 \\), giving us:\n\n\\[\n73(14) + 31(-40) = 1\n\\]\n\nSo \\(Final answer: 14"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Starting from the previous final expression:\n\n\\[\n33 \\cdot 31 - 14 \\cdot 73 = 1,\n\\]\n\nwe can rearrange this to find \\( c \\):\n\n\\[\n73(-14) + 31(33) = 1.\nFrom the identity \\( 73(-14) + 31(33) = 1 \\), we see that the coefficient \\( c = -14 \\). \n\nTo find \\( d \\) within the range \\(-36 \\leFinal answer: -14"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the coefficient \\( c \\) in the identity \\( 73c + 31d = 1 \\), we will use the extended Euclidean algorithm but need to find \\( d \\) such that it falls within the specified range.\n\nGoing through our work, we can follow:\n\n1. We have \\( 1 = 33 \\cdot 31 - 14 \\cdot 73 \\).\n2. This means \\( c = -14 \\) and \\( d = 33 \\).\n\nTo adjust \\( d \\) to fit \\( -To find \\( d \\) in the range \\(-36 \\leq d \\leq 36\\), we adjust \\( d = 33 \\) to bring it into the required range by reducing \\( d \\) by multiples of modulo \\( 73 \\). Since \\( 33 \\) is already within the bounds, we keep \\( d = 33 \\) and need to compute \\( c \\).\n\nFrom \\( 1 = 33 \\cdotFinal answer: -14"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Applying the Extended Euclidean Algorithm, we already found that:\n\n\\[\n33 \\cdot 31 - 14 \\cdot 73 = 1\n\\]\n\nThis means \\( c = -14 \\) and \\( d = 33 \\). To find \\( d \\) in the range \\( -36 \\leq d \\leq 36 \\), we must take the equivalent value of \\( d \\) since \\( d = 33 \\) is valid.\n\nThus, the value of \\( c \\) as the coefficient of 73 is\\(-14\\).\n\nFinal answer: -14"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the integer \\( c \\) such that \\( 73c + 31d = 1 \\) with \\( d \\) being the inverse of 31 modulo 73 and restricted to the range \\(-36 \\leq d \\leq 36\\), we can start from the earlier developed result.\n\nWe know from the extended Euclidean algorithm that:\n\n\\[\n1 = 33 \\cdot 31 - 14 \\cdot 73\n\\]\n\nIn this equation, \\( c = -14 \\) and \\( d = 33 \\). Since \\( d = 33 \\) is positive and within the range, we verify its equivalence modulo 73.\n\nNow, to find \\( d \\) within the specified range \\(-36 \\leq d \\leq 36\\), we adjust \\( d \\):\n- Calculate \\( 33 - 73 = -40 \\), which is out of the range.\n- Calculate \\( 33 + 73 = 106 \\), which is also out of the range.\n\nNext, we need to adjust \\( 33 \\) byTo adjust \\( d = 33 \\) to be in the range \\(-36 \\leq d \\leq 36\\), we find:\n\n\\[\nd - 73 = 33 - 73 = -40\n\\]\n\nNow, check:\n\n\\[\nd = -40 + 73 = 33\n\\]\n\nWe can adjust \\( d \\) further:\n\\[\n-40 + 73 = 33 \\quad \\Rightarrow \\quad d = -40 \\text{ (not valid)}\n\\]\n\nThe corresponding value of \\( c = -14 \\) remains. Since \\( d = -40 \\) is valid (within the range when considering \\( c = -14 \\)), we conclude:\n\nThe value of \\( c \\) remains \\( -14 \\).\n\nFinal answer: -14"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the integer coefficient \\( c \\) such that \\( 73c + 31d = 1 \\) while ensuring \\( d \\) is the inverse \\(-36 \\leq d \\leq 36\\), we will start from the previous work with the Extended Euclidean Algorithm.\n\nWe already determined:\n\\[\n1 = 33 \\cdot 31 - 14 \\cdot 73\n\\]\nThus, rearranging gives us:\n\\[\n1 = -14 \\cdot 73 + 33 \\cdot 31\n\\]\nFrom this, we see that \\( c = -14 \\).\n\nNext, we need \\( d \\) as the multiplicative inverse of \\( 31 \\mod 73 \\), which is \\( d = 33 \\). However, \\( 33 \\) is not within the required range, so we need to adjust.\n\nCalculating \\( d \\) in the specified range, we can subtract \\( 73 \\) from \\( 33 \\):\n\\[\nd = 33 - 73 = -40 \\quad (\\text{not inThus, we need to adjust \\( d \\) further to find a representative within the range \\(-36 \\leq d \\leq 36\\):\n\nCalculating:\n\\[\nd = 33 - 2 \\cdot 73 = 33 - 146 = -113 \\quad (\\text{not in range})\n\\]\n\nSo we check \\( d = 33 - 73 = -40 \\):\n\\[\n-40 + 73 = 33 \\quad (\\text{not valid})\n\\]\nNext, we try:\n\\[\nd = 33 - 73 = -40, \\quad \\text{adding 73 again} \\\\\nd = -40 + 73 = 33 \\quad (\\text{not a valid adjustment})\n\\]\nSince we need to re-adjust this correctly.\n\nAfter correcting:\nThe valid range gives us \\( -14 \\) as a possible valid \\( dFinal answer: -14"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the integer coefficient \\( c \\) such that \\( 73c + 31d = 1 \\) using the Extended Euclidean Algorithm, we can start from the knowledge that we previously solved \\( 31x \\equiv 1 \\mod 73 \\) and found \\( x = 33 \\), which represents \\( d \\). We will express \\( 1 \\) as a linear combination of \\( 73 \\) and \\( 31 \\).\n\nFrom that previous calculation, we had:\n\n\\[\n1 = 33 \\cdot 31 - 14 \\cdot 73\n\\]\n\nReorganizing this gives:\n\n\\[\n1 = 31(33) + 73(-14)\n\\]\n\nIn this representation, \\( c = -14 \\) and \\( d = 33 \\).\n\nNext, we need to find \\( d \\) such that \\( -36 \\leq d \\leq 36 \\). The value \\( d = 33 \\) already falls within this range.\n\nNow, since we need to report the value of \\( c \\), we have:\n\n\\[\nc = -14\n\\]\n\nAs required.\n\nFinal answer: -14"
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-14",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the coefficients \\( c \\) and \\( d \\) such that \\( 73c + 31d = 1 \\) using the extended Euclidean algorithm, we start with the equations derived previously:\n\n1. \\( 73 = 31 \\cdot 2 + 11 \\)\n2. \\( 31 = 11 \\cdot 2 + 9 \\)\n3. \\( 11 = 9 \\cdot 1 + 2 \\)\n4. \\( 9 = 2 \\cdot 4 + 1 \\)\n5. \\( 2 = 1 \\cdot 2 + 0 \\)\n\nFrom the calculations, we found that:\n\n\\[\n1 = 33 \\cdot 31 - 14 \\cdot 73\n\\]\n\nThus, in diophantine form:\n\n\\[\n73(-14) + 31(33) = 1\n\\]\n\nHere, \\( c = -14 \\) and \\( d = 33 \\). \n\nNext, we need \\( d \\) to be in the range \\( -36 \\leq d \\leq 36 \\). Since \\( d = 33 \\) is within the desired range, we now focus on the coefficients.\n\nThe result shows \\( c = -14 \\). This value is valid and needs no adjustment to stay within the bounds for \\( d \\).\n\nFinal answer: -14"
+  }
+]

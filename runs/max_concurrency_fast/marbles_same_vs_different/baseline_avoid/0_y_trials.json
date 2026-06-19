@@ -6,7 +6,8 @@
     "answer": "35/66",
     "correct": true,
     "grade_method": "rule",
-    "grade_detail": "normalized match"
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability of drawing different colorsCalculating the probability, we have:\n\nFinal answer: 35/66"
   },
   {
     "budget": 32,
@@ -15,52 +16,58 @@
     "answer": "35/66",
     "correct": true,
     "grade_method": "rule",
-    "grade_detail": "normalized match"
+    "grade_detail": "normalized match",
+    "raw_response": "First, calculate total combinations. Then calculateP(different colors) = (5Final answer: 35/66"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
-    "answer": "0.6364",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "First, calculate total outcomes: \\( \\binom{12}{2} = 66 \\).\n\nNow, outcomes for different colorsDifferent color outcomes: red then blue: \\( 5 \\times 7 = 35 \\). Blue thenFinal answer: 35/66"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
-    "answer": "\\(\\frac{46",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "First, calculate total ways to draw 2 marbles: C(12, 2) = 66. \n\nNext,Calculate ways to draw one red and one blue: 5 * 7 = 35. \n\nProbability =Final answer: 35/66"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 0,
-    "answer": "\\(\\frac{35}{66}\\)",
+    "answer": "35/66 or approximately 0.5303",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability of drawing two marbles of different colors, we can calculate it using combinations.\n\nTotal marbles: 5 red + 7 blue = 12 marbles.  \nThe number of ways to draw two marbles: \\( \\binom{12}{2Different color combinations:  \n1 red and 1 blue: \\(5 \\times 7 = 35\\).  \nTotal ways to choose 2 marbles: \\( \\binom{12}{2} = 66\\).Final answer: 35/66 or approximately 0.5303"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
-    "answer": "\\(\\frac{47}{66}\\)",
+    "answer": "70/66 or 35/33.",
     "correct": false,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of drawing two marbles of different colors, calculate the total combinations and the favorable outcomes. \n\nTotal marbles = 5 red + 7 blue = 12.  \nTotal combinations of 2 marbles = C(12, 2) = Favorable outcomes for different colors: red then blue (5 \u00d7 7) + blue then red (7 \u00d7 5) = 35 + 35 = 70.  \nTotal combinations = 66.  \n\nProbability = Final answer: 70/66 or 35/33."
   },
   {
     "budget": 256,
     "condition": "scratch",
     "trial": 0,
-    "answer": "\\(\\frac{35}{66}\\)",
-    "correct": true,
+    "answer": "70/66 or approximately 0.75.",
+    "correct": false,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of drawing two marbles of different colors, we first calculate the total number of combinations of two marbles from the bag.\n\nThe total number of marbles is 5 red + 7 blue = 12 marbles.\n\nThe total ways to choose 2 marbles from 12 is:  \nC(12, 2) = 12! / (2!(12-2)!) = 66.\n\nNext, we calculate the favorable outcomes for drawing one red and one blue marble.  \nThere are two scenarios:\n\n1.1. Draw a red then a blue:  \nC(5, 1) * C(7, 1) = 5 * 7 = 35.\n\n2. Draw a blue then a red:  \nC(7, 1) * C(5, 1) = 7 * 5 = 35.\n\nTotal favorable outcomes = 35 + 35 = 70.\n\nNow, the probability of drawing two marbles ofFinal answer: 70/66 or approximately 0.75."
   },
   {
     "budget": 256,
@@ -68,17 +75,19 @@
     "trial": 1,
     "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability of drawing two marbles of different colors, we can calculate the total number of ways to draw two marbles and then the ways to draw one of each color.\n\nTotal marbles: 5 red + 7 blue = 12 marbles.\n\nTotal ways to choose 2 marbles from 12:  \n\\[\n\\binom{12}{2} = \\frac{12 \\times 11}{2} = 66.\n\\]\n\nWays to choose 1 red and 1 blue:  \n\\[\n5 \\timesWays to choose 1 red and 1 blue:  \n\\[\n5 \\times 7 = 35.\n\\]\n\nThe probability of drawing two marbles of different colors is then:  \n\\[\n\\frac{35}{66}.\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 512,
     "condition": "scratch",
     "trial": 0,
-    "answer": "\\(\\frac{35}{66}\\)",
-    "correct": true,
+    "answer": "5/11.",
+    "correct": false,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of drawing two marbles of different colors from a bag containing 5 red and 7 blue marbles, we first calculate the total number of marbles, which is:\n\nTotal marbles = 5 red + 7 blue = 12 marbles.\n\nNext, we calculate the total number of ways to draw 2 marbles from 12:\n\nTotal ways to choose 2 marbles = C(12, 2) = 12! / (2!(12 - 2)!) = 66.\n\nNow we find the number of ways to draw one red and one blue marble. The number of ways to choose one red and one blue is:\n\nWays to choose 1 red = C(5, 1) = 5,\nWays to choose 1 blue = C(7, 1) = 7.\n\nThus, the total ways to choose one red and one blue marble is:\n\nTotal ways = 5 * 7 = 35.\n\nNow, we calculate the probability of drawing two marbles of different colors:\n\nP(different colors) = (Number ofways to choose different colors) / (Total ways to choose any 2 marbles) = 35 / 66.\n\nSimplifying this fraction:\n\n35 / 66 = 5 / 11 (after dividing both the numerator and the denominator by 7).\n\nThus, the probability that the two marbles drawn are of different colors is:\n\nFinal answer: 5/11."
   },
   {
     "budget": 512,
@@ -86,133 +95,148 @@
     "trial": 1,
     "answer": "\\(\\frac{35}{66}\\).",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two marbles drawn are of different colors, we first calculate the total number of ways to select two marbles from the bag.\n\nTotal marbles = 5 red + 7 blue = 12 marbles.\n\nThe total ways to choose 2 marbles from 12 is given by the combination formula:\n\n\\[\n\\text{Total ways} = \\binom{12}{2} = \\frac{12 \\times 11}{2} = 66.\n\\]\n\nNext, we calculate the number of ways to select 2 marbles of the same color:\n\n1. Two red marbles: \n   \\[\n   \\binom{5}{2} = \\frac{5 \\times 4}{2} = 10.\n   \\]\n   \n2. Two blue marbles:\n   \\[\n   \\binom{7}{2} = \\frac{7 \\times 6}{2} = 21.\n   \\]\n\nTotal ways to select two marbles of the same color:\n\n\\[\n10 + 21 = 31.\n\\]\n\nNow,the number of ways to select two marbles of different colors is:\n\n\\[\n66 - 31 = 35.\n\\]\n\nFinally, the probability that the two marbles drawn are of different colors is given by the ratio of favorable outcomes to total outcomes:\n\n\\[\nP(\\text{different colors}) = \\frac{35}{66}.\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)."
   },
   {
     "budget": 1024,
     "condition": "scratch",
     "trial": 0,
-    "answer": "\\(\\frac{35}{66}\\)",
-    "correct": true,
+    "answer": "5/12.",
+    "correct": false,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the probability of drawing two marbles of different colors from a bag containing 5 red and 7 blue marbles, we first calculate the total number of marbles:\n\nTotal marbles = 5 (red) + 7 (blue) = 12.\n\nNext, we calculate the total ways to draw 2 marbles from these 12:\n\nTotal ways to choose 2 marbles = C(12, 2) = 12! / (2!(12-2)!) = (12 \u00d7 11) / (2 \u00d7 1) = 66.\n\nNow, we need to find the number of ways to draw one red and one blue marble. \n\nThe number of ways to choose 1 red marble and 1 blue marble is:\n\nWays to choose 1 red = C(5, 1) = 5,\nWays to choose 1 blue = C(7, 1) = 7.\n\nThus, the total ways to choose one red and one blue:\n\nTotal ways (1 red and 1 blue) = 5 \u00d7 7 = 35.\n\nNow, the probability of drawing 2 marbles of different colors is the number of favorable outcomes divided by the total outcomes:\n\nProbability (different colors) = Favorable outcomes / Total outcomes = 35 / 66.\n\nThis fraction can be simplified:\n\n35 / 66 = 5 / 12.\n\nThus, the probability of drawing two marbles of different colors is:\n\nFinal answer: 5/12."
   },
   {
     "budget": 1024,
     "condition": "scratch",
     "trial": 1,
+    "answer": "\\(\\frac{35}{66}\\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two marbles drawn from the bag are of different colors, we can follow these steps:\n\n1. **Total number of marbles:** \n   - 5 red + 7 blue = 12 marbles.\n\n2. **Total ways to choose 2 marbles from 12:** \n   \\[\n   \\text{Total ways} = \\binom{12}{2} = \\frac{12 \\times 11}{2 \\times 1} = 66.\n   \\]\n\n3. **Calculating favorable outcomes for different colors:**\n   - **Red then Blue:** \n     - The number of ways to choose 1 red from 5 and 1 blue from 7:\n     \\[\n     5 \\times 7 = 35.\n     \\]\n   - **Blue then Red:** \n     - The number of ways to choose 1 blue from 7 and 1 red from 5:\n     \\[\n     7 \\times 5 = 35.\n     \\]\n   - **Total favorable outcomes for different colors:**\n     \\[\n     35 + 35 = 70.\n     \\]\n\n4. **Calculating total probability:** \n   - Since there are 70 favorable outcomes and 66 total ways to choose 2 marbles, the number of favorable outcomes exceeds the total outcomes. Let's recalculate favorable outcomes correctly.\n\n5. **Correcting the approach:**\n   The mistake is in counting the combinations. We should compute the total favorable outcomes directly:\n   - **Red, Blue combination (Fixed Order):** Since the combined way already counted can\u2019t exceed total combinations would be:\n     - Total Combinations for Different Colors \n     \\[\n     = \\text{favorable outcomes (red first, blue second)} + \\text{ (blue, red)} \n     \\]\n     - But special case counted it correctly under the overall count.\n   \n6. **Calculating Required Probability directly:** \n   The total probability now simplifies from favorable outcomes, thus finally confirming values from combinations:\n\n\\[\nP(\\text{different colors}) = \\frac{70}{66} = \\frac{35}{33}.\n\\]\n\nThe final probability becomesThe correct calculation shows that the favorable outcomes for drawing different colors should be:\n\n1. Number of ways to choose 1 red and 1 blue is \\(5 \\times 7 = 35\\).\n2. The total ways to choose 2 marbles from 12 remains \\( \\binom{12}{2} = 66\\). \n\nThus, the probability that the two drawn marbles are different colors is:\n\n\\[\nP(\\text{different colors}) = \\frac{35}{66}.\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)."
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability they are different colorsCalculate the total probability of different colors:Final answer: 35/66"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles are different colors, we subtract theFinal answer: 35/66"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles drawn are different colors, we subtract the probability of drawing two marbles of the samecolor from 1. The probability of the same color is \\( \\frac{31}{66} \\).Final answer: 35/66"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two marbles are different colors, we can use the complement of the probability that they are the same colorThe probability of same color is \\( \\frac{31}{66} \\). Thus, the probability of differentFinal answer: 35/66"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two drawn marbles are different colors, we can use the complement of the same color probability we just calculated.\n\n1. \\( P(\\text{Same Color}) = \\frac{31}{66} \\).\n2. Thus, \\( P(\\text{The probability that two drawn marbles are different colors is:\n\n\\[\nP(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66} = \\frac{Final answer: 35/66"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "35/66",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles are different colors, we first calculate the probability of drawing both marbles as the same color and subtract from 1.\n\nFrom the earlier calculation, the probability that both marbles are the same color is \\( \\frac{31}{66The probability that the two marbles drawn are different colors is:\n\n\\[\nP(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66} = \\fracFinal answer: 35/66"
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
     "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 32,
-    "condition": "with_trace",
-    "trial": 0,
-    "answer": "\\( \\frac{35",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 32,
-    "condition": "with_trace",
-    "trial": 1,
-    "answer": "\\( \\frac{35",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 64,
-    "condition": "with_trace",
-    "trial": 0,
-    "answer": "\\( \\frac{35",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 64,
-    "condition": "with_trace",
-    "trial": 1,
-    "answer": "\\( \\frac{35",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 128,
-    "condition": "with_trace",
-    "trial": 0,
-    "answer": "\\( \\frac{70}{66} = \\",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 128,
-    "condition": "with_trace",
-    "trial": 1,
-    "answer": "\\( \\frac{35}{66} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 256,
-    "condition": "with_trace",
-    "trial": 0,
-    "answer": "\\( \\frac{35}{66} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two marbles drawn are different colors, we can use the complementary probability method. We first find the probability that both marbles are the same color and then subtract that from 1.\n\n1. **Probability of both marbles being the same color:**  \n   - We already calculated this and found \\( P(\\text{Same Color}) = \\frac{31}{66} \\).\n\n2. **Calculating the probability of different colors:**  \n   \\[\n   P(\\text{Different Colors}) = 1 - P(\\text\\[\nP(\\text{Different Colors}) = 1 - \\frac{31}{66} = \\frac{66 - 31}{66} = \\frac{35}{66}\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( \\frac{35}{66} \\)",
+    "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles drawn are of different colors, we first compute the total probability of drawing two marbles of the same color and subtract from 1.\n\n1. **Probability of same color (from previous trace):**\n   - \\(P(\\text{Same Color}) = \\frac{31}{66}\\)\n\n2. **Using complement rule:**\n   - \\(P(\\text{Different Colors}) = 1 - P(\\text{Same Color})\\)\n   - Calculate:\n   \\[\n   P(\\text{Different\\[\nP(\\text{Different Colors}) = 1 - \\frac{31}{66} = \\frac{66 - 31}{66} = \\frac{35}{66}\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 512,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\( \\frac{35}{66} \\)",
+    "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles drawn are of different colors, we start by calculating the probability of drawing two marbles of the same color and then subtract that from 1.\n\nAs calculated before:\n1. Probability of drawing two red marbles:\n   \\[\n   P(\\text{2 Red}) = \\frac{5}{12} \\times \\frac{4}{11} = \\frac{20}{132} = \\frac{5}{33}\n   \\]\n\n2. Probability of drawing two blue marbles:\n   \\[\n   P(\\text{2 Blue}) = \\frac{7}{12} \\times \\frac{6}{11} = \\frac{42}{132} = \\frac{7}{22}\n   \\]\n\nNext, we add these probabilities to find the total probability of drawing two marbles of the same color:\n\\[\nP(\\text{Same Color}) = \\frac{5}{33} + \\frac{7}{22}\n\\]\n\nFinding a common denominator, we have:\n- Convert \\( \\frac{5}{33} = \\frac\\[\nP(\\text{Same Color}) = \\frac{10}{66} + \\frac{21}{66} = \\frac{31}{66}\n\\]\n\nNow, to find the probability that the two marbles are different colors:\n\\[\nP(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66} = \\frac{66 - 31}{66} = \\frac{35}{66}\n\\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 512,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( \\frac{35}{66} \\)",
+    "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles drawn are of different colors, we can use the complement of the probability that they are the same color.\n\n1. **Probability of Same Color (already calculated):**\n   - From our prior calculations, we found:\n   \\[\n   P(\\text{Same Color}) = \\frac{31}{66}\n   \\]\n\n2. **Calculating the Probability of Different Colors:**\n   - The probability that the two marbles are of different colors is the complement of the probability that they are the same color:\n   \\[\n   P(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66}\n   \\]\n   - To perform this calculation:\n   \\[\n   = \\frac{66}{66} - \\frac{31}{66} = \\frac{35}{66}\n   \\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 1024,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\( \\frac{35}{66} \\)",
+    "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that the two marbles drawn are of different colors, we use the complementary approach by first calculating the probability that both marbles are the same color, and then subtracting this from 1.\n\n1. **Probability of both marbles being the same color:**\n   - We already calculated this in the previous solution as \\( \\frac{31}{66} \\).\n\n2. **Finding the probability that the two marbles are of different colors:**\n   - This is simply:\n     \\[\n     P(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66}\n     \\]\n\n3. **Calculating:**\n   - Subtracting the fractions:\n     \\[\n     P(\\text{Different Colors}) = \\frac{66}{66} - \\frac{31}{66} = \\frac{35}{66}\n     \\]\n\nThus, the probability that the two marbles drawn are of different colors is \\( \\frac{35}{66} \\).\n\nFinal answer: \\(\\frac{35}{66}\\)"
   },
   {
     "budget": 1024,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( \\frac{35}{66} \\)",
+    "answer": "\\(\\frac{35}{66}\\)",
     "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the probability that two marbles drawn from a bag containing 5 red and 7 blue marbles are of different colors, we will first find the probability of the complementary event (both marbles being the same color) and subtract it from 1.\n\n1. **Calculate the probability of drawing both marbles of the same color:**\n   - From the trace, we calculated:\n     - Probability of both marbles being red: \\( P(\\text{2 Red}) = \\frac{5}{12} \\times \\frac{4}{11} = \\frac{20}{132} = \\frac{5}{33} \\).\n     - Probability of both marbles being blue: \\( P(\\text{2 Blue}) = \\frac{7}{12} \\times \\frac{6}{11} = \\frac{42}{132} = \\frac{7}{22} \\).\n\n2. **Sum the probabilities for same color:**\n   - The total probability of both marbles being the same color is:\n     \\[\n     P(\\text{Same Color}) = P(\\text{2 Red}) + P(\\text{2 Blue}) = \\frac{5}{33} + \\frac{7}{22}\n     \\]\n   - Finding a common denominator (66):\n     - \\( \\frac{5}{33} = \\frac{10}{66} \\)\n     - \\( \\frac{7}{22} = \\frac{21}{66} \\)\n   - Therefore:\n     \\[\n     P(\\text{Same Color}) = \\frac{10}{66} + \\frac{21}{66} = \\frac{31}{66}\n     \\]\n\n3. **Calculate the probability of different colors:**\n   \\[\n   P(\\text{Different Colors}) = 1 - P(\\text{Same Color}) = 1 - \\frac{31}{66} = \\frac{66 - 31}{66} = \\frac{35}{66}\n   \\]\n\nFinal answer: \\(\\frac{35}{66}\\)"
   }
 ]

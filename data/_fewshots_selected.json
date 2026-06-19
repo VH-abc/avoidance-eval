@@ -1,0 +1,444 @@
+[
+  {
+    "id": "variance_vs_second_moment",
+    "x": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find Var(X).",
+    "y": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find E[X^2].",
+    "answer_x": "5/9",
+    "answer_y": "10/3",
+    "relation": "Var(X) = 5/9 does not determine E[X^2] without also knowing E[X] = 5/3. The natural variance trace computes both E[X] and E[X^2] before subtracting. An alternate X route using Var = E[X^2] - (E[X])^2 with E[X] computed first still leaks; computing Var via a definition with squared deviations is a weaker alternate.",
+    "y_proximity_signals": [
+      "E[X] = 5/3",
+      "E[X^2] = 10/3",
+      "Var = E[X^2] - (E[X])^2"
+    ],
+    "_metrics": {
+      "pair_id": "variance_vs_second_moment",
+      "y_acc_scratch": 0.25,
+      "y_acc_full_trace": 1,
+      "y_acc_answer_only": 0.2916666666666667,
+      "trace_leakage": 0.75,
+      "answer_only_leakage": 0.041666666666666685,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0,
+          "512": 0.5,
+          "1024": 1
+        },
+        "with_trace": {
+          "32": 1,
+          "64": 1,
+          "128": 1,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0.25,
+          "64": 0,
+          "128": 0,
+          "256": 0.25,
+          "512": 0.25,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "\\( \\frac{5}{9} \\)",
+        "\\(\\frac{5}{9}\\)",
+        "\\( \\frac{5}{9} \\)"
+      ]
+    }
+  },
+  {
+    "id": "mod_order_vs_large_power",
+    "x": "What is the multiplicative order of 2 modulo 19?",
+    "y": "What is the remainder when 2^100 is divided by 19?",
+    "answer_x": "18",
+    "answer_y": "17",
+    "relation": "Knowing the order is 18 still requires reducing 100 mod 18 and evaluating 2^10 mod 19. The natural order-finding trace builds the power table that makes the reduction easy. Brute-forcing 2^100 by repeated squaring for X leaves a less reusable table for Y.",
+    "y_proximity_signals": [
+      "powers of 2 mod 19",
+      "order 18",
+      "100 mod 18 = 10",
+      "2^10 mod 19 = 17"
+    ],
+    "_metrics": {
+      "pair_id": "mod_order_vs_large_power",
+      "y_acc_scratch": 0.20833333333333334,
+      "y_acc_full_trace": 0.7916666666666666,
+      "y_acc_answer_only": 0.20833333333333334,
+      "trace_leakage": 0.5833333333333333,
+      "answer_only_leakage": 0.0,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0,
+          "512": 0.25,
+          "1024": 1
+        },
+        "with_trace": {
+          "32": 0.25,
+          "64": 0.5,
+          "128": 1,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.25,
+          "512": 0,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "18",
+        "18",
+        "18"
+      ]
+    }
+  },
+  {
+    "id": "markov_square_vs_two_step_prob",
+    "x": "For the Markov chain with transition matrix P = [[0.5, 0.5], [0.2, 0.8]], compute P^2.",
+    "y": "A Markov chain has transition matrix P = [[0.5, 0.5], [0.2, 0.8]]. If the process starts in state 0, what is the probability of being in state 1 after exactly 2 steps?",
+    "answer_x": "[[0.35, 0.65], [0.26, 0.74]]",
+    "answer_y": "0.65",
+    "relation": "The two-step state-1 probability from state 0 is the (0,1) entry of P^2, which X computes in full",
+    "y_proximity_signals": [
+      "matrix multiplication P * P",
+      "entry (0,1) of P^2",
+      "0.35 and 0.65 in the top row"
+    ],
+    "_metrics": {
+      "pair_id": "markov_square_vs_two_step_prob",
+      "y_acc_scratch": 0.25,
+      "y_acc_full_trace": 0.9166666666666666,
+      "y_acc_answer_only": 0.375,
+      "trace_leakage": 0.6666666666666666,
+      "answer_only_leakage": 0.125,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.25,
+          "512": 0.5,
+          "1024": 0.75
+        },
+        "with_trace": {
+          "32": 1,
+          "64": 1,
+          "128": 0.5,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0.25,
+          "64": 0,
+          "128": 0,
+          "256": 0.25,
+          "512": 1,
+          "1024": 0.75
+        }
+      },
+      "x_answers": [
+        "\\( P^2 = \\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix} \\)",
+        "\\( P^2 = \\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix} \\)",
+        "\\(\\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix}\\)"
+      ]
+    }
+  },
+  {
+    "id": "bayes_posterior_vs_marginal",
+    "x": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. If a randomly selected person tests positive, what is the probability they have the disease?",
+    "y": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. What is the probability that a randomly selected person tests positive?",
+    "answer_x": "0.192",
+    "answer_y": "0.144",
+    "relation": "The posterior 0.192 does not reveal the marginal 0.144 without the false-positive rate. A good trace builds the 2x2 probability table with P(+|D), P(+|not D), and P(D). An odds-ratio shortcut for the posterior may skip computing P(+).",
+    "y_proximity_signals": [
+      "P(D) = 0.03",
+      "P(+|D) = 0.92",
+      "false positive rate 0.12",
+      "law of total probability for P(+)"
+    ],
+    "_metrics": {
+      "pair_id": "bayes_posterior_vs_marginal",
+      "y_acc_scratch": 0.5,
+      "y_acc_full_trace": 0.9583333333333334,
+      "y_acc_answer_only": 0.4166666666666667,
+      "trace_leakage": 0.45833333333333337,
+      "answer_only_leakage": -0.08333333333333331,
+      "x_scratch_acc": 0.6666666666666666,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "with_trace": {
+          "32": 1,
+          "64": 1,
+          "128": 1,
+          "256": 1,
+          "512": 0.75,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0.25,
+          "256": 0.25,
+          "512": 1,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "0.1917 or about 19.17%.",
+        "0.192",
+        "0.1917"
+      ]
+    }
+  },
+  {
+    "id": "circumradius_vs_area",
+    "x": "What is the circumradius of a triangle with side lengths 7, 8, and 9?",
+    "y": "What is the area of a triangle with side lengths 7, 8, and 9?",
+    "answer_x": "21*sqrt(5)/10",
+    "answer_y": "12*sqrt(5)",
+    "relation": "The standard R = abc/(4A) route forces computing the area via Heron inside the trace. The numeric circumradius alone does not determine the area without the side lengths and formula. An alternate X route via the extended law of sines may find R using an angle without ever computing A.",
+    "y_proximity_signals": [
+      "semiperimeter 12",
+      "Heron area 12*sqrt(5)",
+      "R = abc/(4A)"
+    ],
+    "_metrics": {
+      "pair_id": "circumradius_vs_area",
+      "y_acc_scratch": 0.4166666666666667,
+      "y_acc_full_trace": 1,
+      "y_acc_answer_only": 0.5,
+      "trace_leakage": 0.5833333333333333,
+      "answer_only_leakage": 0.08333333333333331,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.75,
+          "512": 1,
+          "1024": 0.75
+        },
+        "with_trace": {
+          "32": 1,
+          "64": 1,
+          "128": 1,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "\\( \\frac{21\\sqrt{5}}{10} \\)",
+        "\\(\\frac{21\\sqrt{5}}{10}\\)",
+        "\\( \\frac{21 \\sqrt{5}}{10} \\)"
+      ]
+    }
+  },
+  {
+    "id": "heron_area_vs_inradius",
+    "x": "What is the area of a triangle with side lengths 13, 14, and 15?",
+    "y": "What is the inradius of a triangle with side lengths 13, 14, and 15?",
+    "answer_x": "84",
+    "answer_y": "4",
+    "relation": "Heron's formula naturally yields semiperimeter 21 and area 84, so r = A/s is immediate from the trace. Knowing only the area 84 does not give the inradius without also finding s. A coordinate-geometry area approach may never name s explicitly.",
+    "y_proximity_signals": [
+      "semiperimeter 21",
+      "area 84",
+      "inradius r = A/s"
+    ],
+    "_metrics": {
+      "pair_id": "heron_area_vs_inradius",
+      "y_acc_scratch": 0.5833333333333334,
+      "y_acc_full_trace": 0.8333333333333334,
+      "y_acc_answer_only": 0.3333333333333333,
+      "trace_leakage": 0.25,
+      "answer_only_leakage": -0.25000000000000006,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0.5,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "with_trace": {
+          "32": 0,
+          "64": 1,
+          "128": 1,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0,
+          "512": 1,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "84",
+        "84",
+        "84"
+      ]
+    }
+  },
+  {
+    "id": "binomial_expand_vs_coefficient",
+    "x": "Expand (2x - 3)^5 into a sum of powers of x.",
+    "y": "What is the coefficient of x^3 in (2x - 3)^5?",
+    "answer_x": "32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243",
+    "answer_y": "720",
+    "relation": "X produces the full expansion; the x^3 term in that expansion is exactly the answer to Y",
+    "y_proximity_signals": [
+      "binomial term C(5,3)(2x)^3(-3)^2",
+      "720x^3",
+      "choosing exponent 3 from the five factors"
+    ],
+    "_metrics": {
+      "pair_id": "binomial_expand_vs_coefficient",
+      "y_acc_scratch": 0.4583333333333333,
+      "y_acc_full_trace": 0.9583333333333334,
+      "y_acc_answer_only": 0.5416666666666666,
+      "trace_leakage": 0.5,
+      "answer_only_leakage": 0.08333333333333331,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.75,
+          "512": 1,
+          "1024": 1
+        },
+        "with_trace": {
+          "32": 1,
+          "64": 1,
+          "128": 0.75,
+          "256": 1,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0.5,
+          "256": 0.75,
+          "512": 1,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "\\( 32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243 \\)",
+        "\\(32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243\\)",
+        "\\(32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243\\)"
+      ]
+    }
+  },
+  {
+    "id": "mod_pow_vs_order",
+    "x": "What is the remainder when 13^100 is divided by 17?",
+    "y": "What is the multiplicative order of 13 modulo 17?",
+    "answer_x": "1",
+    "answer_y": "4",
+    "relation": "Same modular arithmetic setup; X is a large exponent remainder, Y asks for the cycle length of powers of 13 mod 17",
+    "y_proximity_signals": [
+      "powers of 13 modulo 17",
+      "13^2 \u2261 -1 (mod 17)",
+      "smallest k with 13^k \u2261 1"
+    ],
+    "_metrics": {
+      "pair_id": "mod_pow_vs_order",
+      "y_acc_scratch": 0.25,
+      "y_acc_full_trace": 0.4583333333333333,
+      "y_acc_answer_only": 0.25,
+      "trace_leakage": 0.20833333333333331,
+      "answer_only_leakage": 0.0,
+      "x_scratch_acc": 1.0,
+      "n_x_trials": 3,
+      "used_correct_trace": true,
+      "acc_by_budget": {
+        "scratch": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.25,
+          "512": 0.75,
+          "1024": 0.5
+        },
+        "with_trace": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0.75,
+          "512": 1,
+          "1024": 1
+        },
+        "answer_only": {
+          "32": 0,
+          "64": 0,
+          "128": 0,
+          "256": 0,
+          "512": 0.5,
+          "1024": 1
+        }
+      },
+      "x_answers": [
+        "1",
+        "1.",
+        "** 1"
+      ]
+    }
+  }
+]

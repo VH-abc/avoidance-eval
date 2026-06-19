@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "504",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "The LCM of 84 and 126 is 1260. Final answerFinal answer: 504"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "588",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "The LCM of 84 and 126 is 588. \n\nFinal answerFinal answer: 588"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "588",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the LCM of 84 and 126, first factor them:\n\n84 = 2\u00b2 \u00d7 3 \u00d7 The prime factors of 126 are 2 \u00d7 3\u00b2 \u00d7 7. The LCM is calculatedFinal answer: 588"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1260",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we first find the prime factorization:\n\n-84 = 2\u00b2 \u00d7 3 \u00d7 7  \n126 = 2 \u00d7 3\u00b2 \u00d7 Final answer: 1260"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we use their prime factorization.  \n\n84 = 2^2 \u00d7 3^1 \u00d7 7^1  \n126 = 2^1 \u00d7 3^2 \u00d7 7To calculate the LCM, take the highest powers of all prime factors:  \n\nLCM = 2^2 \u00d7 3^2 \u00d7 7^1 = 4 \u00d7 9 \u00d7 7 = 252.  \n\nFinal answer: 252"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we first determine their prime factorizations:\n\n84 = 2^2 \u00d7 3 \u00d7 7  \n126 = 2 \u00d7 3^2 \u00d7 7  \n\nNext, we takethe highest powers of each prime:  \n- 2^2  \n- 3^2  \n- 7^1  \n\nNow, we multiply these highest powers:  \nLCM = 2^2 \u00d7 3^2Final answer: 252"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we start by determining their prime factorizations:\n\n- 84 = 2^2 \u00d7 3^1 \u00d7 7^1\n- 126 = 2^1 \u00d7 3^2 \u00d7 7^1\n\nNext, for the LCM, we take the highest power of each prime factor present:\n\n- The highest power of 2 is 2^2\n- The highest power of 3 is 3^2\n- The highestTo calculate the LCM:\n\nLCM = 2^2 \u00d7 3^2 \u00d7 7^1\n\nCalculating this gives:\n\nLCM = 4 \u00d7 9 \u00d7 7 = 252\n\nFinal answer: 252"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "252.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we can use the prime factorization method.\n\n1. **Prime factorization**:\n   - 84 = 2\u00b2 \u00d7 3\u00b9 \u00d7 7\u00b9\n   - 126 = 2\u00b9 \u00d7 3\u00b2 \u00d7 7\u00b9\n\n2. **Take the highest power** of each prime factor:\n   - 2: 2\u00b2\n   - 3: 3\u00b2\n   - 7: 7\u00b9\n\n3. **MultiplyMultiplying these together gives:\n\nLCM = 2\u00b2 \u00d7 3\u00b2 \u00d7 7\u00b9 = 4 \u00d7 9 \u00d7 7.\n\nCalculating step-by-step:\n\n4 \u00d7 9 = 36,\n36 \u00d7 7 = 252.\n\nFinal answer: 252."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "252.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we can use the prime factorization method.\n\nFirst, we factor each number into primes:\n\n- 84: \n  - 84 = 2 \u00d7 42\n  - 42 = 2 \u00d7 21\n  - 21 = 3 \u00d7 7\n  - Therefore, 84 = 2\u00b2 \u00d7 3\u00b9 \u00d7 7\u00b9\n\n- 126: \n  - 126 = 2 \u00d7 63\n  - 63 = 3 \u00d7 21\n  - 21 = 3 \u00d7 7\n  - Therefore, 126 = 2\u00b9 \u00d7 3\u00b2 \u00d7 7\u00b9\n\nNext, we take the highest power of each prime number that appears in both factorizations:\n\n- For 2: max(2, 1) = 2 \u2192 2\u00b2\n- For 3: max(1, 2) = 2 \u2192 3\u00b2\n- For 7: max(1, 1) = 1 \u2192 Thus, we combine these highest powers:\n\nLCM(84, 126) = 2\u00b2 \u00d7 3\u00b2 \u00d7 7\u00b9 = 4 \u00d7 9 \u00d7 7.\n\nCalculating this step-by-step:\n\n1. 4 \u00d7 9 = 36.\n2. 36 \u00d7 7 = 252.\n\nTherefore, the LCM of 84 and 126 is 252.\n\nFinal answer: 252."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we can use the prime factorization method.\n\n1. **Prime Factorization**:\n   - 84 = \\(2^2 \\times 3^1 \\times 7^1\\)\n   - 126 = \\(2^1 \\times 3^2 \\times 7^1\\)\n\n2. **Finding the LCM**:\n   For the LCM, take the highest power of each prime factor present in the factorizations:\n   - For \\(2\\): maximum power is \\(2^2\\)\n   - For \\(3\\): maximum power is \\(3^2\\)\n   - For \\(7\\): maximum power is \\(7^1\\)\n\n   Therefore:\n   \\[\n   \\text{LCM} = 2^2 \\times 3^2 \\times 7^1 = 4 \\times 9 \\times 7\n   \\]\n\n3. **Calculating**:\n   First, calculate \\(4 \\times 9 = 36\\).Now calculate \\(36 \\times 7 = 252\\).\n\nThus, the least common multiple (LCM) of 84 and 126 is:\n\nFinal answer: 252"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of 84 and 126, we can use the prime factorization method.\n\n1. **Prime Factorization**:\n   - For 84: \n     - 84 = 2 \u00d7 42\n     - 42 = 2 \u00d7 21\n     - 21 = 3 \u00d7 7\n     - Therefore, 84 = \\(2^2 \\times 3^1 \\times 7^1\\)\n\n   - For 126: \n     - 126 = 2 \u00d7 63\n     - 63 = 3 \u00d7 21\n     - 21 = 3 \u00d7 7\n     - Therefore, 126 = \\(2^1 \\times 3^2 \\times 7^1\\)\n\n2. **LCM Calculation**:\n   - The LCM is found by taking the highest power of each prime factor:\n     - For 2: max(2, 1) = 2 \u2192 \\(2^2\\)\n     - For 3: max(1, 2) = 2 \u2192 \\(3^2\\)\n     - For 7: max(1, 1) = 1 \u2192 \\(7^1\\)\n\nThus, the LCM of 84 and 126 is:\n\\[\nLCM = 2^2 \\times 3^2 \\times 7^1 = 4 \\times 9 \\times 7\n\\]\n\nNow, calculate:\n- \\(4 \\times 9 = 36\\)\n- \\(36 \\times 7 = 252\\)\n\nFinal answer: 252"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "252",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the least common multiple (LCM) of two numbers, we can use the formula:\n\n\\[\n\\text{LCM}(a, b) = \\frac{|a \\times b|}{\\text{GCD}(a, b)}\n\\]\n\nFirst, we need to find the greatest common divisor (GCD) of 84 and 126.\n\n**Step 1: Prime factorization**\n- The prime factorization of 84 is:\n  \\[\n  84 = 2^2 \\times 3^1 \\times 7^1\n  \\]\n- The prime factorization of 126 is:\n  \\[\n  126 = 2^1 \\times 3^2 \\times 7^1\n  \\]\n\n**Step 2: Finding the GCD**\nTo find the GCD, we take the lowest power of each common prime factor:\n- For \\(2\\): min(2, 1) = \\(1\\)\n- For \\(3\\): min(1, 2) = \\(1\\)\n- For \\(7\\): min(1, 1) = \\(1\\)\n\nThus, the GCD is:\n\\[\n\\text{GCD}(84, 126) = 2^1 \\times 3^1 \\times 7^1 = 42\n\\]\n\n**Step 3: Finding the LCM**\nNow we use the LCM formula:\n\\[\n\\text{LCM}(84, 126) = \\frac{|84 \\times 126|}{42}\n\\]\n\nCalculating \\(84 \\times 126\\):\n- \\(84 \\times 126 = 10584\\)\n\nNow divide by the GCD:\n\\[\n\\text{LCM}(84, 126) = \\frac{10584}{42} = 252\n\\]\n\nFinal answer: 252"
+  }
+]

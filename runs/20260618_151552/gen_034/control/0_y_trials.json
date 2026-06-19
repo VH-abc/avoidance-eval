@@ -1,0 +1,794 @@
+[
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "20",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute E[X^2], we use the formula:\n\nE[X^2] = \u03a3 (x^2 * P(XE[X^2] = (0^2 * 1/8) + (2^2 *Final answer: 20",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute E[X^2], we use the formula:\n\nE[X^2] = \u03a3 (x^2 * P(X"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = (0^2 * 1/8) + (2^2 *"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 20"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "24",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "E[X^2] = \u03a3 (E[X^2] = 0Final answer: 24",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = \u03a3 ("
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = 0"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 24"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( E[X^2] = 12 \\)",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, and 6 and their corresponding probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\), we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating \\( E[X^2] \\):\n\n1. For \\( x = 0 \\):\n\\[\n0^2 \\cdot \\frac{1}{8} = 0\n\\]\n\n2. For \\( x = 2 \\):\n\\[\n2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8}\n\\]\n\n3. For \\( x = 4 \\):\n\\[\n4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8Continuing with the calculation for \\( E[X^2] \\):\n\n4. For \\( x = 6 \\):\n\\[\n6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8}\n\\]\n\nNow, summing these contributions:\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{12 + 48 + 36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, and 6 and their corresponding probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\), we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating \\( E[X^2] \\):\n\n1. For \\( x = 0 \\):\n\\[\n0^2 \\cdot \\frac{1}{8} = 0\n\\]\n\n2. For \\( x = 2 \\):\n\\[\n2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8}\n\\]\n\n3. For \\( x = 4 \\):\n\\[\n4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 225 of 512 output tokens (50% budget). Only 287 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Continuing with the calculation for \\( E[X^2] \\):\n\n4. For \\( x = 6 \\):\n\\[\n6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8}\n\\]\n\nNow, summing these contributions:\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{12 + 48 + 36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\) for the given random variable:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4Continuing with the calculation:\n\n\\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the given random variable:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Continuing with the calculation:\n\n\\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 103 of 128 output tokens (90% budget). Your next reply is limited to 25 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "answer without prefix",
+    "raw_response": "To compute \\( E[X^2]\\[\nE[X^2] =Final answer: 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2]"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] ="
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 12"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8.5",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\(E[X^2]\\), we use the formula for the expected value of a discrete random variable:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X = x))\n\\]\n\nWhere \\(x\\) represents the values that \\(X\\) can take and \\(P(X = x)\\) represents their corresponding probabilities. We have the following values and probabilities:\n\n- For \\(X = 0\\): \\(P(X = 0) = \\frac{1}{8}\\)\n- For \\(X = 2\\): \\(P(X = 2) = \\frac{3}{8}\\)\n- For \\(X = 4\\): \\(P(X = 4) = \\frac{3}{8}\\)\n- For \\(X = 6\\): \\(P(X = 6) = \\frac{1}{8}\\)\n\nCalculating \\(x^2\\) for each value of \\(X\\):\n\n- \\(0^2 \\cdot \\frac{1}{8} = 0 \\cdot \\frac{1}{Calculating \\(E[X^2]\\):\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n- \\(0^2 \\cdot \\frac{1}{8} = 0\\)\n- \\(2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = 1.5\\)\n- \\(4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6Final answer: 8.5",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\(E[X^2]\\), we use the formula for the expected value of a discrete random variable:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X = x))\n\\]\n\nWhere \\(x\\) represents the values that \\(X\\) can take and \\(P(X = x)\\) represents their corresponding probabilities. We have the following values and probabilities:\n\n- For \\(X = 0\\): \\(P(X = 0) = \\frac{1}{8}\\)\n- For \\(X = 2\\): \\(P(X = 2) = \\frac{3}{8}\\)\n- For \\(X = 4\\): \\(P(X = 4) = \\frac{3}{8}\\)\n- For \\(X = 6\\): \\(P(X = 6) = \\frac{1}{8}\\)\n\nCalculating \\(x^2\\) for each value of \\(X\\):\n\n- \\(0^2 \\cdot \\frac{1}{8} = 0 \\cdot \\frac{1}{"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 225 of 512 output tokens (50% budget). Only 287 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Calculating \\(E[X^2]\\):\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n- \\(0^2 \\cdot \\frac{1}{8} = 0\\)\n- \\(2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = 1.5\\)\n- \\(4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 410 of 512 output tokens (90% budget). Your next reply is limited to 102 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 8.5"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\):\n\n1. Use the formula:\n\n\\[\nE(X^2) = \\sumCalculating:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\):\n\n1. Use the formula:\n\n\\[\nE(X^2) = \\sum"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Calculating:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "answer without prefix",
+    "raw_response": "To compute \\( E[X^2]\\[\nE[X^2] =Final answer: 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2]"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] ="
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 12"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "9",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\), we calculate the sum of the squares of each value multiplied by its probability:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x)) = (0^2 \\cdot \\frac{1}{8}) + (2^2 \\cdot \\frac{3}{8}) + (4^2 \\cdot \\frac{3}{8}) + (6^2 \\cdot \\frac{1}{8})\n\\]\n\nCalculating each termCalculating the terms:\n\n\\[\nE[X^2] = (0 \\cdot \\frac{1}{8}) + (4 \\cdot \\frac{3}{8}) + (16 \\cdot \\frac{3}{8}) + (36 \\cdot \\frac{1}{8})\n\\]\n\\[\n= 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{Final answer: 9",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we calculate the sum of the squares of each value multiplied by its probability:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x)) = (0^2 \\cdot \\frac{1}{8}) + (2^2 \\cdot \\frac{3}{8}) + (4^2 \\cdot \\frac{3}{8}) + (6^2 \\cdot \\frac{1}{8})\n\\]\n\nCalculating each term"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Calculating the terms:\n\n\\[\nE[X^2] = (0 \\cdot \\frac{1}{8}) + (4 \\cdot \\frac{3}{8}) + (16 \\cdot \\frac{3}{8}) + (36 \\cdot \\frac{1}{8})\n\\]\n\\[\n= 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 205 of 256 output tokens (90% budget). Your next reply is limited to 51 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 9"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "16",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute E[X^2], we calculate the sum of the squares of the values multiplied by their probabilities:\n\nE[X^2E[X^2] = 0^2*(1/8) + 2^2*(3Final answer: 16",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute E[X^2], we calculate the sum of the squares of the values multiplied by their probabilities:\n\nE[X^2"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = 0^2*(1/8) + 2^2*(3"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 16"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\( E[X^2] = 12 \\)",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\), we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nThe values of \\( X \\) and their corresponding probabilities are as follows:\n\n- \\( x = 0 \\), \\( P(X = 0) = \\frac{1}{8} \\)\n- \\( x = 2 \\), \\( P(X = 2) = \\frac{3}{8} \\)\n- \\( x = 4 \\), \\( P(X = 4) = \\frac{3}{8} \\)\n- \\( x = 6 \\), \\( P(X = 6) = \\frac{1}{8} \\)\n\nNow we calculate \\( E[X^2] \\):\n\nCalculating each term:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nCalculating the squared values:\n\n\\[\nE[X^2] = 0 \\cdot \\frac{1}{8} + 4 \\cdot \\frac{3}{8} + 16 \\cdot \\frac{3}{8} + 36 \\cdot \\frac{1}{8}\n\\]\n\nNow evaluate each contribution:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8}\n\\]\n\nCombining these terms:\n\n\\[\nE[X^2] = 0 + \\frac{12 + 48 + 36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\), we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nThe values of \\( X \\) and their corresponding probabilities are as follows:\n\n- \\( x = 0 \\), \\( P(X = 0) = \\frac{1}{8} \\)\n- \\( x = 2 \\), \\( P(X = 2) = \\frac{3}{8} \\)\n- \\( x = 4 \\), \\( P(X = 4) = \\frac{3}{8} \\)\n- \\( x = 6 \\), \\( P(X = 6) = \\frac{1}{8} \\)\n\nNow we calculate \\( E[X^2] \\):\n\nCalculating each term:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nCalculating the squared values:\n\n\\[\nE[X^2] = 0 \\cdot \\frac{1}{8} + 4 \\cdot \\frac{3}{8} + 16 \\cdot \\frac{3}{8} + 36 \\cdot \\frac{1}{8}\n\\]\n\nNow evaluate each contribution:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8}\n\\]\n\nCombining these terms:\n\n\\[\nE[X^2] = 0 + \\frac{12 + 48 + 36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, 6 and probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\) respectively, we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE[X^2] = 0\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating the terms:\n\n\\[\n= 0 + \\frac{4 \\cdot 3}{8} +Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, 6 and probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\) respectively, we use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE[X^2] = 0"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating the terms:\n\n\\[\n= 0 + \\frac{4 \\cdot 3}{8} +"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 205 of 256 output tokens (90% budget). Your next reply is limited to 51 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "answer without prefix",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\), we use the definition of expected value for functions of random variables. The expected value \\( E[X^2] \\) is calculated as follows:\n\n\\[\nE[X^2] = \\sum_{i} x_i^2 P(X = x_i)\n\\]\n\nWhere \\( x_i \\) are the values that \\( X \\) can take and \\( P(X = x_i) \\) are their corresponding probabilities. \n\nGiven the values of \\( X \\) and their probabilities:\n\n- \\( x_1 = 0 \\), \\( P(X = 0) = \\frac{1}{8} \\)\n- \\( x_2 = 2 \\), \\( P(X = 2) = \\frac{3}{8} \\)\n- \\( x_3 = 4 \\), \\( P(X = 4) = \\frac{3}{8} \\)\n- \\( x_4 = 6 \\), \\( P(X = 6) = \\frac{1}{8} \\)\n\nWe calculate \\( x_i^2 \\) and then multiply by the probabilities:\n\n1. For \\( x_1 = 0 \\):\n   \\[\n   0^2 \\cdot \\frac{1}{8} = 0\n   \\]\n\n2. For \\( x_2 = 2 \\):\n   \\[\n   2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2}\n   \\]\n\n3. For \\( x_3 = 4 \\):\n   \\[\n   4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n   \\]\n\n4. For \\( x_4 = 6 \\):\n   \\[\n   6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = \\[\nE[X^2] = 0 + \\frac{3}{2} + 6 + \\frac{36}{8}\n\\]\n\nNow we convert \\( \\frac{36}{8} \\) to a decimal:\n\n\\[\n\\frac{36}{8} = 4.5\n\\]\n\nSumming these values:\n\n\\[\nE[X^2] = 0 + 1.5 + 6 + 4.5 = 12\n\\]\n\nFinal answer: 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\), we use the definition of expected value for functions of random variables. The expected value \\( E[X^2] \\) is calculated as follows:\n\n\\[\nE[X^2] = \\sum_{i} x_i^2 P(X = x_i)\n\\]\n\nWhere \\( x_i \\) are the values that \\( X \\) can take and \\( P(X = x_i) \\) are their corresponding probabilities. \n\nGiven the values of \\( X \\) and their probabilities:\n\n- \\( x_1 = 0 \\), \\( P(X = 0) = \\frac{1}{8} \\)\n- \\( x_2 = 2 \\), \\( P(X = 2) = \\frac{3}{8} \\)\n- \\( x_3 = 4 \\), \\( P(X = 4) = \\frac{3}{8} \\)\n- \\( x_4 = 6 \\), \\( P(X = 6) = \\frac{1}{8} \\)\n\nWe calculate \\( x_i^2 \\) and then multiply by the probabilities:\n\n1. For \\( x_1 = 0 \\):\n   \\[\n   0^2 \\cdot \\frac{1}{8} = 0\n   \\]\n\n2. For \\( x_2 = 2 \\):\n   \\[\n   2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2}\n   \\]\n\n3. For \\( x_3 = 4 \\):\n   \\[\n   4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n   \\]\n\n4. For \\( x_4 = 6 \\):\n   \\[\n   6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 451 of 1024 output tokens (50% budget). Only 573 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0 + \\frac{3}{2} + 6 + \\frac{36}{8}\n\\]\n\nNow we convert \\( \\frac{36}{8} \\) to a decimal:\n\n\\[\n\\frac{36}{8} = 4.5\n\\]\n\nSumming these values:\n\n\\[\nE[X^2] = 0 + 1.5 + 6 + 4.5 = 12\n\\]\n\nFinal answer: 12"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\):\n\n\\[\nE[X^2] = 0^2 \\cdot \\\\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\):\n\n\\[\nE[X^2] = 0^2 \\cdot \\"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "answer without prefix",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, and 6 and their respective probabilities, we use the formula:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x))\n\\]\n\nCalculating each term, we have:\n\n1. For \\( x = 0 \\):\n   \\[\n   0^2 \\cdot \\frac{1}{8} = 0 \\cdot \\frac{1}{8} = 0\n   \\]\n\n2. For \\( x = 2 \\):\n   \\[\n   2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2}\n   \\]\n\n3. For \\( x = 4 \\):\n   \\[\n   4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n   \\]\n\n4. For \\( x = 6 \\):\n   \\[\n   6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = \\frac{9}{2}\n   \\]\n\nNow, summing these values together:\n\n\\[\nE[X^2] = 0 + \\frac{3}{2} + 6 + \\frac{9}{2}\n\\]\n\nTo combine these, we can express \\( 6 \\) as \\( \\frac{12}{2} \\):\n\n\\[\nE[X^2] = 0 + \\frac{3}{2} + \\frac{12}{2} + \\frac{9}{2} = \\frac{3 + 12 + 9}{2} = \\frac{24}{2} = 12\n\\]\n\nThus, the expectation \\( E[X^2] \\) is:\n\nFinal answer: 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) with values 0, 2, 4, and 6 and their respective probabilities, we use the formula:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x))\n\\]\n\nCalculating each term, we have:\n\n1. For \\( x = 0 \\):\n   \\[\n   0^2 \\cdot \\frac{1}{8} = 0 \\cdot \\frac{1}{8} = 0\n   \\]\n\n2. For \\( x = 2 \\):\n   \\[\n   2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2}\n   \\]\n\n3. For \\( x = 4 \\):\n   \\[\n   4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n   \\]\n\n4. For \\( x = 6 \\):\n   \\[\n   6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = \\frac{9}{2}\n   \\]\n\nNow, summing these values together:\n\n\\[\nE[X^2] = 0 + \\frac{3}{2} + 6 + \\frac{9}{2}\n\\]\n\nTo combine these, we can express \\( 6 \\) as \\( \\frac{12}{2} \\):\n\n\\[\nE[X^2] = 0 + \\frac{3}{2} + \\frac{12}{2} + \\frac{9}{2} = \\frac{3 + 12 + 9}{2} = \\frac{24}{2} = 12\n\\]\n\nThus, the expectation \\( E[X^2] \\) is:\n\nFinal answer: 12"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\), we use the probabilities associated with each value of the random variable \\( X \\):\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating step by step:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + \\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8}Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we use the probabilities associated with each value of the random variable \\( X \\):\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating step by step:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8}"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 205 of 256 output tokens (90% budget). Your next reply is limited to 51 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\):\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac\\[\nE[X^2] = 0 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3Final answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\):\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 103 of 128 output tokens (90% budget). Your next reply is limited to 25 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "10",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\), we use the formula \\( E[X^2] = \\sum x^2 P(X = x) \\).\n\nCalculating each term:\n- When \\( X = 0 \\): \\( 0^2 \\cdot \\frac{1}{8} = 0 \\)\n- When \\( X = 2 \\): \\( 2^2 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2} \\)\n- When \\(- When \\( X = 4 \\): \\( 4^2 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6 \\)\n- When \\( X = 6 \\): \\( 6^2 \\cdot \\frac{1}{8} = \\frac{36}{8} = 4.5 \\)\n\nNow, summing these results:\n\\[\nE[X^2] = 0Final answer: 10",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we use the formula \\( E[X^2] = \\sum x^2 P(X = x) \\).\n\nCalculating each term:\n- When \\( X = 0 \\): \\( 0^2 \\cdot \\frac{1}{8} = 0 \\)\n- When \\( X = 2 \\): \\( 2^2 \\cdot \\frac{3}{8} = \\frac{12}{8} = \\frac{3}{2} \\)\n- When \\("
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "- When \\( X = 4 \\): \\( 4^2 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6 \\)\n- When \\( X = 6 \\): \\( 6^2 \\cdot \\frac{1}{8} = \\frac{36}{8} = 4.5 \\)\n\nNow, summing these results:\n\\[\nE[X^2] = 0"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 205 of 256 output tokens (90% budget). Your next reply is limited to 51 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 10"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "20",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\), we use the formula:\n\n\\[\nE[X^2] = \\sum x^2 P(X=x)\n\\]\n\nSubstituting in the values:\n\n\\[\nE[X^2] = 0^2 \\cdot\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\fracFinal answer: 20",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we use the formula:\n\n\\[\nE[X^2] = \\sum x^2 P(X=x)\n\\]\n\nSubstituting in the values:\n\n\\[\nE[X^2] = 0^2 \\cdot"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 103 of 128 output tokens (90% budget). Your next reply is limited to 25 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 20"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "E[X^2] = 12",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E(X^2) \\) for the discrete random variable \\( X \\), we use the formula:\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nThe values and their corresponding probabilities are:\n\n- For \\( X = 0 \\) with \\( P(X = 0) = \\frac{1}{8} \\)\n- For \\( X = 2 \\) with \\( P(X = 2) = \\frac{3}{8} \\)\n- For \\( X = 4 \\) with \\( P(X = 4) = \\frac{3}{8} \\)\n- For \\( X = 6 \\) with \\( P(X = 6) = \\frac{1}{8} \\)\n\nCalculating \\( E(X^2) \\) step by step:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdotCalculating \\( E(X^2) \\):\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answerFinal answer: E[X^2] = 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E(X^2) \\) for the discrete random variable \\( X \\), we use the formula:\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nThe values and their corresponding probabilities are:\n\n- For \\( X = 0 \\) with \\( P(X = 0) = \\frac{1}{8} \\)\n- For \\( X = 2 \\) with \\( P(X = 2) = \\frac{3}{8} \\)\n- For \\( X = 4 \\) with \\( P(X = 4) = \\frac{3}{8} \\)\n- For \\( X = 6 \\) with \\( P(X = 6) = \\frac{1}{8} \\)\n\nCalculating \\( E(X^2) \\) step by step:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 225 of 512 output tokens (50% budget). Only 287 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Calculating \\( E(X^2) \\):\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 410 of 512 output tokens (90% budget). Your next reply is limited to 102 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: E[X^2] = 12"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "24",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "E[X^2] = \u03a3 (E[X^2] = 0Final answer: 24",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = \u03a3 ("
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "E[X^2] = 0"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 24"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "answer without prefix",
+    "raw_response": "To compute \\( E[X^2] \\), we need to calculate the expected value of \\( X^2 \\) using the given values and their probabilities. The formula for expected value is:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x))\n\\]\n\nHere, the values and probabilities are:\n\n- For \\( X = 0 \\): \n  \\[\n  X^2 = 0^2 = 0, \\quad P(X=0) = \\frac{1}{8} \\Rightarrow 0 \\cdot \\frac{1}{8} = 0\n  \\]\n\n- For \\( X = 2 \\): \n  \\[\n  X^2 = 2^2 = 4, \\quad P(X=2) = \\frac{3}{8} \\Rightarrow 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = 1.5\n  \\]\n\n- For \\( X = 4 \\): \n  \\[\n  X^2 = \\[\nX^2 = 4^2 = 16, \\quad P(X=4) = \\frac{3}{8} \\Rightarrow 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n\\]\n\n- For \\( X = 6 \\): \n  \\[\n  X^2 = 6^2 = 36, \\quad P(X=6) = \\frac{1}{8} \\Rightarrow 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = 4.5\n  \\]\n\nNow, we sum all these contributions:\n\n\\[\nE[X^2] = 0 + 1.5 + 6 + 4.5 = 12\n\\]\n\nFinal answer: 12",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we need to calculate the expected value of \\( X^2 \\) using the given values and their probabilities. The formula for expected value is:\n\n\\[\nE[X^2] = \\sum (x^2 \\cdot P(X=x))\n\\]\n\nHere, the values and probabilities are:\n\n- For \\( X = 0 \\): \n  \\[\n  X^2 = 0^2 = 0, \\quad P(X=0) = \\frac{1}{8} \\Rightarrow 0 \\cdot \\frac{1}{8} = 0\n  \\]\n\n- For \\( X = 2 \\): \n  \\[\n  X^2 = 2^2 = 4, \\quad P(X=2) = \\frac{3}{8} \\Rightarrow 4 \\cdot \\frac{3}{8} = \\frac{12}{8} = 1.5\n  \\]\n\n- For \\( X = 4 \\): \n  \\[\n  X^2 = "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 225 of 512 output tokens (50% budget). Only 287 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\\[\nX^2 = 4^2 = 16, \\quad P(X=4) = \\frac{3}{8} \\Rightarrow 16 \\cdot \\frac{3}{8} = \\frac{48}{8} = 6\n\\]\n\n- For \\( X = 6 \\): \n  \\[\n  X^2 = 6^2 = 36, \\quad P(X=6) = \\frac{1}{8} \\Rightarrow 36 \\cdot \\frac{1}{8} = \\frac{36}{8} = 4.5\n  \\]\n\nNow, we sum all these contributions:\n\n\\[\nE[X^2] = 0 + 1.5 + 6 + 4.5 = 12\n\\]\n\nFinal answer: 12"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "20.",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\), we calculate:\n\n\\[\nE[X^2] = \\sum x^2 \\cdot P(X = x)\n\\]\nwhere \\( x \\) is 0, 2, 4, 6. \n\nCalculCalculating each part:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2Final answer: 20.",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\), we calculate:\n\n\\[\nE[X^2] = \\sum x^2 \\cdot P(X = x)\n\\]\nwhere \\( x \\) is 0, 2, 4, 6. \n\nCalcul"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Calculating each part:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 103 of 128 output tokens (90% budget). Your next reply is limited to 25 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 20."
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\( E[X^2] = 12 \\)",
+    "correct": false,
+    "grade_method": "rule",
+    "grade_detail": "missing Final answer",
+    "raw_response": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) which takes values 0, 2, 4, 6 with corresponding probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\), we will use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nSubstituting in the values:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nCalculating each term step by step:\n\n1. \\( 0^2 \\cdot \\frac{1}{8} = 0 \\)\n2. \\( 2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} \\)\n3. \\( 4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} \\)\n4. \\( 6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} \\)\n\nNow, summing these contributions:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "You are given another question X and a trace of someone solving it. Use them only if helpful. Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion X: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).\n\nTrace solving question X:\n[control_response] To compute the variance \\( \\text{Var}(X) \\) of the discrete random variable \\( X \\), we can use the formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2\n\\]\n\n1. **Calculate \\( E(X) \\)** (the expected value of \\( X \\)):\n\n\\[\nE(X) = \\sum_{x} x \\cdot P(X = x)\n\\]\n\nCalculating this step by step:\n\n\\[\nE(X) = 0 \\cdot \\frac{1}{8} + 2 \\cdot \\frac{3}{8} + 4 \\cdot \\frac{3}{8} + 6 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X) = 0 + \\frac{6}{8} + \\frac{12}{8} + \\frac{6}{8} = \\frac{24}{8} = 3\n\\]\n\n2. **Calculate \\( E(X^2) \\)** (the expected value of \\( X^2 \\)):\n\n\\[\nE(X^2) = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nCalculating this:\n\n\\[\nE(X^2) = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nEvaluating each term:\n\n\\[\nE(X^2) = 0 + \\frac{4 \\cdot 3}{8} + \\frac{16 \\cdot 3}{8} + \\frac{36}{8}\n\\]\n\nCalculating the contributions:\n\n\\[\nE(X^2) = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\n3. **Compute \\( \\text{Var}(X) \\)**:\n\nNow plug in the values into the variance formula:\n\n\\[\n\\text{Var}(X) = E(X^2) - (E(X))^2 = 12 - (3)^2 = 12 - 9 = 3\n\\]\n\nFinal answer: \\( \\text{Var}(X) = 3 \\)\n\nQuestion: A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2]."
+      },
+      {
+        "role": "assistant",
+        "content": "To compute \\( E[X^2] \\) for the discrete random variable \\( X \\) which takes values 0, 2, 4, 6 with corresponding probabilities \\( \\frac{1}{8}, \\frac{3}{8}, \\frac{3}{8}, \\frac{1}{8} \\), we will use the formula:\n\n\\[\nE[X^2] = \\sum_{x} x^2 \\cdot P(X = x)\n\\]\n\nSubstituting in the values:\n\n\\[\nE[X^2] = 0^2 \\cdot \\frac{1}{8} + 2^2 \\cdot \\frac{3}{8} + 4^2 \\cdot \\frac{3}{8} + 6^2 \\cdot \\frac{1}{8}\n\\]\n\nCalculating each term step by step:\n\n1. \\( 0^2 \\cdot \\frac{1}{8} = 0 \\)\n2. \\( 2^2 \\cdot \\frac{3}{8} = 4 \\cdot \\frac{3}{8} = \\frac{12}{8} \\)\n3. \\( 4^2 \\cdot \\frac{3}{8} = 16 \\cdot \\frac{3}{8} = \\frac{48}{8} \\)\n4. \\( 6^2 \\cdot \\frac{1}{8} = 36 \\cdot \\frac{1}{8} = \\frac{36}{8} \\)\n\nNow, summing these contributions:\n\n\\[\nE[X^2] = 0 + \\frac{12}{8} + \\frac{48}{8} + \\frac{36}{8} = \\frac{96}{8} = 12\n\\]\n\nFinal answer: \\( E[X^2] = 12 \\)"
+      }
+    ]
+  }
+]

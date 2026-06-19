@@ -4,6 +4,7 @@ import time
 
 from llm.client import Completion, LLMClient, Message
 from llm.rate_limits import SLOW_REQUEST_SECONDS, is_rate_limit_error, monitor
+from llm.usage import usage
 
 
 class RateLimitAwareClient:
@@ -16,7 +17,7 @@ class RateLimitAwareClient:
         self,
         messages: list[Message],
         max_tokens: int,
-        temperature: float = 1.0,
+        temperature: float | None = 1.0,
     ) -> Completion:
         start = time.monotonic()
         try:
@@ -28,4 +29,5 @@ class RateLimitAwareClient:
         elapsed = time.monotonic() - start
         if elapsed >= SLOW_REQUEST_SECONDS:
             monitor.record_slow(self.provider, self.model, elapsed)
+        usage.record(self.model, completion.prompt_tokens or 0, completion.completion_tokens or 0)
         return completion

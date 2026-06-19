@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5ln|x-1| - 5ln|",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To evaluate the integral, first use partialfraction decomposition. The integral becomes:\n\n\ufffdFinal answer: 5ln|x-1| - 5ln|"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "(5/3)ln|x-1| - (",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "This integral can be evaluated using partial fractionsThe integral can be expressed as:  \n\nFinal answer: (5/3)ln|x-1| - ("
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5 ln|x - 1| - ln|x",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To evaluate the integral \\( \\int \\frac{5x + 1}{(x - 1)(x + 2First, use partial fractions:\n\n\\[\n\\frac{5x + 1}{(x - 1Final answer: 5 ln|x - 1| - ln|x"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5 ln|x - 1| - ln|x",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To evaluate the integral of \\((5x + 1)/((x - 1)(x + 2))\\)we can use partial fraction decomposition. \n\n\\[\n\\frac{5x + 1}{(x -Final answer: 5 ln|x - 1| - ln|x"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "(5/3)ln|x-1| - (5/3)ln|x+2",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx\\), we can use partial fraction decomposition.\n\nStart by expressing the rational function:\n\n\\[\n\\frac{5x + 1\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nMultipFinal answer: (5/3)ln|x-1| - (5/3)ln|x+2"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5ln|x - 1| - 3ln|x + 2| + C",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx\\), we can use partial fraction decomposition.\n\nFirst, express \\(\\frac{5x + 1}{(x - We decompose:  \n\\(\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2Final answer: 5ln|x - 1| - 3ln|x + 2| + C"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "2 ln|x - 1| + 3 ln|x + 2| + C",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx\\), we can use partial fraction decomposition.\n\n**Step 1: Decompose the fraction**  \nWe can express:\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\nMultiplying through by the denominator gives:  \n\\[\n5Solving for \\(A\\) and \\(B\\) using the equation \\(5x + 1 = A(x + 2) + B(x - 1)\\) gives us a system. \n\nPlug in suitable values for \\(x\\):\n1. Setting \\(x = 1\\): \\(6 = 3A \\Rightarrow A = 2\\).\n2. Setting \\(x = -2\\): \\(-9 = -3BFinal answer: 2 ln|x - 1| + 3 ln|x + 2| + C"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "2 ln|x - 1| + 3 ln|x + 2| + C",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \\(\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx\\), we use partial fraction decomposition:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nMultiplying through by the denominator \\( (x - 1)(x + 2) \\) leads to:\n\n\\[\n5x +Continuing from where we left off:\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1)\n\\]\n\nExpanding and combining terms, we can find \\(A\\) and \\(B\\):\n\n1. Set \\(x = 1\\) to solve for \\(A\\):\n\\[\n6 = A(3) \\implies A = 2\n\\]\n2. Set \\(x = -2\\Final answer: 2 ln|x - 1| + 3 ln|x + 2| + C"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "2 ln|x - 1| + 3 ln|x + 2| + C",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral of \\((5x + 1)/((x - 1)(x + 2))\\) dx, we can use partial fraction decomposition. We can express:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nMultiplying through by \\((x - 1)(x + 2)\\) gives:\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1)\n\\]\n\nExpanding the right side:\n\n\\[\n5x + 1 = Ax + 2A + Bx - B = (A + B)x + (2A - B)\n\\]\n\nSetting coefficients equal:\n\n1. \\(A + B = 5\\)\n2. \\(2A - B = 1\\)\n\nSolving these equations, we substitute \\(B = 5 - A\\) into the second equation:\n\n\\[\n2A - (5 - A) =Substituting gives:\n\n\\[\n2A - 5 + A = 1 \\implies 3A - 5 = 1 \\implies 3A = 6 \\implies A = 2\n\\]\n\nThen substituting back:\n\n\\[\nB = 5 - 2 = 3\n\\]\n\nThus, we have:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\n\\]\n\nNow we integrate:\n\n\\[\n\\int \\left( \\frac{2}{x - 1} + \\frac{3}{x + 2} \\right) dx = 2 \\ln |x - 1| + 3 \\ln |x + 2| + C\n\\]\n\nTherefore, theFinal answer: 2 ln|x - 1| + 3 ln|x + 2| + C"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "2 ln|x - 1| + 3 ln|x + 2| + C",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \n\n\\[\n\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx,\n\\]\n\nwe can use partial fraction decomposition. We express the integrand as:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}.\n\\]\n\nMultiplying both sides by \\((x - 1)(x + 2)\\) yields:\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1).\n\\]\n\nExpanding the right-hand side gives:\n\n\\[\n5x + 1 = Ax + 2A + Bx - B = (A + B)x + (2A - B).\n\\]\n\nEquating coefficients for \\(x\\) and the constant terms, we have the system:\n\n1. \\(A + B = 5\\)\n2. \\(2A - B = 1\\)\n\nSolving this system,From the equations:\n\n1. \\(A + B = 5\\)  \n2. \\(2A - B = 1\\)\n\nAdding these equations gives:\n\n\\[\n3A = 6 \\Rightarrow A = 2.\n\\]\n\nSubstituting \\(A = 2\\) into the first equation:\n\n\\[\n2 + B = 5 \\Rightarrow B = 3.\n\\]\n\nThus, we rewrite the integrand:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}.\n\\]\n\nNow, we can integrate:\n\n\\[\n\\int \\left( \\frac{2}{x - 1} + \\frac{3}{x + 2} \\right) dx = 2 \\ln |x - 1Final answer: 2 ln|x - 1| + 3 ln|x + 2| + C"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\[\n2 \\ln |x - 1| + 3 \\ln |x + 2| + C.\n\\]",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To evaluate the integral \n\n\\[\n\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx,\n\\]\n\nwe can use partial fraction decomposition. We can express \n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2},\n\\]\n\nwhere A and B are constants to be determined.\n\nMultiplying through by the denominator \\((x - 1)(x + 2)\\), we have\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1).\n\\]\n\nExpanding the right-hand side, we get:\n\n\\[\n5x + 1 = Ax + 2A + Bx - B = (A + B)x + (2A - B).\n\\]\n\nThis gives us the system of equations by equating coefficients:\n\n1. \\(A + B = 5\\)\n2. \\(2A - B = 1\\)\n\nNow, we can solve this system. From the first equation, we can express \\(B\\) in terms of \\(A\\):\n\n\\[\nB = 5 - A.\n\\]\n\nSubstituting this expression for \\(B\\) into the second equation:\n\n\\[\n2A - (5 - A) = 1 \\implies 2A - 5 + A = 1 \\implies 3A - 5 = 1 \\implies 3A = 6 \\implies A = 2.\n\\]\n\nNow substituting back to find \\(B\\):\n\n\\[\nB = 5 - 2 = 3.\n\\]\n\nWe have determined that \n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}.\n\\]\n\nNow, we can integrate each term separately:\n\n\\[\n\\int \\left(\\frac{2}{x - 1} + \\frac{3}{x + 2}\\right) \\Integrating each term gives:\n\n\\[\n\\int \\frac{2}{x - 1} \\, dx + \\int \\frac{3}{x + 2} \\, dx.\n\\]\n\nCalculating the integrals:\n\n1. \\(\\int \\frac{2}{x - 1} \\, dx = 2 \\ln |x - 1| + C_1\\)\n2. \\(\\int \\frac{3}{x + 2} \\, dx = 3 \\ln |x + 2| + C_2\\)\n\nCombining these results, we have:\n\n\\[\n\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx = 2 \\ln |x - 1| + 3 \\ln |x + 2| + C,\n\\]\n\nwhere \\(C\\) is the constant of integration.\n\nFinal answer: \n\n\\[\n2 \\ln |x - 1| + 3 \\ln |x + 2| + C.\n\\]"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(2 \\ln |x - 1| + 3 \\ln |x + 2| + C\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "To solve the integral of \\(\\frac{5x + 1}{(x - 1)(x + 2)} \\, dx\\), we can use partial fraction decomposition. First, we express the integrand as:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nMultiplying both sides by the denominator \\((x - 1)(x + 2)\\) gives:\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1)\n\\]\n\nExpanding the right-hand side:\n\n\\[\n5x + 1 = Ax + 2A + Bx - B = (A + B)x + (2A - B)\n\\]\n\nEquating coefficients, we get two equations:\n\n1. \\(A + B = 5\\)\n2. \\(2A - B = 1\\)\n\nNow, we can solve this system. From equation (1), express \\(B\\) in terms of \\(A\\):\n\n\\[\nB = 5 - A\n\\]\n\nSubstituting \\(B\\) into equation (2):\n\n\\[\n2A - (5 - A) = 1\n\\]\n\\[\n2A - 5 + A = 1\n\\]\n\\[\n3A - 5 = 1 \\implies 3A = 6 \\implies A = 2\n\\]\n\nSubstituting \\(A\\) back to find \\(B\\):\n\n\\[\nB = 5 - 2 = 3\n\\]\n\nThus, we have:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\n\\]\n\nNow we can integrate:\n\n\\[\n\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx = \\int \\left( \\frac{2}{x - 1} + \\frac{3Continuing with the integration:\n\n\\[\n\\int \\left( \\frac{2}{x - 1} + \\frac{3}{x + 2} \\right) \\, dx = 2 \\ln |x - 1| + 3 \\ln |x + 2| + C\n\\]\n\nwhere \\(C\\) is the constant of integration.\n\nThus, the final result of the integral is:\n\n\\[\n\\int \\frac{5x + 1}{(x - 1)(x + 2)} \\, dx = 2 \\ln |x - 1| + 3 \\ln |x + 2| + C\n\\]\n\nFinal answer: \\(2 \\ln |x - 1| + 3 \\ln |x + 2| + C\\)"
+  }
+]

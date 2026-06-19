@@ -1,0 +1,1640 @@
+[
+  {
+    "pair_id": "variance_vs_second_moment",
+    "y_acc_scratch": 0.25,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.2916666666666667,
+    "trace_leakage": 0.75,
+    "answer_only_leakage": 0.041666666666666685,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.5,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.25,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.25,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( \\frac{5}{9} \\)",
+      "\\(\\frac{5}{9}\\)",
+      "\\( \\frac{5}{9} \\)"
+    ]
+  },
+  {
+    "pair_id": "mod_order_vs_large_power",
+    "y_acc_scratch": 0.20833333333333334,
+    "y_acc_full_trace": 0.7916666666666666,
+    "y_acc_answer_only": 0.20833333333333334,
+    "trace_leakage": 0.5833333333333333,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0.25,
+        "64": 0.5,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "18",
+      "18",
+      "18"
+    ]
+  },
+  {
+    "pair_id": "markov_square_vs_two_step_prob",
+    "y_acc_scratch": 0.25,
+    "y_acc_full_trace": 0.9166666666666666,
+    "y_acc_answer_only": 0.375,
+    "trace_leakage": 0.6666666666666666,
+    "answer_only_leakage": 0.125,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.5,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 0.5,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.25,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 1,
+        "1024": 0.75
+      }
+    },
+    "x_answers": [
+      "\\( P^2 = \\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix} \\)",
+      "\\( P^2 = \\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix} \\)",
+      "\\(\\begin{bmatrix} 0.35 & 0.65 \\\\ 0.26 & 0.74 \\end{bmatrix}\\)"
+    ]
+  },
+  {
+    "pair_id": "bayes_posterior_vs_marginal",
+    "y_acc_scratch": 0.5,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 0.4166666666666667,
+    "trace_leakage": 0.45833333333333337,
+    "answer_only_leakage": -0.08333333333333331,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0.25,
+        "256": 0.25,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "0.1917 or about 19.17%.",
+      "0.192",
+      "0.1917"
+    ]
+  },
+  {
+    "pair_id": "circumradius_vs_area",
+    "y_acc_scratch": 0.4166666666666667,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.5,
+    "trace_leakage": 0.5833333333333333,
+    "answer_only_leakage": 0.08333333333333331,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.75,
+        "512": 1,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( \\frac{21\\sqrt{5}}{10} \\)",
+      "\\(\\frac{21\\sqrt{5}}{10}\\)",
+      "\\( \\frac{21 \\sqrt{5}}{10} \\)"
+    ]
+  },
+  {
+    "pair_id": "totient_vs_divisor_count",
+    "y_acc_scratch": 0.5416666666666666,
+    "y_acc_full_trace": 0.7083333333333334,
+    "y_acc_answer_only": 0.20833333333333334,
+    "trace_leakage": 0.16666666666666674,
+    "answer_only_leakage": -0.33333333333333326,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0.25,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0.25,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "108",
+      "108",
+      "108"
+    ]
+  },
+  {
+    "pair_id": "heron_area_vs_inradius",
+    "y_acc_scratch": 0.5833333333333334,
+    "y_acc_full_trace": 0.8333333333333334,
+    "y_acc_answer_only": 0.3333333333333333,
+    "trace_leakage": 0.25,
+    "answer_only_leakage": -0.25000000000000006,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0.5,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "84",
+      "84",
+      "84"
+    ]
+  },
+  {
+    "pair_id": "binomial_expand_vs_coefficient",
+    "y_acc_scratch": 0.4583333333333333,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 0.5416666666666666,
+    "trace_leakage": 0.5,
+    "answer_only_leakage": 0.08333333333333331,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 0.75,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0.5,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( 32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243 \\)",
+      "\\(32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243\\)",
+      "\\(32x^5 - 240x^4 + 720x^3 - 1080x^2 + 810x - 243\\)"
+    ]
+  },
+  {
+    "pair_id": "totient_vs_divisors",
+    "y_acc_scratch": 0.5833333333333334,
+    "y_acc_full_trace": 0.7083333333333334,
+    "y_acc_answer_only": 0.3333333333333333,
+    "trace_leakage": 0.125,
+    "answer_only_leakage": -0.25000000000000006,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0.25,
+        "128": 0.5,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0.25,
+        "64": 0.25,
+        "128": 1,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0.5,
+        "256": 0,
+        "512": 0.5,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "108",
+      "108",
+      "108"
+    ]
+  },
+  {
+    "pair_id": "markov_eigenvalues_vs_stationary",
+    "y_acc_scratch": 0.375,
+    "y_acc_full_trace": 0.25,
+    "y_acc_answer_only": 0,
+    "trace_leakage": -0.125,
+    "answer_only_leakage": -0.375,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.25,
+        "64": 0.25,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.75,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.5,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0
+      }
+    },
+    "x_answers": [
+      "The eigenvalues are \\( 1 \\) and \\( 0.3 \\).",
+      "1.0 and 0.3.",
+      "\\( \\lambda_1 = 1, \\lambda_2 = 0.3 \\)"
+    ]
+  },
+  {
+    "pair_id": "mod_pow_vs_order",
+    "y_acc_scratch": 0.25,
+    "y_acc_full_trace": 0.4583333333333333,
+    "y_acc_answer_only": 0.25,
+    "trace_leakage": 0.20833333333333331,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.75,
+        "1024": 0.5
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.5,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "1",
+      "1.",
+      "** 1"
+    ]
+  },
+  {
+    "pair_id": "gcd_vs_bezout_coefficients",
+    "y_acc_scratch": 0.5833333333333334,
+    "y_acc_full_trace": 0.7916666666666666,
+    "y_acc_answer_only": 0.5,
+    "trace_leakage": 0.20833333333333326,
+    "answer_only_leakage": -0.08333333333333337,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.25,
+        "64": 0.25,
+        "128": 0.25,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0.25,
+        "64": 1,
+        "128": 0.75,
+        "256": 1,
+        "512": 1,
+        "1024": 0.75
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0.25,
+        "128": 0.25,
+        "256": 0.5,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "17",
+      "17",
+      "17"
+    ]
+  },
+  {
+    "pair_id": "surjection_vs_partition",
+    "y_acc_scratch": 0.5,
+    "y_acc_full_trace": 0.625,
+    "y_acc_answer_only": 0.375,
+    "trace_leakage": 0.125,
+    "answer_only_leakage": -0.125,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.75,
+        "64": 0.25,
+        "128": 0.5,
+        "256": 0.25,
+        "512": 0.5,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 0.75,
+        "64": 0.25,
+        "128": 0.75,
+        "256": 0.5,
+        "512": 0.5,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.25,
+        "64": 0,
+        "128": 0.25,
+        "256": 0.5,
+        "512": 0.75,
+        "1024": 0.5
+      }
+    },
+    "x_answers": [
+      "540",
+      "540",
+      "540"
+    ]
+  },
+  {
+    "pair_id": "generating_function_vs_coefficient",
+    "y_acc_scratch": 0.20833333333333334,
+    "y_acc_full_trace": 0.25,
+    "y_acc_answer_only": 0.08333333333333333,
+    "trace_leakage": 0.04166666666666666,
+    "answer_only_leakage": -0.125,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.25,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0.25,
+        "256": 0,
+        "512": 0.25,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0,
+        "1024": 0.25
+      }
+    },
+    "x_answers": [
+      "45",
+      "45",
+      "45"
+    ]
+  },
+  {
+    "pair_id": "partial_fractions_vs_integral",
+    "y_acc_scratch": 0.2916666666666667,
+    "y_acc_full_trace": 0.625,
+    "y_acc_answer_only": 0.4583333333333333,
+    "trace_leakage": 0.3333333333333333,
+    "answer_only_leakage": 0.16666666666666663,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 1,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0.25,
+        "256": 0.5,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\(\\frac{2}{x - 1} + \\frac{3}{x + 2}\\)",
+      "\\(\\frac{2}{x - 1} + \\frac{3}{x + 2}\\)",
+      "\\(\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\\)"
+    ]
+  },
+  {
+    "pair_id": "generating_function_coeff_pair",
+    "y_acc_scratch": 0.125,
+    "y_acc_full_trace": 0.20833333333333334,
+    "y_acc_answer_only": 0.08333333333333333,
+    "trace_leakage": 0.08333333333333334,
+    "answer_only_leakage": -0.04166666666666667,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 0.5
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0.5
+      }
+    },
+    "x_answers": [
+      "30",
+      "30",
+      "50"
+    ]
+  },
+  {
+    "pair_id": "bayes_positive_vs_negative",
+    "y_acc_scratch": 0.2916666666666667,
+    "y_acc_full_trace": 0.3333333333333333,
+    "y_acc_answer_only": 0.20833333333333334,
+    "trace_leakage": 0.04166666666666663,
+    "answer_only_leakage": -0.08333333333333334,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.75,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "0.1917",
+      "Approximately 0.1917 or 19.17%.",
+      "19.17%"
+    ]
+  },
+  {
+    "pair_id": "expected_value_vs_variance",
+    "y_acc_scratch": 0.25,
+    "y_acc_full_trace": 0.16666666666666666,
+    "y_acc_answer_only": 0.08333333333333333,
+    "trace_leakage": -0.08333333333333334,
+    "answer_only_leakage": -0.16666666666666669,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.5,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 0.25
+      }
+    },
+    "x_answers": [
+      "\\(\\frac{5}{3}\\)",
+      "\\(\\frac{5}{3}\\)",
+      "\\( \\frac{5}{3} \\)"
+    ]
+  },
+  {
+    "pair_id": "markov_stop_time_vs_exact_length",
+    "y_acc_scratch": 0.041666666666666664,
+    "y_acc_full_trace": 0,
+    "y_acc_answer_only": 0,
+    "trace_leakage": -0.041666666666666664,
+    "answer_only_leakage": -0.041666666666666664,
+    "x_scratch_acc": 0.3333333333333333,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.25,
+        "1024": 0
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0
+      }
+    },
+    "x_answers": [
+      "36",
+      "6",
+      "\\( \\frac{12}{5} \\approx 2.4 \\)"
+    ]
+  },
+  {
+    "pair_id": "markov_hh_expected_vs_exact",
+    "y_acc_scratch": 0.041666666666666664,
+    "y_acc_full_trace": 0,
+    "y_acc_answer_only": 0,
+    "trace_leakage": -0.041666666666666664,
+    "answer_only_leakage": -0.041666666666666664,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0.25
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0,
+        "1024": 0
+      }
+    },
+    "x_answers": [
+      "36",
+      "36",
+      "12"
+    ]
+  },
+  {
+    "pair_id": "marbles_same_vs_different",
+    "y_acc_scratch": 0.5833333333333334,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.875,
+    "trace_leakage": 0.41666666666666663,
+    "answer_only_leakage": 0.29166666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.25,
+        "64": 0.5,
+        "128": 0.25,
+        "256": 0.75,
+        "512": 1,
+        "1024": 0.75
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 0.5,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 0.75
+      }
+    },
+    "x_answers": [
+      "\\(\\frac{31}{66}\\)",
+      "\\(\\frac{31}{66}\\)",
+      "\\( \\frac{31}{66} \\)"
+    ]
+  },
+  {
+    "pair_id": "heron_vs_incircle",
+    "y_acc_scratch": 0.3333333333333333,
+    "y_acc_full_trace": 0.375,
+    "y_acc_answer_only": 0.3333333333333333,
+    "trace_leakage": 0.041666666666666685,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.5,
+        "512": 0.75,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( 12\\sqrt{5} \\) square units.",
+      "26.83 square units.",
+      "12\u221a5 (approximately 26.83 square units)."
+    ]
+  },
+  {
+    "pair_id": "subset_count_exactly_vs_atleast",
+    "y_acc_scratch": 0.3333333333333333,
+    "y_acc_full_trace": 0.375,
+    "y_acc_answer_only": 0.3333333333333333,
+    "trace_leakage": 0.041666666666666685,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 0.3333333333333333,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.75,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "378",
+      "378",
+      "210"
+    ]
+  },
+  {
+    "pair_id": "escape_velocity_vs_orbital",
+    "y_acc_scratch": 0.875,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.8333333333333334,
+    "trace_leakage": 0.125,
+    "answer_only_leakage": -0.04166666666666663,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.75,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 0.5,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.5,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( d(\\sqrt{2} - 1) \\)",
+      "\\( d(\\sqrt{2} - 1) \\)",
+      "The gravitational field is never zero between the two masses \\( m \\) and \\( 2m \\)."
+    ]
+  },
+  {
+    "pair_id": "recurrence_roots_vs_term",
+    "y_acc_scratch": 0.2916666666666667,
+    "y_acc_full_trace": 0.2916666666666667,
+    "y_acc_answer_only": 0.2916666666666667,
+    "trace_leakage": 0.0,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.75,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.75,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 0.75,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( r = 2, 3 \\)",
+      "The roots of the characteristic equation are 3 and 2.",
+      "The roots of the characteristic equation are 3 and 2."
+    ]
+  },
+  {
+    "pair_id": "normalize_pdf_vs_cdf",
+    "y_acc_scratch": 0.625,
+    "y_acc_full_trace": 0.6666666666666666,
+    "y_acc_answer_only": 0.5833333333333334,
+    "trace_leakage": 0.04166666666666663,
+    "answer_only_leakage": -0.04166666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0.25,
+        "128": 0.5,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0.5,
+        "64": 0.75,
+        "128": 0,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.5,
+        "64": 0,
+        "128": 0.25,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\( k = 2 \\)",
+      "\\( k = 2 \\)",
+      "\\( k = 2 \\)"
+    ]
+  },
+  {
+    "pair_id": "matrix_inverse_vs_linear_solve",
+    "y_acc_scratch": 0.5,
+    "y_acc_full_trace": 0.2916666666666667,
+    "y_acc_answer_only": 0.25,
+    "trace_leakage": -0.20833333333333331,
+    "answer_only_leakage": -0.25,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.25,
+        "64": 0.25,
+        "128": 0.25,
+        "256": 0.75,
+        "512": 0.5,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0,
+        "512": 1,
+        "1024": 0.75
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.25,
+        "512": 0.25,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\(\\begin{pmatrix} \\frac{3}{5} & -\\frac{1}{5} \\\\ -\\frac{1}{5} & \\frac{2}{5} \\end{pmatrix}\\)",
+      "\\(\\begin{bmatrix} \\frac{3}{5} & -\\frac{1}{5} \\\\ -\\frac{1}{5} & \\frac{2}{5} \\end{bmatrix}\\)",
+      "\\(\\begin{bmatrix} \\frac{3}{5} & -\\frac{1}{5} \\\\ -\\frac{1}{5} & \\frac{2}{5} \\end{bmatrix}\\)"
+    ]
+  },
+  {
+    "pair_id": "trig_sin_to_cos_vs_tan",
+    "y_acc_scratch": 0.75,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.9166666666666666,
+    "trace_leakage": 0.25,
+    "answer_only_leakage": 0.16666666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.75,
+        "64": 0.25,
+        "128": 0.75,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 0.75,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\(\\frac{12}{13}\\)",
+      "\\(\\frac{12}{13}\\)",
+      "\\( \\frac{12}{13} \\)"
+    ]
+  },
+  {
+    "pair_id": "quartic_roots_vs_parameter_range",
+    "y_acc_scratch": 0.5833333333333334,
+    "y_acc_full_trace": 0.375,
+    "y_acc_answer_only": 0.3333333333333333,
+    "trace_leakage": -0.20833333333333337,
+    "answer_only_leakage": -0.25000000000000006,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0.25,
+        "128": 0.5,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.75,
+        "512": 0.75,
+        "1024": 0.75
+      },
+      "answer_only": {
+        "32": 0,
+        "64": 0,
+        "128": 0,
+        "256": 0.5,
+        "512": 0.75,
+        "1024": 0.75
+      }
+    },
+    "x_answers": [
+      "\\( x = 3, -3, 1, -1 \\)",
+      "\\( x = 3, -3, 1, -1 \\)",
+      "\\(x = -3, -1, 1, 3\\)"
+    ]
+  },
+  {
+    "pair_id": "integral_vs_area_under_curve",
+    "y_acc_scratch": 0.7916666666666666,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.9583333333333334,
+    "trace_leakage": 0.20833333333333337,
+    "answer_only_leakage": 0.16666666666666674,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 0.75,
+        "128": 0,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "8",
+      "8",
+      "8"
+    ]
+  },
+  {
+    "pair_id": "surjection_count_vs_partition",
+    "y_acc_scratch": 0.7916666666666666,
+    "y_acc_full_trace": 0.8333333333333334,
+    "y_acc_answer_only": 0.8333333333333334,
+    "trace_leakage": 0.04166666666666674,
+    "answer_only_leakage": 0.04166666666666674,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.5,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 0.5,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0.5,
+        "64": 1,
+        "128": 0.75,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 0.75,
+        "512": 0.5,
+        "1024": 0.75
+      }
+    },
+    "x_answers": [
+      "150",
+      "150",
+      "150."
+    ]
+  },
+  {
+    "pair_id": "partial_fractions_vs_integral_dup",
+    "y_acc_scratch": 1,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 0.9166666666666666,
+    "trace_leakage": -0.04166666666666663,
+    "answer_only_leakage": -0.08333333333333337,
+    "x_scratch_acc": 0.0,
+    "n_x_trials": 3,
+    "used_correct_trace": false,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 0.5,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "\\(\\frac{1}{x} - \\frac{1}{x + 1}\\)",
+      "\\(\\frac{1}{x} - \\frac{1}{x + 1}\\)",
+      "\\(\\frac{1}{x} - \\frac{1}{x + 1}\\)"
+    ]
+  },
+  {
+    "pair_id": "stars_and_bars_vs_distribution",
+    "y_acc_scratch": 1,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 0.9583333333333334,
+    "trace_leakage": 0,
+    "answer_only_leakage": -0.04166666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "66",
+      "66.",
+      "66"
+    ]
+  },
+  {
+    "pair_id": "majority_algorithm_vs_counterexample",
+    "y_acc_scratch": 0.9166666666666666,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 0.9583333333333334,
+    "trace_leakage": 0.04166666666666674,
+    "answer_only_leakage": 0.04166666666666674,
+    "x_scratch_acc": 0.6666666666666666,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 0.5,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 0.75,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "1",
+      "2",
+      "2"
+    ]
+  },
+  {
+    "pair_id": "compound_balance_vs_interest",
+    "y_acc_scratch": 0.8333333333333334,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 1,
+    "trace_leakage": 0.125,
+    "answer_only_leakage": 0.16666666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.25,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 0.75,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 0.75,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "$2420",
+      "2420",
+      "$2420"
+    ]
+  },
+  {
+    "pair_id": "eigenvalues_vs_trace",
+    "y_acc_scratch": 1,
+    "y_acc_full_trace": 1,
+    "y_acc_answer_only": 1,
+    "trace_leakage": 0,
+    "answer_only_leakage": 0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "6 and 1.",
+      "\\(\\lambda = 1, 6\\)",
+      "The eigenvalues are 6 and 1."
+    ]
+  },
+  {
+    "pair_id": "gcd_vs_lcm",
+    "y_acc_scratch": 0.7083333333333334,
+    "y_acc_full_trace": 0.625,
+    "y_acc_answer_only": 0.7083333333333334,
+    "trace_leakage": -0.08333333333333337,
+    "answer_only_leakage": 0.0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0.5,
+        "64": 0.25,
+        "128": 0.5,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0.75,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.25,
+        "64": 0.25,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 0.75
+      }
+    },
+    "x_answers": [
+      "42",
+      "42",
+      "42"
+    ]
+  },
+  {
+    "pair_id": "quadratic_roots_vs_vieta_sum",
+    "y_acc_scratch": 1,
+    "y_acc_full_trace": 0.9583333333333334,
+    "y_acc_answer_only": 1,
+    "trace_leakage": -0.04166666666666663,
+    "answer_only_leakage": 0,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 1,
+        "64": 0.75,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 1,
+        "64": 1,
+        "128": 1,
+        "256": 1,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "3, 4",
+      "\\( x = 3, 4 \\)",
+      "3 and 4."
+    ]
+  },
+  {
+    "pair_id": "arithmetic_nth_term_vs_partial_sum",
+    "y_acc_scratch": 0.6666666666666666,
+    "y_acc_full_trace": 0.5,
+    "y_acc_answer_only": 0.625,
+    "trace_leakage": -0.16666666666666663,
+    "answer_only_leakage": -0.04166666666666663,
+    "x_scratch_acc": 1.0,
+    "n_x_trials": 3,
+    "used_correct_trace": true,
+    "acc_by_budget": {
+      "scratch": {
+        "32": 0,
+        "64": 0.75,
+        "128": 0.75,
+        "256": 0.5,
+        "512": 1,
+        "1024": 1
+      },
+      "with_trace": {
+        "32": 0,
+        "64": 0,
+        "128": 0.25,
+        "256": 0.75,
+        "512": 1,
+        "1024": 1
+      },
+      "answer_only": {
+        "32": 0.25,
+        "64": 0.75,
+        "128": 0.25,
+        "256": 0.5,
+        "512": 1,
+        "1024": 1
+      }
+    },
+    "x_answers": [
+      "19",
+      "19",
+      "19"
+    ]
+  }
+]

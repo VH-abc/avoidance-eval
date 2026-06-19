@@ -1,0 +1,16 @@
+{
+  "pair_id": "quartic_solve_vs_parameter",
+  "scaffold": "control",
+  "trial": 1,
+  "answer_x": "\\( x = -3, -1, 1, 3 \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To solve the equation \\( x^4 - 10x^2 + 9 = 0 \\), we can use a substitution. Let \\( y = x^2 \\). Then, the equation transforms into:\n\n\\[\ny^2 - 10y + 9 = 0\n\\]\n\nNow, we can factor or use the quadratic formula to find the values of \\( y \\). This can be factored as:\n\n\\[\n(y - 1)(y - 9) = 0\n\\]\n\nSetting each factor equal to zero gives:\n\n\\[\ny - 1 = 0 \\quad \\Rightarrow \\quad y = 1\n\\]\n\\[\ny - 9 = 0 \\quad \\Rightarrow \\quad y = 9\n\\]\n\nNow we substitute back \\( y = x^2 \\):\n\n1. For \\( y = 1 \\):\n   \\[\n   x^2 = 1 \\quad \\Rightarrow \\quad x = \\pm 1\n   \\]\n\n2. For \\( y = 9 \\):\n   \\[\n   x^2 = 9 \\quad \\Rightarrow \\quad x = \\pm 3\n   \\]\n\nThus, the real solutions to the original equation \\( x^4 - 10x^2 + 9 = 0 \\) are:\n\n\\[\nx = 1, -1, 3, -3\n\\]\n\nFinal answer: \\( x = -3, -1, 1, 3 \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

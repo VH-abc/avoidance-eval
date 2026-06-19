@@ -1,0 +1,16 @@
+{
+  "pair_id": "quartic_roots_vs_parameter_range",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\( 3, -3, 1, -1 \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To solve the equation \\( x^4 - 10x^2 + 9 = 0 \\), we can start by making a substitution. Let \\( y = x^2 \\). Then, the equation becomes:\n\n\\[\ny^2 - 10y + 9 = 0\n\\]\n\nNext, we will use the quadratic formula to solve for \\( y \\):\n\n\\[\ny = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n\\]\nwhere \\( a = 1, b = -10, c = 9 \\).\n\nCalculating the discriminant:\n\n\\[\nb^2 - 4ac = (-10)^2 - 4 \\cdot 1 \\cdot 9 = 100 - 36 = 64\n\\]\n\nNow substituting back into the quadratic formula:\n\n\\[\ny = \\frac{10 \\pm \\sqrt{64}}{2 \\cdot 1} = \\frac{10 \\pm 8}{2}\n\\]\n\nCalculating the two possible values for \\( y \\):\n\n1. \\( y = \\frac{18}{2} = 9 \\)\n2. \\( y = \\frac{2}{2} = 1 \\)\n\nSince we substituted \\( y = x^2 \\), we now need to convert back to \\( x \\):\n\n1. For \\( y = 9 \\):\n   \\[\n   x^2 = 9 \\implies x = \\pm 3\n   \\]\n\n2. For \\( y = 1 \\):\n   \\[\n   x^2 = 1 \\implies x = \\pm 1\n   \\]\n\nThus, the complete set of real solutions for the equation \\( x^4 - 10x^2 + 9 = 0 \\) is:\n\n\\[\nx = 3, -3, 1, -1\n\\]\n\nFinal answer: \\( 3, -3, 1, -1 \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

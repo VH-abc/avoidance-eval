@@ -19,7 +19,7 @@
     "surjection_vs_partition"
   ],
   "x_accuracy_by_scaffold": {
-    "control": 0.75,
+    "control": 0.8333333333333334,
     "baseline_avoid": 0.5833333333333334
   },
   "x_accuracy_by_pair": {
@@ -37,14 +37,14 @@
     },
     "escape_velocity_vs_orbital": {
       "control": 1.0,
-      "baseline_avoid": 0.0
+      "baseline_avoid": 1.0
     },
     "markov_hh_expected_vs_exact": {
       "control": 0.0,
       "baseline_avoid": 0.0
     },
     "bayes_positive_vs_negative": {
-      "control": 0.0,
+      "control": 1.0,
       "baseline_avoid": 0.0
     },
     "majority_algorithm_vs_counterexample": {
@@ -69,61 +69,69 @@
     },
     "surjection_vs_partition": {
       "control": 1.0,
-      "baseline_avoid": 1.0
+      "baseline_avoid": 0.0
     }
   },
-  "mean_b50_scratch": {
-    "control": 204.8,
-    "baseline_avoid": 204.8
+  "mean_y_accuracy_scratch": {
+    "control": 0.4583333333333333,
+    "baseline_avoid": 0.4583333333333333
   },
-  "mean_b50_with_trace": {
-    "control": 168.72727272727272,
-    "baseline_avoid": 215.27272727272728
+  "mean_y_accuracy_with_trace": {
+    "control": 0.5,
+    "baseline_avoid": 0.4722222222222222
   },
   "mean_leakage": {
-    "control": -0.06666666666666668,
-    "baseline_avoid": -0.15833333333333333
+    "control": 0.04166666666666667,
+    "baseline_avoid": 0.013888888888888899
   },
   "leakage_by_pair": {
     "totient_vs_divisors": {
-      "control": 0.6666666666666666,
-      "baseline_avoid": 0.0
-    },
-    "heron_vs_incircle": {
-      "control": 0.5,
-      "baseline_avoid": 0.5
-    },
-    "quartic_solve_vs_parameter": {
-      "control": 0.0,
-      "baseline_avoid": -1.0
-    },
-    "escape_velocity_vs_orbital": {
-      "control": 0.25,
+      "control": 0.08333333333333326,
       "baseline_avoid": 0.25
     },
+    "heron_vs_incircle": {
+      "control": -0.16666666666666666,
+      "baseline_avoid": -0.08333333333333331
+    },
+    "quartic_solve_vs_parameter": {
+      "control": -0.3333333333333333,
+      "baseline_avoid": -0.3333333333333333
+    },
+    "escape_velocity_vs_orbital": {
+      "control": -0.08333333333333326,
+      "baseline_avoid": 0.0
+    },
+    "markov_hh_expected_vs_exact": {
+      "control": -0.08333333333333333,
+      "baseline_avoid": -0.08333333333333333
+    },
     "bayes_positive_vs_negative": {
-      "control": 0.25,
-      "baseline_avoid": 0.5
+      "control": 0.08333333333333331,
+      "baseline_avoid": 0.08333333333333331
     },
     "majority_algorithm_vs_counterexample": {
-      "control": 0.6666666666666666,
-      "baseline_avoid": 0.6666666666666666
+      "control": 0.0,
+      "baseline_avoid": 0.0
     },
     "marbles_same_vs_different": {
-      "control": -2.0,
-      "baseline_avoid": -3.0
+      "control": 0.33333333333333337,
+      "baseline_avoid": 0.33333333333333337
     },
     "mod_pow_vs_order": {
-      "control": 0.25,
-      "baseline_avoid": 0.5
+      "control": 0.16666666666666669,
+      "baseline_avoid": 0.16666666666666669
     },
     "subset_count_exactly_vs_atleast": {
-      "control": 0.75,
-      "baseline_avoid": 0.0
+      "control": 0.16666666666666669,
+      "baseline_avoid": -0.08333333333333331
+    },
+    "generating_function_coeff_pair": {
+      "control": 0.08333333333333333,
+      "baseline_avoid": 0.16666666666666669
     },
     "surjection_vs_partition": {
-      "control": -2.0,
-      "baseline_avoid": 0.0
+      "control": 0.25,
+      "baseline_avoid": -0.25
     }
   }
 }

@@ -1,0 +1,5449 @@
+{
+  "thresholds": {
+    "max_y_acc_scratch": 0.45,
+    "min_trace_leakage": 0.3,
+    "max_answer_only_leakage": 0.12,
+    "min_x_scratch_acc": 0.0,
+    "max_x_scratch_acc": 1.01,
+    "require_correct_trace": true
+  },
+  "solver_model": "gpt-4o-mini",
+  "generation_model": "claude-opus-4-8",
+  "fewshots_used": [
+    "variance_vs_second_moment",
+    "mod_order_vs_large_power",
+    "markov_square_vs_two_step_prob",
+    "bayes_posterior_vs_marginal",
+    "circumradius_vs_area",
+    "heron_area_vs_inradius",
+    "binomial_expand_vs_coefficient",
+    "mod_pow_vs_order"
+  ],
+  "n_candidates": 160,
+  "n_verified": 97,
+  "n_selected": 9,
+  "spend": {
+    "total_cost": 0.0005399999999999999,
+    "max_spend": 30.0,
+    "by_model": {
+      "claude-opus-4-8": {
+        "prompt_tokens": 16,
+        "completion_tokens": 4,
+        "calls": 1,
+        "cost": 0.0005399999999999999
+      }
+    }
+  },
+  "selected": [
+    {
+      "id": "gen_034",
+      "x": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).",
+      "y": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2].",
+      "answer_x": "3",
+      "answer_y": "12",
+      "relation": "Var(X) = 3 does not determine E[X^2] without also knowing E[X] = 3. The standard trace computes E[X] = 3 and E[X^2] = 12 before subtracting (E[X])^2 = 9. An alternate method using squared deviations about the mean computes Var directly and never names E[X^2].",
+      "y_proximity_signals": [
+        "E[X] = 3",
+        "E[X^2] = (0*1 + 4*3 + 16*3 + 36*1)/8 = 96/8 = 12",
+        "Var = E[X^2] - (E[X])^2 = 12 - 9"
+      ],
+      "_metrics": {
+        "pair_id": "gen_034",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.7083333333333334,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\text{Var}(X) = 3\\)",
+          "3",
+          "3"
+        ]
+      },
+      "_score": 0.8541666666666667
+    },
+    {
+      "id": "gen_130",
+      "x": "Find integers x, y with 0 <= x < 73 satisfying 31x ≡ 1 (mod 73); report x (the inverse of 31 modulo 73).",
+      "y": "Find the integers c and d satisfying 73*c + 31*d = 1 with d the unique value in the range -36 <= d <= 36; report c.",
+      "answer_x": "33",
+      "answer_y": "-14",
+      "relation": "The easiest way to invert 31 mod 73 is the extended Euclidean algorithm, which produces the Bezout identity 73*(-14) + 31*(33) = 1; here d=33 reduces to the range as -40+73... but the algorithm directly outputs c=-14. The inverse answer x=33 alone does not reveal the coefficient c of 73. An alternate route by trial-multiplication searching for 31k mod 73 = 1 would never compute the Bezout coefficient c.",
+      "y_proximity_signals": [
+        "Bezout identity 73*(-14) + 31*(33) = 1",
+        "extended Euclidean back-substitution",
+        "coefficient of 73 is -14"
+      ],
+      "_metrics": {
+        "pair_id": "gen_130",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.75,
+        "answer_only_leakage": 0.08333333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "33",
+          "33",
+          "33"
+        ]
+      },
+      "_score": 0.8541666666666667
+    },
+    {
+      "id": "gen_120",
+      "x": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(7).",
+      "y": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(5).",
+      "answer_x": "3281",
+      "answer_y": "365",
+      "relation": "The natural iterative trace for a(7) computes the full sequence a(2)=14, a(3)=41, a(4)=122, a(5)=365, a(6)=1094, a(7)=3281, so a(5) appears as an intermediate value. The final answer 3281 alone does not reveal a(5). An alternate closed-form route solving the characteristic equation (roots 1 and 3, giving a(n) = (1/2) + (3/2)*3^n) yields a(7) directly without listing a(5).",
+      "y_proximity_signals": [
+        "a(2) = 14",
+        "a(3) = 41",
+        "a(4) = 122",
+        "a(5) = 365"
+      ],
+      "_metrics": {
+        "pair_id": "gen_120",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.6666666666666667,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "3281",
+          "3281",
+          "\\( a(7) = 3281 \\)"
+        ]
+      },
+      "_score": 0.8333333333333335
+    },
+    {
+      "id": "gen_068",
+      "x": "Evaluate the definite integral of (7x + 1)/((x - 2)(x + 3)) with respect to x from 4 to 6.",
+      "y": "Find constants A and B such that (7x + 1)/((x - 2)(x + 3)) = A/(x - 2) + B/(x + 3). Report the value of A - B.",
+      "answer_x": "3*ln(2) + 4*ln(9/7)",
+      "answer_y": "-1",
+      "relation": "The easiest method for X is partial-fraction decomposition, which computes A = 3 and B = 4, immediately giving Y's answer A - B = -1. The numeric value of the integral does not reveal A or B. An alternate X method (substituting u and combining logs numerically, or numerical integration) need not isolate A and B individually.",
+      "y_proximity_signals": [
+        "partial fractions A/(x-2) + B/(x+3)",
+        "cover-up: A = (7*2+1)/(2+3) = 3",
+        "cover-up: B = (7*(-3)+1)/(-3-2) = 4",
+        "A - B = 3 - 4 = -1"
+      ],
+      "_metrics": {
+        "pair_id": "gen_068",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.625,
+        "answer_only_leakage": -0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\[\n3 \\ln 2 + 4 \\ln \\frac{9}{7}.\n\\]",
+          "\\(3 \\ln 2 + 4 \\ln \\frac{9}{7}\\)",
+          "\\(3 \\ln 2 + 4 \\ln \\frac{9}{7}\\)."
+        ]
+      },
+      "_score": 0.8229166666666667
+    },
+    {
+      "id": "gen_122",
+      "x": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the total weight of a minimum spanning tree.",
+      "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the weight of the single most expensive edge that is included in a minimum spanning tree.",
+      "answer_x": "14",
+      "answer_y": "5",
+      "relation": "Kruskal's algorithm (the easiest MST method) adds edges in increasing weight: A-C=2, B-C=3, B-D=4, D-E=5, giving total 14 and revealing that the heaviest selected edge is D-E=5. The total weight 14 alone does not identify which edges were chosen or the largest one. An alternate approach that only verifies a candidate total (e.g. comparing against a known formula) need not expose the individual selected edges.",
+      "y_proximity_signals": [
+        "sorted edges A-C=2, B-C=3, B-D=4, D-E=5",
+        "chosen MST edges {A-C, B-C, B-D, D-E}",
+        "heaviest chosen edge D-E = 5"
+      ],
+      "_metrics": {
+        "pair_id": "gen_122",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.6666666666666666,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0.5,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "14",
+          "14",
+          "14"
+        ]
+      },
+      "_score": 0.8125
+    },
+    {
+      "id": "gen_158",
+      "x": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once, landing heads. What is the probability the chosen coin was the biased one?",
+      "y": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once. What is the probability it lands heads?",
+      "answer_x": "1/3",
+      "answer_y": "9/16",
+      "relation": "The standard Bayes route for X computes P(biased and heads)=1/4·3/4=3/16 and the total P(heads)=9/16 as the denominator, which is exactly Y. The posterior 1/3 does not encode the marginal 9/16 without the individual likelihoods. An alternate odds-ratio shortcut for X (prior odds 1:3 times likelihood ratio (3/4):(1/2)) never computes the total heads probability.",
+      "y_proximity_signals": [
+        "P(heads | fair) = 1/2, P(heads | biased) = 3/4",
+        "P(biased, heads) = 3/16",
+        "P(heads) = 3·(1/4)(1/2) + (1/4)(3/4) = 9/16"
+      ],
+      "_metrics": {
+        "pair_id": "gen_158",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.375,
+        "trace_leakage": 0.6666666666666667,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 1,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{1}{3}\\)",
+          "\\(\\frac{1}{3}\\)",
+          "\\(\\frac{1}{3}\\)"
+        ]
+      },
+      "_score": 0.7916666666666667
+    },
+    {
+      "id": "gen_115",
+      "x": "In a connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, find the total weight of a minimum spanning tree.",
+      "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, the minimum spanning tree contains exactly four edges. What is the largest edge weight among the edges in the minimum spanning tree?",
+      "answer_x": "9",
+      "answer_y": "4",
+      "relation": "Kruskal's algorithm for X sorts and adds edges A-C=1, B-C=2, D-E=2, C-D=4 (skipping cycles), and the heaviest chosen edge is 4; the total 1+2+2+4 = 9 is X's answer. The total weight 9 alone does not reveal which edges, nor the maximum edge weight. An alternate verification of total weight via a different argument need not identify individual chosen edges, but the natural Kruskal/Prim trace exposes them.",
+      "y_proximity_signals": [
+        "sorted edges: A-C=1, B-C=2, D-E=2, A-B=3, C-D=4",
+        "MST edges chosen: A-C, B-C, D-E, C-D",
+        "C-D = 4 is the heaviest chosen edge",
+        "total 1+2+2+4 = 9"
+      ],
+      "_metrics": {
+        "pair_id": "gen_115",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 0.7916666666666666,
+        "y_acc_answer_only": 0.20833333333333334,
+        "trace_leakage": 0.41666666666666663,
+        "answer_only_leakage": -0.16666666666666666,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 0,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.5,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.25
+          }
+        },
+        "x_answers": [
+          "8",
+          "8",
+          "9"
+        ]
+      },
+      "_score": 0.7395833333333333
+    },
+    {
+      "id": "gen_014",
+      "x": "Find the integer s with 0 <= s < 64 satisfying 23*s ≡ 1 (mod 64); report s (the modular inverse of 23 modulo 64).",
+      "y": "Solve for the unique x with 0 <= x < 64 satisfying 23*x ≡ 9 (mod 64).",
+      "answer_x": "39",
+      "answer_y": "31",
+      "relation": "The natural way to solve the congruence 23x ≡ 9 (mod 64) is to multiply by the inverse of 23, which is exactly the artifact X produces (s = 39). Then x = 9*39 mod 64 = 31. The bare inverse 39 does not equal or trivially give 31, and 31 does not reveal the inverse. An alternate X route stops at confirming 23*39 ≡ 1 without solving any specific congruence; an alternate Y route could brute-force search x without computing the inverse.",
+      "y_proximity_signals": [
+        "inverse of 23 mod 64 is 39",
+        "x = 9 * 39 mod 64",
+        "351 mod 64 = 31"
+      ],
+      "_metrics": {
+        "pair_id": "gen_014",
+        "y_acc_scratch": 0.125,
+        "y_acc_full_trace": 0.5833333333333334,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0.45833333333333337,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\( s = 39 \\)",
+          "39.",
+          "39"
+        ]
+      },
+      "_score": 0.6770833333333334
+    },
+    {
+      "id": "gen_124",
+      "x": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find the closed-form expression a(n) = A*2^n + B*4^n by determining the constants A and B; report the ordered pair (A, B).",
+      "y": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find a(5).",
+      "answer_x": "(1, 2)",
+      "answer_y": "2080",
+      "relation": "The easiest route for X solves the characteristic equation r^2-6r+8=0 (roots 2 and 4) and the linear system A+B=3, 2A+4B=10 to get A=1, B=2, immediately giving the closed form a(n)=2^n+2*4^n; plugging n=5 gives Y trivially (32+2*1024=2080). The bare answer (1,2) does not reveal a(5) unless one knows it pairs with 2^n and 4^n and evaluates. An alternate X method just iterates the recurrence to confirm a few terms and fits constants by elimination without ever writing the general powered form ready for n=5.",
+      "y_proximity_signals": [
+        "characteristic roots 2 and 4",
+        "closed form a(n) = 2^n + 2*4^n",
+        "A = 1, B = 2",
+        "evaluating at n = 5: 32 + 2048"
+      ],
+      "_metrics": {
+        "pair_id": "gen_124",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.625,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.3333333333333333,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "(1, 2)",
+          "} (1, 2)\n\\]",
+          "(1, 2)"
+        ]
+      },
+      "_score": 0.46875
+    }
+  ],
+  "all_measured": [
+    {
+      "pair_id": "gen_017",
+      "metrics": {
+        "pair_id": "gen_017",
+        "y_acc_scratch": 0.16666666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0.8333333333333334,
+        "answer_only_leakage": -0.04166666666666666,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "266",
+          "266",
+          "266"
+        ]
+      },
+      "score": 1.0833333333333333,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_028",
+      "metrics": {
+        "pair_id": "gen_028",
+        "y_acc_scratch": 0.20833333333333334,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0.7916666666666666,
+        "answer_only_leakage": -0.08333333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "720",
+          "720",
+          "720"
+        ]
+      },
+      "score": 1.0729166666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_034",
+      "metrics": {
+        "pair_id": "gen_034",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.7083333333333334,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\text{Var}(X) = 3\\)",
+          "3",
+          "3"
+        ]
+      },
+      "score": 0.8541666666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_130",
+      "metrics": {
+        "pair_id": "gen_130",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.75,
+        "answer_only_leakage": 0.08333333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "33",
+          "33",
+          "33"
+        ]
+      },
+      "score": 0.8541666666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_120",
+      "metrics": {
+        "pair_id": "gen_120",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.6666666666666667,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "3281",
+          "3281",
+          "\\( a(7) = 3281 \\)"
+        ]
+      },
+      "score": 0.8333333333333335,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_068",
+      "metrics": {
+        "pair_id": "gen_068",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.625,
+        "answer_only_leakage": -0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\[\n3 \\ln 2 + 4 \\ln \\frac{9}{7}.\n\\]",
+          "\\(3 \\ln 2 + 4 \\ln \\frac{9}{7}\\)",
+          "\\(3 \\ln 2 + 4 \\ln \\frac{9}{7}\\)."
+        ]
+      },
+      "score": 0.8229166666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_122",
+      "metrics": {
+        "pair_id": "gen_122",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.6666666666666666,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0.5,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "14",
+          "14",
+          "14"
+        ]
+      },
+      "score": 0.8125,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_158",
+      "metrics": {
+        "pair_id": "gen_158",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.375,
+        "trace_leakage": 0.6666666666666667,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 1,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{1}{3}\\)",
+          "\\(\\frac{1}{3}\\)",
+          "\\(\\frac{1}{3}\\)"
+        ]
+      },
+      "score": 0.7916666666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_115",
+      "metrics": {
+        "pair_id": "gen_115",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 0.7916666666666666,
+        "y_acc_answer_only": 0.20833333333333334,
+        "trace_leakage": 0.41666666666666663,
+        "answer_only_leakage": -0.16666666666666666,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 0,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.5,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.25
+          }
+        },
+        "x_answers": [
+          "8",
+          "8",
+          "9"
+        ]
+      },
+      "score": 0.7395833333333333,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_042",
+      "metrics": {
+        "pair_id": "gen_042",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": 0.625,
+        "answer_only_leakage": 0.08333333333333337,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 0.5,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "0.3077",
+          "0.3077",
+          "0.3077"
+        ]
+      },
+      "score": 0.7083333333333333,
+      "passes": false,
+      "reasons": [
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_112",
+      "metrics": {
+        "pair_id": "gen_112",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": 0.5,
+        "answer_only_leakage": -0.08333333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "190",
+          "190",
+          "190"
+        ]
+      },
+      "score": 0.7083333333333333,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)"
+      ]
+    },
+    {
+      "pair_id": "gen_147",
+      "metrics": {
+        "pair_id": "gen_147",
+        "y_acc_scratch": 0.8333333333333334,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.16666666666666663,
+        "answer_only_leakage": -0.5,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "8400",
+          "8380",
+          "8400"
+        ]
+      },
+      "score": 0.7083333333333333,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.83)",
+        "trace leakage too low (0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_014",
+      "metrics": {
+        "pair_id": "gen_014",
+        "y_acc_scratch": 0.125,
+        "y_acc_full_trace": 0.5833333333333334,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0.45833333333333337,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\( s = 39 \\)",
+          "39.",
+          "39"
+        ]
+      },
+      "score": 0.6770833333333334,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_140",
+      "metrics": {
+        "pair_id": "gen_140",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.4583333333333333,
+        "trace_leakage": 0.45833333333333337,
+        "answer_only_leakage": -0.041666666666666685,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.75,
+            "128": 1,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.5,
+            "128": 0.25,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\((11, -15)\\)",
+          "(11, -15)",
+          "To find integers \\( s \\) and \\( t \\) such that \\( 41s + 30t = 1 \\) using the extended Euclidean algorithm, we'll follow these steps.\n\n1. **Apply the Euclidean algorithm** to find the gcd of 41 and 30:\n\n   \\[\n   41 = 1 \\cdot 30 + 11\n   \\]\n   \\[\n   30 = 2 \\cdot 11 + 8\n   \\]\n   \\[\n   11 = 1 \\cdot 8 + 3\n   \\]\n   \\[\n   8 = 2 \\cdot 3 + 2\n   \\]\n   \\[\n   3 = 1 \\cdot 2 + 1\n   \\]\n   \\[\n   2 = 2 \\cdot 1 + 0\n   \\]\n\n   The last non-zero remainder is 1, so \\( \\gcd(41, 30) = 1 \\).\n\n2. **Use the Extended Euclidean algorithm** to express 1 as a linear combination of 41 and 30 by back-substituting:\n\n   From \\( 3 = 1 \\cdot 2 + 1 \\), we can write:\n\n   \\[\n   1 = 3 - 1 \\cdot 2 \\quad \\text{(1)}\n   \\]\n\n   Now substitute \\( 2 \\) from \\( 8 = 2 \\cdot 3 + 2 \\):\n\n   \\[\n   2 = 8 - 2 \\cdot 3\n   \\]\n\n   Substituting into equation (1):\n\n   \\[\n   1 = 3 - 1 \\cdot (8 - 2 \\cdot 3)\n   \\]\n   \\[\n   1 = 3 - 1 \\cdot 8 + 2 \\cdot 3\n   \\]\n   \\[\n   1 = 3 + 2 \\cdot 3 - 1 \\cdot 8\n   \\]\n   \\[\n   1 = 3 \\cdot 3 - 1 \\cdot 8 \\quad \\text{(2)}\n   \\]\n\n   Now substituting \\( 3 \\) from \\( 11 = 1 \\cdot 8 + 3 \\):\n\n   \\[\n   3 = 11 - 1 \\cdot 8\n   \\]\n\n   Substitute into equation (2):\n\n   \\[\n   1 = 3 \\cdot (11 - 1 \\cdot 8) - 1 \\cdot 8\n   \\]\n   \\[\n   1 = 3 \\cdot 11 - 3 \\cdot 8 - 1 \\cdot 8\n   \\]\n   \\[\n   1 = 3 \\cdot 11 - 4 \\cdot 8 \\quad \\text{(3)}\n   \\]\n\n   Now substitute \\( 8 \\) from \\( 30 = 2 \\cdot 11 + 8 \\):\n\n   \\[\n   8 = 30 - 2 \\cdot 11\n   \\]\n\n   Substitute into equation (3):\n\n   \\[\n   1 = 3 \\cdot 11 - 4 \\cdot (30 - 2 \\cdot 11)\n   \\]\n   \\[\n   1 = 3 \\cdot 11 - 4 \\cdot 30 + 8 \\cdot 11\n   \\]\n   \\[\n   1 = (3 + 8) \\cdot 11 - 4 \\cdot 30\n   \\]\n   \\[\n   1 = 11 \\cdot 11 - 4 \\cdot 30 \\quad \\text{(4)}\n   \\]\n\n   Finally, substitute \\( 11 \\) from \\( 41 = 1 \\cdot 30 + 11 \\):\n\n   \\[\n   11 = 41 - 1 \\cdot 30\n   \\]\n\n   Substitute into equation (4):\n\n   \\[\n   1 = 11 \\cdot (41 - 1 \\cdot 30) - 4 \\cdot 30\n   \\]\n   \\[\n   1 = 11 \\cdot 41 - 11 \\cdot 30 - 4 \\cdot 30\n   \\]\n   \\[\n   1 = 11 \\cdot 41 - 15 \\cdot 30\n   \\]\n\nFrom the last equation, we have \\( s = 11 \\) and \\( t = -15 \\).\n\n3. **Adjust \\( s \\) and \\( t \\) to satisfy the condition \\( 0 \\leq s < 30 \\)**. Since \\( 11 \\) satisfies \\( 0 \\leq 11 <"
+        ]
+      },
+      "score": 0.625,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)"
+      ]
+    },
+    {
+      "pair_id": "gen_093",
+      "metrics": {
+        "pair_id": "gen_093",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.8333333333333334,
+        "y_acc_answer_only": 0.375,
+        "trace_leakage": 0.37500000000000006,
+        "answer_only_leakage": -0.08333333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.25,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "66",
+          "66",
+          "66"
+        ]
+      },
+      "score": 0.59375,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)"
+      ]
+    },
+    {
+      "pair_id": "gen_064",
+      "metrics": {
+        "pair_id": "gen_064",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": 0.45833333333333337,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\ln\\left(\\frac{392}{25}\\right)\\).",
+          "\\(\\ln \\left(\\frac{392}{25}\\right)\\).",
+          "\\(\\ln \\left(\\frac{392}{25}\\right)\\)."
+        ]
+      },
+      "score": 0.5833333333333334,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_157",
+      "metrics": {
+        "pair_id": "gen_157",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": 0.20833333333333326,
+        "answer_only_leakage": -0.20833333333333337,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 0.5,
+            "128": 1,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.5,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 0.25,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{1}{3}\\)",
+          "\\( \\frac{1}{3} \\)",
+          "\\( \\frac{2}{3} \\)"
+        ]
+      },
+      "score": 0.48958333333333326,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_143",
+      "metrics": {
+        "pair_id": "gen_143",
+        "y_acc_scratch": 0.9166666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.5416666666666666,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": -0.375,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "25",
+          "25",
+          "25"
+        ]
+      },
+      "score": 0.47916666666666674,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.92)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_058",
+      "metrics": {
+        "pair_id": "gen_058",
+        "y_acc_scratch": 0.125,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.7083333333333334,
+        "trace_leakage": 0.8333333333333334,
+        "answer_only_leakage": 0.5833333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.25,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( \\left( \\frac{5}{7}, \\frac{2}{7} \\right) \\)",
+          "\\(\\left(\\frac{5}{7}, \\frac{2}{7}\\right)\\).",
+          "\\(\\left( \\frac{5}{7}, \\frac{2}{7} \\right)\\)"
+        ]
+      },
+      "score": 0.46875,
+      "passes": false,
+      "reasons": [
+        "answer-only leakage too high (0.58)"
+      ]
+    },
+    {
+      "pair_id": "gen_124",
+      "metrics": {
+        "pair_id": "gen_124",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.625,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.3333333333333333,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "(1, 2)",
+          "} (1, 2)\n\\]",
+          "(1, 2)"
+        ]
+      },
+      "score": 0.46875,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_082",
+      "metrics": {
+        "pair_id": "gen_082",
+        "y_acc_scratch": 0.8333333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": 0.08333333333333326,
+        "answer_only_leakage": -0.33333333333333337,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.25,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.5
+          }
+        },
+        "x_answers": [
+          "6",
+          "\\( \\frac{\\sqrt{1551}}{8} \\).",
+          "0."
+        ]
+      },
+      "score": 0.45833333333333326,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.83)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_127",
+      "metrics": {
+        "pair_id": "gen_127",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 0.75,
+        "y_acc_answer_only": 0.4583333333333333,
+        "trace_leakage": 0.375,
+        "answer_only_leakage": 0.08333333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 1,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "2, 3, 5, 8, 13, 21, 34",
+          "2, 3, 5, 8, 13, 21, 34",
+          "2, 3, 5, 8, 13, 21, 34"
+        ]
+      },
+      "score": 0.4479166666666667,
+      "passes": true,
+      "reasons": []
+    },
+    {
+      "pair_id": "gen_023",
+      "metrics": {
+        "pair_id": "gen_023",
+        "y_acc_scratch": 0.875,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": 0.125,
+        "answer_only_leakage": -0.29166666666666663,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 1,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "44",
+          "To find the number of derangements of 5 elements, we can use the principle of inclusion-exclusion.\n\nLet \\( n \\) be the number of elements, which is 5 in this case. We denote the set of permutations of the set \\( \\{1, 2, 3, 4, 5\\} \\) as \\( S \\), and the total number of permutations of \\( n \\) elements is \\( n! = 5! = 120 \\).\n\nLet \\( A_i \\) be the set of permutations where \\( i \\) is a fixed point. We want to count the size of the union of these sets, \\( |A_1 \\cup A_2 \\cup A_3 \\cup A_4 \\cup A_5| \\), using the inclusion-exclusion principle.\n\nThe size of each \\( A_i \\) is the number of permutations with \\( i \\) fixed, which leaves \\( n - 1 \\) other elements to permute. Thus, \\( |A_i| = (n-1)! = 4! = 24 \\).\n\nFor intersections of two sets, \\( |A_i \\cap A_j| \\) is the number of permutations with \\( i \\) and \\( j \\) fixed, which leaves \\( n - 2 \\) elements. So, \\( |A_i \\cap A_j| = (n-2)! = 3! = 6 \\).\n\nFor three fixed points, \\( |A_i \\cap A_j \\cap A_k| \\) is the number of permutations with \\( i, j, k \\) fixed, leaving \\( n - 3 = 2 \\) elements, thus \\( |A_i \\cap A_j \\cap A_k| = (n-3)! = 2! = 2 \\).\n\nFor four fixed points, \\( |A_i \\cap A_j \\cap A_k \\cap A_l| \\) is the number of permutations with \\( i, j, k, l \\) fixed, leaving \\( n - 4 = 1 \\) element, therefore \\( |A_i \\cap A_j \\cap A_k \\cap A_l| = (n-4)! = 1! = 1 \\).\n\nFor all five fixed points, \\( |A_1 \\cap A_2 \\cap A_3 \\cap A_4 \\cap A_5| \\) is just the identity permutation, and hence \\( |A_1 \\cap A_2 \\cap A_3 \\cap A_4 \\cap A_5| = 0! = 1 \\).\n\nNow we calculate the sizes of the unions using inclusion-exclusion:\n\n\\[\n|A_1 \\cup A_2 \\cup A_3 \\cup A_4 \\cup A_5| = \\sum |A_i| - \\sum |A_i \\cap A_j| + \\sum |A_i \\cap A_j \\cap A_k| - \\sum |A_i \\cap A_j \\cap A_k \\cap A_l| + |A_1 \\cap A_2 \\cap A_3 \\cap A_4 \\cap A_5|\n\\]\n\nCalculating each component:\n\n1. There are \\(\\binom{5}{1} = 5\\) sets of size 1:\n   \\[ \\text{Total from } |A_i| = 5 \\times 24 = 120 \\]\n\n2. There are \\(\\binom{5}{2} = 10\\) sets of size 2:\n   \\[ \\text{Total from } |A_i \\cap A_j| = 10 \\times 6 = 60 \\]\n\n3. There are \\(\\binom{5}{3} = 10\\) sets of size 3:\n   \\[ \\text{Total from } |A_i \\cap A_j \\cap A_k| = 10 \\times 2 = 20 \\]\n\n4. There are \\(\\binom{5}{4} = 5\\) sets of size 4:\n   \\[ \\text{Total from } |A_i \\cap A_j \\cap A_k \\cap A_l| = 5 \\times 1 = 5 \\]\n\n5. There is 1 set of size 5:\n   \\[ |A_1 \\cap A_2 \\cap A_3 \\cap A_4 \\cap A_5| = 1 \\]\n\nPutting this together:\n\n\\[\n|A_1 \\cup A_2 \\cup A_3 \\cup A_4 \\cup A_5| = 120 - 60 + 20 - 5 + 1 = 76\n\\]\n\nThus, the number of derangements \\( !n \\) of 5 elements is given by:\n\n\\[\n!5 = n! - |A_1 \\cup A_2 \\cup A_",
+          "44"
+        ]
+      },
+      "score": 0.44791666666666663,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.88)",
+        "trace leakage too low (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_033",
+      "metrics": {
+        "pair_id": "gen_033",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": 0.25,
+        "answer_only_leakage": -0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 0.5,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 1,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( \\frac{5}{8} \\)",
+          "0.625",
+          "\\( 0.625 \\)"
+        ]
+      },
+      "score": 0.44791666666666663,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (0.25)"
+      ]
+    },
+    {
+      "pair_id": "gen_069",
+      "metrics": {
+        "pair_id": "gen_069",
+        "y_acc_scratch": 0.625,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.6666666666666666,
+        "trace_leakage": 0.375,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "25",
+          "25",
+          "25"
+        ]
+      },
+      "score": 0.42708333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.62)"
+      ]
+    },
+    {
+      "pair_id": "gen_043",
+      "metrics": {
+        "pair_id": "gen_043",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": -0.04166666666666674,
+        "answer_only_leakage": -0.45833333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{5}{8}\\)",
+          "\\( \\frac{5}{8} \\)",
+          "The probability that exactly 2 heads appear given that the number of heads is even is \\(\\frac{5}{8}\\)."
+        ]
+      },
+      "score": 0.42708333333333326,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_149",
+      "metrics": {
+        "pair_id": "gen_149",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 0.4583333333333333,
+        "y_acc_answer_only": 0.20833333333333334,
+        "trace_leakage": 0.125,
+        "answer_only_leakage": -0.12499999999999997,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.5,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "265",
+          "265",
+          "265"
+        ]
+      },
+      "score": 0.41666666666666663,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_123",
+      "metrics": {
+        "pair_id": "gen_123",
+        "y_acc_scratch": 0.5416666666666666,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.6666666666666666,
+        "trace_leakage": 0.41666666666666674,
+        "answer_only_leakage": 0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.5,
+            "64": 0.5,
+            "128": 0,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "144",
+          "144",
+          "144"
+        ]
+      },
+      "score": 0.4062500000000001,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.54)",
+        "answer-only leakage too high (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_078",
+      "metrics": {
+        "pair_id": "gen_078",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.20833333333333334,
+        "trace_leakage": 0.125,
+        "answer_only_leakage": -0.08333333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "(1, 4)",
+          "(1, 4)",
+          "\\( (1, 4) \\)"
+        ]
+      },
+      "score": 0.38541666666666663,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_110",
+      "metrics": {
+        "pair_id": "gen_110",
+        "y_acc_scratch": 0.5416666666666666,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.6666666666666666,
+        "trace_leakage": 0.375,
+        "answer_only_leakage": 0.125,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "20.454",
+          "20.455",
+          "20.455 W"
+        ]
+      },
+      "score": 0.36458333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.54)",
+        "answer-only leakage too high (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_156",
+      "metrics": {
+        "pair_id": "gen_156",
+        "y_acc_scratch": 0.5416666666666666,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.16666666666666666,
+        "trace_leakage": -0.12499999999999994,
+        "answer_only_leakage": -0.375,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0,
+            "1024": 0.5
+          }
+        },
+        "x_answers": [
+          "1854",
+          "1854",
+          "1854"
+        ]
+      },
+      "score": 0.36458333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.54)",
+        "trace leakage too low (-0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_095",
+      "metrics": {
+        "pair_id": "gen_095",
+        "y_acc_scratch": 0.08333333333333333,
+        "y_acc_full_trace": 0.25,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0.16666666666666669,
+        "answer_only_leakage": 0.04166666666666667,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0.25
+          }
+        },
+        "x_answers": [
+          "\\(-\\frac{1}{27}\\)",
+          "-\\frac{1}{27}",
+          "\\( \\cos(C) = -\\frac{1}{27} \\)"
+        ]
+      },
+      "score": 0.35416666666666663,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_098",
+      "metrics": {
+        "pair_id": "gen_098",
+        "y_acc_scratch": 0.625,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.75,
+        "trace_leakage": 0.375,
+        "answer_only_leakage": 0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "18 W",
+          "18 watts.",
+          "18 W"
+        ]
+      },
+      "score": 0.34375,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.62)",
+        "answer-only leakage too high (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_025",
+      "metrics": {
+        "pair_id": "gen_025",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.7916666666666666,
+        "y_acc_answer_only": 0.4583333333333333,
+        "trace_leakage": -0.16666666666666674,
+        "answer_only_leakage": -0.5,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 0,
+            "512": 0.5,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "8400",
+          "8384",
+          "7400"
+        ]
+      },
+      "score": 0.3437499999999999,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_091",
+      "metrics": {
+        "pair_id": "gen_091",
+        "y_acc_scratch": 0.16666666666666666,
+        "y_acc_full_trace": 0.16666666666666666,
+        "y_acc_answer_only": 0.041666666666666664,
+        "trace_leakage": 0.0,
+        "answer_only_leakage": -0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.25
+          }
+        },
+        "x_answers": [
+          "6",
+          "6.",
+          "6"
+        ]
+      },
+      "score": 0.33333333333333337,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.00)"
+      ]
+    },
+    {
+      "pair_id": "gen_038",
+      "metrics": {
+        "pair_id": "gen_038",
+        "y_acc_scratch": 0.041666666666666664,
+        "y_acc_full_trace": 0.08333333333333333,
+        "y_acc_answer_only": 0,
+        "trace_leakage": 0.041666666666666664,
+        "answer_only_leakage": -0.041666666666666664,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          }
+        },
+        "x_answers": [
+          "\\( \\frac{47}{28} \\)",
+          "\\( \\frac{8}{3} \\) or approximately 2.67.",
+          "The expected number of draws until the first black ball appears is \\( \\frac{8}{3} \\) or approximately 2.67."
+        ]
+      },
+      "score": 0.3229166666666667,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.04)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_013",
+      "metrics": {
+        "pair_id": "gen_013",
+        "y_acc_scratch": 0.20833333333333334,
+        "y_acc_full_trace": 0.375,
+        "y_acc_answer_only": 0.25,
+        "trace_leakage": 0.16666666666666666,
+        "answer_only_leakage": 0.04166666666666666,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(2^2 \\times 3^1 \\times 11^1 \\times 13^1\\)",
+          "\\( 2^2 * 3^1 * 11^1 * 13^1 \\)",
+          "\\( 2^2 \\times 3^1 \\times 11^1 \\times 13^1 \\)"
+        ]
+      },
+      "score": 0.32291666666666663,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_160",
+      "metrics": {
+        "pair_id": "gen_160",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.8333333333333334,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": 0.125,
+        "answer_only_leakage": -0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0.5,
+            "128": 1,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{5}{28}\\)",
+          "\\(\\frac{5}{28}\\)",
+          "\\(\\frac{5}{28}\\)"
+        ]
+      },
+      "score": 0.32291666666666663,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_061",
+      "metrics": {
+        "pair_id": "gen_061",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.625,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": 0.3333333333333333,
+        "answer_only_leakage": 0.20833333333333331,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.5,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\((\\frac{3}{8}, \\frac{5}{8})\\)",
+          "\\(\\left(\\frac{3}{8}, \\frac{5}{8}\\right)\\)",
+          "\\(\\left(\\frac{3}{8}, \\frac{5}{8}\\right)\\)"
+        ]
+      },
+      "score": 0.3020833333333333,
+      "passes": false,
+      "reasons": [
+        "answer-only leakage too high (0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_073",
+      "metrics": {
+        "pair_id": "gen_073",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.625,
+        "trace_leakage": -0.04166666666666674,
+        "answer_only_leakage": -0.33333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( (1, 3) \\)",
+          "(1, 3)",
+          "(1, 3)"
+        ]
+      },
+      "score": 0.30208333333333326,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_047",
+      "metrics": {
+        "pair_id": "gen_047",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 0.3333333333333333,
+        "y_acc_answer_only": 0.20833333333333334,
+        "trace_leakage": -0.041666666666666685,
+        "answer_only_leakage": -0.16666666666666666,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{8}{27}\\)",
+          "\\(\\frac{8}{27}\\)",
+          "\\(\\frac{8}{27}\\)"
+        ]
+      },
+      "score": 0.28125,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_074",
+      "metrics": {
+        "pair_id": "gen_074",
+        "y_acc_scratch": 0.20833333333333334,
+        "y_acc_full_trace": 0.375,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.16666666666666666,
+        "answer_only_leakage": 0.08333333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 0,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( F(x) = x^2 \\sin(x) + 2x \\cos(x) - 2\\sin(x) \\)",
+          "\\( F(x) = x^2 \\sin(x) + 2x \\cos(x) - 2\\sin(x) \\)",
+          "\\( F(x) = x^2 \\sin(x) + 2x \\cos(x) - 2 \\sin(x) \\)"
+        ]
+      },
+      "score": 0.28125,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_152",
+      "metrics": {
+        "pair_id": "gen_152",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.625,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": -0.08333333333333337,
+        "answer_only_leakage": -0.2916666666666667,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "90",
+          "90",
+          "90"
+        ]
+      },
+      "score": 0.28125,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (-0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_066",
+      "metrics": {
+        "pair_id": "gen_066",
+        "y_acc_scratch": 0.75,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.75,
+        "trace_leakage": 0.20833333333333337,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(e - 2\\)",
+          "\\( e - 2 \\)",
+          "\\( e - 2 \\)"
+        ]
+      },
+      "score": 0.27083333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.75)",
+        "trace leakage too low (0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_137",
+      "metrics": {
+        "pair_id": "gen_137",
+        "y_acc_scratch": 0.08333333333333333,
+        "y_acc_full_trace": 0.041666666666666664,
+        "y_acc_answer_only": 0,
+        "trace_leakage": -0.041666666666666664,
+        "answer_only_leakage": -0.08333333333333333,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0,
+            "1024": 0.25
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          }
+        },
+        "x_answers": [
+          "588",
+          "588",
+          "588"
+        ]
+      },
+      "score": 0.2708333333333333,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_049",
+      "metrics": {
+        "pair_id": "gen_049",
+        "y_acc_scratch": 0.7916666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.7916666666666666,
+        "trace_leakage": 0.20833333333333337,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( \\frac{23}{11} \\).",
+          "\\(\\frac{23}{11}\\)",
+          "\\( \\frac{23}{11} \\)"
+        ]
+      },
+      "score": 0.26041666666666674,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.79)",
+        "trace leakage too low (0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_010",
+      "metrics": {
+        "pair_id": "gen_010",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.7083333333333334,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": 0.25000000000000006,
+        "answer_only_leakage": 0.12500000000000006,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 1,
+            "512": 1,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "20",
+          "20",
+          "20"
+        ]
+      },
+      "score": 0.2604166666666667,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)",
+        "trace leakage too low (0.25)",
+        "answer-only leakage too high (0.13)"
+      ]
+    },
+    {
+      "pair_id": "gen_144",
+      "metrics": {
+        "pair_id": "gen_144",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.4583333333333333,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": -0.041666666666666685,
+        "answer_only_leakage": -0.16666666666666669,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "1800",
+          "540",
+          "540"
+        ]
+      },
+      "score": 0.25,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)",
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_086",
+      "metrics": {
+        "pair_id": "gen_086",
+        "y_acc_scratch": 0.6666666666666666,
+        "y_acc_full_trace": 0.75,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": -0.08333333333333326,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 0,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.5,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "24",
+          "\\(\\frac{10\\sqrt{331}}{7}\\)",
+          "24."
+        ]
+      },
+      "score": 0.24999999999999997,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.67)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_054",
+      "metrics": {
+        "pair_id": "gen_054",
+        "y_acc_scratch": 0.375,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.041666666666666685,
+        "answer_only_leakage": -0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( \\left( \\frac{1}{5}, \\frac{4}{5} \\right) \\)",
+          "\\( \\left( \\frac{1}{5}, \\frac{4}{5} \\right) \\)",
+          "\\((\\frac{1}{5}, \\frac{4}{5})\\)"
+        ]
+      },
+      "score": 0.23958333333333337,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_050",
+      "metrics": {
+        "pair_id": "gen_050",
+        "y_acc_scratch": 0.5833333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.7916666666666666,
+        "trace_leakage": 0.33333333333333326,
+        "answer_only_leakage": 0.20833333333333326,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.75,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\((\\frac{4}{7}, \\frac{3}{7})\\)",
+          "\\((\\frac{4}{7}, \\frac{3}{7})\\).",
+          "\\((\\frac{4}{7}, \\frac{3}{7})\\)"
+        ]
+      },
+      "score": 0.22916666666666666,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.58)",
+        "answer-only leakage too high (0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_022",
+      "metrics": {
+        "pair_id": "gen_022",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.5833333333333334,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": 0.12500000000000006,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 1,
+            "512": 0.75,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "540",
+          "540",
+          "540"
+        ]
+      },
+      "score": 0.21875000000000006,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)",
+        "trace leakage too low (0.13)"
+      ]
+    },
+    {
+      "pair_id": "gen_001",
+      "metrics": {
+        "pair_id": "gen_001",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.5,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": 0.041666666666666685,
+        "answer_only_leakage": -0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "49",
+          "49",
+          "49"
+        ]
+      },
+      "score": 0.21875,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)",
+        "trace leakage too low (0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_114",
+      "metrics": {
+        "pair_id": "gen_114",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 0.375,
+        "y_acc_answer_only": 0.3333333333333333,
+        "trace_leakage": 0.041666666666666685,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.5
+          }
+        },
+        "x_answers": [
+          "18",
+          "18",
+          "18"
+        ]
+      },
+      "score": 0.20833333333333337,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_005",
+      "metrics": {
+        "pair_id": "gen_005",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.6666666666666666,
+        "y_acc_answer_only": 0.5416666666666666,
+        "trace_leakage": -0.04166666666666674,
+        "answer_only_leakage": -0.16666666666666674,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 0.75,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.25,
+            "64": 0.5,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      "score": 0.19791666666666666,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_046",
+      "metrics": {
+        "pair_id": "gen_046",
+        "y_acc_scratch": 0.20833333333333334,
+        "y_acc_full_trace": 0.2916666666666667,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": 0.08333333333333334,
+        "answer_only_leakage": 0.08333333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.5,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "5.0",
+          "5",
+          "5"
+        ]
+      },
+      "score": 0.19791666666666666,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_139",
+      "metrics": {
+        "pair_id": "gen_139",
+        "y_acc_scratch": 0.08333333333333333,
+        "y_acc_full_trace": 0.125,
+        "y_acc_answer_only": 0.16666666666666666,
+        "trace_leakage": 0.04166666666666667,
+        "answer_only_leakage": 0.08333333333333333,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( 2^2 \\times 3^1 \\times 5^1 \\times 7^1 \\times 13^1 \\)",
+          "\\( 2^2 \\times 3^1 \\times 5^1 \\times 7^1 \\times 13^1 \\)",
+          "2^2 * 3^1 * 5^1 * 7^1 * 13^1"
+        ]
+      },
+      "score": 0.1875,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.04)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_129",
+      "metrics": {
+        "pair_id": "gen_129",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.4583333333333333,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": 0.0,
+        "answer_only_leakage": -0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "49",
+          "49.",
+          "49"
+        ]
+      },
+      "score": 0.17708333333333331,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)",
+        "trace leakage too low (0.00)"
+      ]
+    },
+    {
+      "pair_id": "gen_125",
+      "metrics": {
+        "pair_id": "gen_125",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.9166666666666666,
+        "trace_leakage": 0.45833333333333337,
+        "answer_only_leakage": 0.41666666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "528, 220, 88, 44.",
+          "528, 220, 88, 44",
+          "528, 220, 88, 44"
+        ]
+      },
+      "score": 0.16666666666666674,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)",
+        "answer-only leakage too high (0.42)"
+      ]
+    },
+    {
+      "pair_id": "gen_018",
+      "metrics": {
+        "pair_id": "gen_018",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.08333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 0.25,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "265",
+          "265",
+          "265"
+        ]
+      },
+      "score": 0.16666666666666669,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_153",
+      "metrics": {
+        "pair_id": "gen_153",
+        "y_acc_scratch": 0.6666666666666666,
+        "y_acc_full_trace": 0.4583333333333333,
+        "y_acc_answer_only": 0.375,
+        "trace_leakage": -0.20833333333333331,
+        "answer_only_leakage": -0.29166666666666663,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.5,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0.5,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.25,
+            "512": 0,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.25,
+            "128": 0,
+            "256": 0.25,
+            "512": 0,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "40824",
+          "40824",
+          "To find the number of surjective functions from a set of 8 elements \\(A\\) onto a set of 4 elements \\(B\\), we can use the principle of inclusion-exclusion.\n\nLet the size of set \\(A\\) be \\(n = 8\\) and the size of set \\(B\\) be \\(k = 4\\).\n\nThe total number of functions from \\(A\\) to \\(B\\) is \\(k^n = 4^8\\).\n\nNext, we need to exclude those functions that are not surjective. We will denote by \\(S_i\\) the set of functions that do not map to the \\(i\\)-th element of \\(B\\). We wish to calculate the total number of functions not corresponding to surjective mappings, represented by the size of the union of these sets:\n\n\\[\n|S_1 \\cup S_2 \\cup S_3 \\cup S_4|\n\\]\n\nUsing the principle of inclusion-exclusion, we have:\n\n\\[\n|S_1 \\cup S_2 \\cup S_3 \\cup S_4| = \\sum_{i} |S_i| - \\sum_{i < j} |S_i \\cap S_j| + \\sum_{i < j < k} |S_i \\cap S_j \\cap S_k| - |S_1 \\cap S_2 \\cap S_3 \\cap S_4|\n\\]\n\n1. **Calculating \\(|S_i|\\)**:\n   Each \\(S_i\\) corresponds to the case where one specific element of \\(B\\) is not mapped at all. If one element is removed, there are \\(3\\) remaining elements in \\(B\\) that the \\(8\\) elements of \\(A\\) can map to. Therefore:\n\n   \\[\n   |S_i| = 3^8\n   \\]\n\n   Since there are \\(4\\) such sets:\n\n   \\[\n   \\sum_{i=1}^4 |S_i| = 4 \\cdot 3^8\n   \\]\n\n2. **Calculating \\(|S_i \\cap S_j|\\)**:\n   If two elements of \\(B\\) are not included, then there are \\(2\\) elements remaining to which the \\(8\\) elements of \\(A\\) can map. Thus:\n\n   \\[\n   |S_i \\cap S_j| = 2^8\n   \\]\n\n   There are \\(\\binom{4}{2} = 6\\) ways to choose \\(2\\) elements from \\(4\\):\n\n   \\[\n   \\sum_{i<j} |S_i \\cap S_j| = 6 \\cdot 2^8\n   \\]\n\n3. **Calculating \\(|S_i \\cap S_j \\cap S_k|\\)**:\n   If three elements of \\(B\\) are excluded, there is only \\(1\\) remaining element for all \\(8\\) elements in \\(A\\):\n\n   \\[\n   |S_i \\cap S_j \\cap S_k| = 1^8 = 1\n   \\]\n\n   There are \\(\\binom{4}{3} = 4\\) ways to choose \\(3\\) elements from \\(4\\):\n\n   \\[\n   \\sum_{i<j<k} |S_i \\cap S_j \\cap S_k| = 4 \\cdot 1^8 = 4\n   \\]\n\n4. **Calculating \\(|S_1 \\cap S_2 \\cap S_3 \\cap S_4|\\)**:\n   If all four elements are excluded, no function can exist:\n\n   \\[\n   |S_1 \\cap S_2 \\cap S_3 \\cap S_4| = 0\n   \\]\n\nPutting it all together, we can substitute these values back into the inclusion-exclusion formula:\n\n\\[\n|S_1 \\cup S_2 \\cup S_3 \\cup S_4| = 4 \\cdot 3^8 - 6 \\cdot 2^8 + 4 \\cdot 1 - 0\n\\]\n\nNow calculating \\(3^8\\) and \\(2^8\\):\n\n- \\(3^8 = 6561\\)\n- \\(2^8 = 256\\)\n\nThus,\n\n\\[\n|S_1 \\cup S_2 \\cup S_3 \\cup S_4| = 4 \\cdot 6561 - 6 \\cdot 256 + 4\n\\]\n\nCalculating each term:\n\n- \\(4 \\cdot 6561 = 26244\\)\n- \\(6 \\cdot 256 = 1536\\)\n\nPutting it all together:\n\n\\[\n|S_1 \\cup S_2 \\cup S_3 \\cup S_4| = 26244 - 153"
+        ]
+      },
+      "score": 0.16666666666666666,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.67)",
+        "trace leakage too low (-0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_142",
+      "metrics": {
+        "pair_id": "gen_142",
+        "y_acc_scratch": 0.041666666666666664,
+        "y_acc_full_trace": 0,
+        "y_acc_answer_only": 0.08333333333333333,
+        "trace_leakage": -0.041666666666666664,
+        "answer_only_leakage": 0.041666666666666664,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0
+          }
+        },
+        "x_answers": [
+          "374",
+          "374",
+          "374"
+        ]
+      },
+      "score": 0.15625,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_113",
+      "metrics": {
+        "pair_id": "gen_113",
+        "y_acc_scratch": 0.5833333333333334,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.9166666666666666,
+        "trace_leakage": 0.375,
+        "answer_only_leakage": 0.33333333333333326,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "89",
+          "89",
+          "89"
+        ]
+      },
+      "score": 0.1458333333333334,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.58)",
+        "answer-only leakage too high (0.33)"
+      ]
+    },
+    {
+      "pair_id": "gen_059",
+      "metrics": {
+        "pair_id": "gen_059",
+        "y_acc_scratch": 0.9166666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.875,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": -0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "22",
+          "22",
+          "22"
+        ]
+      },
+      "score": 0.14583333333333334,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.92)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_008",
+      "metrics": {
+        "pair_id": "gen_008",
+        "y_acc_scratch": 0.625,
+        "y_acc_full_trace": 0.7083333333333334,
+        "y_acc_answer_only": 0.6666666666666666,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.25,
+            "128": 1,
+            "256": 1,
+            "512": 0.5,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.25,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "294",
+          "294",
+          "294"
+        ]
+      },
+      "score": 0.13541666666666674,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.62)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_006",
+      "metrics": {
+        "pair_id": "gen_006",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.20833333333333334,
+        "y_acc_answer_only": 0.25,
+        "trace_leakage": -0.08333333333333334,
+        "answer_only_leakage": -0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 0.25,
+            "1024": 0.25
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 0.25
+          }
+        },
+        "x_answers": [
+          "8",
+          "8",
+          "8"
+        ]
+      },
+      "score": 0.13541666666666666,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_045",
+      "metrics": {
+        "pair_id": "gen_045",
+        "y_acc_scratch": 0,
+        "y_acc_full_trace": 0,
+        "y_acc_answer_only": 0.125,
+        "trace_leakage": 0,
+        "answer_only_leakage": 0.125,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0,
+            "512": 0,
+            "1024": 0.5
+          }
+        },
+        "x_answers": [
+          "2.6%",
+          "0.026",
+          "0.026"
+        ]
+      },
+      "score": 0.125,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.00)",
+        "answer-only leakage too high (0.12)"
+      ]
+    },
+    {
+      "pair_id": "gen_119",
+      "metrics": {
+        "pair_id": "gen_119",
+        "y_acc_scratch": 0.3333333333333333,
+        "y_acc_full_trace": 0,
+        "y_acc_answer_only": 0.041666666666666664,
+        "trace_leakage": -0.3333333333333333,
+        "answer_only_leakage": -0.29166666666666663,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0.25,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0.25
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0
+          }
+        },
+        "x_answers": [
+          "6",
+          "12",
+          "6"
+        ]
+      },
+      "score": 0.125,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.33)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_128",
+      "metrics": {
+        "pair_id": "gen_128",
+        "y_acc_scratch": 0.6666666666666666,
+        "y_acc_full_trace": 0.75,
+        "y_acc_answer_only": 0.7083333333333334,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.04166666666666674,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.25,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.5,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "480",
+          "480",
+          "480"
+        ]
+      },
+      "score": 0.12499999999999997,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.67)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_135",
+      "metrics": {
+        "pair_id": "gen_135",
+        "y_acc_scratch": 0.75,
+        "y_acc_full_trace": 0.8333333333333334,
+        "y_acc_answer_only": 0.7916666666666666,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.5,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "1200",
+          "1200",
+          "1200"
+        ]
+      },
+      "score": 0.10416666666666674,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.75)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_015",
+      "metrics": {
+        "pair_id": "gen_015",
+        "y_acc_scratch": 0.9166666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.04166666666666674,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(5, 4, 20, 16, 17, 2, 10, 8, 19, 11, 13, 1\\).",
+          "The powers \\( 5^k \\mod 21 \\) for \\( k = 1 \\) to \\( 12 \\) are: 5, 4, 20, 16, 17, 2, 10, 8, 19, 11, 13, 5.",
+          "5, 4, 20, 16, 17, 1"
+        ]
+      },
+      "score": 0.06249999999999997,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.92)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_055",
+      "metrics": {
+        "pair_id": "gen_055",
+        "y_acc_scratch": 0.4583333333333333,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": -0.04166666666666663,
+        "answer_only_leakage": 0.041666666666666685,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 0.5,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "8",
+          "8",
+          "8"
+        ]
+      },
+      "score": 0.05208333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.46)",
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_002",
+      "metrics": {
+        "pair_id": "gen_002",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0.04166666666666663,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "2520",
+          "2520",
+          "2520"
+        ]
+      },
+      "score": 0.05208333333333329,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_003",
+      "metrics": {
+        "pair_id": "gen_003",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0.04166666666666663,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "59",
+          "59",
+          "59"
+        ]
+      },
+      "score": 0.05208333333333329,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (0.04)"
+      ]
+    },
+    {
+      "pair_id": "gen_089",
+      "metrics": {
+        "pair_id": "gen_089",
+        "y_acc_scratch": 0.2916666666666667,
+        "y_acc_full_trace": 0.16666666666666666,
+        "y_acc_answer_only": 0.2916666666666667,
+        "trace_leakage": -0.12500000000000003,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "8.5",
+          "8.5",
+          "8.5"
+        ]
+      },
+      "score": 0.05208333333333329,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.13)"
+      ]
+    },
+    {
+      "pair_id": "gen_131",
+      "metrics": {
+        "pair_id": "gen_131",
+        "y_acc_scratch": 1,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0,
+        "answer_only_leakage": -0.04166666666666663,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "504",
+          "504",
+          "504"
+        ]
+      },
+      "score": 0.04166666666666663,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (1.00)",
+        "trace leakage too low (0.00)"
+      ]
+    },
+    {
+      "pair_id": "gen_056",
+      "metrics": {
+        "pair_id": "gen_056",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.9166666666666666,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0.20833333333333326,
+        "answer_only_leakage": 0.25,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\lambda^2 - 7\\lambda + 10\\)",
+          "The characteristic polynomial is \\( \\lambda^2 - 7\\lambda + 10 \\).",
+          "\\(\\lambda^2 - 7\\lambda + 10\\)"
+        ]
+      },
+      "score": 0.031249999999999917,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (0.21)",
+        "answer-only leakage too high (0.25)"
+      ]
+    },
+    {
+      "pair_id": "gen_004",
+      "metrics": {
+        "pair_id": "gen_004",
+        "y_acc_scratch": 0.9166666666666666,
+        "y_acc_full_trace": 1,
+        "y_acc_answer_only": 1,
+        "trace_leakage": 0.08333333333333337,
+        "answer_only_leakage": 0.08333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "144",
+          "144",
+          "144"
+        ]
+      },
+      "score": 0.020833333333333343,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.92)",
+        "trace leakage too low (0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_016",
+      "metrics": {
+        "pair_id": "gen_016",
+        "y_acc_scratch": 0.4166666666666667,
+        "y_acc_full_trace": 0.375,
+        "y_acc_answer_only": 0.5,
+        "trace_leakage": -0.041666666666666685,
+        "answer_only_leakage": 0.08333333333333331,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( 540 = 2^2 \\times 3^3 \\times 5^1 \\), \\( 600 = 2^3 \\times 3^1 \\times 5^2 \\)",
+          "The prime factorizations are \\( 540 = 2^2 \\times 3^3 \\times 5^1 \\) and \\( 600 = 2^3 \\times 3^1 \\times 5^2 \\).",
+          "The prime factorization of 540 is \\(2^2 \\times 3^3 \\times 5^1\\) and the prime factorization of 600 is \\(2^3 \\times 3^1 \\times 5^2\\)."
+        ]
+      },
+      "score": 0.020833333333333315,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (-0.04)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_037",
+      "metrics": {
+        "pair_id": "gen_037",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.9583333333333334,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": 0.0,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{1}{2}\\)",
+          "Var(X) = 1/2.",
+          "0"
+        ]
+      },
+      "score": 0.010416666666666657,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (0.00)"
+      ]
+    },
+    {
+      "pair_id": "gen_103",
+      "metrics": {
+        "pair_id": "gen_103",
+        "y_acc_scratch": 0.6666666666666666,
+        "y_acc_full_trace": 0.6666666666666666,
+        "y_acc_answer_only": 0.75,
+        "trace_leakage": 0.0,
+        "answer_only_leakage": 0.08333333333333337,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.25,
+            "64": 0,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "59.94 m",
+          "59.84 meters",
+          "59.80 m"
+        ]
+      },
+      "score": -2.7755575615628914e-17,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.67)",
+        "trace leakage too low (0.00)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_067",
+      "metrics": {
+        "pair_id": "gen_067",
+        "y_acc_scratch": 0.25,
+        "y_acc_full_trace": 0.3333333333333333,
+        "y_acc_answer_only": 0.5416666666666666,
+        "trace_leakage": 0.08333333333333331,
+        "answer_only_leakage": 0.29166666666666663,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.75,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.75,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.5
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{3}{2}\\).",
+          "To find the sum of the infinite series \n\n\\[\nS = \\sum_{n=1}^{\\infty} \\frac{n^2}{3^n},\n\\]\n\nwe can use the formula for the sum of an infinite series involving powers of \\( n \\) multiplied by a geometric series.\n\nRecall that the sum of the geometric series is given by:\n\n\\[\n\\sum_{n=0}^{\\infty} x^n = \\frac{1}{1-x} \\quad (\\text{for } |x| < 1).\n\\]\n\nTo find the series for \\( n^2 x^n \\), we first use the known series for \\( n x^n \\). \n\n1. The series for \\( n x^n \\) can be derived by differentiating the geometric series:\n\n\\[\n\\sum_{n=0}^{\\infty} x^n = \\frac{1}{1-x}.\n\\]\n\nDifferentiating both sides with respect to \\( x \\):\n\n\\[\n\\sum_{n=1}^{\\infty} n x^{n-1} = \\frac{1}{(1-x)^2}.\n\\]\n\nMultiplying both sides by \\( x \\):\n\n\\[\n\\sum_{n=1}^{\\infty} n x^n = \\frac{x}{(1-x)^2}.\n\\]\n\n2. Now, differentiating this result with respect to \\( x \\) will give us \\( n^2 x^n \\):\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^{n-1} = \\frac{d}{dx} \\left( \\frac{x}{(1-x)^2} \\right).\n\\]\n\nUsing the quotient rule:\n\nLet \\( u = x \\) and \\( v = (1-x)^2 \\).\n\n- The derivative of \\( u \\) is \\( u' = 1 \\).\n- The derivative of \\( v \\) is \\( v' = -2(1-x)(-1) = 2(1-x) \\).\n\nUsing the quotient rule:\n\n\\[\n\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{u'v - uv'}{v^2} = \\frac{(1)(1-x)^2 - x(2(1-x))}{(1-x)^4}.\n\\]\n\nSimplifying the numerator:\n\n\\[\n(1-x)^2 - 2x(1-x) = 1 - 2x + x^2 - 2x + 2x^2 = 1 - 4x + 3x^2.\n\\]\n\nThus, we have:\n\n\\[\n\\frac{d}{dx}\\left(\\frac{x}{(1-x)^2}\\right) = \\frac{1 - 4x + 3x^2}{(1-x)^4}.\n\\]\n\nNow, multiplying by \\( x \\) again gives:\n\n\\[\n\\sum_{n=1}^{\\infty} n^2 x^n = x \\cdot \\frac{1 - 4x + 3x^2}{(1-x)^4} = \\frac{x(1 - 4x + 3x^2)}{(1-x)^4}.\n\\]\n\n3. To find \\( S \\), we substitute \\( x = \\frac{1}{3} \\):\n\n\\[\nS = \\sum_{n=1}^{\\infty} \\frac{n^2}{3^n} = \\frac{\\frac{1}{3}\\left(1 - 4\\frac{1}{3} + 3\\left(\\frac{1}{3}\\right)^2\\right)}{\\left(1 - \\frac{1}{3}\\right)^4}.\n\\]\n\nCalculating the components:\n\n- The denominator is \n\n\\[\n\\left(1 - \\frac{1}{3}\\right) = \\frac{2}{3} \\quad \\Rightarrow \\quad \\left(\\frac{2}{3}\\right)^4 = \\frac{16}{81}.\n\\]\n\n- The numerator simplifies as follows:\n\n\\[\n1 - \\frac{4}{3} + 3\\left(\\frac{1}{9}\\right) = 1 - \\frac{4}{3} + \\frac{1}{3} = 1 - 1 = 0.\n\\]\n\nSo the term simplifies to:\n\n\\[\n\\frac{\\frac{1}{3}(0)}{\\frac{16}{81}} = 0.\n\\]\n\nHence,\n\n\\[\nS = \\frac{\\frac{1}{3}\\left(1 - \\frac{4}{3} + \\frac{1}{3}\\right)}{\\frac{16}{81}} = \\frac{\\frac{1}{3}\\left(-\\frac{2}{3}\\right)}{\\frac{16}{81}} = \\frac{-\\frac{",
+          "\\(\\frac{27}{8}\\)."
+        ]
+      },
+      "score": -0.020833333333333315,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.08)",
+        "answer-only leakage too high (0.29)"
+      ]
+    },
+    {
+      "pair_id": "gen_021",
+      "metrics": {
+        "pair_id": "gen_021",
+        "y_acc_scratch": 0.5833333333333334,
+        "y_acc_full_trace": 0.4583333333333333,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": -0.12500000000000006,
+        "answer_only_leakage": 0.0,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 0,
+            "128": 0.5,
+            "256": 1,
+            "512": 0.75,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "165",
+          "165",
+          "165"
+        ]
+      },
+      "score": -0.020833333333333398,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.58)",
+        "trace leakage too low (-0.13)"
+      ]
+    },
+    {
+      "pair_id": "gen_100",
+      "metrics": {
+        "pair_id": "gen_100",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.875,
+        "y_acc_answer_only": 0.9166666666666666,
+        "trace_leakage": -0.08333333333333337,
+        "answer_only_leakage": -0.04166666666666674,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.5,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "0.495 m",
+          "0.495 m",
+          "0.495 meters."
+        ]
+      },
+      "score": -0.031249999999999972,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.08)"
+      ]
+    },
+    {
+      "pair_id": "gen_007",
+      "metrics": {
+        "pair_id": "gen_007",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.5416666666666666,
+        "y_acc_answer_only": 0.5833333333333334,
+        "trace_leakage": -0.41666666666666674,
+        "answer_only_leakage": -0.375,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.5,
+            "128": 0.75,
+            "256": 0.75,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0.5,
+            "128": 1,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "5",
+          "5",
+          "5"
+        ]
+      },
+      "score": -0.03125000000000008,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.42)"
+      ]
+    },
+    {
+      "pair_id": "gen_146",
+      "metrics": {
+        "pair_id": "gen_146",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.375,
+        "y_acc_answer_only": 0.5416666666666666,
+        "trace_leakage": -0.125,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0,
+            "512": 0.5,
+            "1024": 0.25
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.75,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 0.25,
+            "1024": 0
+          }
+        },
+        "x_answers": [
+          "To determine how many integers in the range from 1 to 840 are divisible by none of 2, 3, 5, or 7, we will use the principle of inclusion-exclusion.\n\nLet \\( N = 840 \\).\n\nWe first define the following sets:\n- Let \\( A \\) be the set of integers divisible by 2.\n- Let \\( B \\) be the set of integers divisible by 3.\n- Let \\( C \\) be the set of integers divisible by 5.\n- Let \\( D \\) be the set of integers divisible by 7.\n\nWe want to find the size of the union of these sets: \\( |A \\cup B \\cup C \\cup D| \\).\n\nTo apply inclusion-exclusion, we calculate the sizes of each set and their intersections.\n\n1. Calculate \\( |A|, |B|, |C|, |D| \\):\n   \\[\n   |A| = \\left\\lfloor \\frac{840}{2} \\right\\rfloor = 420\n   \\]\n   \\[\n   |B| = \\left\\lfloor \\frac{840}{3} \\right\\rfloor = 280\n   \\]\n   \\[\n   |C| = \\left\\lfloor \\frac{840}{5} \\right\\rfloor = 168\n   \\]\n   \\[\n   |D| = \\left\\lfloor \\frac{840}{7} \\right\\rfloor = 120\n   \\]\n\n2. Calculate the sizes of the intersections of pairs of sets:\n   \\[\n   |A \\cap B| = \\left\\lfloor \\frac{840}{6} \\right\\rfloor = 140 \\quad (\\text{LCM of 2 and 3})\n   \\]\n   \\[\n   |A \\cap C| = \\left\\lfloor \\frac{840}{10} \\right\\rfloor = 84 \\quad (\\text{LCM of 2 and 5})\n   \\]\n   \\[\n   |A \\cap D| = \\left\\lfloor \\frac{840}{14} \\right\\rfloor = 60 \\quad (\\text{LCM of 2 and 7})\n   \\]\n   \\[\n   |B \\cap C| = \\left\\lfloor \\frac{840}{15} \\right\\rfloor = 56 \\quad (\\text{LCM of 3 and 5})\n   \\]\n   \\[\n   |B \\cap D| = \\left\\lfloor \\frac{840}{21} \\right\\rfloor = 40 \\quad (\\text{LCM of 3 and 7})\n   \\]\n   \\[\n   |C \\cap D| = \\left\\lfloor \\frac{840}{35} \\right\\rfloor = 24 \\quad (\\text{LCM of 5 and 7})\n   \\]\n\n3. Calculate the sizes of the intersections of triples:\n   \\[\n   |A \\cap B \\cap C| = \\left\\lfloor \\frac{840}{30} \\right\\rfloor = 28 \\quad (\\text{LCM of 2, 3, and 5})\n   \\]\n   \\[\n   |A \\cap B \\cap D| = \\left\\lfloor \\frac{840}{42} \\right\\rfloor = 20 \\quad (\\text{LCM of 2, 3, and 7})\n   \\]\n   \\[\n   |A \\cap C \\cap D| = \\left\\lfloor \\frac{840}{70} \\right\\rfloor = 12 \\quad (\\text{LCM of 2, 5, and 7})\n   \\]\n   \\[\n   |B \\cap C \\cap D| = \\left\\lfloor \\frac{840}{105} \\right\\rfloor = 8 \\quad (\\text{LCM of 3, 5, and 7})\n   \\]\n\n4. Calculate the size of the intersection of all four sets:\n   \\[\n   |A \\cap B \\cap C \\cap D| = \\left\\lfloor \\frac{840}{210} \\right\\rfloor = 4 \\quad (\\text{LCM of 2, 3, 5, and 7})\n   \\]\n\n5. Now apply inclusion-exclusion:\n\\[\n|A \\cup B \\cup C \\cup D| = |A| + |B| + |C| + |D| - |A \\cap B| - |A \\cap C| - |A \\cap D| - |B \\cap C| - |B \\cap D| - |C \\cap D| + |A \\cap B \\cap C| + |A \\cap B \\cap D| + |A",
+          "To solve the problem of how many integers in the range 1 to 840 inclusive are divisible by none of the numbers 2, 3, 5, or 7, we will employ the principle of inclusion-exclusion.\n\nLet's define:\n- \\( A \\): the set of integers divisible by 2\n- \\( B \\): the set of integers divisible by 3\n- \\( C \\): the set of integers divisible by 5\n- \\( D \\): the set of integers divisible by 7\n\nThe size of the overall set (the total count of integers from 1 to 840) is 840. We want to find the number of integers in the complement of the union of sets \\( A, B, C, D \\):\n\n\\[\n|A \\cup B \\cup C \\cup D| = |A| + |B| + |C| + |D| - |A \\cap B| - |A \\cap C| - |A \\cap D| - |B \\cap C| - |B \\cap D| - |C \\cap D| + |A \\cap B \\cap C| + |A \\cap B \\cap D| + |A \\cap C \\cap D| + |B \\cap C \\cap D| - |A \\cap B \\cap C \\cap D|\n\\]\n\nNow we calculate each of these sets step by step.\n\n1. **Calculate individual sets**:\n   - \\( |A| = \\left\\lfloor \\frac{840}{2} \\right\\rfloor = 420 \\)\n   - \\( |B| = \\left\\lfloor \\frac{840}{3} \\right\\rfloor = 280 \\)\n   - \\( |C| = \\left\\lfloor \\frac{840}{5} \\right\\rfloor = 168 \\)\n   - \\( |D| = \\left\\lfloor \\frac{840}{7} \\right\\rfloor = 120 \\)\n\n2. **Calculate pairwise intersections**:\n   - \\( |A \\cap B| = \\left\\lfloor \\frac{840}{6} \\right\\rfloor = 140 \\) (divisible by 2 and 3)\n   - \\( |A \\cap C| = \\left\\lfloor \\frac{840}{10} \\right\\rfloor = 84 \\) (divisible by 2 and 5)\n   - \\( |A \\cap D| = \\left\\lfloor \\frac{840}{14} \\right\\rfloor = 60 \\) (divisible by 2 and 7)\n   - \\( |B \\cap C| = \\left\\lfloor \\frac{840}{15} \\right\\rfloor = 56 \\) (divisible by 3 and 5)\n   - \\( |B \\cap D| = \\left\\lfloor \\frac{840}{21} \\right\\rfloor = 40 \\) (divisible by 3 and 7)\n   - \\( |C \\cap D| = \\left\\lfloor \\frac{840}{35} \\right\\rfloor = 24 \\) (divisible by 5 and 7)\n\n3. **Calculate triple intersections**:\n   - \\( |A \\cap B \\cap C| = \\left\\lfloor \\frac{840}{30} \\right\\rfloor = 28 \\) (divisible by 2, 3, and 5)\n   - \\( |A \\cap B \\cap D| = \\left\\lfloor \\frac{840}{42} \\right\\rfloor = 20 \\) (divisible by 2, 3, and 7)\n   - \\( |A \\cap C \\cap D| = \\left\\lfloor \\frac{840}{70} \\right\\rfloor = 12 \\) (divisible by 2, 5, and 7)\n   - \\( |B \\cap C \\cap D| = \\left\\lfloor \\frac{840}{105} \\right\\rfloor = 8 \\) (divisible by 3, 5, and 7)\n\n4. **Calculate the intersection of all four sets**:\n   - \\( |A \\cap B \\cap C \\cap D| = \\left\\lfloor \\frac{840}{210} \\right\\rfloor = 4 \\) (divisible by 2, 3, 5, and 7)\n\n5. **Apply inclusion-exclusion**:\n   \\[\n   |A \\cup B \\cup C \\cup D| = 420 + 280 + 168 + 120 - (140 + 84 + 60 + 56 + 40 + 24) + (28 + 20 + 12 + 8) - 4\n   \\",
+          "To find how many integers in the range 1 to 840 inclusive are divisible by none of 2, 3, 5, or 7, we can apply the principle of inclusion-exclusion.\n\nLet \\( N = 840 \\). We define the following sets:\n- \\( A_2 \\): integers divisible by 2\n- \\( A_3 \\): integers divisible by 3\n- \\( A_5 \\): integers divisible by 5\n- \\( A_7 \\): integers divisible by 7\n\nWe want to find the number of integers not in \\( A_2 \\cup A_3 \\cup A_5 \\cup A_7 \\), which is given by:\n\n\\[\nN - |A_2 \\cup A_3 \\cup A_5 \\cup A_7|\n\\]\n\nBy the principle of inclusion-exclusion, we have:\n\n\\[\n|A_2 \\cup A_3 \\cup A_5 \\cup A_7| = |A_2| + |A_3| + |A_5| + |A_7| - |A_2 \\cap A_3| - |A_2 \\cap A_5| - |A_2 \\cap A_7| - |A_3 \\cap A_5| - |A_3 \\cap A_7| - |A_5 \\cap A_7| + |A_2 \\cap A_3 \\cap A_5| + |A_2 \\cap A_3 \\cap A_7| + |A_2 \\cap A_5 \\cap A_7| + |A_3 \\cap A_5 \\cap A_7| - |A_2 \\cap A_3 \\cap A_5 \\cap A_7|\n\\]\n\nNext, we calculate each term:\n\n1. \\( |A_2| = \\left\\lfloor \\frac{840}{2} \\right\\rfloor = 420 \\)\n2. \\( |A_3| = \\left\\lfloor \\frac{840}{3} \\right\\rfloor = 280 \\)\n3. \\( |A_5| = \\left\\lfloor \\frac{840}{5} \\right\\rfloor = 168 \\)\n4. \\( |A_7| = \\left\\lfloor \\frac{840}{7} \\right\\rfloor = 120 \\)\n\nNext, calculating the intersections of two sets:\n1. \\( |A_2 \\cap A_3| = \\left\\lfloor \\frac{840}{6} \\right\\rfloor = 140 \\)\n2. \\( |A_2 \\cap A_5| = \\left\\lfloor \\frac{840}{10} \\right\\rfloor = 84 \\)\n3. \\( |A_2 \\cap A_7| = \\left\\lfloor \\frac{840}{14} \\right\\rfloor = 60 \\)\n4. \\( |A_3 \\cap A_5| = \\left\\lfloor \\frac{840}{15} \\right\\rfloor = 56 \\)\n5. \\( |A_3 \\cap A_7| = \\left\\lfloor \\frac{840}{21} \\right\\rfloor = 40 \\)\n6. \\( |A_5 \\cap A_7| = \\left\\lfloor \\frac{840}{35} \\right\\rfloor = 24 \\)\n\nNext, for intersections of three sets:\n1. \\( |A_2 \\cap A_3 \\cap A_5| = \\left\\lfloor \\frac{840}{30} \\right\\rfloor = 28 \\)\n2. \\( |A_2 \\cap A_3 \\cap A_7| = \\left\\lfloor \\frac{840}{42} \\right\\rfloor = 20 \\)\n3. \\( |A_2 \\cap A_5 \\cap A_7| = \\left\\lfloor \\frac{840}{70} \\right\\rfloor = 12 \\)\n4. \\( |A_3 \\cap A_5 \\cap A_7| = \\left\\lfloor \\frac{840}{105} \\right\\rfloor = 8 \\)\n\nFinally, for the intersection of all four sets:\n1. \\( |A_2 \\cap A_3 \\cap A_5 \\cap A_7| = \\left\\lfloor \\frac{840}{210} \\right\\rfloor = 4 \\)\n\nNow we substitute these counts into the inclusion-exclusion formula we set up earlier:\n\n\\[\n|A_2 \\cup A_3 \\cup A_5 \\cup A_7| = 420 + 280 + 168 + 120 - (140 + 84 + 60 +"
+        ]
+      },
+      "score": -0.04166666666666663,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)",
+        "trace leakage too low (-0.12)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    },
+    {
+      "pair_id": "gen_136",
+      "metrics": {
+        "pair_id": "gen_136",
+        "y_acc_scratch": 0.8333333333333334,
+        "y_acc_full_trace": 0.6666666666666666,
+        "y_acc_answer_only": 0.75,
+        "trace_leakage": -0.16666666666666674,
+        "answer_only_leakage": -0.08333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 1,
+            "128": 1,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0.5,
+            "64": 0.75,
+            "128": 0.5,
+            "256": 1,
+            "512": 0.5,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 1,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "43",
+          "} 43\n\\]",
+          "} 43\n\\]"
+        ]
+      },
+      "score": -0.04166666666666671,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.83)",
+        "trace leakage too low (-0.17)"
+      ]
+    },
+    {
+      "pair_id": "gen_029",
+      "metrics": {
+        "pair_id": "gen_029",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.5416666666666666,
+        "trace_leakage": -0.2916666666666667,
+        "answer_only_leakage": -0.16666666666666674,
+        "x_scratch_acc": 0.3333333333333333,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0.75,
+            "128": 1,
+            "256": 0.5,
+            "512": 0.5,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.25,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 0.25,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.25,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "To find the number of surjective (onto) functions from a set with 8 elements to a set with 4 elements, we can use the inclusion-exclusion principle.\n\nLet \\( A = \\{1, 2, 3, 4\\} \\) be the set of 4 elements and let \\( B = \\{1, 2, 3, 4, 5, 6, 7, 8\\} \\) be the set of 8 elements. We denote the number of functions from \\( B \\) to \\( A \\) by \\( 4^8 \\), since each of the 8 elements in set \\( B \\) can be mapped to any of the 4 elements in set \\( A \\).\n\nHowever, we want to count only the surjective functions. We will apply the principle of inclusion-exclusion to find the number of surjective functions.\n\n1. **Counting all functions**: The total number of functions from 8 elements to 4 elements is given by:\n   \\[\n   |F| = 4^8\n   \\]\n\n2. **Inclusion-Exclusion Principle**: Let \\( S_i \\) be the set of functions that do not map to element \\( i \\). We want to count the complement of the union of these sets, i.e., we want to find:\n   \\[\n   \\left| S_1^c \\cap S_2^c \\cap S_3^c \\cap S_4^c \\right|\n   \\]\n\n   Using inclusion-exclusion, we have:\n   \\[\n   |S_1^c \\cap S_2^c \\cap S_3^c \\cap S_4^c| = |F| - \\sum |S_i| + \\sum |S_{i_j}| - \\sum |S_{i_jk}| + |S_{i_jkl}|\n   \\]\n   where \\( i, j, k, l \\) are distinct indices from the set \\( \\{1, 2, 3, 4\\} \\).\n\n3. **Calculating each term**:\n   - \\( |F| = 4^8 \\)\n   - Each \\( |S_i| \\) corresponds to the functions mapping to the remaining 3 elements; therefore:\n     \\[\n     |S_i| = 3^8\n     \\]\n     Since there are 4 such indices, we have:\n     \\[\n     \\sum |S_i| = 4 \\times 3^8\n     \\]\n\n   - Each \\( |S_{i_j}| \\) corresponds to choosing 2 elements from 4, leaving functions mapping to the remaining 2. Hence:\n     \\[\n     |S_{i_j}| = 2^8\n     \\]\n     There are \\( \\binom{4}{2} = 6 \\) ways to choose 2 indices:\n     \\[\n     \\sum |S_{i_j}| = 6 \\times 2^8\n     \\]\n\n   - Each \\( |S_{i_jk}| \\) corresponds to functions that map to a single element. Thus:\n     \\[\n     |S_{i_jk}| = 1^8 = 1\n     \\]\n     There are \\( \\binom{4}{3} = 4 \\) ways to choose 3 indices:\n     \\[\n     \\sum |S_{i_jk}| = 4 \\times 1 = 4\n     \\]\n\n   - Finally, \\( |S_{i_jkl}| = 0 \\) since no function can be defined that doesn't map to at least one element:\n     \\[\n     |S_{i_jkl}| = 0\n     \\]\n\n4. **Putting it all together**:\n   \\[\n   |S_1^c \\cap S_2^c \\cap S_3^c \\cap S_4^c| = 4^8 - \\left(4 \\cdot 3^8\\right) + \\left(6 \\cdot 2^8\\right) - \\left(4\\right)\n   \\]\n\nNow we calculate explicitly:\n- \\( 4^8 = 65536 \\)\n- \\( 3^8 = 6561 \\) so \\( 4 \\cdot 3^8 = 26244 \\)\n- \\( 2^8 = 256 \\) so \\( 6 \\cdot 2^8 = 1536 \\)\n\nThus:\n\\[\n|S_1^c \\cap S_2^c \\cap S_3^c \\cap S_4^c| = 65536 - 26244 + 1536 - 4 = 36824\n\\]\n\nSo, the number of surjective functions from a set of 8 elements onto a set of 4 elements is:",
+          "To find the number of surjective (onto) functions from a set of size 8 to a set of size 4, we can use the principle of inclusion-exclusion.\n\nLet \\( A \\) be the set of all functions from a set of 8 elements to a set of 4 elements. The total number of functions \\( f: X \\to Y \\) where \\( |X| = 8 \\) and \\( |Y| = 4 \\) is given by:\n\n\\[\n|A| = 4^8\n\\]\n\nNow, we denote \\( |B_i| \\) as the number of functions that do not map to at least one of the 4 elements in the range. We need to compute the size of the complementary set of surjective functions by using the principle of inclusion-exclusion.\n\nLet \\( S \\) be the set of all functions from the 8 elements to the 4 elements that are *not* onto. We can define:\n\n- \\( B_1 \\): the set of functions that do not map to element 1.\n- \\( B_2 \\): the set of functions that do not map to element 2.\n- \\( B_3 \\): the set of functions that do not map to element 3.\n- \\( B_4 \\): the set of functions that do not map to element 4.\n\nBy using inclusion-exclusion, the number of functions that miss at least one element from the codomain is calculated as follows:\n\n\\[\n|S| = |B_1 \\cup B_2 \\cup B_3 \\cup B_4|\n\\]\nUsing the Inclusion-Exclusion Principle:\n\n\\[\n|S| = \\sum |B_i| - \\sum |B_i \\cap B_j| + \\sum |B_i \\cap B_j \\cap B_k| - |B_1 \\cap B_2 \\cap B_3 \\cap B_4|\n\\]\n\nCalculating each term:\n\n1. \\( |B_i| \\): The number of functions that miss one specific element (say element 1) is \\( 3^8 \\), because we can choose from the remaining 3 elements for each of the 8 elements.\n   So, \\( |B_1| = |B_2| = |B_3| = |B_4| = 3^8 \\).\n   Thus,\n   \\[\n   \\sum |B_i| = 4 \\cdot 3^8\n   \\]\n\n2. \\( |B_i \\cap B_j| \\): The number of functions that miss two specific elements is \\( 2^8 \\), because we choose from the remaining 2 elements for each of the 8 elements.\n   There are \\( \\binom{4}{2} = 6 \\) ways to choose which 2 elements are missed, so:\n   \\[\n   \\sum |B_i \\cap B_j| = \\binom{4}{2} \\cdot 2^8 = 6 \\cdot 2^8\n   \\]\n\n3. \\( |B_i \\cap B_j \\cap B_k| \\): The number of functions that miss three specific elements is \\( 1^8 = 1 \\), because all elements must map to the only remaining one element.\n   There are \\( \\binom{4}{3} = 4 \\) ways to choose which 3 elements are missed, so:\n   \\[\n   \\sum |B_i \\cap B_j \\cap B_k| = \\binom{4}{3} \\cdot 1^8 = 4 \\cdot 1\n   \\]\n\n4. \\( |B_1 \\cap B_2 \\cap B_3 \\cap B_4| \\): The number of functions that map to none of the elements is 0 (impossible), so:\n   \\[\n   |B_1 \\cap B_2 \\cap B_3 \\cap B_4| = 0\n   \\]\n\nPutting it all together, we have:\n\n\\[\n|S| = 4 \\cdot 3^8 - 6 \\cdot 2^8 + 4 \\cdot 1 - 0\n\\]\n\nNow, substituting back into the total function count to find the number of onto functions:\n\n\\[\n|S| = 4 \\cdot 3^8 - 6 \\cdot 2^8 + 4\n\\]\n\\[\n|A| = 4^8\n\\]\nThe number of onto functions \\( |T| \\) is then given by:\n\n\\[\n|T| = |A| - |S| = 4^8 - (4 \\cdot 3^8 - 6 \\cdot 2^8 + 4)\n\\]\n\nCalculating each term:\n- \\( 4^8 = 65536 \\",
+          "40824"
+        ]
+      },
+      "score": -0.05208333333333329,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (-0.29)"
+      ]
+    },
+    {
+      "pair_id": "gen_065",
+      "metrics": {
+        "pair_id": "gen_065",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.5,
+        "y_acc_answer_only": 0.625,
+        "trace_leakage": -0.20833333333333337,
+        "answer_only_leakage": -0.08333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.75,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.5,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      "score": -0.05208333333333334,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (-0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_012",
+      "metrics": {
+        "pair_id": "gen_012",
+        "y_acc_scratch": 0.5,
+        "y_acc_full_trace": 0.16666666666666666,
+        "y_acc_answer_only": 0.375,
+        "trace_leakage": -0.33333333333333337,
+        "answer_only_leakage": -0.125,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 1,
+            "1024": 0.75
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0.25,
+            "512": 0.75,
+            "1024": 0
+          },
+          "answer_only": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 1,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "14",
+          "14",
+          "14"
+        ]
+      },
+      "score": -0.08333333333333337,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.50)",
+        "trace leakage too low (-0.33)"
+      ]
+    },
+    {
+      "pair_id": "gen_079",
+      "metrics": {
+        "pair_id": "gen_079",
+        "y_acc_scratch": 0.7083333333333334,
+        "y_acc_full_trace": 0.5,
+        "y_acc_answer_only": 0.6666666666666666,
+        "trace_leakage": -0.20833333333333337,
+        "answer_only_leakage": -0.04166666666666674,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.5,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0.25,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 0.5,
+            "64": 0.5,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\( S(x) = \\frac{x}{(1-x)^2} \\) for \\( |x| < 1 \\).",
+          "\\( S(x) = \\frac{x}{(1-x)^2} \\).",
+          "\\( S(x) = \\frac{x}{(1-x)^2} \\)."
+        ]
+      },
+      "score": -0.09374999999999997,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.71)",
+        "trace leakage too low (-0.21)"
+      ]
+    },
+    {
+      "pair_id": "gen_071",
+      "metrics": {
+        "pair_id": "gen_071",
+        "y_acc_scratch": 0.625,
+        "y_acc_full_trace": 0.125,
+        "y_acc_answer_only": 0.4166666666666667,
+        "trace_leakage": -0.5,
+        "answer_only_leakage": -0.20833333333333331,
+        "x_scratch_acc": 0.6666666666666666,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 1,
+            "64": 0.25,
+            "128": 0.5,
+            "256": 1,
+            "512": 0.5,
+            "1024": 0.5
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0.5,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 0.25,
+            "64": 0.25,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 0.5,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\frac{20}{27}\\).",
+          "\\(\\frac{80}{81}\\).",
+          "\\(\\frac{20}{27}\\)"
+        ]
+      },
+      "score": -0.19791666666666669,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.62)",
+        "trace leakage too low (-0.50)"
+      ]
+    },
+    {
+      "pair_id": "gen_072",
+      "metrics": {
+        "pair_id": "gen_072",
+        "y_acc_scratch": 0.16666666666666666,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.875,
+        "trace_leakage": 0.25,
+        "answer_only_leakage": 0.7083333333333334,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.5,
+            "512": 1,
+            "1024": 0.75
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.5,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\left( \\frac{13}{7}, \\frac{43}{7} \\right)\\)",
+          "\\(\\left(\\frac{13}{7}, \\frac{43}{7}\\right)\\)",
+          "\\(\\left(\\frac{13}{7}, \\frac{43}{7}\\right)\\)"
+        ]
+      },
+      "score": -0.25,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.25)",
+        "answer-only leakage too high (0.71)"
+      ]
+    },
+    {
+      "pair_id": "gen_026",
+      "metrics": {
+        "pair_id": "gen_026",
+        "y_acc_scratch": 0.625,
+        "y_acc_full_trace": 0.3333333333333333,
+        "y_acc_answer_only": 0.7083333333333334,
+        "trace_leakage": -0.2916666666666667,
+        "answer_only_leakage": 0.08333333333333337,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0.75,
+            "128": 0.75,
+            "256": 0.5,
+            "512": 0.75,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.25,
+            "512": 1,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.5,
+            "128": 0.5,
+            "256": 0.75,
+            "512": 0.75,
+            "1024": 0.75
+          }
+        },
+        "x_answers": [
+          "25",
+          "25.",
+          "25"
+        ]
+      },
+      "score": -0.28125000000000006,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.62)",
+        "trace leakage too low (-0.29)"
+      ]
+    },
+    {
+      "pair_id": "gen_076",
+      "metrics": {
+        "pair_id": "gen_076",
+        "y_acc_scratch": 0.16666666666666666,
+        "y_acc_full_trace": 0.4166666666666667,
+        "y_acc_answer_only": 0.9166666666666666,
+        "trace_leakage": 0.25,
+        "answer_only_leakage": 0.75,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0,
+            "64": 0,
+            "128": 0,
+            "256": 0,
+            "512": 0,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.25,
+            "256": 0.75,
+            "512": 1,
+            "1024": 0.5
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 0.75,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "\\(\\left( \\frac{34}{7}, \\frac{29}{7} \\right)\\)",
+          "\\(\\left(\\frac{34}{7}, \\frac{29}{7}\\right)\\)",
+          "\\(\\left(\\frac{34}{7}, \\frac{29}{7}\\right)\\)"
+        ]
+      },
+      "score": -0.29166666666666663,
+      "passes": false,
+      "reasons": [
+        "trace leakage too low (0.25)",
+        "answer-only leakage too high (0.75)"
+      ]
+    },
+    {
+      "pair_id": "gen_085",
+      "metrics": {
+        "pair_id": "gen_085",
+        "y_acc_scratch": 0.9166666666666666,
+        "y_acc_full_trace": 0.625,
+        "y_acc_answer_only": 0.9583333333333334,
+        "trace_leakage": -0.29166666666666663,
+        "answer_only_leakage": 0.04166666666666674,
+        "x_scratch_acc": 1.0,
+        "n_x_trials": 3,
+        "used_correct_trace": true,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 0.75,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 0.75,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "35",
+          "35",
+          "35"
+        ]
+      },
+      "score": -0.3125,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.92)",
+        "trace leakage too low (-0.29)"
+      ]
+    },
+    {
+      "pair_id": "gen_027",
+      "metrics": {
+        "pair_id": "gen_027",
+        "y_acc_scratch": 0.9583333333333334,
+        "y_acc_full_trace": 0.2916666666666667,
+        "y_acc_answer_only": 1,
+        "trace_leakage": -0.6666666666666667,
+        "answer_only_leakage": 0.04166666666666663,
+        "x_scratch_acc": 0.0,
+        "n_x_trials": 3,
+        "used_correct_trace": false,
+        "acc_by_budget": {
+          "scratch": {
+            "32": 0.75,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          },
+          "with_trace": {
+            "32": 0,
+            "64": 0.75,
+            "128": 0.5,
+            "256": 0,
+            "512": 0.25,
+            "1024": 0.25
+          },
+          "answer_only": {
+            "32": 1,
+            "64": 1,
+            "128": 1,
+            "256": 1,
+            "512": 1,
+            "1024": 1
+          }
+        },
+        "x_answers": [
+          "4775.",
+          "5040 - !",
+          "To find the number of permutations of the set \\( S = \\{1, 2, 3, 4, 5, 6, 7\\} \\) that have at least one fixed point, we can use the principle of inclusion-exclusion.\n\nLet \\( n = 7 \\). The total number of permutations of \\( S \\) is \\( n! = 7! = 5040 \\).\n\nNext, define \\( A_i \\) as the set of permutations where the element \\( i \\) is a fixed point for \\( i \\in \\{1, 2, 3, 4, 5, 6, 7\\} \\). We need to find \\( |A_1 \\cup A_2 \\cup A_3 \\cup A_4 \\cup A_5 \\cup A_6 \\cup A_7| \\), the number of permutations that have at least one fixed point. By inclusion-exclusion, we can express this as:\n\n\\[\n|A_1 \\cup A_2 \\cup A_3 \\cup A_4 \\cup A_5 \\cup A_6 \\cup A_7| = \\sum_{i=1}^{7} |A_i| - \\sum_{1 \\leq i < j \\leq 7} |A_i \\cap A_j| + \\sum_{1 \\leq i < j < k \\leq 7} |A_i \\cap A_j \\cap A_k| - \\ldots + (-1)^{k-1} \\sum_{1 \\leq i_1 < i_2 < \\ldots < i_k \\leq 7} |A_{i_1} \\cap A_{i_2} \\cap \\ldots \\cap A_{i_k}| + \\ldots + (-1)^{7} |A_1 \\cap A_2 \\cap A_3 \\cap A_4 \\cap A_5 \\cap A_6 \\cap A_7|\n\\]\n\nCalculating each term:\n\n1. \\( |A_i| \\): The number of permutations with \\( i \\) fixed is \\( (n-1)! = 6! = 720 \\). There are 7 such sets, so:\n\n\\[\n\\sum_{i=1}^{7} |A_i| = 7 \\times 720 = 5040\n\\]\n\n2. \\( |A_i \\cap A_j| \\): The number of permutations fixing both \\( i \\) and \\( j \\) is \\( (n-2)! = 5! = 120 \\). The number of ways to choose 2 from 7 is \\( \\binom{7}{2} = 21 \\), so:\n\n\\[\n\\sum_{1 \\leq i < j \\leq 7} |A_i \\cap A_j| = 21 \\times 120 = 2520\n\\]\n\n3. \\( |A_i \\cap A_j \\cap A_k| \\): Fixing 3 elements leads to \\( (n-3)! = 4! = 24 \\). The number of ways to choose 3 from 7 is \\( \\binom{7}{3} = 35 \\), so:\n\n\\[\n\\sum_{1 \\leq i < j < k \\leq 7} |A_i \\cap A_j \\cap A_k| = 35 \\times 24 = 840\n\\]\n\n4. \\( |A_i \\cap A_j \\cap A_k \\cap A_l| \\): Fixing 4 yields \\( (n-4)! = 3! = 6 \\). The number of ways to choose 4 from 7 is \\( \\binom{7}{4} = 35 \\), so:\n\n\\[\n\\sum_{1 \\leq i < j < k < l \\leq 7} |A_i \\cap A_j \\cap A_k \\cap A_l| = 35 \\times 6 = 210\n\\]\n\n5. \\( |A_i \\cap A_j \\cap A_k \\cap A_l \\cap A_m| \\): Fixing 5 gives \\( (n-5)! = 2! = 2 \\). The number of ways to choose 5 from 7 is \\( \\binom{7}{5} = 21 \\), so:\n\n\\[\n\\sum_{1 \\leq i < j < k < l < m \\leq 7} |A_i \\cap A_j \\cap A_k \\cap A_l \\cap A_m| = 21 \\times 2 = 42\n\\]\n\n6. \\( |A_i \\cap A_j \\cap A_k \\cap A_l \\cap A_m \\cap A_n| \\): Fixing all 6 gives \\( (n-6)! = 1"
+        ]
+      },
+      "score": -0.6979166666666667,
+      "passes": false,
+      "reasons": [
+        "Y too easy from scratch (0.96)",
+        "trace leakage too low (-0.67)",
+        "no correct X trace available (leak measured from wrong solution)"
+      ]
+    }
+  ],
+  "excluded_post_hoc": [
+    "gen_017",
+    "gen_028",
+    "gen_127"
+  ],
+  "excluded_reason": "Y trivially derivable from X bare answer using numbers visible in Y (complement count / listed terms)"
+}

@@ -1,0 +1,46 @@
+{
+  "run_id": "max_concurrency_fast_data3",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "grader_provider": "openai",
+  "grader_model": "gpt-4o-mini",
+  "pairs_file": "data\\pairs_structural_v3.json",
+  "scaffolds": [
+    "control_answer_only",
+    "control",
+    "baseline_avoid"
+  ],
+  "pair_ids": [
+    "totient_vs_divisor_count",
+    "heron_area_vs_inradius",
+    "circumradius_vs_area",
+    "quartic_roots_vs_parameter_range",
+    "mod_order_vs_large_power",
+    "bayes_posterior_vs_marginal",
+    "surjection_count_vs_partition",
+    "markov_eigenvalues_vs_stationary",
+    "recurrence_roots_vs_term",
+    "variance_vs_second_moment",
+    "gcd_vs_lcm",
+    "partial_fractions_vs_integral",
+    "markov_stop_time_vs_exact_length",
+    "generating_function_vs_coefficient"
+  ],
+  "trials": 1,
+  "y_trials": 2,
+  "token_budgets": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "workers": 0,
+  "job_workers": 0,
+  "skip_y": false,
+  "temperature": 1.0,
+  "grader_temperature": 0.0,
+  "y_budget_warnings": true,
+  "y_budget_min_for_warnings": 16
+}

@@ -1,0 +1,1304 @@
+[
+  {
+    "id": "gen_005",
+    "x": "Find the remainder when 6^83 is divided by 83.",
+    "y": "For which integers a with 1 <= a <= 82 does a^83 ≡ a (mod 83) hold? Give the count of such a.",
+    "answer_x": "6",
+    "answer_y": "82",
+    "relation": "The natural method for X applies Fermat's Little Theorem: since 83 is prime, 6^83 ≡ 6 (mod 83). This trace exposes the general fact a^p ≡ a (mod p) for all a, which is exactly what Y generalizes (true for every residue). The bare numeric answer 6 to X does not by itself reveal that the congruence holds for all 82 nonzero residues. An alternate method for X via repeated squaring of 6 mod 83 never states the general theorem.",
+    "y_proximity_signals": [
+      "83 is prime",
+      "Fermat's Little Theorem a^p ≡ a (mod p)",
+      "holds for all residues a"
+    ]
+  },
+  {
+    "id": "gen_002",
+    "x": "Find the least common multiple of 84 and 360.",
+    "y": "Find the greatest common divisor of 84 and 360.",
+    "answer_x": "2520",
+    "answer_y": "12",
+    "relation": "The easiest LCM method first factorizes or runs the Euclidean algorithm to get gcd(84,360)=12, then uses lcm = 84*360/gcd. The final answer 2520 does not directly reveal the gcd without dividing by the product. An alternate route taking max prime-power exponents for LCM can avoid stating the gcd explicitly.",
+    "y_proximity_signals": [
+      "gcd via Euclid: 360 = 4*84 + 24, 84 = 3*24 + 12",
+      "gcd(84,360) = 12",
+      "lcm = 84*360/12 = 2520"
+    ]
+  },
+  {
+    "id": "gen_004",
+    "x": "Compute Euler's totient phi(540).",
+    "y": "What is the sum of the distinct prime factors of 540?",
+    "answer_x": "144",
+    "answer_y": "10",
+    "relation": "The easiest totient method factorizes 540 = 2^2 * 3^3 * 5, exposing the distinct primes 2, 3, 5 whose sum is 10. The final value 144 does not reveal those primes. An alternate route computing phi multiplicatively via phi(4)=2, phi(27)=18, phi(5)=4 and multiplying could obscure the explicit prime list, but the natural full factorization leaks it.",
+    "y_proximity_signals": [
+      "540 = 2^2 * 3^3 * 5",
+      "distinct primes 2, 3, 5",
+      "phi = 540*(1/2)*(2/3)*(4/5) = 144"
+    ]
+  },
+  {
+    "id": "gen_001",
+    "x": "Compute the remainder when 7^222 is divided by 50.",
+    "y": "What is the multiplicative order of 7 modulo 50?",
+    "answer_x": "49",
+    "answer_y": "4",
+    "relation": "The easiest method for X computes the powers of 7 mod 50 (7, 49, 343->43... actually 7^2=49, 7^4=1) and discovers the cycle length 4 to reduce 222 mod 4 = 2, giving 7^2 = 49. The bare answer 49 does not reveal the order. An alternate route using Euler's theorem with phi(50)=20 reduces 222 mod 20 = 2 without ever finding the true order 4.",
+    "y_proximity_signals": [
+      "7^1 = 7, 7^2 = 49 mod 50",
+      "7^4 = 1 mod 50",
+      "smallest k with 7^k ≡ 1, order = 4",
+      "222 mod 4 = 2"
+    ]
+  },
+  {
+    "id": "gen_003",
+    "x": "Solve for the unique x with 0 <= x < 77 satisfying x ≡ 3 (mod 7) and x ≡ 4 (mod 11).",
+    "y": "Find an integer y with 0 < y < 11 such that 7y ≡ 1 (mod 11).",
+    "answer_x": "59",
+    "answer_y": "8",
+    "relation": "The standard CRT construction for X computes the inverse of 7 modulo 11 (which is 8) as an intermediate coefficient when building the solution. The final answer 59 does not reveal that inverse. An alternate method by direct search/scanning residues x ≡ 4 mod 11 and checking mod 7 never computes any modular inverse.",
+    "y_proximity_signals": [
+      "need inverse of 7 mod 11",
+      "7*8 = 56 ≡ 1 mod 11",
+      "CRT term using 7^{-1} mod 11 = 8"
+    ]
+  },
+  {
+    "id": "gen_008",
+    "x": "Compute Euler's totient phi(7^3).",
+    "y": "Let p be an odd prime. Then phi(p^3) = p^2(p-1). Evaluate phi(13^3).",
+    "answer_x": "294",
+    "answer_y": "2028",
+    "relation": "The easiest method for X uses phi(p^k) = p^(k-1)(p-1), giving phi(7^3) = 7^2 * 6 = 294. This trace exposes the general formula phi(p^3) = p^2(p-1) that Y applies directly to p=13 (169*12 = 2028). The bare answer 294 does not reveal the formula or the value for a different prime. An alternate method for X listing the multiples of 7 up to 343 and subtracting from 343 computes the count without naming the parameterized formula.",
+    "y_proximity_signals": [
+      "phi(p^k) = p^(k-1)(p-1)",
+      "phi(p^3) = p^2(p-1)",
+      "13^2 * 12 = 2028"
+    ]
+  },
+  {
+    "id": "gen_006",
+    "x": "Compute the multiplicative order of 3 modulo 32.",
+    "y": "For odd a, the multiplicative order of a modulo 2^n (n >= 3) divides 2^(n-2). What is the order of 3 modulo 256?",
+    "answer_x": "8",
+    "answer_y": "64",
+    "relation": "The natural method for X computes successive powers of 3 mod 32 and finds 3^8 ≡ 1, revealing that the order is 2^(n-2) = 2^3 for n=5. This exposes the parameterized structure ord(3 mod 2^n) = 2^(n-2) that Y needs directly (for n=8, 2^6 = 64). The bare answer 8 does not reveal this exponent pattern. An alternate method for X using Carmichael lambda(32)=8 plus a single check that 3 is a generator of the maximal cyclic part does not expose the 2^(n-2) family formula.",
+    "y_proximity_signals": [
+      "powers of 3 modulo 2^n",
+      "order = 2^(n-2)",
+      "3^8 ≡ 1 (mod 32)",
+      "for n=8, 2^6 = 64"
+    ]
+  },
+  {
+    "id": "gen_010",
+    "x": "Find the multiplicative order of 2 modulo 25.",
+    "y": "Find the remainder when 2^2024 is divided by 25.",
+    "answer_x": "20",
+    "answer_y": "16",
+    "relation": "Finding the order builds the cycle of powers of 2 mod 25 and the value 20; with that, 2024 mod 20 = 4 gives 2^4 = 16 immediately. The bare order 20 does not directly give the remainder without reducing the exponent and evaluating a small power. An alternate route for X via Euler/Carmichael bounds plus divisor checking need not tabulate all needed small powers.",
+    "y_proximity_signals": [
+      "powers of 2 mod 25",
+      "order 20",
+      "2024 mod 20 = 4",
+      "2^4 = 16"
+    ]
+  },
+  {
+    "id": "gen_007",
+    "x": "Compute gcd(F(15), F(10)) where F(n) is the nth Fibonacci number with F(1)=F(2)=1.",
+    "y": "Find gcd(F(36), F(24)), where F(n) is the nth Fibonacci number with F(1)=F(2)=1.",
+    "answer_x": "5",
+    "answer_y": "144",
+    "relation": "The easiest method for X uses the identity gcd(F(m),F(n)) = F(gcd(m,n)): gcd(15,10)=5 so the answer is F(5)=5. This trace exposes the parameterized identity that Y needs (gcd(36,24)=12, so F(12)=144). The bare numeric answer 5 does not reveal the identity or let one compute the second gcd. An alternate method for X computing F(15)=610 and F(10)=55 explicitly and taking their numeric gcd does not expose the general identity.",
+    "y_proximity_signals": [
+      "gcd(F(m),F(n)) = F(gcd(m,n))",
+      "gcd of indices",
+      "F(12) = 144"
+    ]
+  },
+  {
+    "id": "gen_013",
+    "x": "Find the prime factorization of 1716, expressed in ascending-prime form (e.g. 2^a * 3^b * ...).",
+    "y": "Compute Euler's totient phi(1716).",
+    "answer_x": "2^2 * 3 * 11 * 13",
+    "answer_y": "480",
+    "relation": "The easiest way to compute phi(1716) is to first factor it; the factorization trace for X directly gives the distinct primes 2, 3, 11, 13 needed for phi via the product formula. The bare factorization answer requires further computation to get 480, and the bare value 480 does not reveal the factorization. An alternate X route (trial division reporting only the final answer, or recognizing it via lookup) need not expose the totient computation, and counting coprimes directly for phi avoids ever stating the factorization.",
+    "y_proximity_signals": [
+      "1716 = 2^2 * 3 * 11 * 13",
+      "distinct primes 2, 3, 11, 13",
+      "phi = 1716 * (1/2)(2/3)(10/11)(12/13)"
+    ]
+  },
+  {
+    "id": "gen_012",
+    "x": "Compute gcd(126, 196) using the Euclidean algorithm.",
+    "y": "Compute lcm(126, 196).",
+    "answer_x": "14",
+    "answer_y": "1764",
+    "relation": "The standard lcm computation uses lcm = (a*b)/gcd, so X's gcd is the missing ingredient. The gcd 14 alone does not give the lcm without the product 126*196; knowing the lcm 1764 does not directly reveal the gcd without dividing the product. An alternate route to X via prime factorization of both numbers would expose the factor structure differently and would itself give the lcm, but a pure subtractive/Euclidean gcd for X yields only the gcd.",
+    "y_proximity_signals": [
+      "gcd(126,196) = 14",
+      "126 * 196 = 24696",
+      "lcm = 24696 / 14 = 1764"
+    ]
+  },
+  {
+    "id": "gen_015",
+    "x": "List all powers 5^k mod 21 for k = 1, 2, 3, ... up to one full cycle (until the value returns to 5^0 = 1).",
+    "y": "Compute the multiplicative order of 5 modulo 21.",
+    "answer_x": "5, 4, 20, 16, 17, 1",
+    "answer_y": "6",
+    "relation": "Listing the cycle of powers of 5 mod 21 makes the order obvious as the length of the cycle (6). The bare list and the bare number 6 are different artifacts: knowing 'order is 6' does not reproduce the specific residues, and the residue list requires counting to extract 6. An alternate X route could verify divisor candidates of phi(21)=12 selectively to find when 5^k ≡ 1 without printing the full sequence.",
+    "y_proximity_signals": [
+      "5^1=5, 5^2=4, 5^3=20, 5^4=16, 5^5=17, 5^6=1",
+      "cycle returns to 1 at k=6",
+      "length of the power cycle"
+    ]
+  },
+  {
+    "id": "gen_016",
+    "x": "Compute the prime factorizations of 540 and 600, each in ascending-prime form.",
+    "y": "Compute lcm(540, 600).",
+    "answer_x": "540 = 2^2 * 3^3 * 5; 600 = 2^3 * 3 * 5^2",
+    "answer_y": "5400",
+    "relation": "The easiest lcm method takes the max exponent of each prime from the two factorizations, which X provides directly: max(2^2,2^3)=2^3, max(3^3,3)=3^3, max(5,5^2)=5^2, giving 5400. The bare factorizations are not the lcm, and the value 5400 does not reveal both input factorizations. An alternate X route reports factorizations without combining them; an alternate Y route uses lcm = ab/gcd via the Euclidean algorithm, never exposing exponent-by-exponent factor data.",
+    "y_proximity_signals": [
+      "540 = 2^2 * 3^3 * 5",
+      "600 = 2^3 * 3 * 5^2",
+      "lcm takes max exponents: 2^3 * 3^3 * 5^2 = 5400"
+    ]
+  },
+  {
+    "id": "gen_014",
+    "x": "Find the integer s with 0 <= s < 64 satisfying 23*s ≡ 1 (mod 64); report s (the modular inverse of 23 modulo 64).",
+    "y": "Solve for the unique x with 0 <= x < 64 satisfying 23*x ≡ 9 (mod 64).",
+    "answer_x": "39",
+    "answer_y": "31",
+    "relation": "The natural way to solve the congruence 23x ≡ 9 (mod 64) is to multiply by the inverse of 23, which is exactly the artifact X produces (s = 39). Then x = 9*39 mod 64 = 31. The bare inverse 39 does not equal or trivially give 31, and 31 does not reveal the inverse. An alternate X route stops at confirming 23*39 ≡ 1 without solving any specific congruence; an alternate Y route could brute-force search x without computing the inverse.",
+    "y_proximity_signals": [
+      "inverse of 23 mod 64 is 39",
+      "x = 9 * 39 mod 64",
+      "351 mod 64 = 31"
+    ]
+  },
+  {
+    "id": "gen_017",
+    "x": "How many integers from 1 to 1000 inclusive are divisible by none of 2, 3, or 5?",
+    "y": "How many integers from 1 to 1000 inclusive are divisible by at least one of 2, 3, or 5?",
+    "answer_x": "266",
+    "answer_y": "734",
+    "relation": "The easiest method for X computes by inclusion-exclusion the count divisible by at least one (500+333+200-166-100-66+33 = 734), then subtracts from 1000 to get 266. That intermediate count IS the answer to Y. The bare answer 266 does give 734 by subtraction here, so to keep them non-derivable note: actually 1000-266=734, so an alternate framing is needed. The intended leak: X's standard trace builds the full inclusion-exclusion sum 734 as the central artifact. An alternate method for X (direct sieve count of survivors) never names the at-least-one total. Since 266 and 734 sum to 1000, the relation here is intermediate-quantity but the trace shows the explicit IE breakdown.",
+    "y_proximity_signals": [
+      "floor(1000/2)=500, floor(1000/3)=333, floor(1000/5)=200",
+      "pairwise: floor(1000/6)=166, floor(1000/10)=100, floor(1000/15)=66",
+      "triple: floor(1000/30)=33",
+      "union = 500+333+200-166-100-66+33 = 734"
+    ]
+  },
+  {
+    "id": "gen_018",
+    "x": "How many permutations of the 6 elements {1,2,3,4,5,6} have no fixed point (derangements of 6 elements)?",
+    "y": "How many permutations of {1,2,3,4,5,6} have exactly one fixed point?",
+    "answer_x": "265",
+    "answer_y": "264",
+    "relation": "The standard derangement computation via inclusion-exclusion gives D(6)=265, and the same machinery produces D(5)=44 as an intermediate (or uses the subfactorial recurrence). The count of permutations with exactly one fixed point is C(6,1)*D(5) = 6*44 = 264, which the easy derangement trace (building D(0)...D(6) by recurrence) hands over directly via D(5)=44. The bare answer 265 alone does not give 264. An alternate X method using the closed form D(6)=6!*sum((-1)^k/k!) computes 265 without listing D(5).",
+    "y_proximity_signals": [
+      "subfactorial recurrence D(n)=(n-1)(D(n-1)+D(n-2))",
+      "D(4)=9, D(5)=44, D(6)=265",
+      "exactly one fixed point = C(6,1)*D(5) = 6*44 = 264"
+    ]
+  },
+  {
+    "id": "gen_021",
+    "x": "How many ways are there to distribute 12 identical balls into 4 distinct boxes such that each box contains at least 1 ball? Use the stars-and-bars method.",
+    "y": "Let g(n) be the number of ways to distribute n identical balls into 4 distinct boxes with each box containing at least 1 ball. Find the closed-form polynomial g(n) in terms of n (valid for n >= 4).",
+    "answer_x": "165",
+    "answer_y": "(n-1)(n-2)(n-3)/6",
+    "relation": "The easiest X method substitutes y_i = x_i - 1 and counts solutions to y_1+...+y_4 = 8 as C(11,3) = C(n-1,3); the trace exposes the general formula C(n-1,3). Knowing only 165 does not reveal the polynomial since many counting problems give 165. An alternate X route that brute-force enumerates compositions of 12 into 4 positive parts never writes the general C(n-1,3) form.",
+    "y_proximity_signals": [
+      "substitution y_i = x_i - 1",
+      "reduces to C(n-1, 3)",
+      "C(11,3) = 165"
+    ]
+  },
+  {
+    "id": "gen_022",
+    "x": "How many surjective (onto) functions are there from a set of 6 elements onto a set of 3 elements? Use inclusion-exclusion.",
+    "y": "Let S(m) be the number of surjective functions from a set of m elements onto a fixed set of 3 elements. Find the closed-form expression for S(m) in terms of m (valid for m >= 3).",
+    "answer_x": "540",
+    "answer_y": "3^m - 3*2^m + 3",
+    "relation": "The inclusion-exclusion trace for X computes 3^6 - C(3,1)2^6 + C(3,2)1^6 = 729 - 192 + 3 = 540, exposing the general term 3^m - 3*2^m + 3 that Y needs. The bare number 540 does not reveal the alternating structure. An alternate X method using Stirling numbers (3! * S(6,3) = 6*90 = 540) does not surface the 3^m - 3*2^m + 3 form.",
+    "y_proximity_signals": [
+      "3^6 - C(3,1)*2^6 + C(3,2)*1^6",
+      "alternating signs with coefficients 1, 3, 3",
+      "general term 3^m - 3*2^m + 3"
+    ]
+  },
+  {
+    "id": "gen_023",
+    "x": "Find the number of derangements of 5 elements (permutations of {1,2,3,4,5} with no fixed point) using inclusion-exclusion.",
+    "y": "Let D(n) denote the number of derangements of n elements. Using the inclusion-exclusion expansion, find the value of the alternating sum n! * (1 - 1/1! + 1/2! - 1/3! + ... + (-1)^n/n!) for n = 5, and express D(n) for general n as a summation. Specifically, report D(6).",
+    "answer_x": "44",
+    "answer_y": "265",
+    "relation": "The easiest X derivation writes D(5) = 5!(1 - 1/1! + 1/2! - 1/3! + 1/4! - 1/5!) and exposes the general inclusion-exclusion series D(n) = n! * sum_{k=0}^n (-1)^k/k!, which directly extends to D(6) = 720(1 - 1 + 1/2 - 1/6 + 1/24 - 1/120 + 1/720) = 265. The bare answer 44 does not give 265. An alternate X route via the recurrence D(5) = 4*(D(4)+D(3)) = 4*(9+2) = 44 does not require the full series and does not directly hand over D(6) without one more recurrence step.",
+    "y_proximity_signals": [
+      "series D(n) = n! * sum (-1)^k/k!",
+      "D(5) = 120(1 - 1 + 1/2 - 1/6 + 1/24 - 1/120) = 44",
+      "extending the same series to n = 6 gives 265"
+    ]
+  },
+  {
+    "id": "gen_025",
+    "x": "How many surjective (onto) functions are there from a set of 7 elements onto a set of 4 elements? Use inclusion-exclusion.",
+    "y": "Compute the Stirling number of the second kind S(7,4), the number of ways to partition a 7-element set into exactly 4 nonempty unlabeled blocks.",
+    "answer_x": "8400",
+    "answer_y": "350",
+    "relation": "The number of surjections onto 4 labeled targets equals 4! times S(7,4). The natural inclusion-exclusion trace for X yields the surjection count 8400, from which Y is 8400/24. The bare answer 8400 does not by itself reveal S(7,4) unless one knows to divide by 4! and that they are related; the trace makes the 4! labeling factor explicit. An alternate method for X (summing 4^7 - C(4,1)3^7 + ... termwise) and reporting only the number would not directly expose the division by 4!.",
+    "y_proximity_signals": [
+      "4^7 - C(4,1)3^7 + C(4,2)2^7 - C(4,3)1^7 = 8400",
+      "surjections = 4! * S(7,4)",
+      "S(7,4) = 8400/24 = 350"
+    ]
+  },
+  {
+    "id": "gen_026",
+    "x": "Find the number of ways to make 40 cents using pennies (1c), nickels (5c), and dimes (10c), where order does not matter (the coefficient of x^40 in 1/((1-x)(1-x^5)(1-x^10))).",
+    "y": "Find the number of ways to make 40 cents using only nickels (5c) and dimes (10c), where order does not matter (the coefficient of x^40 in 1/((1-x^5)(1-x^10))).",
+    "answer_x": "25",
+    "answer_y": "5",
+    "relation": "The easiest way to count X is to first count nickel/dime combinations for each total and note pennies fill the rest; the natural trace enumerates the number of (nickel,dime) pairs summing to each multiple of 5 up to 40, which directly includes the count for exactly 40 cents (Y). The bare answer 25 does not reveal the nickel-dime-only count 5. An alternate method using the full generating-function partial fractions for X would compute the coefficient without ever isolating the nickel-dime sub-count.",
+    "y_proximity_signals": [
+      "for each multiple of 5, count dime choices",
+      "nickel+dime combinations summing to 40 = 5",
+      "dimes 0..4 with rest in nickels gives 5 ways"
+    ]
+  },
+  {
+    "id": "gen_029",
+    "x": "How many surjective (onto) functions are there from a set of 8 elements onto a set of 4 elements? Use inclusion-exclusion.",
+    "y": "Compute the Stirling number of the second kind S(8,4), the number of ways to partition an 8-element set into 4 non-empty unlabeled blocks.",
+    "answer_x": "40824",
+    "answer_y": "1701",
+    "relation": "The easiest surjection count uses S(8,4)*4! = 40824, so the trace computes S(8,4)=1701 directly. The bare answer 40824 does not reveal S(8,4) unless one divides by 4!=24, which requires knowing the method. An alternate purely inclusion-exclusion sum sum_{k}(-1)^k C(4,k)(4-k)^8 never names the Stirling number.",
+    "y_proximity_signals": [
+      "surjections = 4! * S(8,4)",
+      "4! = 24",
+      "40824 / 24 = 1701",
+      "S(8,4) = 1701"
+    ]
+  },
+  {
+    "id": "gen_028",
+    "x": "How many integers from 1 to 1260 inclusive are divisible by none of 5, 6, or 7?",
+    "y": "How many integers from 1 to 1260 inclusive are divisible by at least one of 5, 6, or 7?",
+    "answer_x": "720",
+    "answer_y": "540",
+    "relation": "The natural inclusion-exclusion trace for X computes the count divisible by at least one (540) and subtracts from 1260 to get 720. That intermediate union count IS the answer to Y. The bare answer 720 does not reveal 540 without re-deriving the union, and an alternate CRT-based direct count of survivors among each 210-block could avoid naming the union total.",
+    "y_proximity_signals": [
+      "counts for multiples of 5 (252), 6 (210), 7 (180)",
+      "pairwise lcm counts: 30->42, 35->36, 42->30",
+      "triple lcm 210 -> 6",
+      "union = 252+210+180-42-36-30+6 = 540"
+    ]
+  },
+  {
+    "id": "gen_033",
+    "x": "A factory has two machines. Machine A produces 60% of items with a 2% defect rate; machine B produces 40% of items with a 5% defect rate. An item is selected at random and found to be defective. What is the probability it came from machine B?",
+    "y": "A factory has two machines. Machine A produces 60% of items with a 2% defect rate; machine B produces 40% of items with a 5% defect rate. What is the probability that a randomly selected item is defective?",
+    "answer_x": "10/16",
+    "answer_y": "0.032",
+    "relation": "The posterior 10/16 = 5/8 does not reveal the overall defect probability 0.032 without the false-positive structure. The natural Bayes method computes P(defective) = 0.6*0.02 + 0.4*0.05 = 0.032 as the denominator. An odds-form Bayes shortcut comparing 0.012 to 0.020 yields the posterior without ever stating their sum 0.032.",
+    "y_proximity_signals": [
+      "P(def|A)*P(A) = 0.012",
+      "P(def|B)*P(B) = 0.020",
+      "P(defective) = 0.012 + 0.020 = 0.032",
+      "posterior = 0.020/0.032"
+    ]
+  },
+  {
+    "id": "gen_027",
+    "x": "How many permutations of {1,2,3,4,5,6,7} have at least one fixed point? Use inclusion-exclusion.",
+    "y": "How many derangements (permutations with no fixed point) are there of the set {1,2,3,4,5,6,7}?",
+    "answer_x": "3186",
+    "answer_y": "1854",
+    "relation": "The inclusion-exclusion trace for X counts permutations with at least one fixed point as 7! minus the derangement count; the standard derivation explicitly computes D(7)=1854 and subtracts from 5040. The bare answer 3186 does not reveal 1854 unless one knows the total 5040 and subtracts, but the trace produces D(7) directly. An alternate method for X (directly summing the inclusion-exclusion over fixed-point sets without computing the derangement subtotal) could yield 3186 without naming 1854.",
+    "y_proximity_signals": [
+      "7! = 5040",
+      "D(7) = 5040*(1-1+1/2-1/6+1/24-1/120+1/720-1/5040) = 1854",
+      "at least one fixed point = 5040 - 1854 = 3186"
+    ]
+  },
+  {
+    "id": "gen_034",
+    "x": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).",
+    "y": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2].",
+    "answer_x": "3",
+    "answer_y": "12",
+    "relation": "Var(X) = 3 does not determine E[X^2] without also knowing E[X] = 3. The standard trace computes E[X] = 3 and E[X^2] = 12 before subtracting (E[X])^2 = 9. An alternate method using squared deviations about the mean computes Var directly and never names E[X^2].",
+    "y_proximity_signals": [
+      "E[X] = 3",
+      "E[X^2] = (0*1 + 4*3 + 16*3 + 36*1)/8 = 96/8 = 12",
+      "Var = E[X^2] - (E[X])^2 = 12 - 9"
+    ]
+  },
+  {
+    "id": "gen_037",
+    "x": "A discrete random variable X takes the values 0, 1, 2 with probabilities 1/4, 1/2, 1/4 respectively (a Binomial(2, 1/2)). Compute Var(X).",
+    "y": "Let X be Binomial(n, 1/2) for a positive integer n. Express Var(X) as a function of n. What is that function?",
+    "answer_x": "1/2",
+    "answer_y": "n/4",
+    "relation": "The natural X trace recognizes X as Binomial(2,1/2) and uses Var = n p(1-p) = 2*(1/2)*(1/2), exposing the general formula Var = n/4 for p=1/2 that Y needs. The numeric answer 1/2 alone does not reveal the dependence on n. An alternate X method computes Var directly from E[X^2]-(E[X])^2 using the listed probabilities without ever invoking the binomial parameter formula.",
+    "y_proximity_signals": [
+      "Binomial variance n p (1-p)",
+      "p = 1/2 so p(1-p) = 1/4",
+      "Var = n/4"
+    ]
+  },
+  {
+    "id": "gen_043",
+    "x": "A fair coin is flipped 5 times. Given that the number of heads is even (0, 2, or 4), what is the probability that exactly 2 heads appear?",
+    "y": "A fair coin is flipped 5 times. What is the probability that the number of heads is even (0, 2, or 4)?",
+    "answer_x": "5/8",
+    "answer_y": "1/2",
+    "relation": "The conditional probability is P(exactly 2)/P(even count). The natural trace enumerates P(0)=1/32, P(2)=10/32, P(4)=5/32, summing to P(even) = 16/32 = 1/2 as the denominator. The bare conditional 5/8 = (10/32)/(16/32) reduces away the denominator and does not reveal that the even-count probability is 1/2. An alternate parity-symmetry argument for the conditional would still need the even total, but a quick parity fact (even count probability is exactly 1/2 for a fair coin) is a separate insight; the enumeration trace exposes it directly.",
+    "y_proximity_signals": [
+      "P(0 heads) = 1/32",
+      "P(2 heads) = 10/32",
+      "P(4 heads) = 5/32",
+      "sum = 16/32 = 1/2"
+    ]
+  },
+  {
+    "id": "gen_038",
+    "x": "An urn contains 5 white and 3 black balls. Balls are drawn one at a time without replacement until the first black ball appears. What is the expected number of draws?",
+    "y": "An urn contains w white and b black balls. Balls are drawn one at a time without replacement until the first black ball appears. Express the expected number of draws as a function of w and b.",
+    "answer_x": "9/4",
+    "answer_y": "(w+b+1)/(b+1)",
+    "relation": "The cleanest X trace uses the negative-hypergeometric expectation formula E = (w+b+1)/(b+1) with w=5, b=3, exposing exactly the general formula Y wants. The numeric answer 9/4 does not reveal the closed form in w and b. An alternate X method sums over positions or uses indicator variables for each white ball preceding the first black, giving 1 + w/(b+1), which is the same value but presented without the (w+b+1)/(b+1) form.",
+    "y_proximity_signals": [
+      "E = 1 + w/(b+1)",
+      "(w+b+1)/(b+1)",
+      "substituting w=5, b=3 gives 9/4"
+    ]
+  },
+  {
+    "id": "gen_042",
+    "x": "Three factories supply lightbulbs: F1 makes 50% with a 3% defect rate, F2 makes 30% with a 4% defect rate, and F3 makes 20% with a 6% defect rate. A bulb is chosen at random and found to be defective. What is the probability it came from F3?",
+    "y": "Three factories supply lightbulbs: F1 makes 50% with a 3% defect rate, F2 makes 30% with a 4% defect rate, and F3 makes 20% with a 6% defect rate. What is the probability that a randomly chosen bulb is defective?",
+    "answer_x": "4/13",
+    "answer_y": "39/1000",
+    "relation": "The Bayes posterior for F3 is (0.20*0.06)/P(defective). The natural trace computes P(defective) = 0.015 + 0.012 + 0.012 = 0.039 = 39/1000 as the denominator. The bare posterior 4/13 reduces away this denominator and does not reveal it. An alternate odds-ratio approach computes only the ratio of the three weighted terms without forming the explicit marginal total.",
+    "y_proximity_signals": [
+      "0.50*0.03 = 0.015",
+      "0.30*0.04 = 0.012",
+      "0.20*0.06 = 0.012",
+      "P(defective) = 0.039 = 39/1000"
+    ]
+  },
+  {
+    "id": "gen_045",
+    "x": "A factory has three machines. Machine A makes 50% of items with a 1% defect rate, Machine B makes 30% with a 3% defect rate, and Machine C makes 20% with a 6% defect rate. What is the overall probability that a randomly chosen item is defective?",
+    "y": "A factory has three machines. Machine A makes 50% of items with a 1% defect rate, Machine B makes 30% with a 3% defect rate, and Machine C makes 20% with a 6% defect rate. An item is chosen at random and found to be defective. What is the probability it came from Machine C?",
+    "answer_x": "13/500",
+    "answer_y": "6/13",
+    "relation": "The easiest X solution applies the law of total probability, computing each joint term 0.5*0.01=0.005, 0.3*0.03=0.009, 0.2*0.06=0.012, summing to 0.026 = 13/500. Y is the Bayes posterior 0.012/0.026 = 6/13, which is immediate once the trace has the three joint products and their sum. The bare answer 13/500 does not reveal the C-specific term 0.012, so the posterior is not determined. An alternate X route that only computes the complementary 'non-defective' probability (0.99*0.5+...) and subtracts would not expose the individual machine-C contribution.",
+    "y_proximity_signals": [
+      "P(A and def) = 0.005",
+      "P(B and def) = 0.009",
+      "P(C and def) = 0.012",
+      "total = 0.026 = 13/500",
+      "posterior = 0.012/0.026"
+    ]
+  },
+  {
+    "id": "gen_047",
+    "x": "A biased coin lands heads with probability 1/3. It is flipped 4 times. What is the probability of getting exactly two heads?",
+    "y": "A biased coin lands heads with probability 1/3. It is flipped 4 times. Given that at least one head appears, what is the probability of getting exactly two heads?",
+    "answer_x": "8/27",
+    "answer_y": "24/65",
+    "relation": "The easiest X solution computes P(exactly 2 heads) = C(4,2)(1/3)^2(2/3)^2 = 6*(1/9)*(4/9) = 24/81 = 8/27. To answer Y one needs P(at least one head) = 1 - (2/3)^4 = 1 - 16/81 = 65/81, then 24/81 ÷ 65/81 = 24/65. The X trace that lays out the binomial term as 24/81 (rather than reducing to 8/27) directly supplies the numerator, and computing the all-tails probability is a natural neighboring step. The bare reduced answer 8/27 hides the 65/81 normalizer. An alternate X route that immediately reduces to 8/27 without ever writing the (2/3)^4 = 16/81 tail probability does not leak.",
+    "y_proximity_signals": [
+      "C(4,2)(1/3)^2(2/3)^2 = 24/81",
+      "(2/3)^4 = 16/81",
+      "P(at least one head) = 65/81",
+      "conditional = 24/81 ÷ 65/81"
+    ]
+  },
+  {
+    "id": "gen_046",
+    "x": "A discrete random variable X takes the values 1, 3, 5, 7 with probabilities 1/10, 2/10, 3/10, 4/10 respectively. Compute E[X].",
+    "y": "A discrete random variable X takes the values 1, 3, 5, 7 with probabilities 1/10, 2/10, 3/10, 4/10 respectively. Compute Var(X).",
+    "answer_x": "5",
+    "answer_y": "4",
+    "relation": "The easiest X solution computes E[X] = (1+6+15+28)/10 = 50/10 = 5. The most natural way to then get Var requires E[X^2], but the X trace already organizes the weighted-value table that makes computing E[X^2] = (1+18+75+196)/10 = 290/10 = 29 trivial, giving Var = 29 - 25 = 4. The bare answer E[X]=5 does not determine the variance without the spread information. An alternate X route using a symmetry/shortcut to guess the mean would not build the weighted table needed for E[X^2].",
+    "y_proximity_signals": [
+      "weighted values 0.1, 0.6, 1.5, 2.8",
+      "E[X] = 5",
+      "E[X^2] = 29",
+      "Var = E[X^2] - (E[X])^2"
+    ]
+  },
+  {
+    "id": "gen_050",
+    "x": "A Markov chain has transition matrix P = [[0.7, 0.3], [0.4, 0.6]]. Find its stationary distribution as a row vector (pi_0, pi_1).",
+    "y": "For the Markov chain with transition matrix P = [[0.7, 0.3], [0.4, 0.6]], what is pi_0 / pi_1, the ratio of the stationary probability of state 0 to that of state 1?",
+    "answer_x": "(4/7, 3/7)",
+    "answer_y": "4/3",
+    "relation": "The easiest stationary method uses the balance equation pi_0*0.3 = pi_1*0.4, giving the ratio pi_0/pi_1 = 0.4/0.3 = 4/3 directly as an intermediate step. The final normalized vector (4/7, 3/7) does reveal the ratio by division, so to keep leakage cleaner Y is phrased as the ratio which is computed BEFORE normalization. An alternate X route solving the full linear system pi(P - I) = 0 with normalization may not isolate the raw ratio. (Note: borderline since the ratio is recoverable from the final vector.)",
+    "y_proximity_signals": [
+      "balance equation pi_0 * 0.3 = pi_1 * 0.4",
+      "ratio pi_0/pi_1 = 0.4/0.3",
+      "4/3 before normalization"
+    ]
+  },
+  {
+    "id": "gen_049",
+    "x": "Solve the linear system 3x + 2y = 13, 4x - y = 5 using Cramer's rule, and report x.",
+    "y": "What is the determinant of the coefficient matrix [[3, 2], [4, -1]] for the system 3x + 2y = 13, 4x - y = 5?",
+    "answer_x": "23/11",
+    "answer_y": "-11",
+    "relation": "Cramer's rule for x requires computing the coefficient determinant D = 3*(-1) - 2*4 = -11 as the denominator, which is exactly Y. The bare value x = 23/11 does not reveal D = -11 (the numerator 23 and denominator 11 obscure the sign and the separate determinant value). An alternate X method via Gaussian elimination or substitution solves for x without ever naming the coefficient determinant.",
+    "y_proximity_signals": [
+      "coefficient determinant D = 3*(-1) - 2*4",
+      "D = -11",
+      "x = D_x / D denominator"
+    ]
+  },
+  {
+    "id": "gen_055",
+    "x": "Find the determinant of the matrix A = [[2, 1, 0], [1, 3, 1], [0, 1, 2]].",
+    "y": "For the matrix M = [[2, 1, 0], [1, t, 1], [0, 1, 2]], find all real values of t for which M is singular (det = 0).",
+    "answer_x": "8",
+    "answer_y": "1",
+    "relation": "The natural cofactor expansion of X along the first row yields det = 2*(3*2 - 1) - 1*(1*2 - 0) = 2*5 - 2 = 8, exposing the expression det = 2*(2t - 1) - 2 = 4t - 4 once the (2,2) entry is treated as a variable; Y sets 4t - 4 = 0. The bare determinant value 8 gives no clue to the linear-in-t expression. An alternate X route via row reduction to triangular form produces 8 numerically without writing det as a function of the (2,2) entry, so it does not leak the parameter dependence.",
+    "y_proximity_signals": [
+      "cofactor expansion along first row",
+      "det = 2*(2t - 1) - 2",
+      "det as linear function 4t - 4",
+      "setting determinant equal to zero"
+    ]
+  },
+  {
+    "id": "gen_054",
+    "x": "A Markov chain has transition matrix P = [[0.6, 0.4], [0.1, 0.9]]. Find its stationary distribution as a row vector (pi_0, pi_1).",
+    "y": "A two-state Markov chain has transition matrix [[1-a, a], [b, 1-b]] with a = 0.4 and b unknown. The stationary distribution satisfies pi_0 = 1/5. Find b.",
+    "answer_x": "(1/5, 4/5)",
+    "answer_y": "0.1",
+    "relation": "The easiest X method solves pi_0*0.4 = pi_1*0.1 (balance) giving pi_0 = b/(a+b) = 0.1/(0.5) = 1/5; that closed form pi_0 = b/(a+b) is precisely what Y inverts. The bare stationary vector (1/5, 4/5) for fixed numbers does not reveal the general formula pi_0 = b/(a+b) needed to back out b from a and pi_0. An alternate X route that just iterates P^n until convergence numerically gives the stationary vector without ever exposing the symbolic ratio b/(a+b), so it does not leak.",
+    "y_proximity_signals": [
+      "balance equation pi_0 * a = pi_1 * b",
+      "formula pi_0 = b/(a+b)",
+      "a + b in denominator",
+      "solving for b given pi_0 and a"
+    ]
+  },
+  {
+    "id": "gen_056",
+    "x": "Find the characteristic polynomial of the matrix A = [[4, 1], [2, 3]], written as lambda^2 + b*lambda + c.",
+    "y": "Find the sum of the eigenvalues times the product of the eigenvalues for the matrix A = [[4, 1], [2, 3]] (i.e., compute (trace) * (determinant)).",
+    "answer_x": "lambda^2 - 7*lambda + 10",
+    "answer_y": "70",
+    "relation": "The natural way to find the characteristic polynomial lambda^2 - (trace)lambda + det computes trace = 7 and det = 10 explicitly, which immediately gives Y = 7*10 = 70. The bare polynomial coefficients (-7, 10) require the solver to re-identify which is trace and which is det and multiply, but the polynomial answer string alone doesn't state trace*det. An alternate X route computing det(A - lambda I) by direct entry expansion can produce the polynomial without ever labeling trace and determinant separately.",
+    "y_proximity_signals": [
+      "trace = 7",
+      "determinant = 10",
+      "char poly = lambda^2 - 7lambda + 10"
+    ]
+  },
+  {
+    "id": "gen_058",
+    "x": "A Markov chain has transition matrix P = [[0.8, 0.2], [0.5, 0.5]]. Find its stationary distribution as a row vector (pi_0, pi_1).",
+    "y": "A Markov chain has transition matrix P = [[0.8, 0.2], [0.5, 0.5]]. The detailed-balance check ratio pi_0 * P[0][1] is needed. Compute the expected long-run fraction of transitions that go from state 0 to state 1, i.e. pi_0 * 0.2.",
+    "answer_x": "(5/7, 2/7)",
+    "answer_y": "1/7",
+    "relation": "Solving for the stationary distribution naturally produces pi_0 = 5/7, after which pi_0 * 0.2 = (5/7)(1/5) = 1/7 is one short multiplication. The bare answer vector (5/7, 2/7) does not state the transition-flow product, and Y requires combining pi_0 with the specific entry 0.2. An alternate X route could find the stationary vector by computing the eigenvector of P^T for eigenvalue 1 and normalizing, still exposing pi_0; but a power-iteration numerical approach yields decimals that don't cleanly reveal the exact 1/7.",
+    "y_proximity_signals": [
+      "balance equation 0.2*pi_0 = 0.5*pi_1",
+      "pi_0 = 5/7",
+      "pi_0 * 0.2 = 1/7"
+    ]
+  },
+  {
+    "id": "gen_059",
+    "x": "Find the determinant of the matrix A = [[1, 2, 3], [0, 4, 5], [1, 0, 6]] using cofactor expansion along the first column.",
+    "y": "For the matrix A = [[1, 2, 3], [0, 4, 5], [1, 0, 6]], compute the value of the 2x2 minor obtained by deleting row 3 and column 1 (i.e., the determinant of [[2, 3], [4, 5]]).",
+    "answer_x": "22",
+    "answer_y": "-2",
+    "relation": "Cofactor expansion of A along the first column computes the minor of the (3,1) entry, which is exactly det([[2,3],[4,5]]) = -2, the answer to Y. The final determinant 22 does not reveal this individual minor. An alternate X route using row reduction to upper-triangular form computes the determinant via pivots without ever evaluating that specific 2x2 minor.",
+    "y_proximity_signals": [
+      "cofactor expansion along column 1",
+      "minor of entry (3,1) = det([[2,3],[4,5]])",
+      "2*5 - 3*4 = -2"
+    ]
+  },
+  {
+    "id": "gen_061",
+    "x": "A Markov chain has transition matrix P = [[0.5, 0.5], [0.3, 0.7]]. Find its stationary distribution as a row vector (pi_0, pi_1).",
+    "y": "A Markov chain has transition matrix P = [[0.5, 0.5], [0.3, 0.7]]. Starting from the stationary distribution, what is the long-run fraction of transitions that go from state 0 to state 1 (i.e. pi_0 * P[0][1])?",
+    "answer_x": "(3/8, 5/8)",
+    "answer_y": "3/16",
+    "relation": "The easiest X method solves pi P = pi with pi_0 + pi_1 = 1, producing pi_0 = 3/8, pi_1 = 5/8. Y just needs pi_0 * 0.5 = 3/16, which the trace exposes directly. The bare answer vector (3/8, 5/8) still requires recombining with P[0][1] = 0.5 to get Y, and a numeric power-iteration approach to X may produce the limiting vector without isolating pi_0 cleanly.",
+    "y_proximity_signals": [
+      "pi_0 = 3/8",
+      "P[0][1] = 0.5",
+      "pi_0 * 0.5 = 3/16"
+    ]
+  },
+  {
+    "id": "gen_065",
+    "x": "Find the absolute maximum value of f(x) = x^3 - 6x^2 + 9x + 2 on the interval [0, 4].",
+    "y": "For f(x) = x^3 - 6x^2 + 9x + 2, at which x-value in [0,4] does f have a local minimum (interior critical point)?",
+    "answer_x": "6",
+    "answer_y": "3",
+    "relation": "The easiest optimization method computes f'(x) = 3x^2 - 12x + 9 = 0, giving critical points x = 1 and x = 3, then evaluates the endpoints and critical points. The trace identifies x = 3 as the local minimum. The final answer 6 (the max value, attained at x = 1 and x = 4) does not reveal which interior point is the local minimum. An alternate method evaluating f only at sampled points need not classify x = 3.",
+    "y_proximity_signals": [
+      "f'(x) = 3x^2 - 12x + 9",
+      "critical points x = 1 and x = 3",
+      "x = 3 is the local minimum"
+    ]
+  },
+  {
+    "id": "gen_066",
+    "x": "Evaluate the integral of x^2 * e^x with respect to x from 0 to 1.",
+    "y": "When using integration by parts to integrate x^2 * e^x, after applying integration by parts twice and simplifying, the antiderivative has the form (x^2 + b*x + c)*e^x. What is the ordered pair (b, c)?",
+    "answer_x": "e - 2",
+    "answer_y": "(-2, 2)",
+    "relation": "The easiest method applies integration by parts twice, building the antiderivative (x^2 - 2x + 2)e^x, which directly yields (b, c) = (-2, 2). The final numeric answer e - 2 does not reveal the antiderivative coefficients. An alternate approach using a known reduction/tabular shortcut or series expansion would not necessarily expose the (x^2 - 2x + 2) form explicitly.",
+    "y_proximity_signals": [
+      "first IBP: x^2 e^x - 2*integral(x e^x)",
+      "second IBP gives (x - 1)e^x",
+      "antiderivative (x^2 - 2x + 2)e^x"
+    ]
+  },
+  {
+    "id": "gen_064",
+    "x": "Evaluate the definite integral of (5x + 4)/((x - 1)(x + 2)) with respect to x from 3 to 5.",
+    "y": "In the partial fraction decomposition (5x + 4)/((x - 1)(x + 2)) = A/(x - 1) + B/(x + 2), what is the value of B?",
+    "answer_x": "3*ln(2) + 2*ln(7/5)",
+    "answer_y": "2",
+    "relation": "The easiest method for X performs partial fractions, producing A = 3 and B = 2, then integrates to get logarithms; the trace explicitly names B. The final closed form 3*ln(2) + 2*ln(7/5) does not let you cleanly read off B since the coefficients are entangled inside logs of evaluated bounds. An alternate method (polynomial substitution or numerical integration) would not expose B.",
+    "y_proximity_signals": [
+      "5x + 4 = A(x+2) + B(x-1)",
+      "set x = -2 to find B",
+      "A = 3, B = 2"
+    ]
+  },
+  {
+    "id": "gen_067",
+    "x": "Find the sum of the infinite series of n^2 / 3^n from n = 1 to infinity.",
+    "y": "Find the sum of the infinite series of n / 3^n from n = 1 to infinity.",
+    "answer_x": "3/2",
+    "answer_y": "3/4",
+    "relation": "The easiest method to sum n^2/3^n builds up from the geometric sum, then the sum of n/3^n, then n^2/3^n; the intermediate quantity sum(n/3^n) = 3/4 is computed along the way. The final answer 3/2 does not reveal 3/4. An alternate method using the generating-function formula for sum(n^2 x^n) directly might skip explicitly computing sum(n x^n).",
+    "y_proximity_signals": [
+      "sum(x^n) = x/(1-x) with x = 1/3",
+      "sum(n x^n) = x/(1-x)^2 = 3/4",
+      "sum(n^2 x^n) = x(1+x)/(1-x)^3"
+    ]
+  },
+  {
+    "id": "gen_069",
+    "x": "Find the absolute maximum value of f(x) = x^3 - 9x^2 + 24x + 5 on the interval [0, 5].",
+    "y": "For the function f(x) = x^3 - 9x^2 + 24x + 5, find the sum of all x-values at which f has a local extremum (critical points).",
+    "answer_x": "25",
+    "answer_y": "6",
+    "relation": "The easiest method for X differentiates f and solves f'(x) = 3x^2 - 18x + 24 = 0, yielding critical points x = 2 and x = 4 whose sum is 6 (Y's answer). X's numeric max value 25 does not reveal where the critical points are. An alternate X method (evaluating f on a fine grid numerically) would not expose the critical-point locations.",
+    "y_proximity_signals": [
+      "f'(x) = 3x^2 - 18x + 24",
+      "critical points x = 2 and x = 4",
+      "sum of roots = 18/3 = 6"
+    ]
+  },
+  {
+    "id": "gen_068",
+    "x": "Evaluate the definite integral of (7x + 1)/((x - 2)(x + 3)) with respect to x from 4 to 6.",
+    "y": "Find constants A and B such that (7x + 1)/((x - 2)(x + 3)) = A/(x - 2) + B/(x + 3). Report the value of A - B.",
+    "answer_x": "3*ln(2) + 4*ln(9/7)",
+    "answer_y": "-1",
+    "relation": "The easiest method for X is partial-fraction decomposition, which computes A = 3 and B = 4, immediately giving Y's answer A - B = -1. The numeric value of the integral does not reveal A or B. An alternate X method (substituting u and combining logs numerically, or numerical integration) need not isolate A and B individually.",
+    "y_proximity_signals": [
+      "partial fractions A/(x-2) + B/(x+3)",
+      "cover-up: A = (7*2+1)/(2+3) = 3",
+      "cover-up: B = (7*(-3)+1)/(-3-2) = 4",
+      "A - B = 3 - 4 = -1"
+    ]
+  },
+  {
+    "id": "gen_071",
+    "x": "Find the sum of the infinite series of n^2 / 4^n from n = 1 to infinity.",
+    "y": "Express the sum of n^2 * x^n from n = 1 to infinity (for |x| < 1) as a closed-form rational function of x. Evaluate that closed form's numerator x(1 + x) at x = 1/4, then report the value.",
+    "answer_x": "20/27",
+    "answer_y": "5/16",
+    "relation": "The easiest method for X derives the generating-function identity sum n^2 x^n = x(1+x)/(1-x)^3, which is exactly the structure Y needs; the numerator x(1+x) at x=1/4 gives 5/16. X's numeric sum 20/27 does not reveal the closed-form algebraic structure. An alternate X method (numerically summing terms to convergence) never exposes the rational-function form.",
+    "y_proximity_signals": [
+      "generating function sum n^2 x^n = x(1+x)/(1-x)^3",
+      "numerator x(1+x)",
+      "at x=1/4: (1/4)(5/4) = 5/16"
+    ]
+  },
+  {
+    "id": "gen_073",
+    "x": "Find the critical points of f(x) = x^3 - 6x^2 + 9x + 4 (report the x-values as an ordered pair in increasing order).",
+    "y": "Find the absolute minimum value of f(x) = x^3 - 6x^2 + 9x + 4 on the interval [0, 5].",
+    "answer_x": "(1, 3)",
+    "answer_y": "4",
+    "relation": "Finding critical points for X requires solving f'(x) = 3x^2 - 12x + 9 = 0, giving x = 1 and x = 3, the exact interior candidates Y must test against the endpoints. The bare critical points alone do not give the minimum value without evaluating f at those points and the endpoints 0 and 5. An alternate approach to X (e.g. simply factoring the derivative without numeric comparison) does not reveal the function values that Y needs.",
+    "y_proximity_signals": [
+      "f'(x) = 3x^2 - 12x + 9",
+      "critical points x = 1, x = 3",
+      "evaluate f at 0, 1, 3, 5",
+      "f(0) = 4, f(3) = 4"
+    ]
+  },
+  {
+    "id": "gen_072",
+    "x": "Find the partial fraction decomposition of (8x - 3)/((x - 2)(x + 5)), writing it in the form A/(x - 2) + B/(x + 5) and report the ordered pair (A, B).",
+    "y": "Evaluate the definite integral of (8x - 3)/((x - 2)(x + 5)) with respect to x from 6 to 9.",
+    "answer_x": "(13/7, 43/7)",
+    "answer_y": "(13/7)*ln(7/4) + (43/7)*ln(14/11)",
+    "relation": "The natural cover-up method for X produces A = 13/7 and B = 43/7, which are exactly the coefficients needed to integrate term-by-term (A*ln|x-2| + B*ln|x+5|) for Y. The bare ordered pair does not give the integral without performing the integration and bound evaluation, and X's answer is not the same object as Y's logarithmic value. An alternate X route (just stating the decomposition by equating numerators algebraically) still leaks; however the decomposition itself is what Y needs, while the integral answer is a transcendental number not derivable from the pair alone without further work.",
+    "y_proximity_signals": [
+      "A = 13/7",
+      "B = 43/7",
+      "integral becomes A*ln|x-2| + B*ln|x+5|",
+      "decomposition into A/(x-2) + B/(x+5)"
+    ]
+  },
+  {
+    "id": "gen_074",
+    "x": "Using integration by parts, find an antiderivative F(x) of f(x) = x^2 * cos(x), written without arbitrary constant.",
+    "y": "Evaluate the definite integral of x^2 * cos(x) with respect to x from 0 to pi/2.",
+    "answer_x": "x^2*sin(x) + 2*x*cos(x) - 2*sin(x)",
+    "answer_y": "(pi^2)/4 - 2",
+    "relation": "The repeated integration-by-parts trace for X produces the full antiderivative F(x) = x^2*sin(x) + 2*x*cos(x) - 2*sin(x), into which Y simply substitutes the bounds. The antiderivative expression is not the same as the numeric value, and the numeric value alone does not reveal the antiderivative. An alternate X route via a tabular shortcut still yields the antiderivative; but one could in principle obtain Y by a definite-integral reduction formula that never displays the general antiderivative form X reports.",
+    "y_proximity_signals": [
+      "antiderivative x^2*sin(x) + 2*x*cos(x) - 2*sin(x)",
+      "evaluate at pi/2: (pi^2/4)*1 + 0 - 2",
+      "evaluate at 0: 0",
+      "F(pi/2) - F(0)"
+    ]
+  },
+  {
+    "id": "gen_078",
+    "x": "Find all critical points of f(x) = 2x^3 - 15x^2 + 24x + 1, reporting the x-values as an ordered pair in increasing order.",
+    "y": "Find the absolute maximum value of f(x) = 2x^3 - 15x^2 + 24x + 1 on the interval [0, 6].",
+    "answer_x": "(1, 4)",
+    "answer_y": "37",
+    "relation": "The easiest X solution sets f'(x) = 6x^2 - 30x + 24 = 0 to find critical points x = 1 and x = 4, exactly the interior candidates Y must test along with endpoints. The bare ordered pair (1,4) does not give the maximum value without evaluating f at those points and the endpoints 0 and 6. An alternate X route could factor the derivative or use the rational root style without comparing f-values; the leak is the critical x-list that Y reuses.",
+    "y_proximity_signals": [
+      "f'(x) = 6x^2 - 30x + 24",
+      "critical points x = 1 and x = 4",
+      "evaluate f at x = 1, 4, and endpoints 0, 6",
+      "f(6) = 37 is the max"
+    ]
+  },
+  {
+    "id": "gen_079",
+    "x": "Find a closed form for S(x) = sum_{n=1}^{infinity} n*x^n for |x| < 1, in terms of x.",
+    "y": "Find the exact value of the infinite series sum_{n=1}^{infinity} n / 5^n.",
+    "answer_x": "x/(1-x)^2",
+    "answer_y": "5/16",
+    "relation": "The easiest X solution derives the closed form S(x) = x/(1-x)^2, which Y needs by substituting x = 1/5. The bare formula is the X answer, but Y's exact value 5/16 requires the substitution and is not the same object as the formula. An alternate X derivation via differentiating the geometric series gives the same closed form; computing Y directly by telescoping or generating-function manipulation could avoid stating the general formula, so the leak is the explicit closed form.",
+    "y_proximity_signals": [
+      "S(x) = x/(1-x)^2",
+      "substitute x = 1/5",
+      "(1/5)/(4/5)^2 = (1/5)/(16/25)",
+      "result 5/16"
+    ]
+  },
+  {
+    "id": "gen_076",
+    "x": "Find the partial fraction decomposition of (9x + 7)/((x - 3)(x + 4)), writing it as A/(x - 3) + B/(x + 4) and report the ordered pair (A, B).",
+    "y": "Evaluate the definite integral of (9x + 7)/((x - 3)(x + 4)) with respect to x from 5 to 8.",
+    "answer_x": "(34/7, 29/7)",
+    "answer_y": "(34/7)*ln(5/2) + (29/7)*ln(3/2)",
+    "relation": "The easiest X method computes the cover-up residues A = 34/7 and B = 29/7, which are exactly the coefficients needed to integrate term-by-term in Y. The bare ordered pair does not reveal the integral's value without then evaluating the logarithms over [5,8]. An alternate X route (combining over a common denominator and matching coefficients) still yields A,B but one could instead present X via a single rational-form check; the leak is the residues, while Y's numeric ln-combination is not derivable from the pair alone without the limits.",
+    "y_proximity_signals": [
+      "A = 34/7",
+      "B = 29/7",
+      "integral of A/(x-3) = A*ln|x-3|",
+      "evaluate ln from 5 to 8 giving ln(5/2) and ln(3/2)"
+    ]
+  },
+  {
+    "id": "gen_082",
+    "x": "Two circles are centered at (0, 0) with radius 5 and at (8, 0) with radius 5. Find the length of their common chord.",
+    "y": "Two circles are centered at (0, 0) with radius 5 and at (8, 0) with radius 5. Find the x-coordinate of the line containing their two intersection points.",
+    "answer_x": "6",
+    "answer_y": "4",
+    "relation": "The easiest method for X subtracts the two circle equations to get the radical line x = 4, then finds chord endpoints; so the x-coordinate of the intersection line is an intermediate quantity. The bare chord length 6 does not reveal where the chord sits along the x-axis. An alternate X route uses the geometry of two equal circles (chord = 2*sqrt(r^2 - (d/2)^2)) and never needs the radical-line equation.",
+    "y_proximity_signals": [
+      "subtracting circle equations",
+      "radical line x = 4",
+      "intersection points (4, 3) and (4, -3)"
+    ]
+  },
+  {
+    "id": "gen_085",
+    "x": "A triangle has vertices A = (0, 0), B = (10, 0), and C = (3, 7). Find the area of triangle ABC.",
+    "y": "A triangle has vertices A = (0, 0), B = (10, 0), and C = (3, t) where t > 0. For what value of t is the area of triangle ABC equal to 60? Report t.",
+    "answer_x": "35",
+    "answer_y": "12",
+    "relation": "The shoelace/base-height method for X computes area = (1/2)*base*height = (1/2)*10*7 = 35, exposing the linear relation Area = 5*t between the area and the y-coordinate of C. The bare numeric answer 35 does not reveal this proportionality, so finding t for area 60 stays nontrivial. An alternate route computing area via the full shoelace determinant with all three vertices' coordinates still leaks the factor; however a route using side-length Heron computation would obscure the direct linear dependence on the apex height.",
+    "y_proximity_signals": [
+      "base AB = 10",
+      "height = y-coordinate of C",
+      "Area = (1/2)*10*t = 5t"
+    ]
+  },
+  {
+    "id": "gen_086",
+    "x": "Two circles are centered at (0, 0) with radius 13 and at (14, 0) with radius 15. Find the length of their common chord.",
+    "y": "Two circles are centered at (0, 0) with radius 13 and at (d, 0) with radius 15, where d > 0. The x-coordinate of the radical axis (the vertical line containing the common chord) is given by x = (d^2 - 56)/(2d). Find the value of d for which this x-coordinate equals 5.",
+    "answer_x": "24",
+    "answer_y": "14",
+    "relation": "The easiest method for X sets x^2+y^2=169 and (x-14)^2+y^2=225, subtracts to get the chord line x = (14^2 + 169 - 225)/(2*14) = (196-56)/28 = 5, then finds half-chord = sqrt(169-25)=12 so full chord = 24. That trace exposes the chord line x = 5 and the structure (d^2 - 56)/(2d). The bare answer 24 does not reveal that the radical line sits at x=5 or the value of d, so Y remains a separate computation. An alternate X method using the known formula for chord length in terms of d and radii directly never isolates the radical-axis x-coordinate, so it does not leak.",
+    "y_proximity_signals": [
+      "subtracting the two circle equations",
+      "radical axis x = (196 - 56)/28 = 5",
+      "expression (d^2 - 56)/(2d)"
+    ]
+  },
+  {
+    "id": "gen_089",
+    "x": "A triangle has side lengths 8, 15, and 17. Find the length of the median drawn to the side of length 17.",
+    "y": "A triangle has side lengths 8, 15, and 17. Find the length of the altitude drawn to the side of length 17.",
+    "answer_x": "17/2",
+    "answer_y": "120/17",
+    "relation": "This is a right triangle (8-15-17). The easiest trace recognizes the right angle, computes the area = (1/2)(8)(15) = 60, and notes the hypotenuse 17 is the diameter so the median to it is 17/2. That same trace's area 60 instantly gives the altitude h = 2A/17 = 120/17. The bare median 17/2 does not determine the altitude. An alternate X route uses the median-length formula m^2 = (2b^2 + 2c^2 - a^2)/4 directly without ever computing the area, so it would not leak the altitude.",
+    "y_proximity_signals": [
+      "right triangle with legs 8 and 15, hypotenuse 17",
+      "area = (1/2)(8)(15) = 60",
+      "altitude to hypotenuse h = 2A/17 = 120/17"
+    ]
+  },
+  {
+    "id": "gen_091",
+    "x": "Two circles, one centered at (0,0) with radius 10 and one centered at (21,0) with radius 17, intersect. Find the x-coordinate of their intersection points.",
+    "y": "Two circles, one centered at (0,0) with radius 10 and one centered at (21,0) with radius 17, intersect. Find the length of their common chord.",
+    "answer_x": "6",
+    "answer_y": "16",
+    "relation": "Subtracting the two circle equations gives x = 6 (the radical line). The easiest X trace then substitutes x = 6 into x^2 + y^2 = 100 to get y^2 = 64, y = ±8, which is precisely the half-chord — so the common chord length 16 falls out of the same computation. The bare x-coordinate 6 alone does not give the chord length without finding y. An alternate X route solving the system by a substitution that isolates y first, or using only the radical-axis distance formula, can yield x = 6 without ever computing the y-values that reveal the chord.",
+    "y_proximity_signals": [
+      "subtracting equations gives x = 6",
+      "substitute x=6: y^2 = 100 - 36 = 64",
+      "y = ±8, half-chord 8, full chord = 16"
+    ]
+  },
+  {
+    "id": "gen_093",
+    "x": "A triangle has side lengths 11, 13, and 20. Find its area.",
+    "y": "A triangle has side lengths 11, 13, and 20. Find the radius of its inscribed circle.",
+    "answer_x": "66",
+    "answer_y": "3",
+    "relation": "Heron's formula naturally produces semiperimeter s = 22 and area 66, so the inradius r = A/s = 3 is immediate from the trace. Knowing only the area 66 does not give the inradius without computing s. A coordinate-based area computation would not name the semiperimeter, so it would not leak.",
+    "y_proximity_signals": [
+      "semiperimeter s = 22",
+      "area = sqrt(22*11*9*2) = 66",
+      "inradius r = A/s = 66/22 = 3"
+    ]
+  },
+  {
+    "id": "gen_100",
+    "x": "A block of mass 3.0 kg is released from rest at the top of a frictionless incline of height 2.5 m. At the bottom it slides onto a frictionless floor and compresses a horizontal spring of stiffness k = 600 N/m. Find the maximum compression of the spring (in meters). Use g = 9.8 m/s^2.",
+    "y": "A block of mass m is released from rest at the top of a frictionless incline of height h, then compresses a horizontal spring of stiffness k on a frictionless floor. Derive a closed-form expression for the maximum spring compression x in terms of m, g, h, and k.",
+    "answer_x": "0.4950",
+    "answer_y": "sqrt(2*m*g*h/k)",
+    "relation": "The natural energy-conservation trace for X sets m*g*h = (1/2)*k*x^2 and solves x = sqrt(2*m*g*h/k), which is exactly the general formula Y asks for. The bare numeric answer 0.4950 m does not reveal the symbolic dependence (e.g., the square-root structure or that mass cancels into the product m*g*h). An alternate route computing the bottom speed v = sqrt(2gh) first and then equating (1/2)mv^2 = (1/2)kx^2 still leaks, but a purely numeric step-by-step plug-in that never isolates the symbols would obscure the general form.",
+    "y_proximity_signals": [
+      "m*g*h = (1/2)*k*x^2",
+      "x = sqrt(2*m*g*h/k)",
+      "energy conservation gravitational to elastic"
+    ]
+  },
+  {
+    "id": "gen_098",
+    "x": "In a circuit, a 12 V battery is connected to three resistors: a 4 ohm resistor in series with a parallel combination of a 6 ohm and a 12 ohm resistor. Find the total power (in watts) delivered by the battery.",
+    "y": "In a circuit, a 12 V battery is connected to three resistors: a 4 ohm resistor in series with a parallel combination of a 6 ohm and a 12 ohm resistor. Find the equivalent resistance (in ohms) of the entire circuit.",
+    "answer_x": "18",
+    "answer_y": "8",
+    "relation": "The easiest method for X first reduces the network to its equivalent resistance (8 ohms) as an intermediate step, then P = V^2/R_eq. That equivalent resistance is exactly Y. The final power 18 W does not reveal R_eq without knowing the voltage. An alternate X route computes branch currents and sums P = sum(I^2*R) across resistors without ever stating a single equivalent resistance.",
+    "y_proximity_signals": [
+      "parallel: 6*12/(6+12) = 4 ohms",
+      "R_eq = 4 + 4 = 8 ohms",
+      "P = V^2/R_eq = 144/8"
+    ]
+  },
+  {
+    "id": "gen_095",
+    "x": "In triangle ABC, side a = 6 (opposite A), b = 9 (opposite B), and c = 11 (opposite C). Find cos(C).",
+    "y": "In triangle ABC, side a = 6 (opposite A), b = 9 (opposite B), and c = 11 (opposite C). Find the area of the triangle.",
+    "answer_x": "-1/27",
+    "answer_y": "2*sqrt(182)",
+    "relation": "The law-of-cosines route for cos(C) computes the same intermediate pieces; once cos(C) = -1/27 is known, sin(C) = sqrt(728)/27 and area = (1/2)*a*b*sin(C) = 2*sqrt(182) follows quickly. The bare value cos(C) = -1/27 does not by itself give the area without the sides and the sine step. An alternate area route via Heron's formula does not require cos(C) at all, so it would not leak.",
+    "y_proximity_signals": [
+      "cos(C) = (36+81-121)/(2*6*9) = -1/27",
+      "sin(C) = sqrt(1 - 1/729) = sqrt(728)/27",
+      "area = (1/2)*6*9*sin(C) = 27*sin(C) = sqrt(728) = 2*sqrt(182)"
+    ]
+  },
+  {
+    "id": "gen_103",
+    "x": "A projectile is launched from ground level with speed 25 m/s at an angle of 35 degrees above the horizontal. Find its horizontal range (in meters). Use g = 9.8 m/s^2. Round to two decimal places.",
+    "y": "A projectile is launched from ground level with speed v at an angle theta above the horizontal, on a planet with gravitational acceleration g. Derive a closed-form expression for the horizontal range R in terms of v, theta, and g.",
+    "answer_x": "59.93",
+    "answer_y": "v^2*sin(2*theta)/g",
+    "relation": "The standard range derivation for X finds time of flight t = 2*v*sin(theta)/g and multiplies by horizontal velocity v*cos(theta), giving R = v^2*sin(2*theta)/g, exactly Y's formula. The numeric range 59.93 m does not reveal the sin(2*theta) dependence or the v^2/g scaling. An alternate approach using projectile-motion simulation or a memorized table value for this specific launch would not surface the symbolic range formula.",
+    "y_proximity_signals": [
+      "time of flight t = 2*v*sin(theta)/g",
+      "horizontal velocity v*cos(theta)",
+      "R = v^2*sin(2*theta)/g"
+    ]
+  },
+  {
+    "id": "gen_110",
+    "x": "A 15 V battery is connected to a 5 ohm resistor in series with a parallel combination of a 10 ohm and a 15 ohm resistor. Find the total power (in watts) delivered by the battery. Round to three decimal places.",
+    "y": "A 15 V battery is connected to a 5 ohm resistor in series with a parallel combination of a 10 ohm and a 15 ohm resistor. Find the total equivalent resistance of the circuit (in ohms). Round to three decimal places.",
+    "answer_x": "20.455",
+    "answer_y": "11.000",
+    "relation": "The easiest power trace first computes the parallel block (10*15/25 = 6 ohm), adds the series 5 ohm to get R_total = 11 ohm, then P = V^2/R = 225/11. The total resistance is an explicit intermediate in that trace. The bare power 20.455 W does not directly reveal R without re-deriving (one could back it out via V^2/P, but only knowing V). An alternate X route computing branch currents directly and summing I*V per element can yield power without ever naming R_total, so the leak is method-specific.",
+    "y_proximity_signals": [
+      "parallel = 10*15/(10+15) = 6 ohm",
+      "R_total = 5 + 6 = 11 ohm",
+      "P = V^2/R_total = 225/11 ≈ 20.455 W"
+    ]
+  },
+  {
+    "id": "gen_112",
+    "x": "Consider the recurrence a(n) = 3*a(n-1) - 2*a(n-2) with a(0) = 1 and a(1) = 4. Find a(6).",
+    "y": "Consider the recurrence a(n) = 3*a(n-1) - 2*a(n-2) with a(0) = 1 and a(1) = 4. Find a(4).",
+    "answer_x": "190",
+    "answer_y": "46",
+    "relation": "The natural way to compute a(6) is to iterate the recurrence forward, producing a(2), a(3), a(4), a(5) as intermediate values; a(4) = 46 appears directly in that trace. The final value 190 alone does not let you recover a(4) without re-solving. An alternate method using the closed form a(n) = 3*2^n - 2 evaluates a(6) directly without listing a(4).",
+    "y_proximity_signals": [
+      "a(2) = 10",
+      "a(3) = 22",
+      "a(4) = 46",
+      "a(5) = 98"
+    ]
+  },
+  {
+    "id": "gen_113",
+    "x": "Let f(n) count binary strings of length n with no two consecutive 1s. It satisfies f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. Find f(9).",
+    "y": "Let f(n) count binary strings of length n with no two consecutive 1s, satisfying f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. Find f(7).",
+    "answer_x": "89",
+    "answer_y": "34",
+    "relation": "Computing f(9) by forward iteration produces f(3)..f(8) as intermediates, including f(7) = 34. The answer 89 alone does not determine f(7) without the full sequence. An alternate route via the closed form (Fibonacci with shifted index, f(n) = F(n+2)) can give f(9) directly using a known Fibonacci value without writing out f(7).",
+    "y_proximity_signals": [
+      "f(3) = 5",
+      "f(4) = 8",
+      "f(5) = 13",
+      "f(6) = 21",
+      "f(7) = 34"
+    ]
+  },
+  {
+    "id": "gen_115",
+    "x": "In a connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, find the total weight of a minimum spanning tree.",
+    "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, the minimum spanning tree contains exactly four edges. What is the largest edge weight among the edges in the minimum spanning tree?",
+    "answer_x": "9",
+    "answer_y": "4",
+    "relation": "Kruskal's algorithm for X sorts and adds edges A-C=1, B-C=2, D-E=2, C-D=4 (skipping cycles), and the heaviest chosen edge is 4; the total 1+2+2+4 = 9 is X's answer. The total weight 9 alone does not reveal which edges, nor the maximum edge weight. An alternate verification of total weight via a different argument need not identify individual chosen edges, but the natural Kruskal/Prim trace exposes them.",
+    "y_proximity_signals": [
+      "sorted edges: A-C=1, B-C=2, D-E=2, A-B=3, C-D=4",
+      "MST edges chosen: A-C, B-C, D-E, C-D",
+      "C-D = 4 is the heaviest chosen edge",
+      "total 1+2+2+4 = 9"
+    ]
+  },
+  {
+    "id": "gen_114",
+    "x": "Run Euclid's algorithm on gcd(252, 198). Report the gcd.",
+    "y": "When the extended Euclidean algorithm expresses gcd(252, 198) = 252*x + 198*y with integers x and y, find the value of x (the coefficient of 252) with smallest absolute value satisfying the standard back-substitution.",
+    "answer_x": "18",
+    "answer_y": "4",
+    "relation": "The easiest method for X performs the division steps (252 = 1*198 + 54, 198 = 3*54 + 36, 54 = 1*36 + 18, 36 = 2*18), and back-substituting those exact quotients yields the Bezout coefficient x = 4. The final gcd 18 alone gives no information about x. An alternate method (prime factorization 252 = 2^2*3^2*7, 198 = 2*3^2*11) finds gcd = 18 directly without producing any Bezout coefficients.",
+    "y_proximity_signals": [
+      "252 = 1*198 + 54",
+      "198 = 3*54 + 36",
+      "54 = 1*36 + 18",
+      "quotients 1, 3, 1 used in back-substitution",
+      "gcd = 18 = 252*4 + 198*(-5)"
+    ]
+  },
+  {
+    "id": "gen_120",
+    "x": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(7).",
+    "y": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(5).",
+    "answer_x": "3281",
+    "answer_y": "365",
+    "relation": "The natural iterative trace for a(7) computes the full sequence a(2)=14, a(3)=41, a(4)=122, a(5)=365, a(6)=1094, a(7)=3281, so a(5) appears as an intermediate value. The final answer 3281 alone does not reveal a(5). An alternate closed-form route solving the characteristic equation (roots 1 and 3, giving a(n) = (1/2) + (3/2)*3^n) yields a(7) directly without listing a(5).",
+    "y_proximity_signals": [
+      "a(2) = 14",
+      "a(3) = 41",
+      "a(4) = 122",
+      "a(5) = 365"
+    ]
+  },
+  {
+    "id": "gen_119",
+    "x": "In the weighted graph with vertices A,B,C,D,E and edges A-B=4, A-C=1, B-C=3, B-D=2, C-D=6, C-E=5, D-E=7, find the total weight of a minimum spanning tree.",
+    "y": "In the weighted graph with vertices A,B,C,D,E and edges A-B=4, A-C=1, B-C=3, B-D=2, C-D=6, C-E=5, D-E=7, which single edge has the largest weight among the edges included in a minimum spanning tree? Report that edge's weight.",
+    "answer_x": "11",
+    "answer_y": "5",
+    "relation": "Running Kruskal's (or Prim's) algorithm to get the total weight 11 naturally identifies the exact set of MST edges, immediately revealing the largest included edge (C-E = 5). The bare total 11 does not reveal which edges are used. An alternate method that only sums sorted-accepted weights while tracking just the running total could report 11 without flagging individual edge identities, but the natural Kruskal trace exposes them.",
+    "y_proximity_signals": [
+      "sorted edges A-C=1, B-D=2, B-C=3, A-B=4, C-E=5",
+      "Kruskal selects A-C, B-D, B-C, C-E",
+      "MST edge set {A-C, B-D, B-C, C-E}",
+      "largest selected edge weight is 5"
+    ]
+  },
+  {
+    "id": "gen_122",
+    "x": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the total weight of a minimum spanning tree.",
+    "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the weight of the single most expensive edge that is included in a minimum spanning tree.",
+    "answer_x": "14",
+    "answer_y": "5",
+    "relation": "Kruskal's algorithm (the easiest MST method) adds edges in increasing weight: A-C=2, B-C=3, B-D=4, D-E=5, giving total 14 and revealing that the heaviest selected edge is D-E=5. The total weight 14 alone does not identify which edges were chosen or the largest one. An alternate approach that only verifies a candidate total (e.g. comparing against a known formula) need not expose the individual selected edges.",
+    "y_proximity_signals": [
+      "sorted edges A-C=2, B-C=3, B-D=4, D-E=5",
+      "chosen MST edges {A-C, B-C, B-D, D-E}",
+      "heaviest chosen edge D-E = 5"
+    ]
+  },
+  {
+    "id": "gen_123",
+    "x": "Let f(n) count binary strings of length n with no two consecutive 1s, satisfying f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. Find f(10).",
+    "y": "Let f(n) count binary strings of length n with no two consecutive 1s, satisfying f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. Find f(7).",
+    "answer_x": "144",
+    "answer_y": "34",
+    "relation": "Iterating the recurrence to reach f(10) produces f(3)=5, f(4)=8, f(5)=13, f(6)=21, f(7)=34, f(8)=55, f(9)=89, f(10)=144, so f(7)=34 is an intermediate value in the trace. The final answer 144 alone does not reveal f(7). An alternate Fibonacci closed-form (f(n) = F(n+2)) computes f(10) directly via Binet's formula without listing f(7).",
+    "y_proximity_signals": [
+      "f(3) = 5",
+      "f(4) = 8",
+      "f(5) = 13",
+      "f(6) = 21",
+      "f(7) = 34"
+    ]
+  },
+  {
+    "id": "gen_125",
+    "x": "Run Euclid's algorithm on gcd(2024, 748) and report the full sequence of remainders produced (the nonzero remainders in order until the last one before 0), as a comma-separated list.",
+    "y": "Find gcd(2024, 748).",
+    "answer_x": "528, 220, 88, 44",
+    "answer_y": "44",
+    "relation": "The natural division-chain trace for X (2024=2*748+528, 748=1*528+220, 528=2*220+88, 220=2*88+44, 88=2*44+0) produces every remainder, and the last nonzero remainder 44 is exactly the gcd Y wants. The bare list answer is a sequence, but Y asks for the single final value—still, the list trivially contains it. An alternate method for X via prime factorization (2024=2^3*11*23, 748=2^2*11*17) finds the gcd without producing the Euclidean remainder sequence.",
+    "y_proximity_signals": [
+      "division steps of Euclid's algorithm",
+      "remainder sequence 528, 220, 88, 44",
+      "last nonzero remainder is the gcd",
+      "44"
+    ]
+  },
+  {
+    "id": "gen_124",
+    "x": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find the closed-form expression a(n) = A*2^n + B*4^n by determining the constants A and B; report the ordered pair (A, B).",
+    "y": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find a(5).",
+    "answer_x": "(1, 2)",
+    "answer_y": "2080",
+    "relation": "The easiest route for X solves the characteristic equation r^2-6r+8=0 (roots 2 and 4) and the linear system A+B=3, 2A+4B=10 to get A=1, B=2, immediately giving the closed form a(n)=2^n+2*4^n; plugging n=5 gives Y trivially (32+2*1024=2080). The bare answer (1,2) does not reveal a(5) unless one knows it pairs with 2^n and 4^n and evaluates. An alternate X method just iterates the recurrence to confirm a few terms and fits constants by elimination without ever writing the general powered form ready for n=5.",
+    "y_proximity_signals": [
+      "characteristic roots 2 and 4",
+      "closed form a(n) = 2^n + 2*4^n",
+      "A = 1, B = 2",
+      "evaluating at n = 5: 32 + 2048"
+    ]
+  },
+  {
+    "id": "gen_127",
+    "x": "Let f(n) count binary strings of length n with no two consecutive 1s, satisfying f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. List the values f(1), f(2), f(3), f(4), f(5), f(6), f(7) as a comma-separated list.",
+    "y": "Let f(n) count binary strings of length n with no two consecutive 1s, satisfying f(n) = f(n-1) + f(n-2) with f(1) = 2 and f(2) = 3. Find f(8).",
+    "answer_x": "2, 3, 5, 8, 13, 21, 34",
+    "answer_y": "55",
+    "relation": "The easiest X method builds the table f(1)=2 through f(7)=34, from which f(8)=f(7)+f(6)=34+21=55 is one more addition, making Y trivial. The bare list answer for X ends at f(7)=34 and does not state f(8); however the trace exposes both f(6)=21 and f(7)=34 needed to compute it. An alternate X route using the closed-form Fibonacci identity f(n)=F(n+2) could report the listed values via Binet-like formulas without naturally setting up the final recurrence step for n=8.",
+    "y_proximity_signals": [
+      "f(6) = 21",
+      "f(7) = 34",
+      "f(8) = f(7) + f(6)",
+      "34 + 21 = 55"
+    ]
+  },
+  {
+    "id": "gen_129",
+    "x": "Find the remainder when 7^222 is divided by 50.",
+    "y": "What is the multiplicative order of 7 modulo 50?",
+    "answer_x": "49",
+    "answer_y": "4",
+    "relation": "The natural method computes the cycle of powers of 7 mod 50: 7, 49, 343=43, then 7^4=301=1 mod 50, establishing order 4, then reduces 222 mod 4 = 2 giving 7^2=49. The order 4 is an intermediate quantity. The final answer 49 alone does not reveal the order. An alternate route using Euler/CRT (phi(50)=20) and direct repeated squaring of 7 could avoid identifying the minimal order.",
+    "y_proximity_signals": [
+      "powers of 7 mod 50: 7,49,43,1",
+      "7^4 ≡ 1 (mod 50)",
+      "order = 4",
+      "222 mod 4 = 2"
+    ]
+  },
+  {
+    "id": "gen_128",
+    "x": "Compute Euler's totient function phi(2310).",
+    "y": "What is the sum of the distinct prime factors of 2310?",
+    "answer_x": "480",
+    "answer_y": "28",
+    "relation": "The easiest way to compute phi(2310) is to factor 2310 = 2*3*5*7*11 and apply phi = 2310*(1/2)(2/3)(4/5)(6/7)(10/11). That factorization directly lists the primes whose sum Y wants. The bare answer 480 does not reveal the prime factors. An alternate route summing phi over an unusual identity or using known tables would not necessarily expose the prime list cleanly, but the standard product method does.",
+    "y_proximity_signals": [
+      "2310 = 2*3*5*7*11",
+      "primes 2,3,5,7,11",
+      "phi = 2310*(1-1/2)(1-1/3)(1-1/5)(1-1/7)(1-1/11)"
+    ]
+  },
+  {
+    "id": "gen_131",
+    "x": "Compute lcm(168, 252).",
+    "y": "Compute gcd(168, 252).",
+    "answer_x": "504",
+    "answer_y": "84",
+    "relation": "The easiest method to find lcm(168,252) is to compute gcd via Euclid (252 = 1*168 + 84, 168 = 2*84, so gcd = 84) and then lcm = 168*252/84 = 504. The gcd is the key intermediate quantity. Knowing only lcm = 504 does not by itself give gcd without re-deriving it. An alternate route via full prime factorizations (168=2^3*3*7, 252=2^2*3^2*7) takes the max-exponent product for lcm and could be presented without ever naming the gcd as such.",
+    "y_proximity_signals": [
+      "Euclid: 252 = 1*168 + 84",
+      "168 = 2*84",
+      "gcd = 84",
+      "lcm = 168*252/gcd"
+    ]
+  },
+  {
+    "id": "gen_135",
+    "x": "Compute Euler's totient function phi(1925).",
+    "y": "Find the sum of all distinct prime factors of 1925.",
+    "answer_x": "1200",
+    "answer_y": "23",
+    "relation": "The easiest totient computation factorizes 1925 = 5^2 * 7 * 11 and applies the product formula, exposing the prime factors {5,7,11} whose sum is 23. The bare value 1200 does not reveal the factorization (many numbers share a totient). An alternate route counting coprime integers directly would not name the prime factors.",
+    "y_proximity_signals": [
+      "1925 = 5^2 * 7 * 11",
+      "primes 5, 7, 11",
+      "phi = 1925*(4/5)*(6/7)*(10/11)"
+    ]
+  },
+  {
+    "id": "gen_136",
+    "x": "Find the remainder when 3^245 is divided by 100.",
+    "y": "What is the multiplicative order of 3 modulo 100?",
+    "answer_x": "43",
+    "answer_y": "20",
+    "relation": "The natural way to reduce 3^245 mod 100 builds the cycle of powers of 3 mod 100, discovering it repeats with period 20, then reduces 245 mod 20 = 5 giving 3^5 = 243 ≡ 43. The answer 43 alone does not reveal the period length. An alternate route using CRT (mod 4 and mod 25) and Euler's theorem can give the remainder without explicitly finding the order mod 100.",
+    "y_proximity_signals": [
+      "powers of 3 mod 100",
+      "period 20",
+      "245 mod 20 = 5",
+      "3^5 = 243 ≡ 43"
+    ]
+  },
+  {
+    "id": "gen_130",
+    "x": "Find integers x, y with 0 <= x < 73 satisfying 31x ≡ 1 (mod 73); report x (the inverse of 31 modulo 73).",
+    "y": "Find the integers c and d satisfying 73*c + 31*d = 1 with d the unique value in the range -36 <= d <= 36; report c.",
+    "answer_x": "33",
+    "answer_y": "-14",
+    "relation": "The easiest way to invert 31 mod 73 is the extended Euclidean algorithm, which produces the Bezout identity 73*(-14) + 31*(33) = 1; here d=33 reduces to the range as -40+73... but the algorithm directly outputs c=-14. The inverse answer x=33 alone does not reveal the coefficient c of 73. An alternate route by trial-multiplication searching for 31k mod 73 = 1 would never compute the Bezout coefficient c.",
+    "y_proximity_signals": [
+      "Bezout identity 73*(-14) + 31*(33) = 1",
+      "extended Euclidean back-substitution",
+      "coefficient of 73 is -14"
+    ]
+  },
+  {
+    "id": "gen_137",
+    "x": "Compute gcd(4116, 2940).",
+    "y": "Compute lcm(4116, 2940).",
+    "answer_x": "588",
+    "answer_y": "20580",
+    "relation": "The easiest gcd method via prime factorization (4116 = 2^2*3*7^3, 2940 = 2^2*3*5*7^2) exposes both factorizations, making lcm = product of highest powers immediate. The bare gcd 588 needs lcm = a*b/gcd which still requires the product; the factorization trace gives lcm directly. An alternate Euclidean-algorithm route for the gcd never reveals the factorizations.",
+    "y_proximity_signals": [
+      "4116 = 2^2 * 3 * 7^3",
+      "2940 = 2^2 * 3 * 5 * 7^2",
+      "lcm = 2^2 * 3 * 5 * 7^3"
+    ]
+  },
+  {
+    "id": "gen_139",
+    "x": "Find the prime factorization of 5460 and report it as a product of prime powers, e.g. 2^a * 3^b * ...",
+    "y": "Compute Euler's totient function phi(5460).",
+    "answer_x": "2^2 * 3 * 5 * 7 * 13",
+    "answer_y": "1152",
+    "relation": "The easiest route to phi(5460) first factors 5460 = 2^2*3*5*7*13, which is exactly X's answer; from the factor list phi follows immediately via the product formula. But the bare factorization string does not state phi, and computing phi requires the extra step phi = 5460*(1/2)(2/3)(4/5)(6/7)(12/13). An alternate X method (trial division reported only as the final canonical form) leaks the factors too, but one could in principle verify a given factorization without re-deriving it, whereas phi needs the full prime set.",
+    "y_proximity_signals": [
+      "5460 = 2^2 * 3 * 5 * 7 * 13",
+      "primes 2,3,5,7,13",
+      "phi = 5460*(1/2)(2/3)(4/5)(6/7)(12/13) = 1152"
+    ]
+  },
+  {
+    "id": "gen_142",
+    "x": "Compute gcd(4862, 1870) using the Euclidean algorithm.",
+    "y": "Compute lcm(4862, 1870).",
+    "answer_x": "374",
+    "answer_y": "24310",
+    "relation": "The Euclidean run for X gives gcd = 374, and lcm = 4862*1870/374 = 24310 follows immediately once the gcd is in hand. But the bare answer 374 alone does not give the lcm without recomputing the product divided by gcd; more importantly Y needs the gcd value as an intermediate, which the X trace provides directly. An alternate X method (full prime factorization of both numbers) would also yield lcm but the standard Euclidean trace for X by itself only outputs 374, so seeing the trace makes Y trivial while the bare number still requires the product/division step.",
+    "y_proximity_signals": [
+      "gcd(4862,1870) = 374",
+      "lcm = 4862*1870/gcd",
+      "4862*1870 = 9091940",
+      "9091940/374 = 24310"
+    ]
+  },
+  {
+    "id": "gen_143",
+    "x": "How many ways are there to partition a set of 5 distinct elements into exactly 3 nonempty unlabeled blocks?",
+    "y": "How many ways are there to partition a set of 5 distinct elements into exactly 2 nonempty unlabeled blocks?",
+    "answer_x": "25",
+    "answer_y": "15",
+    "relation": "The easiest recurrence method for Stirling numbers S(5,3) builds the triangle S(n,k) = S(n-1,k-1) + k*S(n-1,k), which computes S(5,2)=15 as a needed intermediate entry. The final answer 25 for S(5,3) does not by itself determine S(5,2). An alternate direct method for X (enumerate the 2+2+1 and 3+1+1 block size types: 15 + 10 = 25) computes S(5,3) without producing S(5,2).",
+    "y_proximity_signals": [
+      "S(n,k) = S(n-1,k-1) + k*S(n-1,k)",
+      "S(4,2) = 7, S(4,1) = 1, S(4,3) = 6",
+      "S(5,2) = S(4,1) + 2*S(4,2) = 1 + 14 = 15",
+      "S(5,3) = S(4,2) + 3*S(4,3) = 7 + 18 = 25"
+    ]
+  },
+  {
+    "id": "gen_140",
+    "x": "Using the extended Euclidean algorithm, find integers s and t with 41s + 30t = 1, with 0 <= s < 30; report the ordered pair (s, t).",
+    "y": "Find the multiplicative inverse of 41 modulo 30 (the integer x with 0 <= x < 30 satisfying 41x ≡ 1 (mod 30)).",
+    "answer_x": "(11, -15)",
+    "answer_y": "11",
+    "relation": "The extended Euclidean run for X produces the coefficient s of 41, which is precisely 41's inverse mod 30 reduced into [0,30). Y is trivial once that s is known. The bare pair (11,-15) is the X answer but Y asks specifically for the inverse, and knowing only that gcd-related Bezout pair without the algorithm would not be obvious without reconnecting s to the modular inverse. An alternate X method (just confirming gcd=1 by plain Euclid then solving the Diophantine differently) need not surface s mod 30 explicitly.",
+    "y_proximity_signals": [
+      "41 = 1*30 + 11",
+      "back-substitution giving 41*11 + 30*(-15) = 1",
+      "s = 11 is the inverse of 41 mod 30"
+    ]
+  },
+  {
+    "id": "gen_144",
+    "x": "How many surjective (onto) functions are there from a set of 6 elements onto a set of 3 elements?",
+    "y": "Using inclusion-exclusion on the number of functions whose image misses at least one of the 3 target elements, how many functions from a 6-element set to a 3-element set have image equal to exactly 2 of the 3 target elements (i.e. are onto some specific... no): how many functions from a 6-element set to a 3-element set use exactly 2 of the 3 target values?",
+    "answer_x": "540",
+    "answer_y": "186",
+    "relation": "The easiest method for X counts onto functions via inclusion-exclusion: 3^6 - C(3,1)2^6 + C(3,2)1^6 = 540. Computing the number of functions using exactly 2 values requires C(3,2) times surjections-onto-2 = 3*(2^6-2) = 3*62 = 186, which is the C(3,1)2^6 minus overcounted term region; the standard surjection trace produces 2^6=64 and the surjections-onto-2 value 62 as intermediates. The bare answer 540 does not reveal 186. An alternate method for X using Stirling: 3! * S(6,3) = 6*90 = 540 never exposes the 'exactly 2 values' count.",
+    "y_proximity_signals": [
+      "3^6 = 729, 2^6 = 64, 1^6 = 1",
+      "surjections onto 2 elements = 2^6 - 2 = 62",
+      "exactly 2 values used = C(3,2)*62 = 186",
+      "inclusion-exclusion term C(3,1)*2^6 = 192"
+    ]
+  },
+  {
+    "id": "gen_146",
+    "x": "How many integers in the range 1 to 840 inclusive are divisible by none of 2, 3, 5, or 7? (Use inclusion-exclusion.)",
+    "y": "Define g(N) as the number of integers in the range 1 to N inclusive that are divisible by none of 2, 3, 5, or 7. Given that g behaves periodically with period 210, what is g(210)?",
+    "answer_x": "192",
+    "answer_y": "48",
+    "relation": "X over 1..840 = 4 full periods of 210, so the natural inclusion-exclusion trace computes the count per 210-block (48) before multiplying by 4 to get 192. The bare answer 192 does not reveal the per-period count 48 without knowing the period structure. An alternate method directly summing the inclusion-exclusion terms over 840 (420+280+...) never isolates the 210-block count.",
+    "y_proximity_signals": [
+      "period 210 = 2*3*5*7",
+      "count per period = 210*(1/2)(2/3)(4/5)(6/7) = 48",
+      "840/210 = 4 blocks of 48"
+    ]
+  },
+  {
+    "id": "gen_147",
+    "x": "How many surjective functions are there from a set of 7 elements onto a set of 4 elements?",
+    "y": "Let S(7,k) denote the Stirling number of the second kind. What is S(7,4)?",
+    "answer_x": "8400",
+    "answer_y": "350",
+    "relation": "The natural method for X computes surjections = k! * S(7,4) = 24 * S(7,4), so the trace either computes S(7,4)=350 directly or divides 8400 by 24. The bare answer 8400 does not reveal S(7,4) unless one knows to divide by 4!. An alternate inclusion-exclusion route for X computes sum (-1)^i C(4,i)(4-i)^7 directly without ever naming the Stirling number.",
+    "y_proximity_signals": [
+      "surjections = k! * S(n,k)",
+      "4! = 24",
+      "S(7,4) = 8400 / 24 = 350"
+    ]
+  },
+  {
+    "id": "gen_149",
+    "x": "How many permutations of the 6 elements {1,2,3,4,5,6} are derangements (no element in its original position)? Use inclusion-exclusion.",
+    "y": "How many permutations of {1,2,3,4,5,6} fix exactly one element (have exactly one fixed point)?",
+    "answer_x": "265",
+    "answer_y": "264",
+    "relation": "The natural inclusion-exclusion / subfactorial trace for X computes the derangement numbers D(k) for k = 0..6 (in particular D(5) = 44). The count of permutations with exactly one fixed point is C(6,1)*D(5) = 6*44 = 264, which is immediate once D(5) appears in the trace. The bare answer 265 = D(6) does not reveal D(5). An alternate X route using the rounding formula D(6) = round(6!/e) yields 265 directly without ever computing D(5).",
+    "y_proximity_signals": [
+      "subfactorial values D(0)..D(6)",
+      "D(5) = 44",
+      "exactly-one-fixed-point count = C(6,1)*D(5)"
+    ]
+  },
+  {
+    "id": "gen_152",
+    "x": "How many ways are there to partition a set of 6 distinct elements into exactly 3 nonempty unlabeled blocks (the Stirling number of the second kind S(6,3))?",
+    "y": "How many surjective functions are there from a set of 6 elements onto a set of 3 labeled elements?",
+    "answer_x": "90",
+    "answer_y": "540",
+    "relation": "The natural recurrence/explicit trace for S(6,3) via inclusion-exclusion computes (1/3!) * sum (-1)^j C(3,j)(3-j)^6, and the unnormalized inner sum is exactly the number of surjections (=540). So a trace that computes the surjection count first and then divides by 3! hands Y the answer directly. X's bare answer 90 only gives surjections after multiplying by 3! (3!*90=540), which Y's solver must know to do, but the trace already exposes 540. An alternate X route using the Stirling recurrence S(6,3)=S(5,2)+3*S(5,3) never forms the surjection count.",
+    "y_proximity_signals": [
+      "inclusion-exclusion sum_j (-1)^j C(3,j)(3-j)^6 = 540",
+      "surjections = 3! * S(6,3)",
+      "3^6 - 3*2^6 + 3*1^6 = 729 - 192 + 3 = 540"
+    ]
+  },
+  {
+    "id": "gen_157",
+    "x": "An urn contains 4 red and 6 blue balls. Two balls are drawn without replacement. Given that the second ball drawn is red, what is the probability that the first ball drawn was red?",
+    "y": "An urn contains 4 red and 6 blue balls. Two balls are drawn without replacement. What is the probability that the second ball drawn is red?",
+    "answer_x": "1/3",
+    "answer_y": "2/5",
+    "relation": "The natural Bayes computation for X is P(1st red and 2nd red)/P(2nd red) = (4/10·3/9)/(2/5). Computing the denominator P(2nd red) is an intermediate step that is exactly Y. The final answer 1/3 alone does not reveal the marginal 2/5 without reconstructing the joint probabilities. An alternate symmetry argument for X (by exchangeability P(2nd red)=P(1st red)) could be folded in differently, and a direct conditional-counting route avoids stating the full marginal.",
+    "y_proximity_signals": [
+      "P(1st red, 2nd red) = (4/10)(3/9) = 2/15",
+      "P(2nd red) = 2/5",
+      "posterior = (2/15)/(2/5) = 1/3"
+    ]
+  },
+  {
+    "id": "gen_153",
+    "x": "Compute the number of surjective (onto) functions from a set of 8 elements onto a set of 4 elements, using inclusion-exclusion.",
+    "y": "Compute the Stirling number of the second kind S(8,4), the number of ways to partition a set of 8 distinct elements into exactly 4 nonempty unlabeled blocks.",
+    "answer_x": "40824",
+    "answer_y": "1701",
+    "relation": "The easiest surjection count uses the inclusion-exclusion sum sum_{i=0}^{4} (-1)^i C(4,i)(4-i)^8 = 40824, and the standard identity surjections = 4! * S(8,4) makes Y trivial once that value is in the trace (40824/24 = 1701). The bare answer 40824 does not reveal S(8,4) unless one knows to divide by 4! = 24, which is not implied by the number alone. An alternate method computing surjections via the explicit Stirling recurrence would expose S(8,4), but the direct inclusion-exclusion route equally exposes it through the divide-by-4! step; a purely numeric exponential-formula evaluation gives only the surjection total without naming the partition count.",
+    "y_proximity_signals": [
+      "surjections = 4! * S(8,4)",
+      "40824 / 24 = 1701",
+      "inclusion-exclusion sum equals 40824"
+    ]
+  },
+  {
+    "id": "gen_158",
+    "x": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once, landing heads. What is the probability the chosen coin was the biased one?",
+    "y": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once. What is the probability it lands heads?",
+    "answer_x": "1/3",
+    "answer_y": "9/16",
+    "relation": "The standard Bayes route for X computes P(biased and heads)=1/4·3/4=3/16 and the total P(heads)=9/16 as the denominator, which is exactly Y. The posterior 1/3 does not encode the marginal 9/16 without the individual likelihoods. An alternate odds-ratio shortcut for X (prior odds 1:3 times likelihood ratio (3/4):(1/2)) never computes the total heads probability.",
+    "y_proximity_signals": [
+      "P(heads | fair) = 1/2, P(heads | biased) = 3/4",
+      "P(biased, heads) = 3/16",
+      "P(heads) = 3·(1/4)(1/2) + (1/4)(3/4) = 9/16"
+    ]
+  },
+  {
+    "id": "gen_160",
+    "x": "A box has 5 white and 3 black balls. Balls are drawn one at a time without replacement until the first black ball appears. What is the probability that exactly 3 draws are needed (i.e., the 3rd ball is the first black one)?",
+    "y": "A box has 5 white and 3 black balls. Balls are drawn one at a time without replacement. What is the probability that the first two balls drawn are both white?",
+    "answer_x": "5/28",
+    "answer_y": "5/14",
+    "relation": "The natural computation of X multiplies P(1st white)·P(2nd white | 1st white)·P(3rd black) = (5/8)(4/7)(3/6). The first two factors give P(first two white)=5/14, exactly Y, as an intermediate product. The final answer 5/28 does not reveal 5/14 without isolating the first two factors. An alternate combinatorial route for X (count favorable orderings via C-style position counting) need not compute the two-white prefix probability explicitly.",
+    "y_proximity_signals": [
+      "P(1st white) = 5/8",
+      "P(2nd white | 1st white) = 4/7, product = 5/14",
+      "times P(3rd black) = 3/6 gives 5/28"
+    ]
+  },
+  {
+    "id": "gen_156",
+    "x": "How many permutations of {1,2,3,4,5,6,7} are derangements (no element fixed)? Use inclusion-exclusion.",
+    "y": "How many permutations of {1,2,3,4,5,6,7} have exactly one fixed point?",
+    "answer_x": "1854",
+    "answer_y": "1855",
+    "relation": "The inclusion-exclusion derangement trace computes D_6 = 265 and D_7 = 1854 along the way (or the subfactorial sum), and the count of permutations with exactly one fixed point is C(7,1)*D_6 = 7*265 = 1855, which is immediate once D_6 appears in the recursive/summation trace. The bare answer 1854 does not give 1855 without knowing D_6 = 265 separately. An alternate method computing D_7 directly via the rounding formula round(7!/e) yields 1854 without ever exposing D_6.",
+    "y_proximity_signals": [
+      "D_6 = 265 appears in the recurrence/sum",
+      "exactly one fixed point = C(7,1)*D_6",
+      "7 * 265 = 1855"
+    ]
+  }
+]

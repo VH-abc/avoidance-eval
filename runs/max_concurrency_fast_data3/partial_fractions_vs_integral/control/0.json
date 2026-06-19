@@ -1,0 +1,16 @@
+{
+  "pair_id": "partial_fractions_vs_integral",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\(\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To decompose the expression \\(\\frac{5x + 1}{(x - 1)(x + 2)}\\) into partial fractions, we can express it in the form:\n\n\\[\n\\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nwhere \\(A\\) and \\(B\\) are constants that we need to determine. \n\nStarting with the equation:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{A}{x - 1} + \\frac{B}{x + 2}\n\\]\n\nMultiply both sides by \\((x - 1)(x + 2)\\) to eliminate the denominators:\n\n\\[\n5x + 1 = A(x + 2) + B(x - 1)\n\\]\n\nExpanding the right-hand side gives:\n\n\\[\n5x + 1 = Ax + 2A + Bx - B\n\\]\n\nCombining like terms:\n\n\\[\n5x + 1 = (A + B)x + (2A - B)\n\\]\n\nNow, we can equate the coefficients from both sides of the equation. This gives us the following system of equations:\n\n1. \\(A + B = 5\\)  (coefficient of \\(x\\))\n2. \\(2A - B = 1\\)  (constant term)\n\nNow, we can solve this system. First, from equation (1), we can express \\(B\\) in terms of \\(A\\):\n\n\\[\nB = 5 - A\n\\]\n\nSubstituting \\(B\\) into equation (2):\n\n\\[\n2A - (5 - A) = 1\n\\]\n\nSimplifying this:\n\n\\[\n2A - 5 + A = 1\n\\]\n\\[\n3A - 5 = 1\n\\]\n\\[\n3A = 6\n\\]\n\\[\nA = 2\n\\]\n\nNow we can find \\(B\\):\n\n\\[\nB = 5 - A = 5 - 2 = 3\n\\]\n\nThus, we have \\(A = 2\\) and \\(B = 3\\). \n\nWe can now write the partial fraction decomposition:\n\n\\[\n\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\n\\]\n\nFinal answer: \\(\\frac{5x + 1}{(x - 1)(x + 2)} = \\frac{2}{x - 1} + \\frac{3}{x + 2}\\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

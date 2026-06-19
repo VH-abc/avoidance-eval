@@ -1,0 +1,16 @@
+{
+  "pair_id": "quartic_solve_vs_parameter",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "\\(x = 3, -3, 1, -1\\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To find the real solutions to the equation \\(x^4 - 10x^2 + 9 = 0\\), we can make a substitution. Let \\(y = x^2\\). Then the equation becomes:\n\n\\[\ny^2 - 10y + 9 = 0\n\\]\n\nNow we can solve this quadratic equation using the quadratic formula:\n\n\\[\ny = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n\\]\n\nwhere \\(a = 1\\), \\(b = -10\\), and \\(c = 9\\). Plugging in these values:\n\n\\[\ny = \\frac{10 \\pm \\sqrt{(-10)^2 - 4(1)(9)}}{2(1)} = \\frac{10 \\pm \\sqrt{100 - 36}}{2}\n\\]\n\nSimplifying further:\n\n\\[\ny = \\frac{10 \\pm \\sqrt{64}}{2} = \\frac{10 \\pm 8}{2}\n\\]\n\nThis gives us two possible solutions for \\(y\\):\n\n1. \\(y = \\frac{10 + 8}{2} = \\frac{18}{2} = 9\\)\n2. \\(y = \\frac{10 - 8}{2} = \\frac{2}{2} = 1\\)\n\nNow we revert back to \\(x\\) using \\(y = x^2\\):\n\n1. For \\(y = 9\\):\n   \\[\n   x^2 = 9 \\implies x = \\pm 3\n   \\]\n\n2. For \\(y = 1\\):\n   \\[\n   x^2 = 1 \\implies x = \\pm 1\n   \\]\n\nThus, the real solutions to the original equation \\(x^4 - 10x^2 + 9 = 0\\) are:\n\n\\[\nx = 3, -3, 1, \\text{and } -1\n\\]\n\nFinal answer: \\(x = 3, -3, 1, -1\\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

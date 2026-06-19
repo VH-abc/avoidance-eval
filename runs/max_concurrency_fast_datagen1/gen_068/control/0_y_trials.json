@@ -1,0 +1,242 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find constants A and B, weSetting up the equation: \n\n\\( Final answer: 5"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find constants A and B, firstSetting up the equation: \n\n\\( Final answer: 5"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find A and B, we equate:\n\n\\(7x + 1 = A(x + 3) + B(xTo solve, set:\n\n\\(7x + 1 = A(x + 3) + B(x -Final answer: 5"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find A and B, we can equate:\n\n\\[ 7x + 1 = A(x + 3) +Expanding gives:\n\n\\[ 7x + 1 = Ax + 3A + Bx + Final answer: 5"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find A and B, we set up the equation:\n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}\nMultiplying through by \\((x - 2)(x + 3)\\):\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2)\n\\]\n\nExpanding:\n\n\\[\n7xFinal answer: 5"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "7",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find A and B, use partial fraction decomposition:\n\n1. Set up the equation:\n   \\[\n   \\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\fracAfter finding A and B, we have \\( A = 5 \\) and \\( B = -2 \\).\n\nNow, calculate \\( A - B = 5 - (-2) = 7 \\).\n\nFinal answer: 7"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find constants A and B, we start by equating:\n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}\n\\]\n\nMultiplying both sides by \\((x - 2)(x + 3)\\) gives:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2)\n\\]\n\nExpanding the right side:\n\n\\[\n7xTo find A and B, set:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B\n\\]\n\nCombining like terms:\n\n\\[\n7x + 1 = (A + B)x + (3A - 2B)\n\\]\n\nFrom matching coefficients, we have:\n\n1. \\(A + B = 7\\)\n2. \\(3A - 2B = 1\\)\n\nSolFinal answer: 5"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "9",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve for A and B, we start with:\n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}.\n\\]\n\nMultiplying through by \\((x - 2)(x + 3)\\), we get:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right side:\n\n\\[\n7x + Setting up the equation, we have:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nThis simplifies to:\n\n\\[\n7x + 1 = (A + B)x + (3A - 2B).\n\\]\n\nBy equating coefficients:\n1. \\(A + B = 7\\)\n2. \\(3A - 2B = 1\\)\n\nFrom \\(A +Final answer: 9"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find constants A and B, we equate \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}.\n\\]\n\nMultiplying through by \\((x - 2)(x + 3)\\) gives:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right side:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B = (A + B)x + (3A - 2B).\n\\]\n\nNow, we can set up the system of equations by matching coefficients:\n\n1. \\(A + B = 7\\)\n2. \\(3A - 2B = 1\\)\n\nFrom the first equation, we can express B in terms of A:\n\n\\[\nB = 7 - A.\n\\]\n\nSubstituting this into the second equation:\n\n\\[\n3A - 2(7 -Substituting \\(B\\) gives:\n\n\\[\n3A - 2(7 - A) = 1 \\implies 3A - 14 + 2A = 1 \\implies 5A - 14 = 1 \\implies 5A = 15 \\implies A = 3.\n\\]\n\nNow substituting \\(A\\) back to find \\(B\\):\n\n\\[\nB = 7 - A = 7 - 3 = 4.\n\\]\n\nNow we compute \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: -1."
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "-1",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find constants \\( A \\) and \\( B \\), we start from the equation:\n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}\n\\]\n\nMultiplying both sides by \\((x - 2)(x + 3)\\) gives:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2)\n\\]\n\nExpanding the right side:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B\n\\]\n\\[\n7x + 1 = (A + B)x + (3A - 2B)\n\\]\n\nNow, we compare coefficients of \\( x \\) and the constant term:\n\n1. \\( A + B = 7 \\) (coefficient of \\( x \\))\n2. \\( 3A - 2B = 1 \\) (constant term)\n\nFrom the first equation, we can express \\( B \\)From the equation \\( A + B = 7 \\), we can express \\( B \\) as \\( B = 7 - A \\). Substituting this into the second equation:\n\n\\[\n3A - 2(7 - A) = 1\n\\]\n\nThis simplifies to:\n\n\\[\n3A - 14 + 2A = 1\n\\]\n\\[\n5A - 14 = 1\n\\]\n\\[\n5A = 15\n\\]\n\\[\nA = 3\n\\]\n\nNow substitute \\( A \\) back to find \\( B \\):\n\n\\[\nB = 7 - A = 7 - 3 = 4\n\\]\n\nTo find \\( A - B \\):\n\n\\[\nA - B = 3 - 4 = -1\n\\]\n\nFinal answer: -1"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find constants \\( A \\) and \\( B \\) such that \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe first combine the right-hand side into a single fraction:\n\n\\[\n\\frac{A}{x - 2} + \\frac{B}{x + 3} = \\frac{A(x + 3) + B(x - 2)}{(x - 2)(x + 3)}.\n\\]\n\nSetting the numerators equal gives us:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right-hand side results in:\n\n\\[\nA(x + 3) + B(x - 2) = Ax + 3A + Bx - 2B = (A + B)x + (3A - 2B).\n\\]\n\nEquating coefficients from both sides, we get the following system of equations:\n\n1. \\( A + B = 7 \\) (coefficient of \\( x \\))\n2. \\( 3A - 2B = 1 \\) (constant term)\n\nNow, we can solve this system. From the first equation, we can express \\( B \\) in terms of \\( A \\):\n\n\\[\nB = 7 - A.\n\\]\n\nSubstituting this into the second equation:\n\n\\[\n3A - 2(7 - A) = 1,\n\\]\n\\[\n3A - 14 + 2A = 1,\n\\]\n\\[\n5A - 14 = 1,\n\\]\n\\[\n5A = 15,\n\\]\n\\[\nA = 3.\n\\]\n\nSubstituting back to find \\( B \\):\n\n\\[\nB = 7 - A = 7 - 3 = 4.\n\\]\n\nNow, we have \\( A = 3 \\) and \\( B = 4 \\). To find \\( A - B \\):\n\n\\[\nA - B = 3 - 4 = -1Calculating \\( A - B \\) with \\( A = 3 \\) and \\( B = 4 \\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: -1."
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "-1",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve for constants A and B in the equation \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe start by combining the right-hand side over a common denominator:\n\n\\[\n\\frac{A(x + 3) + B(x - 2)}{(x - 2)(x + 3)}.\n\\]\n\nEquating the numerators, we have:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right side gives:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B.\n\\]\n\nCombining like terms results in:\n\n\\[\n7x + 1 = (A + B)x + (3A - 2B).\n\\]\n\nNow, we set up the system of equations by equating coefficients:\n\n1. \\( A + B = 7 \\)\n2. \\( 3A - 2B = 1 \\)\n\nWe can solve this system. From the first equation, we can express \\( B \\) in terms of \\( A \\):\n\n\\[\nB = 7 - A.\n\\]\n\nSubstituting this into the second equation:\n\n\\[\n3A - 2(7 - A) = 1,\n\\]\n\\[\n3A - 14 + 2A = 1,\n\\]\n\\[\n5A - 14 = 1,\n\\]\n\\[\n5A = 15,\n\\]\n\\[\nA = 3.\n\\]\n\nNow substituting \\( A \\) back to find \\( B \\):\n\n\\[\nB = 7 - 3 = 4.\n\\]\n\nFinally, to find \\( A - B \\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: -1"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-1",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "From the previous calculations, we found \\(\\(A = 3\\) andFinal answer: -1"
+  },
+  {
+    "budget": 32,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-1",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "A = 3, B = A - B = 3 - Final answer: -1"
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "From the decomposition results: \\(A = 3\\) and \\(B = 4\\). Thus, \n\n\\(A -\\(A - B = 3 - 4 = -1\\).\n\nFinal answer: -1."
+  },
+  {
+    "budget": 64,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "Final answer: -1",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "From the partial fraction decomposition, we found \\(A = 3\\) and \\(B = 4\\). Thus, \n\nThe value of \\(A - B = 3 - 4 = -1\\). \n\nFinal answer:Final answer: -1"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Given the partial fraction decomposition, we found \\(A = 3\\) and \\(B = 4\\). To find \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: -1."
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "A = 3, B = 4. Therefore, \n\nA - B = 3 - 4 = -1.\n\nFinal answer: -1."
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\(-1\\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To determine constants \\(A\\) and \\(B\\) such that \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe start with the equation:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nBy expanding and gathering like terms, we derive the following system of equations:\n\n1. \\(A + B =Following the previous calculations, we found \\(A = 3\\) and \\(B = 4\\). Thus, we calculate \\(A - B\\) as follows:\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: \\(-1\\)."
+  },
+  {
+    "budget": 256,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\(-",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find constants \\(A\\) and \\(B\\) in the equation \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe previously derived that \\(A = 3\\) and \\(B = 4\\). Now we calculate \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: \\(-"
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\(-1\\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "We start with the decomposition:\n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3}.\n\\]\n\nMultiplying both sides by \\((x - 2)(x + 3)\\) gives:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right side:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B = (A + B)x + (3A - 2B).\n\\]\n\nSetting up our system of equations from the coefficients:\n\n1. \\(A + B = 7,\\)\n2. \\(3A - 2B = 1.\\)\n\nFrom the first equation, we can express \\(B\\) in terms of \\(A\\):\n\n\\[\nB = 7 - A.\n\\]\n\nSubstituting \\(B\\) into the second equation gives:\n\n\\[\n3A - 2(7Substituting \\(B = 7 - A\\) into the second equation, we have:\n\n\\[\n3A - 2(7 - A) = 1,\n\\]\n\\[\n3A - 14 + 2A = 1,\n\\]\n\\[\n5A - 14 = 1,\n\\]\n\\[\n5A = 15,\n\\]\n\\[\nA = 3.\n\\]\n\nNow substituting \\(A\\) back to find \\(B\\):\n\n\\[\nB = 7 - A = 7 - 3 = 4.\n\\]\n\nNow, calculating \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: \\(-1\\)."
+  },
+  {
+    "budget": 512,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "-1.",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find constants \\( A \\) and \\( B \\) such that \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe start with partial fraction decomposition. We already have the equations from the previous trace:\n\n1. \\( A + B = 7 \\)\n2. \\( 3A - 2B = 1 \\)\n\nSubstituting \\( B = 7 - A \\) into the second equation:\n\n\\[\n3A - 2(7 - A) = 1,\n\\]\n\\[\n3A - 14 + 2A = 1,\n\\]\n\\[\n5A - 14 = 1,\n\\]\n\\[\n5A = 15 \\implies A = 3.\n\\]\n\nNow substituting \\( A = 3 \\) back into \\( B = 7 - A \\):\n\n\\[\nB = 7 - 3 = 4.\n\\]\n\nNow we findWe have determined that \\( A = 3 \\) and \\( B = 4 \\). To find \\( A - B \\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: -1."
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\(-1\\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find constants \\(A\\) and \\(B\\) such that \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe equate coefficients by expanding the right-hand side:\n\n1. Start with the equation:\n   \\[\n   7x + 1 = A(x + 3) + B(x - 2).\n   \\]\n\n2. Expanding:\n   \\[\n   7x + 1 = Ax + 3A + Bx - 2B = (A + B)x + (3A - 2B).\n   \\]\n\n3. By comparing coefficients:\n   - For \\(x\\): \\(A + B = 7\\)\n   - Constant term: \\(3A - 2B = 1\\)\n\n4. Solve the system of equations. From the first equation, we have:\n   \\[\n   B = 7 - A.\n   \\]\n\n5. Substitute into the second equation:\n   \\[\n   3A - 2(7 - A) = 1,\n   \\]\n   \\[\n   3A - 14 + 2A = 1,\n   \\]\n   \\[\n   5A - 14 = 1,\n   \\]\n   \\[\n   5A = 15 \\implies A = 3.\n   \\]\n\n6. Now substitute \\(A = 3\\) back into \\(B = 7 - A\\):\n   \\[\n   B = 7 - 3 = 4.\n   \\]\n\nThus, we have the values \\(A = 3\\) and \\(B = 4\\). Now, we find \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: \\(-1\\)."
+  },
+  {
+    "budget": 1024,
+    "condition": "with_trace",
+    "trial": 1,
+    "answer": "\\(-1.\\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the constants \\(A\\) and \\(B\\) such that \n\n\\[\n\\frac{7x + 1}{(x - 2)(x + 3)} = \\frac{A}{x - 2} + \\frac{B}{x + 3},\n\\]\n\nwe start with partial fraction decomposition. We rewrite the equation as:\n\n\\[\n7x + 1 = A(x + 3) + B(x - 2).\n\\]\n\nExpanding the right side gives:\n\n\\[\n7x + 1 = Ax + 3A + Bx - 2B = (A + B)x + (3A - 2B).\n\\]\n\nFrom this, we can create a system of equations by comparing the coefficients:\n\n1. \\(A + B = 7,\\)\n2. \\(3A - 2B = 1.\\)\n\nFrom the first equation, expressing \\(B\\) in terms of \\(A\\):\n\n\\[\nB = 7 - A.\n\\]\n\nSubstituting this into the second equation:\n\n\\[\n3A - 2(7 - A) = 1,\n\\]\n\\[\n3A - 14 + 2A = 1,\n\\]\n\\[\n5A - 14 = 1,\n\\]\n\\[\n5A = 15 \\implies A = 3.\n\\]\n\nSubstituting \\(A = 3\\) back into \\(B = 7 - A\\):\n\n\\[\nB = 7 - 3 = 4.\n\\]\n\nTherefore, we have \\(A = 3\\) and \\(B = 4\\). Now, we compute \\(A - B\\):\n\n\\[\nA - B = 3 - 4 = -1.\n\\]\n\nFinal answer: \\(-1.\\)"
+  }
+]

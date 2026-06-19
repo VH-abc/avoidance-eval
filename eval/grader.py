@@ -69,6 +69,12 @@ def _rule_match(extracted: str, gold: str) -> bool:
     return _equivalent_value(extracted, gold)
 
 
+def answers_equivalent(a: str, b: str) -> bool:
+    """Public helper: True if two answer strings are equivalent under the same
+    normalization / numeric rules the grader uses."""
+    return _rule_match(a, b)
+
+
 def _unambiguous_answer_match(candidate: str, gold: str) -> bool:
     stripped = candidate.strip()
     if not stripped:

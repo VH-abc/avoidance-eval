@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import os
+import sys
 from pathlib import Path
 
 from config import (
@@ -13,11 +15,15 @@ from config import (
     DEFAULT_Y_TRIALS,
     FAST_SCAFFOLDS,
     FAST_TOKEN_BUDGETS,
+    GENERATION_MAX_SPEND,
     GRADER_TEMPERATURE,
     RUNS_DIR,
 )
 from eval.runner import analyze_run, run_full_eval, y_sweep_trace
 from visualizer.server import serve
+
+
+DEFAULT_SCAFFOLDS = "control,control_answer_only,baseline_avoid,cheating_avoid,threaded,two_agent"
 
 
 def _parse_csv(value: str) -> list[str]:
@@ -37,8 +43,11 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser = subparsers.add_parser("run", help="Run scaffolds and full eval")
     run_parser.add_argument(
         "--scaffolds",
-        default="control,baseline_avoid,threaded,two_agent",
-        help="Comma-separated scaffold names",
+        default=None,
+        help=(
+            "Comma-separated scaffold names. Overrides --fast's scaffold set when given. "
+            f"Default: {DEFAULT_SCAFFOLDS}"
+        ),
     )
     run_parser.add_argument("--pairs", default="all", help="Comma-separated pair ids or 'all'")
     run_parser.add_argument(
@@ -119,14 +128,37 @@ def build_parser() -> argparse.ArgumentParser:
     viz_parser.add_argument("--host", default="127.0.0.1")
     viz_parser.add_argument("--port", type=int, default=8765)
 
+    gen_parser = subparsers.add_parser(
+        "generate", help="Generate (X, Y) pairs with high trace-leakage, low answer-only-leakage"
+    )
+    gen_parser.add_argument("--target", type=int, default=160, help="Candidate pairs to generate")
+    gen_parser.add_argument("--n-per-call", type=int, default=4, help="Candidates per generation call")
+    gen_parser.add_argument("--max-fewshots", type=int, default=8)
+    gen_parser.add_argument("--y-trials", type=int, default=4)
+    gen_parser.add_argument("--x-trials", type=int, default=3)
+    gen_parser.add_argument("--verify-samples", type=int, default=2)
+    gen_parser.add_argument("--budgets", default=None, help="Comma-separated Y token budgets")
+    gen_parser.add_argument("--max-spend", type=float, default=GENERATION_MAX_SPEND)
+    gen_parser.add_argument("--max-final", type=int, default=25, help="Max curated pairs to output")
+    gen_parser.add_argument("--output", default="pairs_generated_v1", help="Output basename in data/")
+    gen_parser.add_argument("--gen-model", default=None, help="Override generation model string")
+    gen_parser.add_argument("--fresh", action="store_true", help="Ignore cached stage outputs")
+    gen_parser.add_argument(
+        "--refresh-fewshots", action="store_true", help="Re-run Stage 0 few-shot selection"
+    )
+
     return parser
 
 
 def _resolve_run_options(args) -> dict:
     fast = getattr(args, "fast", False)
-    scaffolds = _parse_csv(args.scaffolds)
-    if fast:
+    if args.scaffolds is not None:
+        # Explicit --scaffolds always wins, even alongside --fast.
+        scaffolds = _parse_csv(args.scaffolds)
+    elif fast:
         scaffolds = list(FAST_SCAFFOLDS)
+    else:
+        scaffolds = _parse_csv(DEFAULT_SCAFFOLDS)
 
     trials = args.trials if args.trials is not None else (1 if fast else DEFAULT_TRIALS)
     y_trials = args.y_trials if args.y_trials is not None else (2 if fast else DEFAULT_Y_TRIALS)
@@ -150,6 +182,11 @@ def _resolve_run_options(args) -> dict:
 
 
 def main() -> None:
+    # Windows consoles default to cp1252; math symbols (e.g. the congruence sign)
+    # in problem text would otherwise crash on print. Make stdout tolerant.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
     parser = build_parser()
     args = parser.parse_args()
 
@@ -198,6 +235,33 @@ def main() -> None:
 
     if args.command == "visualize":
         serve(host=args.host, port=args.port)
+        return
+
+    if args.command == "generate":
+        if args.gen_model:
+            os.environ["GENERATION_MODEL"] = args.gen_model
+            import importlib
+
+            import config as _config
+
+            importlib.reload(_config)
+        from generation.pipeline import run_pipeline
+
+        token_budgets = _parse_int_csv(args.budgets) if args.budgets else None
+        run_pipeline(
+            target_candidates=args.target,
+            n_per_call=args.n_per_call,
+            max_fewshots=args.max_fewshots,
+            y_trials=args.y_trials,
+            x_trials=args.x_trials,
+            token_budgets=token_budgets,
+            max_spend=args.max_spend,
+            max_final=args.max_final,
+            output_name=args.output,
+            verify_samples=args.verify_samples,
+            fresh=args.fresh,
+            refresh_fewshots=args.refresh_fewshots,
+        )
         return
 
     raise ValueError(f"Unknown command: {args.command}")

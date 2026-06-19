@@ -26,6 +26,14 @@ from scaffolds.base import (
     has_final_answer,
 )
 
+
+def _is_answer_only_trace(trace: list[TraceStep]) -> bool:
+    return len(trace) == 1 and bool(trace[0].metadata.get("answer_only"))
+
+
+def _answer_only_context(trace: list[TraceStep]) -> str:
+    return extract_final_answer(trace[0].content)
+
 _scratch_locks: dict[str, Lock] = {}
 _scratch_locks_guard = Lock()
 
@@ -92,15 +100,29 @@ def _answer_y_prompt(
     instruction = _budget_instruction(budget, segmented)
     if trace is None:
         user_content = f"{instruction}\n\nQuestion: {pair.y}"
+    elif _is_answer_only_trace(trace):
+        user_content = (
+            "You are given another question X and its final answer. Use them only if helpful. "
+            f"{instruction}\n\n"
+            f"Question X: {pair.x}\n\n"
+            f"Final answer to question X: {_answer_only_context(trace)}\n\n"
+            f"Question: {pair.y}"
+        )
     else:
         trace_text = format_trace_for_context(trace)
         user_content = (
-            "You are given a trace from solving a related question. Use it only if helpful. "
+            "You are given another question X and a trace of someone solving it. "
+            "Use them only if helpful. "
             f"{instruction}\n\n"
-            f"Related trace:\n{trace_text}\n\n"
+            f"Question X: {pair.x}\n\n"
+            f"Trace solving question X:\n{trace_text}\n\n"
             f"Question: {pair.y}"
         )
     return [Message(role="user", content=user_content)]
+
+
+def _messages_to_dicts(messages: list[Message]) -> list[dict[str, str]]:
+    return [{"role": m.role, "content": m.content} for m in messages]
 
 
 def _answer_y_single_shot(
@@ -109,13 +131,15 @@ def _answer_y_single_shot(
     budget: int,
     trace: list[TraceStep] | None,
     temperature: float,
-) -> str:
+) -> tuple[str, list[Message]]:
+    messages = _answer_y_prompt(pair, budget, trace, segmented=False)
     completion = client.complete(
-        messages=_answer_y_prompt(pair, budget, trace, segmented=False),
+        messages=messages,
         max_tokens=budget,
         temperature=temperature,
     )
-    return completion.content
+    final = messages + [Message(role="assistant", content=completion.content)]
+    return completion.content, final
 
 
 def _answer_y_segmented(
@@ -124,13 +148,14 @@ def _answer_y_segmented(
     budget: int,
     trace: list[TraceStep] | None,
     temperature: float,
-) -> str:
+) -> tuple[str, list[Message]]:
     cap1, cap2, cap3 = _segment_caps(budget)
     caps = [cap1, cap2, cap3]
 
     messages = _answer_y_prompt(pair, budget, trace, segmented=True)
     parts: list[str] = []
     tokens_used = 0
+    final_messages = list(messages)
 
     for index, cap in enumerate(caps):
         if cap <= 0:
@@ -141,11 +166,13 @@ def _answer_y_segmented(
             temperature=temperature,
         )
         segment_text = completion.content
+        # Context the model saw this turn, plus what it produced.
+        final_messages = messages + [Message(role="assistant", content=segment_text)]
         parts.append(segment_text)
         tokens_used += cap
         accumulated = "".join(parts)
         if has_final_answer(accumulated):
-            return accumulated
+            return accumulated, final_messages
 
         messages = messages + [Message(role="assistant", content=segment_text)]
         if index == 0:
@@ -153,7 +180,7 @@ def _answer_y_segmented(
         elif index == 1:
             messages = messages + [Message(role="user", content=_warning_90(budget, tokens_used, cap3))]
 
-    return "".join(parts)
+    return "".join(parts), final_messages
 
 
 def generate_y_response(
@@ -162,7 +189,10 @@ def generate_y_response(
     budget: int,
     trace: list[TraceStep] | None = None,
     temperature: float = 1.0,
-) -> str:
+) -> tuple[str, list[Message]]:
+    """Return (full_text, final_messages) where final_messages is the exact turn
+    structure the solver saw when it produced its final answer (including that
+    final assistant turn)."""
     if budget >= Y_BUDGET_MIN_FOR_WARNINGS:
         return _answer_y_segmented(pair, client, budget, trace, temperature)
     return _answer_y_single_shot(pair, client, budget, trace, temperature)
@@ -175,7 +205,8 @@ def answer_y(
     trace: list[TraceStep] | None = None,
     temperature: float = 1.0,
 ) -> str:
-    return extract_final_answer(generate_y_response(pair, client, budget, trace, temperature))
+    text, _ = generate_y_response(pair, client, budget, trace, temperature)
+    return extract_final_answer(text)
 
 
 def mean_y_accuracy(
@@ -244,7 +275,7 @@ def _run_y_trial(
     temperature: float,
     grader_temperature: float,
 ) -> YTrialResult:
-    raw = generate_y_response(pair, client, budget, trace, temperature)
+    raw, messages = generate_y_response(pair, client, budget, trace, temperature)
     grade = grade_y_answer(pair, raw, grader_client, grader_temperature)
     return YTrialResult(
         budget=budget,
@@ -252,6 +283,7 @@ def _run_y_trial(
         trial=trial,
         answer=extract_final_answer(raw),
         raw_response=raw,
+        prompt_messages=_messages_to_dicts(messages),
         correct=grade.correct,
         grade_method=grade.method,
         grade_detail=grade.detail,

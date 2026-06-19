@@ -3,37 +3,41 @@
     "budget": 32,
     "condition": "scratch",
     "trial": 0,
-    "answer": "-2Gm\u00b2",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "answer": "-2Gm^2/d",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "The gravitational potential energy is given by:\n\nU = -G * m * (Final answer: -2Gm^2/d"
   },
   {
     "budget": 32,
     "condition": "scratch",
     "trial": 1,
-    "answer": "-2Gm\u00b2",
-    "correct": false,
+    "answer": "U = -2Gm\u00b2/d",
+    "correct": true,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "U = -G(m)(2mU = -2Gm\u00b2/dFinal answer: U = -2Gm\u00b2/d"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 0,
-    "answer": "U = -\\frac",
-    "correct": false,
-    "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "answer": "-2Gm^2/d",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "The gravitational potential energy \\( U \\) between two masses is given by:\n\n\\[\nU = -\\frac{G \\cd\\[\nU = -\\frac{G \\cdot m \\cdot 2m}{d}Final answer: -2Gm^2/d"
   },
   {
     "budget": 64,
     "condition": "scratch",
     "trial": 1,
-    "answer": "\\( U = -\\",
+    "answer": "-Gm^2/d",
     "correct": false,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses \\( m \\) and \\( 2m \\) separated by distanceis given by the formula:\n\n\\[\nU = -\\frac{G \\cdot m \\cdotFinal answer: -Gm^2/d"
   },
   {
     "budget": 128,
@@ -42,16 +46,18 @@
     "answer": "\\( U = -\\frac{2Gm^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\), separated by a distance \\( d \\), is given by:\n\n\\[\nU = -\\frac{G \\cdot m \\cdot 2m}{d\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nFinal answer: \\( U = -\\frac{2Gm^2}{d} \\)"
   },
   {
     "budget": 128,
     "condition": "scratch",
     "trial": 1,
-    "answer": "\\( U = -\\frac{2G m",
-    "correct": false,
+    "answer": "\\( U = -\\frac{2G m^2}{d} \\).",
+    "correct": true,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) at a distance \\( d \\) is given by the formula:\n\n\\[\nU = -\\frac{G m (2m)}{d} = -\\\\(-\\frac{2G m^2}{d}\\).\n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)."
   },
   {
     "budget": 256,
@@ -60,133 +66,148 @@
     "answer": "\\( U = -\\frac{2G m^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nFor masses \\( m \\) and \\( 2m \\) separated by distance \\( d \\):\n\n\\[\nU = -\\frac{G m (2m)}{d} = -\\frac{2G m^2}{d}\n\\]\n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)"
   },
   {
     "budget": 256,
-    "condition": "scratch",
-    "trial": 1,
-    "answer": "\\( U = -\\frac{2Gm^2}{d} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 512,
-    "condition": "scratch",
-    "trial": 0,
-    "answer": "\\( U = -\\frac{2Gm^2}{d} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 512,
-    "condition": "scratch",
-    "trial": 1,
-    "answer": "\\( U = -\\frac{2Gm^2}{d} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 1024,
-    "condition": "scratch",
-    "trial": 0,
-    "answer": "\\( U = -\\frac{2G m^2}{d} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
-  },
-  {
-    "budget": 1024,
     "condition": "scratch",
     "trial": 1,
     "answer": "\\( U = -\\frac{2G m^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy (U) between two point masses \\( m_1 \\) and \\( m_2 \\) separated by distance \\( r \\) is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nFor two point masses, \\( m \\) and \\( 2m \\), separated by distance \\( d \\):\n\n\\[\nU = -\\frac{G \\cdot m \\cdot 2m}{d} = -\\frac{2G m^2Thus, the gravitational potential energy of the two masses is:\n\n\\[\nU = -\\frac{2G m^2}{d}\n\\]\n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( U = -\\frac{2G m^2}{d} \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m_1 \\) and \\( m_2 \\) separated by a distance \\( r \\) is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nwhere \\( G \\) is the gravitational constant.\n\nIn this case, we have:\n\n- \\( m_1 = m \\)\n- \\( m_2 = 2m \\)\n- \\( r = d \\)\n\nSubstituting these values into the formula, we get:\n\n\\[\nU = -\\frac{G (m)(2m)}{d} = -\\frac{2G m^2}{d}\n\\]\n\nThus, the gravitational potential energy of the two point masses \\( m \\) and \\( 2m \\), separated by a distance \\( d \\), is:\n\n\\[\nU = -\\frac{2G m^2}{d}\n\\]\n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\( U = -\\frac{2Gm^2}{d} \\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy (U) between two point masses is given by the formula:\n\n\\[ U = -\\frac{G \\cdot m_1 \\cdot m_2}{r} \\]\n\nwhere:\n- \\( G \\) is the gravitational constant,\n- \\( m_1 \\) and \\( m_2 \\) are the masses,\n- \\( r \\) is the distance between the centers of the two masses.\n\nIn this case, let \\( m_1 = m \\) and \\( m_2 = 2m \\), and \\( r = d \\). Therefore, we can substitute these values into the equation:\n\n\\[\nU = -\\frac{G \\cdot m \\cdot 2m}{d}\n\\]\n\nSimplifying this gives:\n\n\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nThis represents the gravitational potential energy of the two masses separated by distance \\( d \\).\n\nFinal answer: \\( U = -\\frac{2Gm^2}{d} \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\(U = -\\frac{2Gm^2}{d}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy (\\(U\\)) between two point masses can be calculated using the formula:\n\n\\[\nU = -\\frac{G \\cdot m_1 \\cdot m_2}{r}\n\\]\n\nwhere \\(G\\) is the gravitational constant, \\(m_1\\) and \\(m_2\\) are the masses, and \\(r\\) is the distance between them.\n\nIn this case, we have:\n- \\(m_1 = m\\) (the first mass)\n- \\(m_2 = 2m\\) (the second mass)\n- \\(r = d\\) (the distance between the two masses)\n\nSubstituting these values into the formula gives:\n\n\\[\nU = -\\frac{G \\cdot m \\cdot (2m)}{d}\n\\]\n\nThis simplifies to:\n\n\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nThus, the gravitational potential energy of two point masses \\(m\\) and \\(2m\\) separated by distance \\(d\\) is:\n\n\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nFinal answer: \\(U = -\\frac{2Gm^2}{d}\\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "\\(-\\frac{2G m^2}{d}\\)",
+    "correct": true,
+    "grade_method": "llm",
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( m_1 \\) and \\( m_2 \\) are the masses, and \\( r \\) is the distance between them.\n\nIn this case, we have two masses: \\( m \\) and \\( 2m \\). The distance \\( r \\) is equal to \\( d \\). Substituting these values into the formula, we find:\n\n\\[\nU = -\\frac{G (m)(2m)}{d} = -\\frac{2G m^2}{d}\n\\]\n\nThus, the gravitational potential energy of the two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is:\n\n\\[\nU = -\\frac{2G m^2}{d}\n\\]\n\nFinal answer: \\(-\\frac{2G m^2}{d}\\)"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\( -\\frac{",
-    "correct": false,
+    "answer": "-G(2m*m)/d",
+    "correct": true,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\)is given by the formula:\n\n\\[\nFinal answer: -G(2m*m)/d"
   },
   {
     "budget": 32,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( -\\frac{",
-    "correct": false,
+    "answer": "-G*m*(2m)/d",
+    "correct": true,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\)is given by \n\n\\[\nU =Final answer: -G*m*(2m)/d"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\(-\\frac{",
-    "correct": false,
+    "answer": "-G(2m)(m)/d",
+    "correct": true,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses \\( m \\) and \\( 2m \\) separated by aThe gravitational potential energy \\( U \\) is given by:\n\n\\[\nU = -\\frac{G \\Final answer: -G(2m)(m)/d"
   },
   {
     "budget": 64,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\(-\\frac{",
+    "answer": "-2Gm^2/d",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) separated by distanceis given by the formula:\n\n\\[\nU = -\\frac{G m (2m)}{dFinal answer: -2Gm^2/d"
+  },
+  {
+    "budget": 128,
+    "condition": "with_trace",
+    "trial": 0,
+    "answer": "\\( U",
     "correct": false,
     "grade_method": "llm",
-    "grade_detail": "INCORRECT"
-  },
-  {
-    "budget": 128,
-    "condition": "with_trace",
-    "trial": 0,
-    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
-    "correct": true,
-    "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is given by the formula:\n\n\\[\nU = -\\frac{G \\cdot m \\cdot 2m\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nThis expression indicates that the gravitational potential energy is negative, reflecting the attractive nature of the gravitational force between the two masses.\n\nFinal answer: \\( U"
   },
   {
     "budget": 128,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
+    "answer": "\\( U = -\\frac{2G m^2}{d} \\).",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) separated by distance \\( d \\) is given by:\n\n\\[\nU = -\\frac{G m (2m)}{d} = -\\frac{\\[\nU = -\\frac{2G m^2}{d}\n\\]\n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)."
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
+    "answer": "\\( -\\frac{2Gm^2}{d} \\).",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is given by:\n\n\\[\nU = -\\frac{Gm(2m)}{d} = -\\frac{2Gm^2}{d}\n\\]\n\nHere, \\( G \\) is the gravitational constant. This formula accounts for the attractive gravitational force between the two masses. \n\nFinal answer: \\( -\\frac{2Gm^2}{d} \\)."
   },
   {
     "budget": 256,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
-    "correct": true,
+    "answer": "\\( U = -\\frac{2Gm",
+    "correct": false,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "INCORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses \\( m \\) and \\( 2m \\) separated by distance \\( d \\) is given by:\n\n\\[\nU = -\\frac{G \\cdot m \\cdot 2m}{d}\n\\]\n\nSimplifying this:\n\n\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nThis formula represents the gravitational potential energy considering \\( U = 0 \\) at infinite separation.\n\nFinal answer: \\( U = -\\frac{2Gm"
   },
   {
     "budget": 512,
     "condition": "with_trace",
     "trial": 0,
-    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
+    "answer": "\\( U = -\\frac{2G m^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nFor our two masses, \\( m_1 = m \\) and \\( m_2 = 2m \\), separated by distance \\( d \\), we can substitute into the formula:\n\n\\[\nU = -\\frac{G m (2m)}{d} = -\\frac{2G m^2}{d}\n\\]\n\nThis expression represents the gravitational potential energy between the two point masses \\( m \\) and \\( 2m \\). \n\nFinal answer: \\( U = -\\frac{2G m^2}{d} \\)"
   },
   {
     "budget": 512,
@@ -195,7 +216,8 @@
     "answer": "\\( -\\frac{2Gm^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is given by the formula:\n\n\\[\nU = -\\frac{Gm_1m_2}{r}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( m_1 = m \\), \\( m_2 = 2m \\), and \\( r = d \\). Substituting the values into the formula gives:\n\n\\[\nU = -\\frac{G(m)(2m)}{d} = -\\frac{2Gm^2}{d}\n\\]\n\nThus, the gravitational potential energy of the two masses is:\n\nFinal answer: \\( -\\frac{2Gm^2}{d} \\)"
   },
   {
     "budget": 1024,
@@ -204,15 +226,17 @@
     "answer": "\\( -\\frac{2Gm^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) between two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is given by the formula:\n\n\\[\nU = -\\frac{GM_1M_2}{r}\n\\]\n\nwhere \\( G \\) is the gravitational constant, \\( M_1 = m \\), \\( M_2 = 2m \\), and \\( r = d \\).\n\nSubstituting these values into the formula:\n\n\\[\nU = -\\frac{G(m)(2m)}{d}\n\\]\n\nThis simplifies to:\n\n\\[\nU = -\\frac{2Gm^2}{d}\n\\]\n\nTherefore, the gravitational potential energy of the two point masses \\( m \\) and \\( 2m \\) separated by a distance \\( d \\) is:\n\nFinal answer: \\( -\\frac{2Gm^2}{d} \\)"
   },
   {
     "budget": 1024,
     "condition": "with_trace",
     "trial": 1,
-    "answer": "\\( -\\frac{2G m^2}{d} \\)",
+    "answer": "\\( -\\frac{2Gm^2}{d} \\)",
     "correct": true,
     "grade_method": "llm",
-    "grade_detail": "CORRECT"
+    "grade_detail": "CORRECT",
+    "raw_response": "The gravitational potential energy \\( U \\) of two point masses is given by the formula:\n\n\\[\nU = -\\frac{G m_1 m_2}{r}\n\\]\n\nwhere \\( m_1 \\) and \\( m_2 \\) are the masses, \\( G \\) is the gravitational constant, and \\( r \\) is the distance between the two masses.\n\nFor this case:\n- Let \\( m_1 = m \\)\n- Let \\( m_2 = 2m \\)\n- Let \\( r = d \\)\n\nSubstituting these values into the formula:\n\n\\[\nU = -\\frac{G (m)(2m)}{d} = -\\frac{2Gm^2}{d}\n\\]\n\nThus, the gravitational potential energy of the two point masses \\( m \\) and \\( 2m \\) separated by distance \\( d \\) is:\n\nFinal answer: \\( -\\frac{2Gm^2}{d} \\)"
   }
 ]

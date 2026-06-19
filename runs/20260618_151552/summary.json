@@ -1,0 +1,115 @@
+{
+  "run_id": "20260618_151552",
+  "scaffolds": [
+    "control",
+    "cheating_avoid"
+  ],
+  "pair_ids": [
+    "gen_034",
+    "gen_130",
+    "gen_120",
+    "gen_068",
+    "gen_122",
+    "gen_158",
+    "gen_115",
+    "gen_014",
+    "gen_124"
+  ],
+  "x_accuracy_by_scaffold": {
+    "control": 0.8888888888888888,
+    "cheating_avoid": 0.7777777777777778
+  },
+  "x_accuracy_by_pair": {
+    "gen_034": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_130": {
+      "control": 1.0,
+      "cheating_avoid": 0.0
+    },
+    "gen_120": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_068": {
+      "control": 1.0,
+      "cheating_avoid": 0.0
+    },
+    "gen_122": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_158": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_115": {
+      "control": 0.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_014": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    },
+    "gen_124": {
+      "control": 1.0,
+      "cheating_avoid": 1.0
+    }
+  },
+  "mean_y_accuracy_scratch": {
+    "control": 0.2708333333333333,
+    "cheating_avoid": 0.27380952380952384
+  },
+  "mean_y_accuracy_with_trace": {
+    "control": 0.7604166666666666,
+    "cheating_avoid": 0.4166666666666667
+  },
+  "mean_leakage": {
+    "control": 0.4895833333333333,
+    "cheating_avoid": 0.14285714285714285
+  },
+  "leakage_by_pair": {
+    "gen_034": {
+      "control": -0.08333333333333334,
+      "cheating_avoid": 0.16666666666666669
+    },
+    "gen_130": {
+      "control": 0.8333333333333333
+    },
+    "gen_120": {
+      "control": 0.75,
+      "cheating_avoid": 0.08333333333333331
+    },
+    "gen_068": {
+      "control": 0.33333333333333326
+    },
+    "gen_122": {
+      "control": 0.6666666666666666,
+      "cheating_avoid": 0.08333333333333331
+    },
+    "gen_158": {
+      "control": 0.5833333333333333,
+      "cheating_avoid": -0.08333333333333337
+    },
+    "gen_014": {
+      "control": 0.4166666666666667,
+      "cheating_avoid": 0.5
+    },
+    "gen_124": {
+      "control": 0.41666666666666663,
+      "cheating_avoid": 0.33333333333333337
+    },
+    "gen_115": {
+      "cheating_avoid": -0.08333333333333337
+    }
+  },
+  "leakage_trials_used": {
+    "control": 8,
+    "cheating_avoid": 7
+  },
+  "leakage_trials_total": {
+    "control": 9,
+    "cheating_avoid": 9
+  }
+}

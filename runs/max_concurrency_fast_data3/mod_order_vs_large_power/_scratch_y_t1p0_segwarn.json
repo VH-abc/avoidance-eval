@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve for the remainder of \\(2By Fermat's Little Theorem,Final answer: 6"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\(2^{Using Fermat's Little Theorem,Final answer: 6"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\( 2^{100} \\) when divided by 19, we can use Fermat's LittleUsing Fermat's Little Theorem, \\( 2^{18} \\equiv 1 \\mod Final answer: 6"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find \\(2^{100} \\mod 19\\), we can use Fermat's Little Theorem, which states thatSince \\(19\\) is prime, \\(2^{18} \\equiv 1 \\mod 19Final answer: 6"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "8",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\(2^{100}\\) divided by 19, we can use Fermat's Little Theorem, which states that if \\(p\\) is a prime and \\(a\\) is not divisible by \\(p\\), then \\(a^{p-So, for \\(p = 19\\) and \\(a = 2\\):\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNow, \\(100 \\mod 18 = 10Final answer: 8"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\(2^{100}\\) divided by 19, we can use Fermat's Little Theorem. It states that if \\(p\\) is a prime and \\(a\\) is not divisible by \\(p\\):\n\n\\[\na^{p-According to Fermat's Little Theorem: \n\n\\[\n2^{18} \\equiv 1 \\mod 19.\n\\]\n\nNow, calculate \\(100 \\mod 18\\):\n\n\\[\n100 \\div 18 =Final answer: 6"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder when \\( 2^{100} \\) is divided by 19, we can use Fermat's little theorem. Since 19 is a prime number, Fermat's theorem states that for any integer \\( a \\) not divisible by 19:\n\n\\[\na^{p-1} \\equiv 1 \\mod p\n\\]\n\nHere, \\( a = 2 \\) and \\( p = 19 \\), so:\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNextNext, we find \\( 100 \\mod 18 \\):\n\n\\[\n100 \\div 18 = 5 \\text{ remainder } 10\n\\]\n\nThus, \\( 100 \\equiv 10 \\mod 18 \\), and we can write:\n\n\\[\n2^{100} \\equiv 2^{10} \\mod 19\n\\]\n\nNow, we calculate \\( 2^{10} \\):\n\n\\[\n2^{10}Final answer: 6"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "12",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\( 2^{100} \\) when divided by 19, we can use Fermat's Little Theorem, which states that if \\( p \\) is a prime and \\( a \\) is an integer not divisible by \\( p \\), then \\( a^{p-1} \\equiv 1 \\mod p \\).\n\nHere, \\( p = 19 \\) and \\( a = 2 \\). Since 19 is prime and 2 is not divisible by 19, we can apply the theorem:\n\n\\According to Fermat's Little Theorem, \\( 2^{18} \\equiv 1 \\mod 19 \\). To find \\( 2^{100} \\mod 19 \\), we first calculate \\( 100 \\mod 18 \\):\n\n\\[\n100 \\div 18 = 5 \\quad \\text{(remainder 10)}\n\\]\n\nThus, \\( 100 \\equiv 10 \\mod 18 \\). Therefore,\n\nFinal answer: 12"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the remainder of \\(2^{100}\\) divided by 19, we can use Fermat's Little Theorem. According to the theorem, if \\(p\\) is a prime and \\(a\\) is an integer not divisible by \\(p\\), then:\n\n\\[\na^{p-1} \\equiv 1 \\mod p\n\\]\n\nIn this case, we take \\(a = 2\\) and \\(p = 19\\). Since 19 is prime and 2 is not divisible by 19, we apply the theorem:\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNext, we need to express \\(100\\) modulo \\(18\\) to simplify \\(2^{100}\\):\n\n\\[\n100 \\mod 18\n\\]\n\nCalculating the division, we find:\n\n\\[\n100 \\div 18 = 5 \\quad \\text{(whole part)}\n\\]\n\\[\n100 - (18 \\times 5) = 10\n\\]\n\nThus, \\(100 \\mod 18 = 10\\Now we know:\n\n\\[\n2^{100} \\equiv 2^{10} \\mod 19\n\\]\n\nNext, we need to calculate \\(2^{10}\\):\n\n\\[\n2^1 = 2\n\\]\n\\[\n2^2 = 4\n\\]\n\\[\n2^3 = 8\n\\]\n\\[\n2^4 = 16\n\\]\n\\[\n2^5 = 32 \\equiv 13 \\mod 19\n\\]\n\\[\n2^6 = 2 \\times 13 \\equiv 26 \\equiv 7 \\mod 19\n\\]\n\\[\n2^7 = 2 \\times 7 = 14\n\\]\n\\[\n2^8 = 2 \\times 14 = 28 \\equiv 9 \\mod 19\n\\]\n\\[\n2^9 = 2 \\timesFinal answer: 6"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "Final answer: 17",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the remainder of \\( 2^{100} \\) when divided by 19, we can use Fermat's Little Theorem. According to the theorem, if \\( p \\) is a prime and \\( a \\) is an integer not divisible by \\( p \\), then:\n\n\\[\na^{p-1} \\equiv 1 \\mod p\n\\]\n\nIn this case, \\( p = 19 \\) and \\( a = 2 \\). Since 2 is not divisible by 19, we can apply the theorem. Thus, we have:\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNow, we need to express \\( 2^{100} \\) in terms of \\( 2^{18} \\). We can divide 100 by 18:\n\n\\[\n100 = 5 \\times 18 + 10\n\\]\n\nThis means:\n\n\\[\n2^{100} = (2^{18})^5 \\times 2^{10}\n\\]\n\nUsing Fermat's theorem, we simplify this:\n\n\\[\n(\\[\n(2^{18})^5 \\equiv 1^5 \\equiv 1 \\mod 19\n\\]\n\nNow we just need to calculate \\( 2^{10} \\mod 19 \\):\n\n\\[\n2^{10} = 1024\n\\]\n\nNow, we divide 1024 by 19 to find the remainder:\n\n\\[\n1024 \\div 19 \\approx 53.8947368 \\quad \\text{(integer part is 53)}\n\\]\n\\[\n53 \\times 19 = 1007\n\\]\n\\[\n1024 - 1007 = 17\n\\]\n\nThus, \\( 2^{10} \\equiv 17 \\mod 19 \\).\n\nPutting it all together:\n\n\\[\n2^{100} \\equiv 2^{10} \\equiv 17 \\mod 19\n\\]\n\nFinal answer:Final answer: 17"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "17",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the remainder of \\( 2^{100} \\) when divided by 19, we can use Fermat's Little Theorem. According to this theorem, if \\( p \\) is a prime number and \\( a \\) is an integer not divisible by \\( p \\), then:\n\n\\[\na^{p-1} \\equiv 1 \\mod p\n\\]\n\nIn this case, \\( a = 2 \\) and \\( p = 19 \\). Since 2 is not divisible by 19, we can apply the theorem:\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNext, we need to express \\( 100 \\) in terms of \\( 18 \\). We do this by performing the division:\n\n\\[\n100 \\div 18 = 5 \\quad \\text{(remainder 10)}\n\\]\n\nThis means we can write:\n\n\\[\n100 = 5 \\times 18 + 10\n\\]\n\nTherefore:\n\n\\[\n2^{100} = 2^{5 \\times 18 + 10} = (2^{18})^5 \\times 2^{10} \\equiv 1^5 \\times 2^{10} \\equiv 2^{10} \\mod 19\n\\]\n\nNow, we need to calculate \\( 2^{10} \\mod 19 \\). We can do this by first calculating \\( 2^5 \\):\n\n\\[\n2^5 = 32\n\\]\n\nNow, we find \\( 32 \\mod 19 \\):\n\n\\[\n32 \\div 19 = 1 \\quad \\text{(remainder 13)}\n\\]\n\nSo:\n\n\\[\n2^5 \\equiv 13 \\mod 19\n\\]\n\nNext, we calculate \\( 2^{10} \\):\n\n\\[\n2^{10} = (2^5)^2 \\equiv 13^2 \\mod 19\n\\]\n\nCalculating \\( 13^2 \\):\n\n\\[\n13^2 = 169\n\\]\n\nNow we find \\( 169 \\mod 19 \\):\n\n\\[\n169 \\div 19 = 8 \\quad \\Calculating \\( 169 \\mod 19 \\):\n\n\\[\n169 - (19 \\times 8) = 169 - 152 = 17\n\\]\n\nThus:\n\n\\[\n2^{10} \\equiv 17 \\mod 19\n\\]\n\nFinally, we have:\n\n\\[\n2^{100} \\equiv 17 \\mod 19\n\\]\n\nFinal answer: 17"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "17",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the remainder when \\( 2^{100} \\) is divided by 19, we can use Fermat's Little Theorem. According to this theorem, if \\( p \\) is a prime and \\( a \\) is an integer not divisible by \\( p \\), then:\n\n\\[\na^{p-1} \\equiv 1 \\mod p\n\\]\n\nIn our case, \\( p = 19 \\) and \\( a = 2 \\). Since 2 is not divisible by 19, we can apply the theorem:\n\n\\[\n2^{18} \\equiv 1 \\mod 19\n\\]\n\nNow, to compute \\( 2^{100} \\mod 19 \\), we first find \\( 100 \\mod 18 \\):\n\n\\[\n100 \\div 18 = 5 \\quad \\text{(remainder } 10\\text{)}\n\\]\nThus, \\( 100 \\equiv 10 \\mod 18 \\).\n\nThis means:\n\n\\[\n2^{100} \\equiv 2^{10} \\mod 19\n\\]\n\nNow, we need to calculate \\( 2^{10} \\).\n\nCalculating \\( 2^{10} \\):\n\n\\[\n2^1 = 2\n\\]\n\\[\n2^2 = 4\n\\]\n\\[\n2^3 = 8\n\\]\n\\[\n2^4 = 16\n\\]\n\\[\n2^5 = 32 \\equiv 13 \\mod 19 \\quad (\\text{since } 32 - 19 = 13)\n\\]\n\\[\n2^6 = 2 \\times 13 = 26 \\equiv 7 \\mod 19 \\quad \\text{(since } 26 - 19 = 7)\n\\]\n\\[\n2^7 = 2 \\times 7 = 14\n\\]\n\\[\n2^8 = 2 \\times 14 = 28 \\equiv 9 \\mod 19 \\quad \\text{(since } 28 - 19 = 9)\n\\]\n\\[\n2^9 = 2 \\times 9 = 18 \\equivContinuing with the calculation for \\( 2^{10} \\):\n\n\\[\n2^{10} = 2 \\times 18 = 36 \\equiv 17 \\mod 19 \\quad (\\text{since } 36 - 19 = 17)\n\\]\n\nThus, we find that:\n\n\\[\n2^{100} \\equiv 2^{10} \\equiv 17 \\mod 19\n\\]\n\nFinal answer: 17"
+  }
+]

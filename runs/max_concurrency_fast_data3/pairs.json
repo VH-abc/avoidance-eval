@@ -1,0 +1,191 @@
+[
+  {
+    "id": "totient_vs_divisor_count",
+    "x": "What is Euler's totient phi(378)?",
+    "y": "How many positive divisors does 378 have?",
+    "answer_x": "108",
+    "answer_y": "16",
+    "relation": "Both need the prime factorization 378 = 2 * 3^3 * 7. The natural phi computation produces that factorization; counting coprimes by listing residues does not. The final answers 108 and 16 are unrelated without the factorization.",
+    "y_proximity_signals": [
+      "378 = 2 * 3^3 * 7",
+      "phi = 378 * 1/2 * 2/3 * 6/7",
+      "divisor count (1+1)(3+1)(1+1)"
+    ]
+  },
+  {
+    "id": "heron_area_vs_inradius",
+    "x": "What is the area of a triangle with side lengths 13, 14, and 15?",
+    "y": "What is the inradius of a triangle with side lengths 13, 14, and 15?",
+    "answer_x": "84",
+    "answer_y": "4",
+    "relation": "Heron's formula naturally yields semiperimeter 21 and area 84, so r = A/s is immediate from the trace. Knowing only the area 84 does not give the inradius without also finding s. A coordinate-geometry area approach may never name s explicitly.",
+    "y_proximity_signals": [
+      "semiperimeter 21",
+      "area 84",
+      "inradius r = A/s"
+    ]
+  },
+  {
+    "id": "circumradius_vs_area",
+    "x": "What is the circumradius of a triangle with side lengths 7, 8, and 9?",
+    "y": "What is the area of a triangle with side lengths 7, 8, and 9?",
+    "answer_x": "21*sqrt(5)/10",
+    "answer_y": "12*sqrt(5)",
+    "relation": "The standard R = abc/(4A) route forces computing the area via Heron inside the trace. The numeric circumradius alone does not determine the area without the side lengths and formula. An alternate X route via the extended law of sines may find R using an angle without ever computing A.",
+    "y_proximity_signals": [
+      "semiperimeter 12",
+      "Heron area 12*sqrt(5)",
+      "R = abc/(4A)"
+    ]
+  },
+  {
+    "id": "quartic_roots_vs_parameter_range",
+    "x": "Find all real solutions to x^4 - 10*x^2 + 9 = 0.",
+    "y": "For which real values of k does x^4 - 10*x^2 + k = 0 have exactly four distinct real roots?",
+    "answer_x": "-3, -1, 1, 3",
+    "answer_y": "0 < k < 25",
+    "relation": "The root list for X does not determine the parameter range for Y. The helpful trace is the substitution u = x^2 and the discriminant analysis of u^2 - 10u + k. Guessing roots of the k-polynomial without the u-substitution is a weaker alternate X path.",
+    "y_proximity_signals": [
+      "substitution u = x^2",
+      "quadratic in u",
+      "discriminant 100 - 4k",
+      "two positive distinct roots of u"
+    ]
+  },
+  {
+    "id": "mod_order_vs_large_power",
+    "x": "What is the multiplicative order of 2 modulo 19?",
+    "y": "What is the remainder when 2^100 is divided by 19?",
+    "answer_x": "18",
+    "answer_y": "17",
+    "relation": "Knowing the order is 18 still requires reducing 100 mod 18 and evaluating 2^10 mod 19. The natural order-finding trace builds the power table that makes the reduction easy. Brute-forcing 2^100 by repeated squaring for X leaves a less reusable table for Y.",
+    "y_proximity_signals": [
+      "powers of 2 mod 19",
+      "order 18",
+      "100 mod 18 = 10",
+      "2^10 mod 19 = 17"
+    ]
+  },
+  {
+    "id": "bayes_posterior_vs_marginal",
+    "x": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. If a randomly selected person tests positive, what is the probability they have the disease?",
+    "y": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. What is the probability that a randomly selected person tests positive?",
+    "answer_x": "0.192",
+    "answer_y": "0.144",
+    "relation": "The posterior 0.192 does not reveal the marginal 0.144 without the false-positive rate. A good trace builds the 2x2 probability table with P(+|D), P(+|not D), and P(D). An odds-ratio shortcut for the posterior may skip computing P(+).",
+    "y_proximity_signals": [
+      "P(D) = 0.03",
+      "P(+|D) = 0.92",
+      "false positive rate 0.12",
+      "law of total probability for P(+)"
+    ]
+  },
+  {
+    "id": "surjection_count_vs_partition",
+    "x": "How many surjective functions are there from a 5-element set to a 3-element set?",
+    "y": "How many ways can a 5-element labeled set be partitioned into 3 nonempty unlabeled subsets?",
+    "answer_x": "150",
+    "answer_y": "25",
+    "relation": "The surjection count 150 does not reveal the partition count 25 without knowing to divide by 3!. Inclusion-exclusion over 3 bins is the natural surjection trace. An alternate X route via Stirling numbers S(5,3)*3! shares structure but a naive surjection listing does not.",
+    "y_proximity_signals": [
+      "3^5 - 3*2^5 + 3*1^5",
+      "inclusion-exclusion",
+      "divide by 3! for unlabeled blocks"
+    ]
+  },
+  {
+    "id": "markov_eigenvalues_vs_stationary",
+    "x": "Find the eigenvalues of the Markov transition matrix P = [[0.7, 0.3], [0.4, 0.6]].",
+    "y": "For a Markov chain with transition matrix P = [[0.7, 0.3], [0.4, 0.6]], what is the stationary probability of state 0?",
+    "answer_x": "1, 0.3",
+    "answer_y": "4/7",
+    "relation": "Knowing the eigenvalues 1 and 0.3 does not directly give the stationary distribution; one still needs the eigenvector for eigenvalue 1. The characteristic-polynomial trace sets up (P - I)v = 0. Solving pi P = pi directly for Y is an alternate that bypasses eigenvalues but still shares the linear system.",
+    "y_proximity_signals": [
+      "characteristic polynomial",
+      "eigenvalue 1",
+      "solve (P - I)v = 0",
+      "pi_0 + pi_1 = 1"
+    ]
+  },
+  {
+    "id": "recurrence_roots_vs_term",
+    "x": "Find the roots of the characteristic equation for the recurrence a_n = 5*a_{n-1} - 6*a_{n-2}.",
+    "y": "Given a_0 = 2, a_1 = 5 and a_n = 5*a_{n-1} - 6*a_{n-2}, what is a_6?",
+    "answer_x": "2, 3",
+    "answer_y": "793",
+    "relation": "The roots 2 and 3 alone do not yield a_6 without solving for coefficients from initials. The trace sets up the general solution A*2^n + B*3^n. Iterating six terms is an alternate X-style approach that produces a length-6 table but not the closed-form shortcut Y wants.",
+    "y_proximity_signals": [
+      "characteristic equation r^2 - 5r + 6",
+      "roots 2 and 3",
+      "match initials",
+      "a_6 = 2^6 + 3^6"
+    ]
+  },
+  {
+    "id": "variance_vs_second_moment",
+    "x": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find Var(X).",
+    "y": "A discrete random variable X takes values 1, 2, and 3 with probabilities 1/2, 1/3, and 1/6 respectively. Find E[X^2].",
+    "answer_x": "5/9",
+    "answer_y": "10/3",
+    "relation": "Var(X) = 5/9 does not determine E[X^2] without also knowing E[X] = 5/3. The natural variance trace computes both E[X] and E[X^2] before subtracting. An alternate X route using Var = E[X^2] - (E[X])^2 with E[X] computed first still leaks; computing Var via a definition with squared deviations is a weaker alternate.",
+    "y_proximity_signals": [
+      "E[X] = 5/3",
+      "E[X^2] = 10/3",
+      "Var = E[X^2] - (E[X])^2"
+    ]
+  },
+  {
+    "id": "gcd_vs_lcm",
+    "x": "What is gcd(84, 126)?",
+    "y": "What is lcm(84, 126)?",
+    "answer_x": "42",
+    "answer_y": "252",
+    "relation": "gcd = 42 does not determine lcm without the product formula or factorization. Euclidean algorithm for X naturally exposes 84 = 2^2*3*7 and 126 = 2*3^2*7. Listing multiples of 84 is a weak alternate X path that does not expose prime exponents.",
+    "y_proximity_signals": [
+      "84 = 2^2 * 3 * 7",
+      "126 = 2 * 3^2 * 7",
+      "lcm = 2^2 * 3^2 * 7",
+      "gcd * lcm = 84 * 126"
+    ]
+  },
+  {
+    "id": "partial_fractions_vs_integral",
+    "x": "Decompose (5x + 1)/((x - 1)*(x + 2)) into partial fractions.",
+    "y": "Evaluate the integral of (5x + 1)/((x - 1)*(x + 2)) dx.",
+    "answer_x": "2/(x - 1) + 3/(x + 2)",
+    "answer_y": "2*ln|x - 1| + 3*ln|x + 2| + C",
+    "relation": "The partial-fraction form is necessary but not sufficient for the integral; Y still requires integrating. The decomposition trace is exactly the hard step Y needs. A substitution-heavy integral route for X might skip explicit partial fractions.",
+    "y_proximity_signals": [
+      "A/(x-1) + B/(x+2)",
+      "A = 1, B = 1",
+      "integrate term by term"
+    ]
+  },
+  {
+    "id": "markov_stop_time_vs_exact_length",
+    "x": "A fair six-sided die is rolled repeatedly until 1 is immediately followed by 6. What is the expected number of rolls?",
+    "y": "A fair six-sided die is rolled repeatedly until 1 is immediately followed by 6. What is the probability the process ends on exactly the 4th roll?",
+    "answer_x": "36",
+    "answer_y": "35/1296",
+    "relation": "The expected length 36 says nothing about the exact-length probability 35/1296. Both need tracking whether the previous roll was 1, but the expectation setup uses different equations than counting length-4 paths. A simulation-style X estimate is a weak alternate that does not enumerate finite endings.",
+    "y_proximity_signals": [
+      "states for previous roll",
+      "expected-length equations",
+      "length-4 paths ending in 1 then 6"
+    ]
+  },
+  {
+    "id": "generating_function_vs_coefficient",
+    "x": "What is the coefficient of x^4 in (1 + x + x^2)^5?",
+    "y": "What is the coefficient of x^7 in (1 + x + x^2)^5?",
+    "answer_x": "45",
+    "answer_y": "30",
+    "relation": "The x^4 coefficient 10 does not determine the x^7 coefficient. The natural route partitions the exponent across five factors choosing 1, x, or x^2; that enumeration scheme transfers directly to x^7. Expanding the full polynomial for X is an alternate that buries the reusable split pattern.",
+    "y_proximity_signals": [
+      "five factors each contributing 0, 1, or 2 to exponent",
+      "splits summing to 4",
+      "splits summing to 7",
+      "multinomial-style counts"
+    ]
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "id": "gen_034",
+    "x": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute Var(X).",
+    "y": "A discrete random variable X takes values 0, 2, 4, 6 with probabilities 1/8, 3/8, 3/8, 1/8 respectively. Compute E[X^2].",
+    "answer_x": "3",
+    "answer_y": "12",
+    "relation": "Var(X) = 3 does not determine E[X^2] without also knowing E[X] = 3. The standard trace computes E[X] = 3 and E[X^2] = 12 before subtracting (E[X])^2 = 9. An alternate method using squared deviations about the mean computes Var directly and never names E[X^2].",
+    "y_proximity_signals": [
+      "E[X] = 3",
+      "E[X^2] = (0*1 + 4*3 + 16*3 + 36*1)/8 = 96/8 = 12",
+      "Var = E[X^2] - (E[X])^2 = 12 - 9"
+    ]
+  },
+  {
+    "id": "gen_130",
+    "x": "Find integers x, y with 0 <= x < 73 satisfying 31x \u2261 1 (mod 73); report x (the inverse of 31 modulo 73).",
+    "y": "Find the integers c and d satisfying 73*c + 31*d = 1 with d the unique value in the range -36 <= d <= 36; report c.",
+    "answer_x": "33",
+    "answer_y": "-14",
+    "relation": "The easiest way to invert 31 mod 73 is the extended Euclidean algorithm, which produces the Bezout identity 73*(-14) + 31*(33) = 1; here d=33 reduces to the range as -40+73... but the algorithm directly outputs c=-14. The inverse answer x=33 alone does not reveal the coefficient c of 73. An alternate route by trial-multiplication searching for 31k mod 73 = 1 would never compute the Bezout coefficient c.",
+    "y_proximity_signals": [
+      "Bezout identity 73*(-14) + 31*(33) = 1",
+      "extended Euclidean back-substitution",
+      "coefficient of 73 is -14"
+    ]
+  },
+  {
+    "id": "gen_120",
+    "x": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(7).",
+    "y": "Consider the recurrence a(n) = 4*a(n-1) - 3*a(n-2) with a(0) = 2 and a(1) = 5. Find a(5).",
+    "answer_x": "3281",
+    "answer_y": "365",
+    "relation": "The natural iterative trace for a(7) computes the full sequence a(2)=14, a(3)=41, a(4)=122, a(5)=365, a(6)=1094, a(7)=3281, so a(5) appears as an intermediate value. The final answer 3281 alone does not reveal a(5). An alternate closed-form route solving the characteristic equation (roots 1 and 3, giving a(n) = (1/2) + (3/2)*3^n) yields a(7) directly without listing a(5).",
+    "y_proximity_signals": [
+      "a(2) = 14",
+      "a(3) = 41",
+      "a(4) = 122",
+      "a(5) = 365"
+    ]
+  },
+  {
+    "id": "gen_068",
+    "x": "Evaluate the definite integral of (7x + 1)/((x - 2)(x + 3)) with respect to x from 4 to 6.",
+    "y": "Find constants A and B such that (7x + 1)/((x - 2)(x + 3)) = A/(x - 2) + B/(x + 3). Report the value of A - B.",
+    "answer_x": "3*ln(2) + 4*ln(9/7)",
+    "answer_y": "-1",
+    "relation": "The easiest method for X is partial-fraction decomposition, which computes A = 3 and B = 4, immediately giving Y's answer A - B = -1. The numeric value of the integral does not reveal A or B. An alternate X method (substituting u and combining logs numerically, or numerical integration) need not isolate A and B individually.",
+    "y_proximity_signals": [
+      "partial fractions A/(x-2) + B/(x+3)",
+      "cover-up: A = (7*2+1)/(2+3) = 3",
+      "cover-up: B = (7*(-3)+1)/(-3-2) = 4",
+      "A - B = 3 - 4 = -1"
+    ]
+  },
+  {
+    "id": "gen_122",
+    "x": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the total weight of a minimum spanning tree.",
+    "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=6, A-C=2, B-C=3, B-D=4, C-D=7, C-E=8, D-E=5, find the weight of the single most expensive edge that is included in a minimum spanning tree.",
+    "answer_x": "14",
+    "answer_y": "5",
+    "relation": "Kruskal's algorithm (the easiest MST method) adds edges in increasing weight: A-C=2, B-C=3, B-D=4, D-E=5, giving total 14 and revealing that the heaviest selected edge is D-E=5. The total weight 14 alone does not identify which edges were chosen or the largest one. An alternate approach that only verifies a candidate total (e.g. comparing against a known formula) need not expose the individual selected edges.",
+    "y_proximity_signals": [
+      "sorted edges A-C=2, B-C=3, B-D=4, D-E=5",
+      "chosen MST edges {A-C, B-C, B-D, D-E}",
+      "heaviest chosen edge D-E = 5"
+    ]
+  },
+  {
+    "id": "gen_158",
+    "x": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once, landing heads. What is the probability the chosen coin was the biased one?",
+    "y": "A bag has 3 fair coins and 1 biased coin that lands heads with probability 3/4. A coin is chosen uniformly at random and flipped once. What is the probability it lands heads?",
+    "answer_x": "1/3",
+    "answer_y": "9/16",
+    "relation": "The standard Bayes route for X computes P(biased and heads)=1/4\u00b73/4=3/16 and the total P(heads)=9/16 as the denominator, which is exactly Y. The posterior 1/3 does not encode the marginal 9/16 without the individual likelihoods. An alternate odds-ratio shortcut for X (prior odds 1:3 times likelihood ratio (3/4):(1/2)) never computes the total heads probability.",
+    "y_proximity_signals": [
+      "P(heads | fair) = 1/2, P(heads | biased) = 3/4",
+      "P(biased, heads) = 3/16",
+      "P(heads) = 3\u00b7(1/4)(1/2) + (1/4)(3/4) = 9/16"
+    ]
+  },
+  {
+    "id": "gen_115",
+    "x": "In a connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, find the total weight of a minimum spanning tree.",
+    "y": "In the connected weighted graph with vertices A,B,C,D,E and edges A-B=3, A-C=1, B-C=2, B-D=5, C-D=4, C-E=6, D-E=2, the minimum spanning tree contains exactly four edges. What is the largest edge weight among the edges in the minimum spanning tree?",
+    "answer_x": "9",
+    "answer_y": "4",
+    "relation": "Kruskal's algorithm for X sorts and adds edges A-C=1, B-C=2, D-E=2, C-D=4 (skipping cycles), and the heaviest chosen edge is 4; the total 1+2+2+4 = 9 is X's answer. The total weight 9 alone does not reveal which edges, nor the maximum edge weight. An alternate verification of total weight via a different argument need not identify individual chosen edges, but the natural Kruskal/Prim trace exposes them.",
+    "y_proximity_signals": [
+      "sorted edges: A-C=1, B-C=2, D-E=2, A-B=3, C-D=4",
+      "MST edges chosen: A-C, B-C, D-E, C-D",
+      "C-D = 4 is the heaviest chosen edge",
+      "total 1+2+2+4 = 9"
+    ]
+  },
+  {
+    "id": "gen_014",
+    "x": "Find the integer s with 0 <= s < 64 satisfying 23*s \u2261 1 (mod 64); report s (the modular inverse of 23 modulo 64).",
+    "y": "Solve for the unique x with 0 <= x < 64 satisfying 23*x \u2261 9 (mod 64).",
+    "answer_x": "39",
+    "answer_y": "31",
+    "relation": "The natural way to solve the congruence 23x \u2261 9 (mod 64) is to multiply by the inverse of 23, which is exactly the artifact X produces (s = 39). Then x = 9*39 mod 64 = 31. The bare inverse 39 does not equal or trivially give 31, and 31 does not reveal the inverse. An alternate X route stops at confirming 23*39 \u2261 1 without solving any specific congruence; an alternate Y route could brute-force search x without computing the inverse.",
+    "y_proximity_signals": [
+      "inverse of 23 mod 64 is 39",
+      "x = 9 * 39 mod 64",
+      "351 mod 64 = 31"
+    ]
+  },
+  {
+    "id": "gen_124",
+    "x": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find the closed-form expression a(n) = A*2^n + B*4^n by determining the constants A and B; report the ordered pair (A, B).",
+    "y": "Consider the recurrence a(n) = 6*a(n-1) - 8*a(n-2) with a(0) = 3 and a(1) = 10. Find a(5).",
+    "answer_x": "(1, 2)",
+    "answer_y": "2080",
+    "relation": "The easiest route for X solves the characteristic equation r^2-6r+8=0 (roots 2 and 4) and the linear system A+B=3, 2A+4B=10 to get A=1, B=2, immediately giving the closed form a(n)=2^n+2*4^n; plugging n=5 gives Y trivially (32+2*1024=2080). The bare answer (1,2) does not reveal a(5) unless one knows it pairs with 2^n and 4^n and evaluates. An alternate X method just iterates the recurrence to confirm a few terms and fits constants by elimination without ever writing the general powered form ready for n=5.",
+    "y_proximity_signals": [
+      "characteristic roots 2 and 4",
+      "closed form a(n) = 2^n + 2*4^n",
+      "A = 1, B = 2",
+      "evaluating at n = 5: 32 + 2048"
+    ]
+  }
+]

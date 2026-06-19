@@ -1,0 +1,157 @@
+[
+  {
+    "id": "totient_vs_divisors",
+    "x": "What is Euler's totient \u03c6(378)?",
+    "y": "How many positive divisors does 378 have?",
+    "answer_x": "108",
+    "answer_y": "16",
+    "relation": "Both depend on prime factorization of 378, but one asks for \u03c6 and the other for divisor count",
+    "y_proximity_signals": [
+      "writing 378 = 2 \u00d7 3^3 \u00d7 7",
+      "listing the prime powers of 378"
+    ]
+  },
+  {
+    "id": "heron_vs_incircle",
+    "x": "What is the area of a triangle with side lengths 7, 8, and 9?",
+    "y": "What is the circumradius of a triangle with side lengths 7, 8, and 9?",
+    "answer_x": "12\u221a5",
+    "answer_y": "21\u221a5/10",
+    "relation": "Same triangle; area for X is an intermediate quantity for the circumradius formula R = abc/(4A)",
+    "y_proximity_signals": [
+      "computing area 12\u221a5",
+      "computing semiperimeter 12",
+      "using R = abc/(4A)"
+    ]
+  },
+  {
+    "id": "quartic_solve_vs_parameter",
+    "x": "Find all real solutions to x^4 - 10x^2 + 9 = 0.",
+    "y": "For which real values of k does x^4 - 10x^2 + k = 0 have exactly four distinct real roots?",
+    "answer_x": "-3, -1, 1, 3",
+    "answer_y": "0 < k < 25",
+    "relation": "Same quartic family via u = x^2; X solves one instance, Y asks for a parameter range",
+    "y_proximity_signals": [
+      "substitution u = x^2",
+      "analyzing when u^2 - 10u + k has two positive roots",
+      "discriminant 100 - 4k"
+    ]
+  },
+  {
+    "id": "escape_velocity_vs_orbital",
+    "x": "Two point masses m and 2m are at positions 0 and d on a line. How far from mass m (between the two masses) is the net gravitational field zero?",
+    "y": "What is the gravitational potential energy of two point masses m and 2m separated by distance d? (Take U = 0 at infinite separation.)",
+    "answer_x": "d(\u221a2 - 1)",
+    "answer_y": "-2Gm^2/d",
+    "relation": "Same two-mass configuration; X finds where fields cancel, Y asks for system potential energy",
+    "y_proximity_signals": [
+      "masses m and 2m separated by d",
+      "inverse-square field or potential",
+      "product 2m^2 in the numerator"
+    ]
+  },
+  {
+    "id": "markov_hh_expected_vs_exact",
+    "x": "A fair six-sided die is rolled repeatedly until 1 is immediately followed by 6. What is the expected number of rolls?",
+    "y": "A fair six-sided die is rolled repeatedly until 1 is immediately followed by 6. What is the probability the process ends on the 4th roll?",
+    "answer_x": "36",
+    "answer_y": "35/1296",
+    "relation": "Same 1-then-6 stopping rule; X asks for expected length, Y for an exact-length probability",
+    "y_proximity_signals": [
+      "tracking whether the previous roll was 1",
+      "reasoning about when 1-6 can first occur",
+      "enumerating length-4 endings"
+    ]
+  },
+  {
+    "id": "bayes_positive_vs_negative",
+    "x": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. If a randomly selected person tests positive, what is the probability they have the disease?",
+    "y": "A disease affects 3% of the population. A test has 92% sensitivity and 88% specificity. If a person tests negative, what is the probability they have the disease?",
+    "answer_x": "0.192",
+    "answer_y": "0.00280",
+    "relation": "Same medical-test setup; X conditions on a positive test, Y on a negative test",
+    "y_proximity_signals": [
+      "P(D) = 0.03",
+      "P(+|D) = 0.92",
+      "false-positive rate 0.12"
+    ]
+  },
+  {
+    "id": "majority_algorithm_vs_counterexample",
+    "x": "After running Boyer-Moore majority vote on [1, 2, 3, 1, 2, 3, 1, 2], what candidate remains?",
+    "y": "In the array [1, 2, 3, 1, 2, 3, 1, 2], is any value appearing more than n/2 times?",
+    "answer_x": "2",
+    "answer_y": "No",
+    "relation": "Boyer-Moore output on the array vs whether a true majority exists",
+    "y_proximity_signals": [
+      "tracing candidate and count through the array",
+      "counting occurrences of each value",
+      "comparing counts to 4"
+    ]
+  },
+  {
+    "id": "marbles_same_vs_different",
+    "x": "A bag contains 5 red and 7 blue marbles. Two marbles are drawn without replacement. What is the probability they are the same color?",
+    "y": "A bag contains 5 red and 7 blue marbles. Two marbles are drawn without replacement. What is the probability they are different colors?",
+    "answer_x": "31/66",
+    "answer_y": "35/66",
+    "relation": "Same draw setup; the two probabilities are complements on the same sample space",
+    "y_proximity_signals": [
+      "C(12,2) total pairs",
+      "same-color pairs C(5,2)+C(7,2)",
+      "complement of same-color probability"
+    ]
+  },
+  {
+    "id": "mod_pow_vs_order",
+    "x": "What is the remainder when 13^100 is divided by 17?",
+    "y": "What is the multiplicative order of 13 modulo 17?",
+    "answer_x": "1",
+    "answer_y": "4",
+    "relation": "Same modular arithmetic setup; X is a large exponent remainder, Y asks for the cycle length of powers of 13 mod 17",
+    "y_proximity_signals": [
+      "powers of 13 modulo 17",
+      "13^2 \u2261 -1 (mod 17)",
+      "smallest k with 13^k \u2261 1"
+    ]
+  },
+  {
+    "id": "subset_count_exactly_vs_atleast",
+    "x": "How many 6-element subsets of {1,2,...,11} contain exactly two of the elements {2,5,9}?",
+    "y": "How many 6-element subsets of {1,2,...,11} contain at least two of the elements {2,5,9}?",
+    "answer_x": "210",
+    "answer_y": "266",
+    "relation": "Same universe and subset size; Y aggregates the exactly-2 and exactly-3 cases that arise when counting around {2,5,9}",
+    "y_proximity_signals": [
+      "choosing 2 of {2,5,9} then 4 others",
+      "adding the exactly-3 case C(8,3)",
+      "complementary counting over the three marked elements"
+    ]
+  },
+  {
+    "id": "generating_function_coeff_pair",
+    "x": "What is the coefficient of x^3 in (1+x)^5 (1+x^2)^4?",
+    "y": "What is the coefficient of x^5 in (1+x)^5 (1+x^2)^4?",
+    "answer_x": "30",
+    "answer_y": "71",
+    "relation": "Same product of generating functions; only the target power of x differs",
+    "y_proximity_signals": [
+      "splitting exponent as k+2j",
+      "binomial coefficients from (1+x)^5 and (1+x^2)^4",
+      "enumerating valid (k,j) pairs"
+    ]
+  },
+  {
+    "id": "surjection_vs_partition",
+    "x": "How many surjective functions are there from a 6-element set to a 3-element set?",
+    "y": "How many ways can a 6-element labeled set be partitioned into 3 nonempty unlabeled subsets?",
+    "answer_x": "540",
+    "answer_y": "90",
+    "relation": "Surjection count and partition count differ by labeling of the 3 blocks",
+    "y_proximity_signals": [
+      "3^6 - 3\u00b72^6 + 3\u00b71^6",
+      "inclusion-exclusion over 3 bins",
+      "dividing by 3!"
+    ]
+  }
+]

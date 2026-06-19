@@ -1,0 +1,46 @@
+{
+  "run_id": "max_concurrency_fast_datagen1",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "grader_provider": "openai",
+  "grader_model": "gpt-4o-mini",
+  "pairs_file": "data\\pairs_generated_v1.json",
+  "scaffolds": [
+    "control_answer_only",
+    "control",
+    "baseline_avoid"
+  ],
+  "pair_ids": [
+    "gen_017",
+    "gen_028",
+    "gen_034",
+    "gen_130",
+    "gen_120",
+    "gen_068",
+    "gen_122",
+    "gen_158",
+    "gen_115",
+    "gen_014",
+    "gen_124",
+    "gen_127"
+  ],
+  "trials": 1,
+  "y_trials": 2,
+  "token_budgets": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "workers": 0,
+  "job_workers": 0,
+  "skip_y": false,
+  "temperature": 1.0,
+  "grader_temperature": 0.0,
+  "y_budget_warnings": true,
+  "y_budget_min_for_warnings": 16,
+  "rate_limit_hits": 0,
+  "slow_requests": 1
+}

@@ -4,6 +4,7 @@ import os
 
 from openai import OpenAI
 
+from config import LLM_MAX_RETRIES, REQUEST_TIMEOUT
 from llm.client import Completion, LLMClient, Message
 
 
@@ -14,20 +15,24 @@ class OpenAIClient:
         self._client = OpenAI(
             api_key=api_key or os.environ["OPENAI_API_KEY"],
             base_url=base_url or os.getenv("OPENAI_BASE_URL"),
+            timeout=REQUEST_TIMEOUT,
+            max_retries=LLM_MAX_RETRIES,
         )
 
     def complete(
         self,
         messages: list[Message],
         max_tokens: int,
-        temperature: float = 1.0,
+        temperature: float | None = 1.0,
     ) -> Completion:
-        response = self._client.chat.completions.create(
-            model=self.model,
-            messages=[{"role": m.role, "content": m.content} for m in messages],
-            max_tokens=max_tokens,
-            temperature=temperature,
-        )
+        kwargs: dict = {
+            "model": self.model,
+            "messages": [{"role": m.role, "content": m.content} for m in messages],
+            "max_tokens": max_tokens,
+        }
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+        response = self._client.chat.completions.create(**kwargs)
         choice = response.choices[0]
         usage = response.usage
         return Completion(

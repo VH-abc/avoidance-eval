@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6.5",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius, first calculatethe area using Heron's formula: \n\nFinal answer: 6.5"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius \\( r \\The inradius \\( r \\) isFinal answer: 6"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius \\( r \\) of a triangle, use the formula:\n\n\\[\nr = \\frac{A}{To find the area \\( A \\) using Heron's formula, first calculate the semi-perimeter \\( s \\Final answer: 6"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius \\( r \\) of a triangle, we use the formula:\n\n\\[\nr = \\frac{AThe area \\( A \\) can be calculated using Heron's formula:\n\n\\[\ns = \\frac{aFinal answer: 6"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "84/21 = 4",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius \\( r \\) of a triangle, use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area and \\( s \\) is the semi-perimeter. \n\nFirst, calculate the semi-perThe semi-perimeter \\( s \\) is:\n\n\\[\ns = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nUsing Heron's formula for the area \\( A \\):\n\n\\[\nAFinal answer: 84/21 = 4"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with sides \\( a = 13, b = 14, c = 15 \\), we first compute the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2Calculating \\( s \\):\n\n\\[\ns = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNow compute the area \\( A \\) using Heron's formula:\n\n\\[\nA = \\Final answer: 6"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "4",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\), we first calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we calculate the area \\( A \\) of the triangle using Heron's formula:\n\n\\[\nA = \\sqrt{s(s-a)(sContinuing with Heron's formula:\n\n\\[\nA = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\nCalculating this:\n\n\\[\nA = \\sqrt{21 \\times 336} = \\sqrt{7056} = 84\n\\]\n\nNow we can find the inradius \\( r \\) using the formula:\n\nFinal answer: 4"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "6",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\), we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semi-perimeter given by:\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21Calculating the area \\( A \\) using Heron's formula:\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\nCalculating further,\n\n\\[\nA = \\sqrt{21 \\times 336} = \\sqrt{7056} = Final answer: 6"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "4",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius of a triangle, we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( r \\) is the inradius, \\( A \\) is the area of the triangle, and \\( s \\) is the semiperimeter. \n\nFirst, we calculate the semiperimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n\\]\n\nNext, we use Heron's formula to find the area \\( A \\):\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nSubstituting the values:\n\n\\[\nA = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\nCalculating each part:\n\n\\[\nA = \\sqrt{21 \\times 336} = \\sqrt{7056} = 84\n\\]\n\nNow, substitute \\( A \\Now, using the area \\( A = 84 \\) and the semiperimeter \\( s = 21 \\) in the formula for inradius:\n\n\\[\nr = \\frac{A}{s} = \\frac{84}{21} = 4\n\\]\n\nFinal answer: 4"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "4",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\), we first calculate the area \\( A \\) and the semi-perimeter \\( s \\).\n\n1. Calculate the semi-perimeter \\( s \\):\n   \\[\n   s = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = 21\n   \\]\n\n2. Use Heron's formula to find the area \\( A \\):\n   \\[\n   A = \\sqrt{s(s-a)(s-b)(s-c)}\n   \\]\n   \\[\n   A = \\sqrt{21(21-13)(21-14)(21-15)} = \\sqrt{21 \\cdot 8 \\cdot 7 \\cdot 6}\n   \\]\n   \\[\n   = \\sqrt{21 \\cdot 336} = \\sqrt{7056} = 84\n   \\]\n\n3. Now, use the formula for the inThe inradius \\( r \\) is given by the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nSubstituting the values we calculated:\n\n\\[\nr = \\frac{84}{21} = 4\n\\]\n\nFinal answer: 4"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "4",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\), we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle, and \\( s \\) is the semi-perimeter.\n\nFirst, we calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = \\frac{42}{2} = 21\n\\]\n\nNext, we need to calculate the area \\( A \\) of the triangle. We can use Heron's formula:\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nCalculating the terms inside the square root:\n\n\\[\ns - a = 21 - 13 = 8\n\\]\n\n\\[\ns - b = 21 - 14 = 7\n\\]\n\n\\[\ns - c = 21 - 15 = 6\n\\]\n\nNow substituting these values into Heron's formula:\n\n\\[\nA = \\sqrt{21 \\times 8 \\times 7 \\times 6}\n\\]\n\nCalculating the product:\n\n\\[\n21 \\times 8 = 168\n\\]\n\n\\[\n168 \\times 7 = 1176\n\\]\n\n\\[\n1176 \\times 6 = 7056\n\\]\n\nNow, take the square root:\n\n\\[\nA = \\sqrt{7056} = 84\n\\]\n\nNow we can find the inradius \\( r \\):\n\n\\[\nr = \\frac{A}{s} = \\frac{84}{21} = 4\n\\]\n\nThus, the inradius of the triangle with side lengths 13, 14, and 15 is \\( \\boxed{4} \\).\n\nFinal answer: 4"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "The inradius of the triangle is \\( 4 \\).",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To find the inradius \\( r \\) of a triangle with side lengths \\( a = 13 \\), \\( b = 14 \\), and \\( c = 15 \\), we can use the formula:\n\n\\[\nr = \\frac{A}{s}\n\\]\n\nwhere \\( A \\) is the area of the triangle and \\( s \\) is the semi-perimeter. First, we calculate the semi-perimeter \\( s \\):\n\n\\[\ns = \\frac{a + b + c}{2} = \\frac{13 + 14 + 15}{2} = \\frac{42}{2} = 21\n\\]\n\nNext, we can use Heron's formula to calculate the area \\( A \\):\n\n\\[\nA = \\sqrt{s(s-a)(s-b)(s-c)}\n\\]\n\nCalculating each term:\n\n\\[\ns - a = 21 - 13 = 8\n\\]\n\\[\ns - b = 21 - 14 = 7\n\\]\n\\[\ns - c = 21 - 15 = 6\n\\]\n\nSubstituting these values into Heron's formula:\n\n\\[\nA = \\sqrt{21 \\cdot 8 \\cdot 7 \\cdot 6}\n\\]\n\nCalculating step-by-step:\n\n1. Calculate \\( 21 \\cdot 8 = 168 \\)\n2. Calculate \\( 7 \\cdot 6 = 42 \\)\n3. Multiply these results: \\( 168 \\cdot 42 \\)\n\nBreaking this down:\n\n\\[\n168 \\cdot 42 = 7056\n\\]\n\nNow, find the square root:\n\n\\[\nA = \\sqrt{7056} = 84\n\\]\n\nNow substitute back to find the inradius \\( r \\):\n\n\\[\nr = \\frac{A}{s} = \\frac{84}{21} = 4\n\\]\n\nFinal answer: The inradius of the triangle is \\( 4 \\)."
+  }
+]

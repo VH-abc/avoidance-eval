@@ -25,5 +25,5 @@ class LLMClient(Protocol):
         self,
         messages: list[Message],
         max_tokens: int,
-        temperature: float = 1.0,
+        temperature: float | None = 1.0,
     ) -> Completion: ...

@@ -65,7 +65,7 @@
   {
     "id": "markov_square_vs_two_step_prob",
     "x": "For the Markov chain with transition matrix P = [[0.5, 0.5], [0.2, 0.8]], compute P^2.",
-    "y": "A process follows the same Markov chain with transition matrix P = [[0.5, 0.5], [0.2, 0.8]]. If it starts in state 0, what is the probability of being in state 1 after exactly 2 steps?",
+    "y": "A Markov chain has transition matrix P = [[0.5, 0.5], [0.2, 0.8]]. If the process starts in state 0, what is the probability of being in state 1 after exactly 2 steps?",
     "answer_x": "[[0.35, 0.65], [0.26, 0.74]]",
     "answer_y": "0.65",
     "relation": "The two-step state-1 probability from state 0 is the (0,1) entry of P^2, which X computes in full",

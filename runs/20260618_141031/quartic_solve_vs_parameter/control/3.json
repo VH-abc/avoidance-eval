@@ -1,0 +1,16 @@
+{
+  "pair_id": "quartic_solve_vs_parameter",
+  "scaffold": "control",
+  "trial": 3,
+  "answer_x": "\\( x = 3, -3, 1, -1 \\)",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "To solve the equation \\( x^4 - 10x^2 + 9 = 0 \\), we can make a substitution to simplify it. Let \\( y = x^2 \\). Therefore, our equation becomes:\n\n\\[\ny^2 - 10y + 9 = 0\n\\]\n\nThis is a quadratic equation in \\( y \\). We can solve it using the quadratic formula:\n\n\\[\ny = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\n\\]\n\nwhere \\( a = 1 \\), \\( b = -10 \\), and \\( c = 9 \\).\n\nCalculating the discriminant:\n\n\\[\nb^2 - 4ac = (-10)^2 - 4 \\cdot 1 \\cdot 9 = 100 - 36 = 64\n\\]\n\nNow, substituting into the quadratic formula:\n\n\\[\ny = \\frac{10 \\pm \\sqrt{64}}{2 \\cdot 1} = \\frac{10 \\pm 8}{2}\n\\]\n\nCalculating the two possible values for \\( y \\):\n\n1. \\( y = \\frac{18}{2} = 9 \\)\n2. \\( y = \\frac{2}{2} = 1 \\)\n\nNow, we substitute back \\( y = x^2 \\):\n\n1. For \\( y = 9 \\):\n   \\[\n   x^2 = 9 \\implies x = \\pm 3\n   \\]\n\n2. For \\( y = 1 \\):\n   \\[\n   x^2 = 1 \\implies x = \\pm 1\n   \\]\n\nThus, the solutions are:\n\n\\[\nx = 3, -3, 1, -1\n\\]\n\nFinally, collecting all solutions, we have:\n\nFinal answer: \\( x = 3, -3, 1, -1 \\)",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

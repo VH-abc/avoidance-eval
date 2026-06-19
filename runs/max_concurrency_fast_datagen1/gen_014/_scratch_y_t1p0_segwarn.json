@@ -1,0 +1,122 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "47",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve for x, first find theNext, we find the multiplicative inverseFinal answer: 47"
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "15",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve \\( 23x \\equApplying the extended Euclidean algorithm, weFinal answer: 15"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "39",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "First, we need to find the multiplicative inverse of 23 modulo 64. Using the Extended Euclidean Algorithm, we findthe inverse is 39. Then, we multiply both sides of the equation by 39:\n\nx \u2261Final answer: 39"
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "23",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the equation, we first find the multiplicative inverse of 23 modulo 64. Using the Extended Euclidean Algorithm,the inverse of 23 is 55. Multiplying both sides by 55 gives:  \n\\(x \\Final answer: 23"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "53",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve for \\( x \\) in the equation \\( 23x \\equiv 9 \\mod 64 \\), we first need to find the multiplicative inverse of \\( 23 \\) modulo \\( 64 \\).\n\nUsing the Extended Euclidean Algorithm, we find thatthe inverse is \\( 11 \\). Multiplying both sides of the original equation by \\( 11 \\), we get:\n\n\\[\nx \\equiv 11 \\cdot 9 \\mod 64.\n\\]\n\nCalculatingFinal answer: 53"
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "37",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve \\( 23x \\equiv 9 \\mod 64 \\), first find the multiplicative inverse of 23 modulo 64. Using the Extended Euclidean Algorithm:\n\n1. Apply the Euclidean Algorithm:\n   - \\( 64 = 2 \\times The inverse of 23 modulo 64 is 11. Multiplying both sides of the congruence by 11 gives:\n\n\\[ x \\equiv 11 \\times 9 \\mod 64 \\]\n\nCalculating, \\(Final answer: 37"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "39",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve \\( 23x \\equiv 9 \\mod 64 \\), we first find the multiplicative inverse of 23 modulo 64. We apply the Extended Euclidean Algorithm to find integers \\( a \\) and \\( b \\) such that \\( 23a + 64b = 1 \\).\n\nCalculating:\n\n1. \\( 64 = 2 \\times 23 + 18 \\)\n2. \\( 23 = 1 \\times 18 + 5 \\)\n3. \\( 18 = 3 \\timesContinuing from the Extended Euclidean Algorithm:\n\n4. \\( 23 = 4 \\times 5 + 3 \\)\n5. \\( 5 = 1 \\times 3 + 2 \\)\n6. \\( 3 = 1 \\times 2 + 1 \\)\n7. \\( 2 = 2 \\times 1 + 0 \\)\n\nBack substituting to express 1:\n\n1. \\( 1 = 3Final answer: 39"
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "53",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the equation \\(23x \\equiv 9 \\mod 64\\), we first need to find the multiplicative inverse of 23 modulo 64.\n\nUsing the Extended Euclidean Algorithm, we calculate gcd:\n\n\\[\n64 = 2 \\times 23 + 18\n\\]\n\\[\n23 = 1 \\times 18 + 5\n\\]\n\\[\n18 = 3 \\times 5 + 3\n\\]\n\\[\n5 = 1 \\times 3 + 2\n\\]\n\\[\n3Continuing from the Extended Euclidean Algorithm:\n\n\\[\n2 = 1 \\times 2 + 1\n\\]\n\\[\n1 = 5 - 1 \\times 2\n\\]\nSubstituting back up, we find:\n\\[\n1 = 5 - 1 \\times (18 - 3 \\times 5) = 4 \\times 5 - 1 \\times 18\n\\]\nContinuing:\n\\[\nFinal answer: 53"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve for the unique \\( x \\) such that \\( 23x \\equiv 9 \\mod 64 \\), we first need to find the multiplicative inverse of \\( 23 \\) modulo \\( 64 \\).\n\nWe use the Extended Euclidean Algorithm to find \\( a \\) and \\( b \\) such that:\n\\[\n23a + 64b = \\gcd(23, 64)\n\\]\nCalculating \\( \\gcd(23, 64) \\):\n- \\( 64 = 2 \\times 23 + 18 \\)\n- \\( 23 = 1 \\times 18 + 5 \\)\n- \\( 18 = 3 \\times 5 + 3 \\)\n- \\( 5 = 1 \\times 3 + 2 \\)\n- \\( 3 = 1 \\times 2 + 1 \\)\n- \\( 2 = 2 \\times 1 + 0 \\)\n\nThus, \\( \\gcd(23, 64) = 1 \\). Now, we backtrack to express this as aContinuing from where we left off with the Extended Euclidean Algorithm:\n\n1. From \\( 3 = 18 - 3 \\times 5 \\)\n2. Substitute \\( 5 = 23 - 1 \\times 18 \\):\n   \\[\n   3 = 18 - 3(23 - 1 \\times 18) = 4 \\times 18 - 3 \\times 23\n   \\]\n3. Substitute \\( 18 = 64 - 2 \\times 23 \\):\n   \\[\n   3 = 4(64 - 2 \\times 23) - 3 \\times 23 = 4 \\times 64 - 8 \\times 23 - 3 \\times 23 = 4 \\times 64 - 11 \\times 23\n   \\]\n\nThis gives us \\( -11 \\times 23 \\equFinal answer: 45"
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "47",
+    "correct": false,
+    "grade_method": "llm",
+    "grade_detail": "INCORRECT",
+    "raw_response": "To solve the equation \\( 23x \\equiv 9 \\mod 64 \\), we first need to find the multiplicative inverse of 23 modulo 64.\n\nUsing the Extended Euclidean Algorithm, we find the integers \\( a \\) and \\( b \\) such that:\n\n\\[\n23a + 64b = \\gcd(23, 64)\n\\]\n\nCalculating \\( \\gcd(23, 64) \\):\n\n\\[\n64 = 2 \\times 23 + 18 \\\\\n23 = 1 \\times 18 + 5 \\\\\n18 = 3 \\times 5 + 3 \\\\\n5 = 1 \\times 3 + 2 \\\\\n3 = 1 \\times 2 + 1 \\\\\n2 = 2 \\times 1 + 0\n\\]\n\nNow back-substituting to find integers:\n\n\\[\n1 = 3 - 1 \\times 2 \\\\\n2 = 5 - 1 \\times 3 \\rightarrow 1 = 3 - 1 \\times (5 - 1Continuing from the back-substituting:\n\n\\[\n1 = 3 - 1 \\times (5 - 1 \\times 3) = 2 \\times 3 - 1 \\times 5\n\\]\n\nSubstituting for 3:\n\n\\[\n3 = 18 - 3 \\times 5 \\rightarrow 1 = 2 \\times (18 - 3 \\times 5) - 1 \\times 5 = 2 \\times 18 - 7 \\times 5\n\\]\n\nSubstituting for 5:\n\n\\[\n5 = 23 - 1 \\times 18 \\rightarrow 1 = 2 \\times 18 - 7 \\times (23 - 1 \\times 18) = 9 \\times 18 - 7 \\times 23\n\\]\n\nNow substituting for 18:\n\n\\[\n18 = Final answer: 47"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "\\( x = 31 \\)",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the equation \\( 23x \\equiv 9 \\mod 64 \\), we need to find the multiplicative inverse of \\( 23 \\) modulo \\( 64 \\).\n\n1. **Finding the Inverse of 23 mod 64**:\n   We can use the Extended Euclidean Algorithm to find integers \\( a \\) and \\( b \\) such that \\( 23a + 64b = \\gcd(23, 64) \\).\n\n   - Start with the Euclidean algorithm:\n     \\[\n     64 = 2 \\times 23 + 18\n     \\]\n     \\[\n     23 = 1 \\times 18 + 5\n     \\]\n     \\[\n     18 = 3 \\times 5 + 3\n     \\]\n     \\[\n     5 = 1 \\times 3 + 2\n     \\]\n     \\[\n     3 = 1 \\times 2 + 1\n     \\]\n     \\[\n     2 = 2 \\times 1 + 0\n     \\]\n   - Hence, \\( \\gcd(23, 64) = 1 \\).\n\n2. **Back-substitute to find the inverse**:\n   - From \\( 3 = 1 \\times 5 + 2 \\):\n     \\[\n     1 = 3 - 1 \\times 2\n     \\]\n   - From \\( 5 = 1 \\times 3 + 2 \\):\n     \\[\n     2 = 5 - 1 \\times 3 \\implies 1 = 3 - 1 \\times (5 - 1 \\times 3) = 2 \\times 3 - 1 \\times 5\n     \\]\n   - From \\( 3 = 18 - 3 \\times 5 \\):\n     \\[\n     1 = 2 \\times (18 - 3 \\times 5) - 1 \\times 5 = 2 \\times 18 - 7 \\times 5\n     \\]\n   - From \\( 5 = 23 - 18 \\):\n     \\[\n1. Continuing from the previous inversion calculations:\n\n   \\[\n   1 = 2 \\times 18 - 7 \\times (23 - 18) = 9 \\times 18 - 7 \\times 23\n   \\]\n\n   Since \\( 18 = 64 - 2 \\times 23 \\), substitute:\n\n   \\[\n   1 = 9 \\times (64 - 2 \\times 23) - 7 \\times 23 = 9 \\times 64 - 25 \\times 23\n   \\]\n\n   Thus, the multiplicative inverse of \\( 23 \\) modulo \\( 64 \\) is \\( -25 \\) or equivalently \\( 39 \\) (since \\( -25 \\equiv 39 \\mod 64 \\)).\n\n2. **Solve for x**:\n   Now, multiply both sides of the original congruence \\( 23x \\equiv 9 \\mod 64 \\) by \\( 39 \\):\n\n   \\[\n   x \\equiv 39 \\times 9 \\mod 64\n   \\]\n\n   Calculate \\( 39 \\times 9 = 351 \\).\n\n3. **Reduce modulo 64**:\n   Now reduce \\( 351 \\mod 64 \\):\n\n   \\[\n   351 \\div 64 = 5 \\quad \\text{(integer part)} \\Rightarrow 5 \\times 64 = 320\n   \\]\n   \\[\n   351 - 320 = 31\n   \\]\n\nThus, \\( x \\equiv 31 \\mod 64 \\).\n\nFinal answer: \\( x = 31 \\)"
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "31",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "To solve the congruence equation \\( 23x \\equiv 9 \\mod{64} \\), we first find the multiplicative inverse of \\( 23 \\) modulo \\( 64 \\).\n\n1. **Finding the Inverse:**\n   We need to find \\( y \\) such that \\( 23y \\equiv 1 \\mod{64} \\). We will use the Extended Euclidean Algorithm.\n\n   \\[\n   64 = 2 \\cdot 23 + 18 \\\\\n   23 = 1 \\cdot 18 + 5 \\\\\n   18 = 3 \\cdot 5 + 3 \\\\\n   5 = 1 \\cdot 3 + 2 \\\\\n   3 = 1 \\cdot 2 + 1 \\\\\n   2 = 2 \\cdot 1 + 0\n   \\]\n\n   Now we backtrack to find \\( 1 \\) in terms of \\( 23 \\) and \\( 64 \\):\n\n   \\[\n   1 = 3 - 1 \\cdot 2 \\\\\n   1 = 3 - 1 \\cdot (5 - 1 \\cdot 3) = 2 \\cdot 3 - 1 \\cdot 5 \\\\\n   1 = 2 \\cdot (18 - 3 \\cdot 5) - 1 \\cdot 5 = 2 \\cdot 18 - 7 \\cdot 5 \\\\\n   1 = 2 \\cdot 18 - 7 \\cdot (23 - 1 \\cdot 18) = 9 \\cdot 18 - 7 \\cdot 23 \\\\\n   1 = 9 \\cdot (64 - 2 \\cdot 23) - 7 \\cdot 23 = 9 \\cdot 64 - 25 \\cdot 23\n   \\]\n\n   Thus, \\( -25 \\equiv 39 \\mod{64} \\) is the inverse of \\( 23 \\) modulo \\( 64 \\).\n\n2. **MultipContinuing from where we stopped:\n\nWe have found that the inverse of \\( 23 \\mod{64} \\) is \\( 39 \\). Now, we can multiply both sides of the original congruence \\( 23x \\equiv 9 \\mod{64} \\) by \\( 39 \\):\n\n\\[\n39 \\cdot (23x) \\equiv 39 \\cdot 9 \\mod{64}\n\\]\n\nThis simplifies to:\n\n\\[\nx \\equiv 351 \\mod{64}\n\\]\n\nNext, we compute \\( 351 \\mod{64} \\):\n\n\\[\n351 \\div 64 \\approx 5.484375 \\Rightarrow 5 \\text{ remainder } 31\n\\]\n\nThus, \\( 351 \\equiv 31 \\mod{64} \\).\n\nTherefore, the unique solution for \\( x \\) satisfying \\( 23x \\equiv 9 \\mod{64} \\) in the range \\( 0 \\leq x < 64 \\) is:\n\nFinal answer: 31"
+  }
+]

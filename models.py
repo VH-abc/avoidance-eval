@@ -45,6 +45,7 @@ class YTrialResult(BaseModel):
     grade_method: str = ""
     grade_detail: str = ""
     raw_response: str = ""
+    prompt_messages: list[dict[str, str]] = Field(default_factory=list)
 
 
 class B50Result(BaseModel):
@@ -60,6 +61,7 @@ class LeakageResult(BaseModel):
     y_accuracy_scratch: float
     y_accuracy_with_trace: float
     leakage: float
+    x_correct: bool = True
 
 
 class XAccuracyResult(BaseModel):
@@ -80,3 +82,5 @@ class RunSummary(BaseModel):
     mean_y_accuracy_with_trace: dict[str, float | None]
     mean_leakage: dict[str, float | None]
     leakage_by_pair: dict[str, dict[str, float | None]]
+    leakage_trials_used: dict[str, int] = Field(default_factory=dict)
+    leakage_trials_total: dict[str, int] = Field(default_factory=dict)

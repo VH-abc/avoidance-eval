@@ -35,13 +35,27 @@ GRADER_PROVIDER = os.getenv("GRADER_PROVIDER", DEFAULT_PROVIDER)
 GRADER_MODEL = os.getenv("GRADER_MODEL", DEFAULT_MODEL)
 GRADER_TEMPERATURE = float(os.getenv("GRADER_TEMPERATURE", "0"))
 
+# Strong model used to generate and verify candidate (X, Y) pairs.
+GENERATION_PROVIDER = os.getenv("GENERATION_PROVIDER", "anthropic")
+GENERATION_MODEL = os.getenv("GENERATION_MODEL", "claude-opus-4-8")
+GENERATION_TEMPERATURE = float(os.getenv("GENERATION_TEMPERATURE", "1"))
+# Solver/target model whose Y accuracy defines "hard"; reuses the cheap default.
+SOLVER_PROVIDER = os.getenv("SOLVER_PROVIDER", DEFAULT_PROVIDER)
+SOLVER_MODEL = os.getenv("SOLVER_MODEL", DEFAULT_MODEL)
+GENERATION_MAX_SPEND = float(os.getenv("GENERATION_MAX_SPEND", "30"))
+
+# Per-request HTTP timeout (seconds) and retry count for LLM clients. Prevents
+# individual requests from hanging for many minutes on a stalled connection.
+REQUEST_TIMEOUT = float(os.getenv("LLM_REQUEST_TIMEOUT", "120"))
+LLM_MAX_RETRIES = int(os.getenv("LLM_MAX_RETRIES", "4"))
+
 TOKEN_BUDGETS = [16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
 FAST_TOKEN_BUDGETS = [32, 64, 128, 256, 512, 1024]
 DEFAULT_TRIALS = 5
 DEFAULT_Y_TRIALS = 10
 DEFAULT_WORKERS = 0
 DEFAULT_JOB_WORKERS = 0
-FAST_SCAFFOLDS = ["control", "baseline_avoid"]
+FAST_SCAFFOLDS = ["control_answer_only", "control", "baseline_avoid", "cheating_avoid"]
 
 
 def resolve_pool_workers(requested: int, job_count: int) -> int:
