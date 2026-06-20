@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_010",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "448",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to find T(64) using the recurrence T(n) = 2·T(n/2) + n, with T(1) = 1.\n\nLet me compute step by step:\n\n- T(1) = 1\n- T(2) = 2·T(1) + 2 = 2·1 + 2 = 4\n- T(4) = 2·T(2) + 4 = 2·4 + 4 = 12\n- T(8) = 2·T(4) + 8 = 2·12 + 8 = 32\n- T(16) = 2·T(8) + 16 = 2·32 + 16 = 80\n- T(32) = 2·T(16) + 32 = 2·80 + 32 = 192\n- T(64) = 2·T(32) + 64 = 2·192 + 64 = 448\n\n**Verification with closed form:** For T(n) = 2T(n/2) + n with T(1)=1, where n = 2^k:\nT(n) = n·log₂(n) + n. For n = 64, k = 6: T(64) = 64·6 + 64 = 384 + 64 = 448. ✓\n\nFinal answer: 448",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

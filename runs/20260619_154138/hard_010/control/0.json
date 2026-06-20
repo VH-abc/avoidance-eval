@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_010",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "448",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to find T(64) where T(1)=1 and T(n) = 2·T(n/2) + n for powers of 2.\n\nLet me compute step by step:\n\nT(1) = 1\nT(2) = 2·T(1) + 2 = 2·1 + 2 = 4\nT(4) = 2·T(2) + 4 = 2·4 + 4 = 12\nT(8) = 2·T(4) + 8 = 2·12 + 8 = 32\nT(16) = 2·T(8) + 16 = 2·32 + 16 = 80\nT(32) = 2·T(16) + 32 = 2·80 + 32 = 192\nT(64) = 2·T(32) + 64 = 2·192 + 64 = 448\n\nLet me verify with the closed form. For n = 2^k, T(n) = n·log₂(n) + n.\nFor n=64, k=6: T(64) = 64·6 + 64 = 384 + 64 = 448. ✓\n\nFinal answer: 448",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

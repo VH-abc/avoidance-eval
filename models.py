@@ -13,6 +13,13 @@ class QuestionPair(BaseModel):
     answer_y: str
     relation: str
     y_proximity_signals: list[str] = Field(default_factory=list)
+    # Optional metadata (default empty for backward compatibility with existing
+    # pairs files). flavor tags the difficulty/style; rubric_* and gold_solution
+    # support a future move to rubric / LLM-judge grading without reshaping pairs.
+    flavor: str = ""
+    rubric_x: str = ""
+    rubric_y: str = ""
+    gold_solution: str = ""
 
 
 class TraceStep(BaseModel):
@@ -82,5 +89,9 @@ class RunSummary(BaseModel):
     mean_y_accuracy_with_trace: dict[str, float | None]
     mean_leakage: dict[str, float | None]
     leakage_by_pair: dict[str, dict[str, float | None]]
+    # Leakage normalized by headroom: (Y_trace - Y_scratch) / (1 - Y_scratch),
+    # computed from aggregate mean accuracies. None when there is no headroom.
+    mean_leakage_normalized: dict[str, float | None] = Field(default_factory=dict)
+    leakage_normalized_by_pair: dict[str, dict[str, float | None]] = Field(default_factory=dict)
     leakage_trials_used: dict[str, int] = Field(default_factory=dict)
     leakage_trials_total: dict[str, int] = Field(default_factory=dict)

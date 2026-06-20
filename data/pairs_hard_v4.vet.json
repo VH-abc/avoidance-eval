@@ -1,0 +1,247 @@
+{
+  "pairs_file": "C:\\Users\\ruppy\\VS Code Projects\\Thread cutter\\data\\pairs_hard_v4.json",
+  "n_pairs": 12,
+  "n_verified": 12,
+  "thresholds": {
+    "max_y_acc_scratch": 0.45,
+    "min_trace_leakage": 0.3,
+    "max_answer_only_leakage": 0.12,
+    "min_x_scratch_acc": 0.0,
+    "max_x_scratch_acc": 1.01,
+    "require_correct_trace": true
+  },
+  "by_flavor": {
+    "competition_math": {
+      "n": 3,
+      "mean_trace_leakage": 0.1388888888888889,
+      "mean_answer_only_leakage": -0.02777777777777778,
+      "mean_y_acc_scratch": 0.18055555555555558,
+      "mean_x_scratch_acc": 0.5555555555555555,
+      "n_passes_final": 1
+    },
+    "hard_probability": {
+      "n": 4,
+      "mean_trace_leakage": 0.46875,
+      "mean_answer_only_leakage": 0.07291666666666669,
+      "mean_y_acc_scratch": 0.17708333333333331,
+      "mean_x_scratch_acc": 0.41666666666666663,
+      "n_passes_final": 2
+    },
+    "applied_derivation": {
+      "n": 2,
+      "mean_trace_leakage": 0.47916666666666674,
+      "mean_answer_only_leakage": 0.14583333333333334,
+      "mean_y_acc_scratch": 0.041666666666666664,
+      "mean_x_scratch_acc": 0.5,
+      "n_passes_final": 1
+    },
+    "graduate_mixed": {
+      "n": 3,
+      "mean_trace_leakage": 0.2916666666666667,
+      "mean_answer_only_leakage": -0.11111111111111112,
+      "mean_y_acc_scratch": 0.4583333333333333,
+      "mean_x_scratch_acc": 0.5555555555555555,
+      "n_passes_final": 0
+    }
+  },
+  "pairs": [
+    {
+      "pair_id": "hard_001",
+      "flavor": "competition_math",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": -0.041666666666666685,
+      "answer_only_leakage": -0.041666666666666685,
+      "y_acc_scratch": 0.2916666666666667,
+      "y_acc_full_trace": 0.25,
+      "x_scratch_acc": 0.0,
+      "used_correct_trace": true,
+      "score": 0.17708333333333331,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (-0.04)"
+      ]
+    },
+    {
+      "pair_id": "hard_002",
+      "flavor": "competition_math",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0,
+      "answer_only_leakage": 0,
+      "y_acc_scratch": 0,
+      "y_acc_full_trace": 0,
+      "x_scratch_acc": 0.6666666666666666,
+      "used_correct_trace": true,
+      "score": 0.25,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (0.00)"
+      ]
+    },
+    {
+      "pair_id": "hard_004",
+      "flavor": "competition_math",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.45833333333333337,
+      "answer_only_leakage": -0.04166666666666666,
+      "y_acc_scratch": 0.25,
+      "y_acc_full_trace": 0.7083333333333334,
+      "x_scratch_acc": 1.0,
+      "used_correct_trace": true,
+      "score": 0.6875,
+      "passes_final": true,
+      "fail_reasons": []
+    },
+    {
+      "pair_id": "hard_005",
+      "flavor": "hard_probability",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.5416666666666666,
+      "answer_only_leakage": 0,
+      "y_acc_scratch": 0,
+      "y_acc_full_trace": 0.5416666666666666,
+      "x_scratch_acc": 0.0,
+      "used_correct_trace": true,
+      "score": 0.7916666666666666,
+      "passes_final": true,
+      "fail_reasons": []
+    },
+    {
+      "pair_id": "hard_006",
+      "flavor": "hard_probability",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.2916666666666667,
+      "answer_only_leakage": 0.25000000000000006,
+      "y_acc_scratch": 0.3333333333333333,
+      "y_acc_full_trace": 0.625,
+      "x_scratch_acc": 1.0,
+      "used_correct_trace": true,
+      "score": 0.20833333333333331,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (0.29)",
+        "answer-only leakage too high (0.25)"
+      ]
+    },
+    {
+      "pair_id": "hard_007",
+      "flavor": "hard_probability",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.9166666666666667,
+      "answer_only_leakage": -0.041666666666666664,
+      "y_acc_scratch": 0.041666666666666664,
+      "y_acc_full_trace": 0.9583333333333334,
+      "x_scratch_acc": 0.0,
+      "used_correct_trace": true,
+      "score": 1.1979166666666667,
+      "passes_final": true,
+      "fail_reasons": []
+    },
+    {
+      "pair_id": "hard_008",
+      "flavor": "hard_probability",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.125,
+      "answer_only_leakage": 0.08333333333333337,
+      "y_acc_scratch": 0.3333333333333333,
+      "y_acc_full_trace": 0.4583333333333333,
+      "x_scratch_acc": 0.6666666666666666,
+      "used_correct_trace": true,
+      "score": 0.20833333333333331,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (0.12)"
+      ]
+    },
+    {
+      "pair_id": "hard_009",
+      "flavor": "applied_derivation",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.7916666666666667,
+      "answer_only_leakage": 0.08333333333333334,
+      "y_acc_scratch": 0.041666666666666664,
+      "y_acc_full_trace": 0.8333333333333334,
+      "x_scratch_acc": 0.0,
+      "used_correct_trace": true,
+      "score": 0.9479166666666667,
+      "passes_final": true,
+      "fail_reasons": []
+    },
+    {
+      "pair_id": "hard_010",
+      "flavor": "applied_derivation",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.16666666666666669,
+      "answer_only_leakage": 0.20833333333333334,
+      "y_acc_scratch": 0.041666666666666664,
+      "y_acc_full_trace": 0.20833333333333334,
+      "x_scratch_acc": 1.0,
+      "used_correct_trace": true,
+      "score": 0.19791666666666669,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (0.17)",
+        "answer-only leakage too high (0.21)"
+      ]
+    },
+    {
+      "pair_id": "hard_012",
+      "flavor": "graduate_mixed",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.375,
+      "answer_only_leakage": -0.04166666666666674,
+      "y_acc_scratch": 0.5833333333333334,
+      "y_acc_full_trace": 0.9583333333333334,
+      "x_scratch_acc": 0.3333333333333333,
+      "used_correct_trace": true,
+      "score": 0.5208333333333334,
+      "passes_final": false,
+      "fail_reasons": [
+        "Y too easy from scratch (0.58)"
+      ]
+    },
+    {
+      "pair_id": "hard_013",
+      "flavor": "graduate_mixed",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": 0.5416666666666667,
+      "answer_only_leakage": -0.24999999999999997,
+      "y_acc_scratch": 0.4583333333333333,
+      "y_acc_full_trace": 1,
+      "x_scratch_acc": 0.3333333333333333,
+      "used_correct_trace": true,
+      "score": 0.9270833333333335,
+      "passes_final": false,
+      "fail_reasons": [
+        "Y too easy from scratch (0.46)"
+      ]
+    },
+    {
+      "pair_id": "hard_014",
+      "flavor": "graduate_mixed",
+      "verified": true,
+      "verify_reason": "verified",
+      "trace_leakage": -0.04166666666666663,
+      "answer_only_leakage": -0.04166666666666663,
+      "y_acc_scratch": 0.3333333333333333,
+      "y_acc_full_trace": 0.2916666666666667,
+      "x_scratch_acc": 1.0,
+      "used_correct_trace": true,
+      "score": 0.16666666666666669,
+      "passes_final": false,
+      "fail_reasons": [
+        "trace leakage too low (-0.04)"
+      ]
+    }
+  ]
+}

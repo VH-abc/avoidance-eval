@@ -1,0 +1,346 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "6\u03a9 parallel Total R=8\u03a9Final answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "6\u03a9 parallel "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Total R=8\u03a9"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "6\u03a9 parallel Total R=8\u03a9Final answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "6\u03a9 parallel "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Total R=8\u03a9"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel: 2\u03a9. Total: 4+2+2=8\u03a9.Current 1.5A, drop 3V across parallel, 6Final answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel: 2\u03a9. Total: 4+2+2=8\u03a9."
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Current 1.5A, drop 3V across parallel, 6"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel 6,3 = 2\u03a9. Total = 4+2+2 = 8\u03a9. I=1.5A. V across parallel=3VFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel 6,3 = 2\u03a9. Total = 4+2+2 "
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "= 8\u03a9. I=1.5A. V across parallel=3V"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 wat",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel 6,3 = 2\u03a9. Total = 4+2+2 = 8\u03a9. Current = 12/8 = 1.5A. Voltage across parallel= 1.5\u00d72 = 3V. Power in 6\u03a9 = 3\u00b2/6 = 1.5W.\n\nFinal answer: 1.5 wat",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel 6,3 = 2\u03a9. Total = 4+2+2 = 8\u03a9. Current = 12/8 = 1.5A. Voltage across parallel"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "= 1.5\u00d72 = 3V. Power in 6\u03a9 = 3\u00b2/6 = 1.5W.\n\nFinal answer: 1.5 wat"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel of 6 and 3 = 2\u03a9. Total = 4+2+2 = 8\u03a9. Current = 12/8 = 1.5A. Voltage acrossVoltage across parallel = 1.5\u00d72 = 3V. Power in 6\u03a9 = 3\u00b2/6 = 1.5W.\n\nFinal answFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel of 6 and 3 = 2\u03a9. Total = 4+2+2 = 8\u03a9. Current = 12/8 = 1.5A. Voltage across"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Voltage across parallel = 1.5\u00d72 = 3V. Power in 6\u03a9 = 3\u00b2/6 = 1.5W.\n\nFinal answ"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 103 of 128 output tokens (90% budget). Your next reply is limited to 25 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel of 6 and 3: (6\u00b73)/9 = 2\u03a9.\nTotal: 4 + 2 + 2 = 8\u03a9.\nCurrent: 12/8 = 1.5A.\nVoltage across parallel: 1.5 \u00d7 2 = 3V.\nPower in 6\u03a9: V\u00b2/R = 9/6 = 1Final answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel of 6 and 3: (6\u00b73)/9 = 2\u03a9.\nTotal: 4 + 2 + 2 = 8\u03a9.\nCurrent: 12/8 = 1.5A.\nVoltage across parallel: 1.5 \u00d7 2 = 3V.\nPower in 6\u03a9: V\u00b2/R = 9/6 = 1"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel of 6 and 3 = 2 ohms.\nTotal = 4 + 2 + 2 = 8 ohms.\nCurrent = 12/8 = 1.5 A.\nVoltage across parallel section = 1.5 \u00d7 2 = 3 V.\nPower in 6-ohm = V\u00b2/R = 9/6 = 1.5Final answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel of 6 and 3 = 2 ohms.\nTotal = 4 + 2 + 2 = 8 ohms.\nCurrent = 12/8 = 1.5 A.\nVoltage across parallel section = 1.5 \u00d7 2 = 3 V.\nPower in 6-ohm = V\u00b2/R = 9/6 = 1.5"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 112 of 256 output tokens (50% budget). Only 144 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel of 6 and 3: (6\u00b73)/(6+3) = 2 ohms.\n\nTotal resistance: 4 + 2 + 2 = 8 ohms.\n\nTotal current: I = 12/8 = 1.5 A.\n\nVoltage across parallel section: V = I \u00d7 2 = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm: P = V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel of 6 and 3: (6\u00b73)/(6+3) = 2 ohms.\n\nTotal resistance: 4 + 2 + 2 = 8 ohms.\n\nTotal current: I = 12/8 = 1.5 A.\n\nVoltage across parallel section: V = I \u00d7 2 = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm: P = V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel of 6 and 3 = 2 ohms.\n\nTotal resistance = 4 + 2 + 2 = 8 ohms.\n\nTotal current = 12/8 = 1.5 A.\n\nVoltage across parallel combo = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor = V\u00b2/R = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel of 6 and 3 = 2 ohms.\n\nTotal resistance = 4 + 2 + 2 = 8 ohms.\n\nTotal current = 12/8 = 1.5 A.\n\nVoltage across parallel combo = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor = V\u00b2/R = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel combination of 6 and 3 ohms: (6\u00d73)/(6+3) = 2 ohms.\n\nTotal resistance: 4 + 2 + 2 = 8 ohms.\n\nTotal current: 12/8 = 1.5 A.\n\nVoltage across parallel combination: 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor: V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel combination of 6 and 3 ohms: (6\u00d73)/(6+3) = 2 ohms.\n\nTotal resistance: 4 + 2 + 2 = 8 ohms.\n\nTotal current: 12/8 = 1.5 A.\n\nVoltage across parallel combination: 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor: V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "1.5 watts",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Parallel combination: 6\u22253 = (6\u00b73)/(6+3) = 18/9 = 2 \u03a9.\n\nTotal resistance: 4 + 2 + 2 = 8 \u03a9.\n\nTotal current: I = 12/8 = 1.5 A.\n\nThis current flows through the parallel combination. Voltage across parallel section: V = I\u00b7R = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor: P = V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor."
+      },
+      {
+        "role": "assistant",
+        "content": "Parallel combination: 6\u22253 = (6\u00b73)/(6+3) = 18/9 = 2 \u03a9.\n\nTotal resistance: 4 + 2 + 2 = 8 \u03a9.\n\nTotal current: I = 12/8 = 1.5 A.\n\nThis current flows through the parallel combination. Voltage across parallel section: V = I\u00b7R = 1.5 \u00d7 2 = 3 V.\n\nPower in 6-ohm resistor: P = V\u00b2/R = 3\u00b2/6 = 9/6 = 1.5 W.\n\nFinal answer: 1.5 watts"
+      }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "run_id": "20260619_154138",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "x_provider": "anthropic",
+  "x_model": "claude-opus-4-8",
+  "grader_provider": "openai",
+  "grader_model": "gpt-4o-mini",
+  "pairs_file": "data\\pairs_hard_v4.json",
+  "scaffolds": [
+    "control_answer_only",
+    "control",
+    "baseline_avoid",
+    "cheating_avoid"
+  ],
+  "pair_ids": [
+    "hard_001",
+    "hard_002",
+    "hard_004",
+    "hard_005",
+    "hard_006",
+    "hard_007",
+    "hard_008",
+    "hard_009",
+    "hard_010",
+    "hard_012",
+    "hard_013",
+    "hard_014"
+  ],
+  "trials": 1,
+  "y_trials": 2,
+  "token_budgets": [
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "workers": 0,
+  "job_workers": 0,
+  "skip_y": false,
+  "temperature": 1.0,
+  "grader_temperature": 0.0,
+  "y_budget_warnings": true,
+  "y_budget_min_for_warnings": 16
+}

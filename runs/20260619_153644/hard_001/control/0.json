@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_001",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "960/961",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to evaluate $\\sum_{k=1}^{30} \\frac{2k+1}{k^2(k+1)^2}$.\n\n## Setting Up Telescoping\n\nNotice that $(k+1)^2 - k^2 = 2k+1$.\n\nSo I can write:\n$$\\frac{2k+1}{k^2(k+1)^2} = \\frac{(k+1)^2 - k^2}{k^2(k+1)^2} = \\frac{1}{k^2} - \\frac{1}{(k+1)^2}$$\n\n## Telescoping Sum\n\n$$\\sum_{k=1}^{30} \\left(\\frac{1}{k^2} - \\frac{1}{(k+1)^2}\\right) = \\frac{1}{1^2} - \\frac{1}{31^2}$$\n\n## Computing\n\n$$= 1 - \\frac{1}{961} = \\frac{961 - 1}{961} = \\frac{960}{961}$$\n\nCheck reduction: $961 = 31^2$, and $960 = 2^6 \\cdot 3 \\cdot 5$. No common factors with 31.\n\nFinal answer: 960/961",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

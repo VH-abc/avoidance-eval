@@ -1,0 +1,314 @@
+[
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4\u00b73^2\u00b77^2Final answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\u00b73^2\u00b77^2"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 32,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4\u00b73\u00b2\u00b77\u00b2. DivFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 32 output tokens total. Your generation will be hard-stopped at 8 tokens (50%) and 8 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 8 of 32 output tokens (50% budget). Only 24 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "\u00b73\u00b2\u00b77\u00b2. Div"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 16 of 32 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4\u00b73^2\u00b77^2.\n\nDivisors: 5\u00b75\u00b73\u00b73 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4\u00b73^2\u00b77^2.\n\nDivisors: 5\u00b7"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "5\u00b73\u00b73 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 64,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors(4+1)(2+1)(2+1)=45.\n\nFinal answFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 64 output tokens total. Your generation will be hard-stopped at 26 tokens (50%) and 22 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 16 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 26 of 64 output tokens (50% budget). Only 38 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "(4+1)(2+1)(2+1)=45.\n\nFinal answ"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 48 of 64 output tokens (90% budget). Your next reply is limited to 16 tokens. Do not explain. Reply with exactly one line in this format:\nFinal answer: <your answer>\nUse a short plain answer without LaTeX (e.g. `Final answer: <your result>`)."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors: (4+1)(2+1)(2+1) = 5\u00b73\u00b73 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors: (4+1)(2+1)(2+1) = 5\u00b73\u00b73 = 45.\n\n"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 128,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors: (4+1)(2+1)(2+1) = 5\u00b73\u00b73 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 128 output tokens total. Your generation will be hard-stopped at 56 tokens (50%) and 47 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 25 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4 \u00b7 3^2 \u00b7 7^2.\n\nDivisors: (4+1)(2+1)(2+1) = 5\u00b73\u00b73 = 45.\n\n"
+      },
+      {
+        "role": "user",
+        "content": "WARNING: You have used 56 of 128 output tokens (50% budget). Only 72 tokens remain for the entire response. Stop setup and reasoning \u2014 move immediately toward your answer. You must finish with a line starting with 'Final answer:'."
+      },
+      {
+        "role": "assistant",
+        "content": "Final answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 16 \u00d7 441 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5\u00d73\u00d73 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 16 \u00d7 441 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5\u00d73\u00d73 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 256,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "7056 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5\u00d73\u00d73 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 256 output tokens total. Your generation will be hard-stopped at 112 tokens (50%) and 93 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 51 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "7056 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5\u00d73\u00d73 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Factor 7056.\n\n7056 = 16 \u00d7 441 = 2\u2074 \u00d7 21\u00b2 = 2\u2074 \u00d7 3\u00b2 \u00d7 7\u00b2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "Factor 7056.\n\n7056 = 16 \u00d7 441 = 2\u2074 \u00d7 21\u00b2 = 2\u2074 \u00d7 3\u00b2 \u00d7 7\u00b2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 512,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "Factor 7056.\n\n7056 = 16 \u00d7 441 = 2^4 \u00d7 21^2 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 512 output tokens total. Your generation will be hard-stopped at 225 tokens (50%) and 185 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 102 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "Factor 7056.\n\n7056 = 16 \u00d7 441 = 2^4 \u00d7 21^2 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 0,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "First, factorize 7056.\n\n7056 = 7056. Divide by 2: 3528, 1764, 882, 441. That's four 2's, so 2\u2074.\n\n441 = 21\u00b2 = 3\u00b2 \u00d7 7\u00b2.\n\nSo 7056 = 2\u2074 \u00d7 3\u00b2 \u00d7 7\u00b2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "First, factorize 7056.\n\n7056 = 7056. Divide by 2: 3528, 1764, 882, 441. That's four 2's, so 2\u2074.\n\n441 = 21\u00b2 = 3\u00b2 \u00d7 7\u00b2.\n\nSo 7056 = 2\u2074 \u00d7 3\u00b2 \u00d7 7\u00b2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  },
+  {
+    "budget": 1024,
+    "condition": "scratch",
+    "trial": 1,
+    "answer": "45",
+    "correct": true,
+    "grade_method": "rule",
+    "grade_detail": "normalized match",
+    "raw_response": "First, factorize 7056.\n\n7056 = 7056\nDivide by 2: 7056 / 2 = 3528\n/2 = 1764\n/2 = 882\n/2 = 441\nSo 2^4 \u00d7 441.\n441 = 21\u00b2 = (3\u00d77)\u00b2 = 3\u00b2 \u00d7 7\u00b2.\n\nSo 7056 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45",
+    "prompt_messages": [
+      {
+        "role": "user",
+        "content": "Your entire response is limited to 1024 output tokens total. Your generation will be hard-stopped at 451 tokens (50%) and 369 tokens after that (90%), with urgent warnings between segments. The final segment allows at most 204 tokens. Answer concisely and finish with a line starting with 'Final answer:'.\n\nQuestion: Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056)."
+      },
+      {
+        "role": "assistant",
+        "content": "First, factorize 7056.\n\n7056 = 7056\nDivide by 2: 7056 / 2 = 3528\n/2 = 1764\n/2 = 882\n/2 = 441\nSo 2^4 \u00d7 441.\n441 = 21\u00b2 = (3\u00d77)\u00b2 = 3\u00b2 \u00d7 7\u00b2.\n\nSo 7056 = 2^4 \u00d7 3^2 \u00d7 7^2.\n\nNumber of divisors = (4+1)(2+1)(2+1) = 5 \u00d7 3 \u00d7 3 = 45.\n\nFinal answer: 45"
+      }
+    ]
+  }
+]

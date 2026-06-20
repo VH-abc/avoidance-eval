@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_010",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "448",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I'll compute T(64) by working up from the base case.\n\nT(1) = 1\nT(2) = 2·1 + 2 = 4\nT(4) = 2·4 + 4 = 12\nT(8) = 2·12 + 8 = 32\nT(16) = 2·32 + 16 = 80\nT(32) = 2·80 + 32 = 192\nT(64) = 2·192 + 64 = 448\n\nFinal answer: 448",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

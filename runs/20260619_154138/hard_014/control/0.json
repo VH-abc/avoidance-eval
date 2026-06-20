@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_014",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "22",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to count all partitions of 8.\n\nLet me list them systematically by the largest part.\n\n**Largest part 8:**\n- 8\n\n**Largest part 7:**\n- 7+1\n\n**Largest part 6:**\n- 6+2\n- 6+1+1\n\n**Largest part 5:**\n- 5+3\n- 5+2+1\n- 5+1+1+1\n\n**Largest part 4:**\n- 4+4\n- 4+3+1\n- 4+2+2\n- 4+2+1+1\n- 4+1+1+1+1\n\n**Largest part 3:**\n- 3+3+2\n- 3+3+1+1\n- 3+2+2+1\n- 3+2+1+1+1\n- 3+1+1+1+1+1\n\n**Largest part 2:**\n- 2+2+2+2\n- 2+2+2+1+1\n- 2+2+1+1+1+1\n- 2+1+1+1+1+1+1\n\n**Largest part 1:**\n- 1+1+1+1+1+1+1+1\n\nNow counting:\n- Part 8: 1\n- Part 7: 1\n- Part 6: 2\n- Part 5: 3\n- Part 4: 5\n- Part 3: 5\n- Part 2: 4\n- Part 1: 1\n\nTotal: 1+1+2+3+5+5+4+1 = 22\n\nFinal answer: 22",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

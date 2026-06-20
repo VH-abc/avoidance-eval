@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_002",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "315",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to find ordered pairs (a,b) where lcm(a,b) = 2³·3²·5⁴.\n\nFor each prime independently, I'll count the pairs of exponents.\n\n**General formula:** For lcm with prime power p^n, write a = p^x, b = p^y where max(x,y) = n.\n\nNumber of pairs (x,y) with 0 ≤ x,y ≤ n and max(x,y) = n:\n- Total pairs with both ≤ n: (n+1)²\n- Pairs with both ≤ n-1: n²\n- Pairs with max = n: (n+1)² - n² = 2n+1\n\n**For each prime:**\n- 2³: n=3, count = 2(3)+1 = 7\n- 3²: n=2, count = 2(2)+1 = 5\n- 5⁴: n=4, count = 2(4)+1 = 9\n\n**Total:** 7 × 5 × 9 = 315\n\nFinal answer: 315",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

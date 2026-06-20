@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_002",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "315",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "For each prime power p^e in the LCM, the number of ordered pairs of exponents (x,y) with max(x,y)=e is 2e+1.\n\n- For 2^3: 2(3)+1 = 7\n- For 3^2: 2(2)+1 = 5\n- For 5^4: 2(4)+1 = 9\n\nTotal: 7 × 5 × 9 = 315.\n\nFinal answer: 315",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

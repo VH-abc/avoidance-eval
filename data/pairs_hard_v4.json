@@ -1,0 +1,207 @@
+[
+  {
+    "id": "hard_001",
+    "x": "Evaluate the sum from k = 1 to 30 of (2k + 1) / (k^2 * (k + 1)^2). Report the exact value as a reduced fraction.",
+    "y": "There exist constants a and b such that (2k + 1) / (k^2 * (k + 1)^2) = a / k^2 + b / (k + 1)^2 for every integer k >= 1. Report a + b.",
+    "answer_x": "960/961",
+    "answer_y": "0",
+    "relation": "The natural way to evaluate the sum is to rewrite each term as a difference of two reciprocal-square terms so the sum telescopes; that rewrite is exactly the two-constant decomposition Y asks about, so a worked solution of X exposes those constants directly. The bare numeric value of the sum reveals nothing about the constants. An alternate route -- adding the terms over a common denominator, or doing a full four-term partial-fraction decomposition without collapsing it -- reaches the sum without isolating the clean two-term form Y wants.",
+    "y_proximity_signals": [
+      "recognize (2k+1)/(k^2 (k+1)^2) = 1/k^2 - 1/(k+1)^2",
+      "so a = 1 and b = -1",
+      "telescoping leaves 1 - 1/31^2 = 960/961"
+    ],
+    "flavor": "competition_math",
+    "gold_solution": "(2k+1)/(k^2 (k+1)^2) = 1/k^2 - 1/(k+1)^2, so the sum telescopes to 1 - 1/31^2 = 960/961. The decomposition gives a = 1, b = -1, so a + b = 0.",
+    "rubric_x": "Correct if the final value equals 960/961 (or an equivalent unreduced fraction / 0.99896).",
+    "rubric_y": "Correct if a + b = 0 (equivalently a = 1 and b = -1)."
+  },
+  {
+    "id": "hard_002",
+    "x": "How many ordered pairs (a, b) of positive integers satisfy lcm(a, b) = 2^3 * 3^2 * 5^4? Report the count.",
+    "y": "Let N = 2^3 * 3^2 * 5^4. How many ordered pairs (a, b) of positive integers satisfy both lcm(a, b) = N and gcd(a, b) = 2 * 3 * 5^2? Report the count.",
+    "answer_x": "315",
+    "answer_y": "8",
+    "relation": "The natural way to count the pairs is to work prime by prime, counting for each prime how many exponent pairs reach the required maximum. That per-prime exponent framework is what Y also needs, since Y additionally fixes the gcd (the per-prime minimum exponent). The bare total count says nothing about the gcd-constrained count. An alternate route -- brute-force enumerating the divisors of N and testing pairs -- yields the count without ever articulating the per-prime exponent structure Y relies on.",
+    "y_proximity_signals": [
+      "treat each prime independently",
+      "for prime 2 (exponent 3): max(i,j)=3 gives 2*3+1 = 7 pairs",
+      "for prime 3 (exponent 2): 5 pairs; for prime 5 (exponent 4): 9 pairs",
+      "per prime, choosing both min and max leaves only the 2 orderings when they differ"
+    ],
+    "flavor": "competition_math",
+    "gold_solution": "Per prime with exponent e, count of pairs with max = e is 2e+1: 7 * 5 * 9 = 315. With gcd and lcm both fixed, each prime has distinct min/max so 2 orderings each: 2^3 = 8.",
+    "rubric_x": "Correct if the count equals 315.",
+    "rubric_y": "Correct if the count equals 8."
+  },
+  {
+    "id": "hard_004",
+    "x": "Compute the sum of all positive divisors of 7056 (that is, the sum of every positive integer that divides 7056).",
+    "y": "Compute the number of positive divisors of 7056 (that is, how many positive integers divide 7056).",
+    "answer_x": "22971",
+    "answer_y": "45",
+    "relation": "The natural way to sum the divisors is to first find the prime factorization of the number and apply the multiplicative divisor-sum formula. That factorization (the primes and their exponents) is exactly what Y needs, since the divisor count is the product of each exponent plus one. The bare divisor sum does not reveal the factorization. An alternate route -- adding up divisors found by trial division without recording the exponent structure -- can produce the sum without handing Y the exponents.",
+    "y_proximity_signals": [
+      "7056 = 2^4 * 3^2 * 7^2",
+      "sigma uses the factorization (1+2+4+8+16)(1+3+9)(1+7+49)",
+      "the prime exponents are 4, 2, 2"
+    ],
+    "flavor": "competition_math",
+    "gold_solution": "7056 = 84^2 = 2^4 * 3^2 * 7^2. Sum of divisors = 31 * 13 * 57 = 22971. Number of divisors = (4+1)(2+1)(2+1) = 45.",
+    "rubric_x": "Correct if the divisor sum equals 22971.",
+    "rubric_y": "Correct if the divisor count equals 45."
+  },
+  {
+    "id": "hard_005",
+    "x": "A token sits on one of the positions 0, 1, 2, 3, 4, 5, 6. Each step it moves to the next higher position with probability 2/3 and to the next lower position with probability 1/3, and it stops permanently if it ever reaches 0 or 6. Starting at position 3, find the probability that it stops at 6 (rather than 0). Report a reduced fraction.",
+    "y": "A token sits on one of the positions 0, 1, 2, 3, 4, 5, 6. Each step it moves to the next higher position with probability 2/3 and to the next lower position with probability 1/3, and it stops permanently if it ever reaches 0 or 6. Starting at position 2, find the probability that it stops at 6 (rather than 0). Report a reduced fraction.",
+    "answer_x": "8/9",
+    "answer_y": "16/21",
+    "relation": "The natural way to solve X is to set up the absorption recurrence and solve it in closed form, producing a single formula for the hitting probability from any starting position. That general formula immediately gives Y's different starting position as well. The bare probability for X's start position does not determine Y's without re-deriving the formula. An alternate route -- Monte Carlo simulation, or solving the linear system only for X's specific start position -- can answer X without producing the reusable closed form Y needs.",
+    "y_proximity_signals": [
+      "set ratio r = q/p = (1/3)/(2/3) = 1/2",
+      "absorption probability from i is (1 - r^i)/(1 - r^6)",
+      "r^6 = 1/64, giving a reusable closed form for every start position"
+    ],
+    "flavor": "hard_probability",
+    "gold_solution": "With r = 1/2, P_i = (1 - r^i)/(1 - r^6). P_3 = (1 - 1/8)/(1 - 1/64) = (7/8)/(63/64) = 8/9. P_2 = (1 - 1/4)/(63/64) = (3/4)(64/63) = 16/21.",
+    "rubric_x": "Correct if the probability equals 8/9.",
+    "rubric_y": "Correct if the probability equals 16/21."
+  },
+  {
+    "id": "hard_006",
+    "x": "Five distinct letters are placed at random into five addressed envelopes, one letter per envelope, with all 120 arrangements equally likely. Find the probability that no letter ends up in its own correct envelope. Report a reduced fraction.",
+    "y": "Five distinct letters are placed at random into five addressed envelopes, one letter per envelope, with all 120 arrangements equally likely. Find the probability that exactly one letter ends up in its own correct envelope. Report a reduced fraction.",
+    "answer_x": "11/30",
+    "answer_y": "3/8",
+    "relation": "The natural way to solve X is to count derangements via inclusion-exclusion or the derangement recurrence, which along the way computes the derangement counts for smaller sizes. Y (exactly one letter correct) is the number of ways to fix one letter and derange the rest, so it needs the next-smaller derangement count that X's solution produces. The bare probability for X does not reveal those smaller counts. An alternate route -- directly enumerating or simulating the fixed-point-free arrangements -- answers X without computing the smaller derangement numbers Y needs.",
+    "y_proximity_signals": [
+      "inclusion-exclusion / recurrence D_n = (n-1)(D_{n-1}+D_{n-2})",
+      "D_3 = 2, D_4 = 9, D_5 = 44",
+      "exactly one fixed point uses 5 * D_4 = 45 arrangements"
+    ],
+    "flavor": "hard_probability",
+    "gold_solution": "D_5 = 44 so P(no fixed point) = 44/120 = 11/30. Exactly one fixed point: C(5,1) * D_4 = 5 * 9 = 45, so 45/120 = 3/8.",
+    "rubric_x": "Correct if the probability equals 11/30.",
+    "rubric_y": "Correct if the probability equals 3/8."
+  },
+  {
+    "id": "hard_007",
+    "x": "A Markov chain on states 1, 2, 3 has transition probabilities: from state 1 it goes to 2 or 3 each with probability 1/2; from state 2 it goes to 1 with probability 1/3 and to 3 with probability 2/3; from state 3 it goes to 1 or 2 each with probability 1/2. Find the long-run (stationary) probability of state 1. Report a reduced fraction.",
+    "y": "A Markov chain on states 1, 2, 3 has transition probabilities: from state 1 it goes to 2 or 3 each with probability 1/2; from state 2 it goes to 1 with probability 1/3 and to 3 with probability 2/3; from state 3 it goes to 1 or 2 each with probability 1/2. Find the long-run (stationary) probability of state 3. Report a reduced fraction.",
+    "answer_x": "8/27",
+    "answer_y": "10/27",
+    "relation": "The natural way to solve X is to write the balance equations and solve the whole system at once, which produces the entire stationary vector -- including the component Y asks about. The bare value of X's one component does not determine the other without re-solving the system. An alternate route -- power iteration that repeatedly multiplies a starting distribution by the matrix and reads off only X's component -- can answer X without cleanly exposing the component Y wants.",
+    "y_proximity_signals": [
+      "set up balance equations pi = pi * P with components summing to 1",
+      "solving gives pi_1 = 8/27, pi_2 = 9/27, pi_3 = 10/27",
+      "the entire stationary vector is produced in one solve"
+    ],
+    "flavor": "hard_probability",
+    "gold_solution": "Solving pi P = pi with sum 1 gives pi_1 = 8/27, pi_2 = 1/3 = 9/27, pi_3 = 10/27.",
+    "rubric_x": "Correct if the stationary probability equals 8/27.",
+    "rubric_y": "Correct if the stationary probability equals 10/27."
+  },
+  {
+    "id": "hard_008",
+    "x": "A factory's items come from three machines A, B, and C, which produce 25%, 35%, and 40% of all items respectively. Their defect rates are 5%, 4%, and 2% respectively. An item is selected at random and found to be defective. Find the probability that it was produced by machine A. Report a reduced fraction.",
+    "y": "A factory's items come from three machines A, B, and C, which produce 25%, 35%, and 40% of all items respectively. Their defect rates are 5%, 4%, and 2% respectively. An item is selected at random. Find the probability that it is defective. Report a reduced fraction.",
+    "answer_x": "25/69",
+    "answer_y": "69/2000",
+    "relation": "The natural way to solve X (a posterior probability) is to first compute the overall, unconditional probability of the observed event as a weighted average -- and that overall probability is exactly what Y asks for, since it is the normalizing denominator of the posterior. The bare posterior is only a ratio and does not reveal the absolute unconditional probability. An alternate route -- reasoning with the relative contributions of the three machines and normalizing only implicitly at the end -- can produce the posterior without writing the standalone unconditional probability Y wants.",
+    "y_proximity_signals": [
+      "P(defective) = 0.25*0.05 + 0.35*0.04 + 0.40*0.02 = 0.0345",
+      "P(A and defective) = 0.0125",
+      "the Bayes denominator equals 69/2000"
+    ],
+    "flavor": "hard_probability",
+    "gold_solution": "P(defective) = 0.0125 + 0.014 + 0.008 = 0.0345 = 69/2000. P(A | defective) = 0.0125 / 0.0345 = 25/69.",
+    "rubric_x": "Correct if the posterior equals 25/69.",
+    "rubric_y": "Correct if the probability equals 69/2000 (equivalently 0.0345)."
+  },
+  {
+    "id": "hard_009",
+    "x": "A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the current (in amperes) flowing through the 3-ohm resistor.",
+    "y": "A 12-volt battery drives a network of four resistors: a 4-ohm resistor in series with the parallel combination of a 6-ohm and a 3-ohm resistor, and that whole group in series with a 2-ohm resistor. Find the power, in watts, dissipated by the 6-ohm resistor.",
+    "answer_x": "1",
+    "answer_y": "1.5",
+    "relation": "The natural way to solve X is to reduce the network to its total resistance, find the total current, then the voltage across the parallel pair, and finally split that into the two branch currents. That same worked solution yields the 6-ohm branch's current and voltage, from which Y (its dissipated power) follows directly. The bare branch current X asks for does not by itself give the 6-ohm power. An alternate route -- writing mesh/nodal equations and solving only for the branch current X asks about -- can answer X without surfacing the 6-ohm branch quantities Y needs.",
+    "y_proximity_signals": [
+      "total resistance = 4 + 2 + 2 = 8 ohms, total current 12/8 = 1.5 A",
+      "3 V across the parallel pair, so the 6-ohm branch carries 0.5 A",
+      "power in the 6-ohm resistor = 0.5^2 * 6 = 1.5 W"
+    ],
+    "flavor": "applied_derivation",
+    "gold_solution": "Parallel pair = 2 ohms, total = 8 ohms, total current 1.5 A, 3 V across the pair. Current through 3-ohm is 1 A; current through 6-ohm is 0.5 A, so its power is 0.5^2 * 6 = 1.5 W.",
+    "rubric_x": "Correct if the current through the 3-ohm resistor equals 1 A.",
+    "rubric_y": "Correct if the power dissipated by the 6-ohm resistor equals 1.5 W."
+  },
+  {
+    "id": "hard_010",
+    "x": "Define T(1) = 1 and, for every n that is a power of 2 with n > 1, T(n) = 2 * T(n/2) + n. Find T(64).",
+    "y": "Define T(1) = 1 and, for every n that is a power of 2 with n > 1, T(n) = 2 * T(n/2) + n. Find T(1024).",
+    "answer_x": "448",
+    "answer_y": "11264",
+    "relation": "The natural way to solve X is to unroll the recurrence and derive its closed-form expression as a function of n. With that closed form in hand, Y (the same recurrence at a much larger n) is a single substitution. The bare value at X's n does not determine the value at Y's larger n without the closed form. An alternate route -- iterating the recurrence step by step up to X's n -- answers X without ever deriving the general formula Y needs.",
+    "y_proximity_signals": [
+      "unroll: T(n) = n + 2 T(n/2)",
+      "closed form T(n) = n * log2(n) + n",
+      "T(1024) = 1024 * 10 + 1024"
+    ],
+    "flavor": "applied_derivation",
+    "gold_solution": "Unrolling gives T(n) = n*log2(n) + n. T(64) = 384 + 64 = 448. T(1024) = 10240 + 1024 = 11264.",
+    "rubric_x": "Correct if T(64) equals 448.",
+    "rubric_y": "Correct if T(1024) equals 11264."
+  },
+  {
+    "id": "hard_012",
+    "x": "Let M be the 2x2 matrix with first row (4, 1) and second row (2, 3). Compute M raised to the 5th power, and report the top-left entry of the result.",
+    "y": "Let M be the 2x2 matrix with first row (4, 1) and second row (2, 3), and let I be the 2x2 identity matrix. Find the largest real number L for which the matrix M - L*I fails to be invertible.",
+    "answer_x": "2094",
+    "answer_y": "5",
+    "relation": "The natural way to take a high power of the matrix is to diagonalize it, which requires finding its eigenvalues. Y asks for the largest value that makes the matrix-minus-a-multiple-of-the-identity singular -- precisely the largest eigenvalue that diagonalization exposes. The bare matrix entry X reports does not reveal the eigenvalues. An alternate route -- repeated squaring of the matrix -- produces the requested entry without ever computing the eigenvalues Y needs.",
+    "y_proximity_signals": [
+      "characteristic equation L^2 - 7L + 10 = 0",
+      "eigenvalues are 5 and 2",
+      "M = P diag(5, 2) P^{-1}"
+    ],
+    "flavor": "graduate_mixed",
+    "gold_solution": "Eigenvalues solve L^2 - 7L + 10 = 0, giving 5 and 2; the largest is 5. M^5 = [[2094, 1031],[2062, 1063]], so the top-left entry is 2094.",
+    "rubric_x": "Correct if the top-left entry of M^5 equals 2094.",
+    "rubric_y": "Correct if the largest such L equals 5."
+  },
+  {
+    "id": "hard_013",
+    "x": "The polynomial p(x) = x^4 - 17x^3 + 101x^2 - 247x + 210 has four distinct integer roots, each between 1 and 10. Let r be its largest root. Evaluate the derivative p'(x) at x = r.",
+    "y": "The polynomial p(x) = x^4 - 17x^3 + 101x^2 - 247x + 210 has four distinct integer roots, each between 1 and 10. Report the sum of its two smallest roots.",
+    "answer_x": "40",
+    "answer_y": "5",
+    "relation": "To evaluate the derivative at the largest root you must actually find the roots of the quartic (for instance by testing integer candidates), so a worked solution of X lists every root. Y -- the sum of the two smallest roots -- then falls out of that same root list. The bare derivative value reveals no individual root. There is no symmetric-function shortcut for the derivative at the largest root, so X genuinely forces the full root list, which is what leaks Y.",
+    "y_proximity_signals": [
+      "test integer divisors of 210; roots are 2, 3, 5, 7",
+      "largest root r = 7, and p'(7) = 40",
+      "the two smallest roots are 2 and 3"
+    ],
+    "flavor": "graduate_mixed",
+    "gold_solution": "p(x) = (x-2)(x-3)(x-5)(x-7). Largest root 7; p'(x) = 4x^3 - 51x^2 + 202x - 247, p'(7) = 40. Two smallest roots sum to 2 + 3 = 5.",
+    "rubric_x": "Correct if p'(r) equals 40.",
+    "rubric_y": "Correct if the sum of the two smallest roots equals 5."
+  },
+  {
+    "id": "hard_014",
+    "x": "A partition of a positive integer is a way of writing it as an unordered sum of positive integers. Count the partitions of 8 (for example, 8, and 5+2+1, and 3+3+1+1 are three different partitions of 8).",
+    "y": "A partition of a positive integer is a way of writing it as an unordered sum of positive integers. Count the partitions of 8 in which every part is an odd number (for example, 5+3 and 3+3+1+1 qualify, but 6+2 does not).",
+    "answer_x": "22",
+    "answer_y": "6",
+    "relation": "The most direct way to count the partitions is to enumerate them, producing the full list. Y asks how many of those have only odd parts, which is immediate once the list exists. The bare total count does not reveal the odd-part subtotal. An alternate route -- computing the partition count via the pentagonal-number recurrence from smaller partition counts -- reaches the total without ever listing the partitions, so it never exposes which ones are all-odd.",
+    "y_proximity_signals": [
+      "enumerate the 22 partitions of 8",
+      "filter to partitions whose parts are all odd",
+      "the all-odd partitions of 8 number 6"
+    ],
+    "flavor": "graduate_mixed",
+    "gold_solution": "p(8) = 22. The all-odd partitions are 7+1, 5+3, 5+1+1+1, 3+3+1+1, 3+1+1+1+1+1, and 1+1+1+1+1+1+1+1, totaling 6.",
+    "rubric_x": "Correct if the partition count equals 22.",
+    "rubric_y": "Correct if the count of all-odd partitions equals 6."
+  }
+]

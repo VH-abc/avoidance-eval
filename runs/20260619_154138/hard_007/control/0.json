@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_007",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "8/27",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to find the stationary distribution π where πP = π.\n\nTransition matrix (rows = from, columns = to):\n- From 1: to 2 (1/2), to 3 (1/2)\n- From 2: to 1 (1/3), to 3 (2/3)\n- From 3: to 1 (1/2), to 2 (1/2)\n\nSet up equations for π = (π₁, π₂, π₃):\n\n**π₁** (into state 1): from 2 with 1/3, from 3 with 1/2\n- π₁ = (1/3)π₂ + (1/2)π₃\n\n**π₂** (into state 2): from 1 with 1/2, from 3 with 1/2\n- π₂ = (1/2)π₁ + (1/2)π₃\n\n**π₃** (into state 3): from 1 with 1/2, from 2 with 2/3\n- π₃ = (1/2)π₁ + (2/3)π₂\n\nWith π₁ + π₂ + π₃ = 1.\n\nLet me solve. From equation 2:\n- 2π₂ = π₁ + π₃ → π₃ = 2π₂ - π₁\n\nSubstitute into equation 1:\n- π₁ = (1/3)π₂ + (1/2)(2π₂ - π₁)\n- π₁ = (1/3)π₂ + π₂ - (1/2)π₁\n- (3/2)π₁ = (4/3)π₂\n- π₁ = (8/9)π₂\n\nSo π₂ = (9/8)π₁.\n\nThen π₃ = 2π₂ - π₁ = 2(9/8)π₁ - π₁ = (9/4)π₁ - π₁ = (5/4)π₁.\n\nCheck equation 3: π₃ = (1/2)π₁ + (2/3)π₂ = (1/2)π₁ + (2/3)(9/8)π₁ = (1/2)π₁ + (3/4)π₁ = (5/4)π₁. ✓\n\nNormalize:\n- π₁ + (9/8)π₁ + (5/4)π₁ = 1\n- π₁(1 + 9/8 + 5/4) = 1\n- Common denominator 8: (8/8 + 9/8 + 10/8) = 27/8\n- π₁(27/8) = 1\n- π₁ = 8/27\n\nFinal answer: 8/27",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

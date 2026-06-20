@@ -38,6 +38,13 @@ function leakageClass(value) {
   return "leakage-low";
 }
 
+function normLeakageClass(value) {
+  if (value == null || Number.isNaN(value)) return "";
+  if (value < -0.05) return "leakage-negative";
+  if (value > 0.4) return "leakage-high";
+  return "leakage-low";
+}
+
 function renderSummary(run) {
   const summary = run.summary;
   if (!summary) {
@@ -57,8 +64,9 @@ function renderSummary(run) {
             <div class="value">${fmtPct(summary.x_accuracy_by_scaffold[scaffold])}</div>
           </div>
           <div class="stat-card">
-            <div class="label">Leakage</div>
-            <div class="value ${leakageClass(summary.mean_leakage[scaffold])}">${fmtLeakage(summary.mean_leakage[scaffold])}</div>
+            <div class="label">Leakage (norm)</div>
+            <div class="value ${normLeakageClass(summary.mean_leakage_normalized?.[scaffold])}">${fmtLeakage(summary.mean_leakage_normalized?.[scaffold])}</div>
+            <div class="subvalue">raw &Delta; ${fmtLeakage(summary.mean_leakage[scaffold])}</div>
           </div>
         </div>
       </section>`
@@ -72,7 +80,8 @@ function renderSummary(run) {
         .map((scaffold) => {
           const xAcc = summary.x_accuracy_by_pair?.[pairId]?.[scaffold];
           const leak = summary.leakage_by_pair?.[pairId]?.[scaffold];
-          return `<td>${fmtPct(xAcc)}</td><td class="${leakageClass(leak)}">${fmtLeakage(leak)}</td>`;
+          const norm = summary.leakage_normalized_by_pair?.[pairId]?.[scaffold];
+          return `<td>${fmtPct(xAcc)}</td><td class="${normLeakageClass(norm)}" title="raw &Delta; ${fmtLeakage(leak)}">${fmtLeakage(norm)}</td>`;
         })
         .join("");
       return `
@@ -92,7 +101,7 @@ function renderSummary(run) {
     .join("");
 
   const headerCells = scaffolds
-    .map((s) => `<th>${s} X</th><th>${s} leak</th>`)
+    .map((s) => `<th>${s} X</th><th>${s} leak (norm)</th>`)
     .join("");
 
   summaryPanel.innerHTML = `

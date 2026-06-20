@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_007",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "8/27",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to find the stationary distribution π where πP = π.\n\nTransition matrix (rows = from, columns = to):\n- From 1: to 2 (1/2), to 3 (1/2)\n- From 2: to 1 (1/3), to 3 (2/3)\n- From 3: to 1 (1/2), to 2 (1/2)\n\nBalance equations:\n- π₁ = π₂(1/3) + π₃(1/2)\n- π₂ = π₁(1/2) + π₃(1/2)\n- π₃ = π₁(1/2) + π₂(2/3)\n\nLet me use the first two equations plus normalization.\n\nFrom equation 1: π₁ = (1/3)π₂ + (1/2)π₃\n\nFrom equation 2: π₂ = (1/2)π₁ + (1/2)π₃\n\nLet me express everything in terms of π₁. From equation 2:\nπ₂ = (1/2)π₁ + (1/2)π₃ → 2π₂ = π₁ + π₃ → π₃ = 2π₂ - π₁\n\nSubstitute into equation 1:\nπ₁ = (1/3)π₂ + (1/2)(2π₂ - π₁)\nπ₁ = (1/3)π₂ + π₂ - (1/2)π₁\nπ₁ + (1/2)π₁ = (4/3)π₂\n(3/2)π₁ = (4/3)π₂\nπ₂ = (3/2)(3/4)π₁ = (9/8)π₁\n\nThen π₃ = 2π₂ - π₁ = 2(9/8)π₁ - π₁ = (9/4)π₁ - π₁ = (5/4)π₁\n\nNormalize:\nπ₁ + π₂ + π₃ = π₁ + (9/8)π₁ + (5/4)π₁ = π₁(1 + 9/8 + 10/8) = π₁(8/8 + 9/8 + 10/8) = π₁(27/8) = 1\n\nπ₁ = 8/27\n\nLet me verify with equation 3:\nπ₃ should = (1/2)π₁ + (2/3)π₂\nπ₂ = (9/8)(8/27) = 9/27 = 1/3\nπ₃ = (5/4)(8/27) = 40/108 = 10/27\nCheck eq 3: (1/2)(8/27) + (2/3)(1/3) = 4/27 + 2/9 = 4/27 + 6/27 = 10/27 ✓\n\nFinal answer: 8/27",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

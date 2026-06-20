@@ -60,6 +60,19 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--provider", default=DEFAULT_PROVIDER)
     run_parser.add_argument("--model", default=DEFAULT_MODEL)
     run_parser.add_argument(
+        "--x-provider",
+        default=None,
+        help="Provider for solving X (default: same as --provider)",
+    )
+    run_parser.add_argument(
+        "--x-model",
+        default=None,
+        help=(
+            "Model that solves X in the scaffolds, letting X use a smarter model than Y. "
+            "If unset, X uses --model (same model for both X and Y)."
+        ),
+    )
+    run_parser.add_argument(
         "--temperature",
         type=float,
         default=DEFAULT_TEMPERATURE,
@@ -127,6 +140,33 @@ def build_parser() -> argparse.ArgumentParser:
     viz_parser = subparsers.add_parser("visualize", help="Launch trace visualizer web UI")
     viz_parser.add_argument("--host", default="127.0.0.1")
     viz_parser.add_argument("--port", type=int, default=8765)
+
+    vet_parser = subparsers.add_parser(
+        "vet", help="Verify gold answers and measure leakage for a hand-authored pairs file"
+    )
+    vet_parser.add_argument(
+        "--pairs-file", required=True, help="Path to question pairs JSON to vet"
+    )
+    vet_parser.add_argument("--y-trials", type=int, default=4)
+    vet_parser.add_argument("--x-trials", type=int, default=3)
+    vet_parser.add_argument("--verify-samples", type=int, default=2)
+    vet_parser.add_argument("--budgets", default=None, help="Comma-separated Y token budgets")
+    vet_parser.add_argument(
+        "--trace-model",
+        default=None,
+        help=(
+            "Model that produces the leaking X trace (default: the strong generation "
+            "model). Pass 'solver' to use the cheap solver instead."
+        ),
+    )
+    vet_parser.add_argument(
+        "--trace-provider",
+        default=None,
+        help="Provider for --trace-model (default: the generation provider)",
+    )
+    vet_parser.add_argument(
+        "--skip-verify", action="store_true", help="Skip the answer re-solve verification step"
+    )
 
     gen_parser = subparsers.add_parser(
         "generate", help="Generate (X, Y) pairs with high trace-leakage, low answer-only-leakage"
@@ -200,6 +240,8 @@ def main() -> None:
             y_trials=opts["y_trials"],
             provider=args.provider,
             model=args.model,
+            x_provider=args.x_provider,
+            x_model=args.x_model,
             run_id=args.run_id,
             token_budgets=opts["token_budgets"],
             workers=opts["workers"],
@@ -235,6 +277,31 @@ def main() -> None:
 
     if args.command == "visualize":
         serve(host=args.host, port=args.port)
+        return
+
+    if args.command == "vet":
+        from config import GENERATION_PROVIDER, SOLVER_MODEL, SOLVER_PROVIDER
+        from generation.vet import vet_pairs_file
+
+        token_budgets = _parse_int_csv(args.budgets) if args.budgets else None
+        if args.trace_model is not None and args.trace_model.lower() == "solver":
+            trace_provider = SOLVER_PROVIDER
+            trace_model = SOLVER_MODEL
+        else:
+            from config import GENERATION_MODEL
+
+            trace_model = args.trace_model or GENERATION_MODEL
+            trace_provider = args.trace_provider or GENERATION_PROVIDER
+        vet_pairs_file(
+            pairs_file=args.pairs_file,
+            y_trials=args.y_trials,
+            x_trials=args.x_trials,
+            token_budgets=token_budgets,
+            verify_samples=args.verify_samples,
+            trace_provider=trace_provider,
+            trace_model=trace_model,
+            skip_verify=args.skip_verify,
+        )
         return
 
     if args.command == "generate":

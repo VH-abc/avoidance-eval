@@ -230,6 +230,22 @@ def leakage_from_accuracies(
     return y_scratch, y_trace, y_trace - y_scratch
 
 
+def normalized_leakage(
+    y_scratch: float,
+    y_with_trace: float,
+    eps: float = 1e-9,
+) -> float | None:
+    """Leakage normalized by the headroom above the scratch accuracy: the
+    fraction of the gap between Y-scratch accuracy and a perfect 1.0 that the
+    trace closes. Returns None when there is no headroom (y_scratch ~ 1.0), since
+    leakage cannot be measured against a ceiling. A raw drop (trace hurts) yields
+    a negative value."""
+    headroom = 1.0 - y_scratch
+    if headroom <= eps:
+        return None
+    return (y_with_trace - y_scratch) / headroom
+
+
 def compute_b50(
     accuracies: dict[int, float],
     token_budgets: list[int] | None = None,

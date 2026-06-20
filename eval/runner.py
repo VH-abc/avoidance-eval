@@ -31,6 +31,7 @@ from eval.y_leakage import (
     evaluate_leakage,
     get_or_compute_scratch,
     leakage_from_accuracies,
+    normalized_leakage,
 )
 from llm.client import LLMClient
 from llm.factory import create_client
@@ -192,6 +193,8 @@ def run_full_eval(
     y_trials: int,
     provider: str,
     model: str,
+    x_provider: str | None = None,
+    x_model: str | None = None,
     run_id: str | None = None,
     token_budgets: list[int] | None = None,
     workers: int = DEFAULT_WORKERS,
@@ -211,6 +214,15 @@ def run_full_eval(
     client = create_client(provider, model)
     grader_client = create_client(GRADER_PROVIDER, GRADER_MODEL)
 
+    # X may use a smarter model than Y; default to the same model for both.
+    x_provider_eff = x_provider or provider
+    x_model_eff = x_model or model
+    if x_provider_eff == provider and x_model_eff == model:
+        x_client = client
+    else:
+        x_client = create_client(x_provider_eff, x_model_eff)
+        print(f"Solving X with {x_provider_eff}/{x_model_eff}; Y uses {provider}/{model}", flush=True)
+
     pairs_path = resolve_pairs_path(pairs_file)
     pairs = load_pairs(pair_ids, pairs_file=pairs_file)
     save_pairs_for_run(run_dir, pairs)
@@ -221,6 +233,8 @@ def run_full_eval(
         "run_id": run_id,
         "provider": provider,
         "model": model,
+        "x_provider": x_provider_eff,
+        "x_model": x_model_eff,
         "grader_provider": GRADER_PROVIDER,
         "grader_model": GRADER_MODEL,
         "pairs_file": pairs_file_for_manifest(pairs_path),
@@ -282,7 +296,7 @@ def run_full_eval(
                     p,
                     t,
                     run_dir,
-                    client,
+                    x_client,
                     grader_client,
                     temperature,
                     grader_temperature,
@@ -377,7 +391,9 @@ def build_summary(
     mean_y_accuracy_scratch: dict[str, float | None] = {}
     mean_y_accuracy_with_trace: dict[str, float | None] = {}
     mean_leakage: dict[str, float | None] = {}
+    mean_leakage_normalized: dict[str, float | None] = {}
     leakage_by_pair: dict[str, dict[str, float | None]] = defaultdict(dict)
+    leakage_normalized_by_pair: dict[str, dict[str, float | None]] = defaultdict(dict)
     leakage_trials_used: dict[str, int] = {}
     leakage_trials_total: dict[str, int] = {}
 
@@ -389,17 +405,25 @@ def build_summary(
         qualifying = [r for r in scaffold_leakage if r.x_correct]
         leakage_trials_total[scaffold] = len(scaffold_leakage)
         leakage_trials_used[scaffold] = len(qualifying)
-        mean_y_accuracy_scratch[scaffold] = _mean_or_none(
-            [r.y_accuracy_scratch for r in qualifying]
-        )
-        mean_y_accuracy_with_trace[scaffold] = _mean_or_none(
-            [r.y_accuracy_with_trace for r in qualifying]
-        )
+        scratch_mean = _mean_or_none([r.y_accuracy_scratch for r in qualifying])
+        trace_mean = _mean_or_none([r.y_accuracy_with_trace for r in qualifying])
+        mean_y_accuracy_scratch[scaffold] = scratch_mean
+        mean_y_accuracy_with_trace[scaffold] = trace_mean
         mean_leakage[scaffold] = _mean_or_none([r.leakage for r in qualifying])
+        mean_leakage_normalized[scaffold] = (
+            normalized_leakage(scratch_mean, trace_mean)
+            if scratch_mean is not None and trace_mean is not None
+            else None
+        )
         for pair_id in pair_ids:
             pair_leakage = [r for r in qualifying if r.pair_id == pair_id]
             if pair_leakage:
                 leakage_by_pair[pair_id][scaffold] = mean(r.leakage for r in pair_leakage)
+                pair_scratch = mean(r.y_accuracy_scratch for r in pair_leakage)
+                pair_trace = mean(r.y_accuracy_with_trace for r in pair_leakage)
+                leakage_normalized_by_pair[pair_id][scaffold] = normalized_leakage(
+                    pair_scratch, pair_trace
+                )
 
     return RunSummary(
         run_id=run_id,
@@ -410,7 +434,9 @@ def build_summary(
         mean_y_accuracy_scratch=mean_y_accuracy_scratch,
         mean_y_accuracy_with_trace=mean_y_accuracy_with_trace,
         mean_leakage=mean_leakage,
+        mean_leakage_normalized=mean_leakage_normalized,
         leakage_by_pair=dict(leakage_by_pair),
+        leakage_normalized_by_pair=dict(leakage_normalized_by_pair),
         leakage_trials_used=leakage_trials_used,
         leakage_trials_total=leakage_trials_total,
     )
@@ -597,7 +623,8 @@ def print_summary(summary: RunSummary) -> None:
         "X accuracy",
         "Y acc scratch",
         "Y acc w/ trace",
-        "Leakage",
+        "Leakage (raw)",
+        "Leakage (norm)",
         "Trials (X-ok)",
     ]
     rows: list[list[str]] = []
@@ -611,6 +638,7 @@ def print_summary(summary: RunSummary) -> None:
                 _fmt(summary.mean_y_accuracy_scratch.get(scaffold)),
                 _fmt(summary.mean_y_accuracy_with_trace.get(scaffold)),
                 _fmt(summary.mean_leakage.get(scaffold)),
+                _fmt(summary.mean_leakage_normalized.get(scaffold)),
                 f"{used}/{total}",
             ]
         )
@@ -623,7 +651,9 @@ def print_summary(summary: RunSummary) -> None:
         print(" | ".join(cell.ljust(widths[i]) for i, cell in enumerate(row)))
     print(
         "Note: Y accuracy and leakage are averaged only over trials where X was "
-        "graded correct (see Trials X-ok).",
+        "graded correct (see Trials X-ok). Leakage (norm) = (Y_trace - Y_scratch) / "
+        "(1 - Y_scratch), the fraction of headroom the trace closes; n/a when "
+        "Y_scratch is at the ceiling.",
         flush=True,
     )
 

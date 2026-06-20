@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_008",
+  "scaffold": "baseline_avoid",
+  "trial": 0,
+  "answer_x": "25/69",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I'll use Bayes' theorem to find P(A | defective).\n\nThe numerator is P(A)·P(defect|A) = 0.25 × 0.05 = 0.0125.\n\nThe denominator is the total defective probability. Computing each contribution:\n- 0.25 × 0.05 = 0.0125\n- 0.35 × 0.04 = 0.0140\n- 0.40 × 0.02 = 0.0080\n\nSum = 0.0345.\n\nSo P(A | defective) = 0.0125 / 0.0345 = 125/345 = 25/69.\n\nFinal answer: 25/69",
+      "metadata": {
+        "label": "baseline_avoid_response"
+      }
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,16 @@
+{
+  "pair_id": "hard_001",
+  "scaffold": "control",
+  "trial": 0,
+  "answer_x": "$\\dfrac{960}{961}$",
+  "trace": [
+    {
+      "role": "assistant",
+      "content": "I need to evaluate $\\sum_{k=1}^{30} \\frac{2k+1}{k^2(k+1)^2}$.\n\n## Setting Up the Telescoping\n\nNotice that $\\frac{2k+1}{k^2(k+1)^2}$ might telescope. Let me check:\n\n$$\\frac{1}{k^2} - \\frac{1}{(k+1)^2} = \\frac{(k+1)^2 - k^2}{k^2(k+1)^2} = \\frac{2k+1}{k^2(k+1)^2}$$\n\nThis matches exactly! So:\n\n$$\\frac{2k+1}{k^2(k+1)^2} = \\frac{1}{k^2} - \\frac{1}{(k+1)^2}$$\n\n## Evaluating the Telescoping Sum\n\n$$\\sum_{k=1}^{30} \\left(\\frac{1}{k^2} - \\frac{1}{(k+1)^2}\\right) = \\frac{1}{1^2} - \\frac{1}{31^2}$$\n\nThis equals:\n\n$$1 - \\frac{1}{961} = \\frac{961 - 1}{961} = \\frac{960}{961}$$\n\n## Checking Reduction\n\nSince $961 = 31^2$ and $960 = 2^6 \\cdot 3 \\cdot 5$, they share no common factors. The fraction is already reduced.\n\nFinal answer: $\\dfrac{960}{961}$",
+      "metadata": {
+        "label": "control_response"
+      }
+    }
+  ],
+  "metadata": {}
+}
