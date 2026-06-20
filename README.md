@@ -1,3 +1,5 @@
+(this is all vibecoded lol)
+
 # Thread Cutter
 
 Thread Cutter is an experiment harness for studying **reasoning-trace leakage**: when a
